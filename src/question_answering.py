@@ -69,7 +69,9 @@ def index_documents(document_collection):
 
 	# add files
 	for document in all_documents:
-		print("Adding file: "+document)
+		print("Adding file: "+document) # for testing purposes
 		i.addFile(document, "trectext") # untested, I think this is the correct format
 
 	i.close()
+
+main()
