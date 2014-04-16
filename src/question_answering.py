@@ -51,10 +51,12 @@ def index_documents(document_collection):
 	# use 1000 bytes - I'm guessing we'll actually need more?
 	i.setMemory(1000) 
 
-	# do normalize - what does this do exactly, and do we want it?
+	# do normalize - this performs case normalization - we probably want it
 	i.setNormalization(True)
 
-	# set stemmer - do we want stemming? If not, how to disable, if so, which one?
+	# set stemmer
+	# two possible stemmers - "porter" (overgeneralizes), "krovetz" (doesn't overgeneralize)
+	# indri/lemur doc says this is optional, so I think we can just omit to not stem
 	i.setStemmer("porter")
 
 	# make sure that the metadata we just added is indexed and searchable
@@ -67,6 +69,7 @@ def index_documents(document_collection):
 
 	# add files
 	for document in all_documents:
-		i.addFile(document, "xml") # how to specify TREC xml?
+		print("Adding file: "+document)
+		i.addFile(document, "trectext") # untested, I think this is the correct format
 
 	i.close()
