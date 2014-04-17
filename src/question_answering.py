@@ -37,9 +37,12 @@ def main():
 	# instead, index document collection
 	index_documents(document_collection)
 
-	# do XML stripping (use package?), filter for only factoid questions
+	# do XML stripping of TREC question file
 	questions = generate_q_list(q_file)
-	questions = filter(lambda x: x.type=='factoid', questions)
+	q_file.close()
+	
+	# filter for only factoid questions
+	questions = filter(lambda x: x.type=='FACTOID', questions)
 
 	# for a given Question object:
 	for question in questions:
@@ -95,22 +98,30 @@ def index_documents(document_collection):
 	i.close()
 
 
-# FIXME: incomplete/untested code; for now, this method simply returns a dummy list of
-# Question objects so that the program can be run.
-
 # This method takes an XML file of questions as input, creates relevant Question objects,
 # and returns them in a list.
 
 def generate_q_list(xml_file):
-#	parsed_file = etree.parse(xml_file)	# use beautiful soup instead? (which sits on top of lxml)
-	# may need to first get rid of junk at the beginning/end of the file
-	# then, parse the xml file (using Beautiful Soup?)
+	# parse the xml file (using Beautiful Soup?)
 	# create relevant Question objects from the parse tree
 	# return the Question objects in a sequential list
 
-	q1 = Question(None, 'factoid', None, None)
-	q2 = Question(None, 'description', None, None)
-	return [q1, q2]
+	soup = BeautifulSoup(xml_file)
+
+	soup_targets = soup.find_all('target')
+	questions = []
+	
+	for soup_target in soup_targets[:1]:
+		target = soup_target.get('text')
+		soup_questions = soup_target.find_all('q')
+
+		for soup_question in soup_questions:
+			id = soup_question.get('id')
+			type = soup_question.get('type')
+			q = soup_question.get_text().strip()
+			question = Question(id, type, q, target)
+			questions.append(question)
+	return questions
 
 
 if __name__ == '__main__':
