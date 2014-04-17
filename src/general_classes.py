@@ -55,3 +55,11 @@ class AnswerTemplate:
         # or alternatively, gather probabilities for all different NE types
         pass
 
+
+# Wrapper class for passages and weights returned by indri/lemur
+class Passage:
+    def __init__(self, passage, weight):
+        self.passage = passage
+        self.weight = weight
+
+
