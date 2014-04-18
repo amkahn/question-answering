@@ -42,7 +42,7 @@ class AnswerProcessor:
                 answer_candidate.set_score(new_score)
 
     def rank_answers(self):
-        self.ranked_answers.sort(key=operator.attrgetter('score'))
+        self.ranked_answers.sort(reverse=True,key=operator.attrgetter('score'))
 
 
 class AnswerCandidate:
