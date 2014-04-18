@@ -18,7 +18,8 @@ class AnswerProcessor:
         self.reweight_answers()           
         # sort answers by score
         self.rank_answers()
-        return self.ranked_answers
+        # return top 20 highest ranked answers
+        return self.ranked_answers[:20]
 
     # a method to extract possible answers from the passages and rank them
     def extract_answers(self):
