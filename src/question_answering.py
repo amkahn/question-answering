@@ -18,19 +18,22 @@ from bs4 import BeautifulSoup
 from pymur import *
 from os import listdir, path, walk
 
-
 def main():
 	# script needs to have passed in:
 	# path to TREC question file, path to index, optionally path to output file
 
 	# first argument is the TREC question file
-	q_file = open(sys.argv[1],'r')
+    q_file = open(sys.argv[1],'r')
 	
 	# second argument is the path to the index
-	index_path = sys.argv[2]
+    index_path = sys.argv[2]
 
 	# should the output file be a third argument?
 	# or should we output the stdout?
+    output = sys.stdout
+
+    # run-tag for output file - maybe later add as fourth argument?
+    run_tag = "test"
 
 	# comments taken from our shared Google Doc
 	# instantiate an InfoRetriever using a set of documents
@@ -38,30 +41,45 @@ def main():
 	# instead, index document collection - happens in separate script
 
 	# do XML stripping of TREC question file
-	questions = generate_q_list(q_file)
-	q_file.close()
+    questions = generate_q_list(q_file)
+    q_file.close()
 	
 	# filter for only factoid questions
-	questions = filter(lambda x: x.type=='FACTOID', questions)
+    questions = filter(lambda x: x.type=='FACTOID', questions)
 
 	# for a given Question object:
-	for question in questions:
+    for question in questions:
 #		sys.stderr.write("DEBUG  Here is the question: %s\n" % question.to_string())
 
 		# instantiate a QueryProcessor and use it to generate a set of searches and an AnswerTemplate object
-		qp = QueryProcessor(question)
+        qp = QueryProcessor(question)
 		
-		search_queries = qp.generate_queries()
+        search_queries = qp.generate_queries()
 #		sys.stderr.write("DEBUG  Here are the search queries: %s\n" % search_queries)
 		
-		ans_template = qp.generate_ans_template()
+        ans_template = qp.generate_ans_template()
 #		sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template)
 
-		# use the InfoRetriever, the document index, and the search queries to generate a set of passages
+   		# use the InfoRetriever, the document index, and the search queries to generate a set of passages
 
-		# instantiate an AnswerProcessor that takes set of passages and the AnswerTemplate object and returns a ranked list of answers
+
+        # dummy set of passage objects to test AnswerProcessor
+        passages = []
+        for i in range(20):
+            passage = Passage("this is a test",i,"NYT123"+str(i))
+            passages.append(passage)
+        # dummy answer template to test AnswerProcessor
+        ans_template = AnswerTemplate("what are you doing?")
+
+   		# instantiate an AnswerProcessor that takes set of passages and the AnswerTemplate object
+        ap = AnswerProcessor(passages,ans_template)
+
+        # get a ranked list of answers
+        ranked_answers = ap.generate_and_rank_answers()
 
 		# do formatting on answer list
+        for answer in ranked_answers:
+            output.write("%s %s %s %s\n" % (question.id, run_tag, answer.doc_id, answer.answer))
 
 
 # This method takes an XML file of questions as input, creates relevant Question objects,

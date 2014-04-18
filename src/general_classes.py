@@ -1,7 +1,8 @@
 # LING 573 Question Answering System
-# Code last updated 4/15/14 by Andrea Kahn
+# Code last updated 4/18/14 by Claire Jaja
 # This code holds classes that need to be accessed by various parts of the system.
 
+from collections import defaultdict
 
 # A Question object has the attributes id (a float corresponding to the TREC question ID),
 # type (a string corresponding to the question type; always "factoid" in our system, but
@@ -43,11 +44,24 @@ class SearchQuery(object):
 		return to_return
 
 
+# An AnswerTemplate object has the attributes original_question (a string with the original
+# question) and type_weights (a dictionary for the weights of each NE type, where the weights
+# will be used to reweight AnswerCandidate objects).
 class AnswerTemplate:
     def __init__(self,question):
-        self.original_question = question
         # should the AnswerTemplate get the question and then generate the template from that?
-        # or should the QueryProcessor generate the pieces and then pass them to the AnswerTemplate?
+        # or should the QueryProcessor generate the pieces and then pass them to the AnswerTemplate
+        self.original_question = question
+        # should the default weight of a type be 0 or some small number?
+        self.type_weights = defaultdict(lambda:0)
+        # by default, set weights for person, organization, and location to 1
+        for x in ["person","organization","location"]:
+            self.type_weights[x] = 1
+
+    # This method changes the weight of the given type to the given weight.
+    # If the type is not already in the type_weights dictionary, it is added.
+    def set_weight(type,weight):
+        self.type_weights[type] = weight
 
     # one possibility - AnswerTemplate generates the template
     def generate_template(self):
@@ -58,8 +72,10 @@ class AnswerTemplate:
 
 # Wrapper class for passages and weights returned by indri/lemur
 class Passage:
-    def __init__(self, passage, weight):
+    def __init__(self, passage, weight, doc_id):
         self.passage = passage
         self.weight = weight
-
+        # I'm adding something here for the ID of the doc the passage came from
+        # feel free to modify, just using for testing the AnswerProcessor - Claire
+        self.doc_id = doc_id
 
