@@ -1,6 +1,8 @@
 #!/opt/python-2.7/bin/python2.7
+#
 # script can be run without invoking python because of shebang
 # will be run with correct version on Patas
+#
 # LING 573 Question Answering System
 # Last edited on 4/17/14 by Andrea Kahn
 #
@@ -44,16 +46,24 @@ def main():
 
 	# for a given Question object:
 	for question in questions:
+#		sys.stderr.write("DEBUG  Here is the question: %s\n" % question.to_string())
 
-		# instantiate a QueryProcessor and use to generate a set of searches and an AnswerTemplate object
+		# instantiate a QueryProcessor and use it to generate a set of searches and an AnswerTemplate object
 		qp = QueryProcessor(question)
+		
+		search_queries = qp.generate_queries()
+#		sys.stderr.write("DEBUG  Here are the search queries: %s\n" % search_queries)
+		
+		ans_template = qp.generate_ans_template()
+#		sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template)
 
-		# use the InfoRetriever and the search set to generate a set of passages
+		# use the InfoRetriever, the document index, and the search queries to generate a set of passages
 
 		# instantiate an AnswerProcessor that takes set of passages and the AnswerTemplate object and returns a ranked list of answers
 
 		# do formatting on answer list
-		
+
+
 # This method takes an XML file of questions as input, creates relevant Question objects,
 # and returns them in a list.
 
@@ -67,14 +77,14 @@ def generate_q_list(xml_file):
 	soup_targets = soup.find_all('target')
 	questions = []
 	
-	for soup_target in soup_targets[:1]:
-		target = soup_target.get('text')
+	for soup_target in soup_targets:
+		target = str(soup_target.get('text'))
 		soup_questions = soup_target.find_all('q')
 
 		for soup_question in soup_questions:
-			id = soup_question.get('id')
-			type = soup_question.get('type')
-			q = soup_question.get_text().strip()
+			id = float(soup_question.get('id'))
+			type = str(soup_question.get('type'))
+			q = str(soup_question.get_text().strip())
 			question = Question(id, type, q, target)
 			questions.append(question)
 	return questions
