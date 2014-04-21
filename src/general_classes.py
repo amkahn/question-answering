@@ -26,9 +26,10 @@ class Question(object):
 		return to_return	
 
 
-# A SearchQuery object has the attributes search_terms (a set of strings, each of which can
-# be one or more words) and weight (which will be used to calculate the probability of the
-# corresponding AnswerCandidate, with a higher weight corresponding to a higher probability).
+# A SearchQuery object has the attributes search_terms (a dictionary of strings, each of
+# which can be one or more words, mapped to weights for those terms) and weight (which will
+# be used to calculate the probability of the corresponding AnswerCandidate, with a higher
+# weight corresponding to a higher probability of that answer being correct).
 
 # The query_processing module outputs a set of SearchQuery objects that are passed to the
 # info_retrieval module as input. 

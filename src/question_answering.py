@@ -49,13 +49,13 @@ def main():
 
 	# for a given Question object:
     for question in questions:
-#		sys.stderr.write("DEBUG  Here is the question: %s\n" % question.to_string())
+#        sys.stderr.write("DEBUG  Here is the question: %s\n" % question.to_string())
 
 		# instantiate a QueryProcessor and use it to generate a set of searches and an AnswerTemplate object
         qp = QueryProcessor(question)
 		
         search_queries = qp.generate_queries()
-#		sys.stderr.write("DEBUG  Here are the search queries: %s\n" % search_queries)
+#       sys.stderr.write("DEBUG  Here are the search queries: %s\n" % search_queries)
 		
         ans_template = qp.generate_ans_template()
 #		sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template)
@@ -88,7 +88,7 @@ def main():
 # and returns them in a list.
 
 def generate_q_list(xml_file):
-	# parse the xml file (using Beautiful Soup?)
+	# parse the xml file using BeautifulSoup
 	# create relevant Question objects from the parse tree
 	# return the Question objects in a sequential list
 
