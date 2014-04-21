@@ -23,14 +23,14 @@ class QueryProcessor(object):
 
 	# This method returns a set of SearchQuery objects.
 	def generate_queries(self):
-		tokenized_q = nltk.word_tokenize(self.question.q)
-		tokenized_target = nltk.word_tokenize(self.question.target)
+        tokenized_q = nltk.word_tokenize(self.question.q)
+        tokenized_target = nltk.word_tokenize(self.question.target)
 		# FIXME: Strip out punctuation tokens
         # note from Claire: here is a temporary fix
         punctuation = ['?','.',',']
-		search_query = [x for x in tokenized_q if x not in punctuation] + [x for x in tokenized_target if x not in punctuation]
+        search_query = [x for x in tokenized_q if x not in punctuation] + [x for x in tokenized_target if x not in punctuation]
 		# FIXME: Issue with leading escape character in some questions 
-		return [search_query]
+        return [search_query]
 	
 	# This method returns an AnswerTemplate object.
 	def generate_ans_template(self):
