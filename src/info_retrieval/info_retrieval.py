@@ -15,7 +15,7 @@ class InfoRetriever:
         # how to get this to link up to the doc collection?
 
         self.path_to_idx = index_path
-        self.index = new Index(self.path_to_idx)
+        self.index = Index(self.path_to_idx)
         self.query_env = QueryEnvironment()
         self.query_env.addIndex(self.path_to_idx)
 
