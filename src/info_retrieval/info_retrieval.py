@@ -25,6 +25,7 @@ class InfoRetriever:
     def retrieve_passages(self, queries):
         passages = []
         for query in queries:
+            query = " ".join(query)
             # second argument is the number of documents desired
             docs = self.query_env.runQuery("#combine[passage50:25](" + query + ")", 20)
             for doc in docs:
