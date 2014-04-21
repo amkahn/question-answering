@@ -33,7 +33,7 @@ class InfoRetriever:
                 begin = doc.begin
                 end = doc.end
                 doc_id = self.query_env.documents([doc_num])[0].metadata['docno'] # need this for output
-                passage = Passage(self.index.document(doc_num, True)[begin, end], doc.score, doc_id)
+                passage = Passage(self.index.document(doc_num, True)[begin:end], doc.score, doc_id)
                 passages.append(passage)
 
         return passages
