@@ -27,9 +27,13 @@ class InfoRetriever:
         passages = []
         for query in queries:
             query = " ".join(query)
-            sys.stderr.write(query)
+            sys.stderr.write(query + '\n')
             # second argument is the number of documents desired
-            docs = self.query_env.runQuery("#combine[passage50:25](" + query + ")", 20)
+            try:
+                docs = self.query_env.runQuery("#combine[passage50:25](" + query + ")", 20)
+            except:
+                docs = []
+                sys.stderr.write("Couldn't run query: " + query + '\n')
             for doc in docs:
                 doc_num = doc.document
                 begin = doc.begin
