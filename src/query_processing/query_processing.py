@@ -5,8 +5,8 @@
 
 
 import sys
-import general_classes
 import nltk
+from general_classes import *
 
 # TODO: A QueryProcessor should be initialized with the Question object, but should it
 # have this question as an attribute, or should it have attributes id, type, q, target that
@@ -25,12 +25,24 @@ class QueryProcessor(object):
     def generate_queries(self):
         tokenized_q = nltk.word_tokenize(self.question.q)
         tokenized_target = nltk.word_tokenize(self.question.target)
-		# FIXME: Strip out punctuation tokens
-        # note from Claire: here is a temporary fix
+		# FIXME: Strip out punctuation tokens (here is a temporary fix)
         punctuation = ['?','.',',']
-        search_query = [x for x in tokenized_q if x not in punctuation] + [x for x in tokenized_target if x not in punctuation]
+        query_terms = filter(lambda x: x not in punctuation, tokenized_q + tokenized_target)
+        query_dict = {}
+        
+        # NB: For now, the weights of the search terms are equal to the counts of the term
+        # in the question plus the target.
+        for term in query_terms:
+            if query_dict.get(term) == None:
+                query_dict[term] = 1
+            else:
+                query_dict[term] += 1
+
+        query = SearchQuery(query_dict, 1)
+#       sys.stderr.write("DEBUG  Here is the search query: %s\n" % query.to_string())
+
 		# FIXME: Issue with leading escape character in some questions 
-        return [search_query]
+        return [query]
 	
 	# This method returns an AnswerTemplate object.
     def generate_ans_template(self):
