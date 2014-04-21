@@ -33,19 +33,19 @@ class QueryProcessor(object):
         return [search_query]
 	
 	# This method returns an AnswerTemplate object.
-	def generate_ans_template(self):
+    def generate_ans_template(self):
 	
 		# NB: The following if statement should always evaluate as True in our system, but
 		# its inclusion enables the system to more easily be extended to handle other types
 		# of questions, for which the text-processing and AnswerTemplate-generation steps
 		# might be slightlydifferent.
 
-		if self.question.type=="FACTOID":		
+        if self.question.type=="FACTOID":		
 			# do some sort of text-processing on the natural-language question and context
 			# to determine NE type
 			# generate a corresponding AnswerTemplate object
 			# return it
-			return None
+            return None
 
-		else:
-			sys.stderr.write("Warning: System can only handle \"factoid\" questions\n")
+        else:
+            sys.stderr.write("Warning: System can only handle \"factoid\" questions\n")
