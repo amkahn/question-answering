@@ -26,7 +26,7 @@ class AnswerProcessor:
     def extract_answers(self):
         # for now, just take the entire text of the passage as the answer
         for passage in self.passages:
-            answer_candidate = AnswerCandidate(passage.passage,passage.doc_id)
+            answer_candidate = AnswerCandidate(" ".join(passage.passage),passage.doc_id)
             answer_candidate.set_score(passage.weight)
             self.ranked_answers.append(answer_candidate)
             # later, do something more clever, like count n-grams
