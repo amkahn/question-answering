@@ -25,8 +25,10 @@ class QueryProcessor(object):
 	def generate_queries(self):
 		tokenized_q = nltk.word_tokenize(self.question.q)
 		tokenized_target = nltk.word_tokenize(self.question.target)
-		search_query = tokenized_q + tokenized_target
 		# FIXME: Strip out punctuation tokens
+        # note from Claire: here is a temporary fix
+        punctuation = ['?','.',',']
+		search_query = [x for x in tokenized_q if x not in punctuation] + [x for x in tokenized_target if x not in punctuation]
 		# FIXME: Issue with leading escape character in some questions 
 		return [search_query]
 	
