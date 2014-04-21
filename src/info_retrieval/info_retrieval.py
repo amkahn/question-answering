@@ -26,7 +26,7 @@ class InfoRetriever:
     def retrieve_passages(self, queries):
         passages = []
         for query in queries:
-            query = " ".join(query)
+            query = " ".join(query.search_terms.keys())
             sys.stderr.write(query + '\n')
             # second argument is the number of documents desired
             try:

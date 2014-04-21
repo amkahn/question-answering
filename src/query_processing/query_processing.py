@@ -39,8 +39,8 @@ class QueryProcessor(object):
                 query_dict[term] += 1
 
         query = SearchQuery(query_dict, 1)
-        sys.stderr.write("DEBUG  Here is the search query: %s\n" % query.to_string())
-		
+#       sys.stderr.write("DEBUG  Here is the search query: %s\n" % query.to_string())
+
 		# FIXME: Issue with leading escape character in some questions 
         return [query]
 	

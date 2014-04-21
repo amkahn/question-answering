@@ -48,14 +48,14 @@ def main():
     questions = filter(lambda x: x.type=='FACTOID', questions)
 
 	# for a given Question object:
-    for question in questions[:3]:
-        sys.stderr.write("DEBUG  Here is the question: %s\n" % question.to_string())
+    for question in questions:
+#        sys.stderr.write("DEBUG  Here is the question: %s\n" % question.to_string())
 
 		# instantiate a QueryProcessor and use it to generate a set of searches and an AnswerTemplate object
         qp = QueryProcessor(question)
 		
         search_queries = qp.generate_queries()
-        sys.stderr.write("DEBUG  Here are the search queries: %s\n" % search_queries)
+#       sys.stderr.write("DEBUG  Here are the search queries: %s\n" % search_queries)
 		
         ans_template = qp.generate_ans_template()
 #		sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template)
