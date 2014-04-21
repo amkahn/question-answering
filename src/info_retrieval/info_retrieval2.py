@@ -36,7 +36,6 @@ class InfoRetriever:
                 results = (p1.communicate())
                 print results
             except:
-                except:
                 sys.stderr.write("Couldn't run query: " + query + '\n')
 
 
