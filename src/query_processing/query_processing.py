@@ -18,11 +18,11 @@ import nltk
 # A QueryProcessor object has the attribute "question", a Question object.
 
 class QueryProcessor(object):
-	def __init__(self, question):
-		self.question = question
+    def __init__(self, question):
+        self.question = question
 
 	# This method returns a set of SearchQuery objects.
-	def generate_queries(self):
+    def generate_queries(self):
         tokenized_q = nltk.word_tokenize(self.question.q)
         tokenized_target = nltk.word_tokenize(self.question.target)
 		# FIXME: Strip out punctuation tokens
