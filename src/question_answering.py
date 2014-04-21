@@ -61,13 +61,15 @@ def main():
 #		sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template)
 
    		# use the InfoRetriever, the document index, and the search queries to generate a set of passages
-
+        ir = InfoRetriever(index_path)
+        
+        passages = ir.retrieve_passages(search_queries)
 
         # dummy set of passage objects to test AnswerProcessor
-        passages = []
-        for i in range(20):
-            passage = Passage("this is a test",i,"NYT123"+str(i))
-            passages.append(passage)
+        #passages = []
+        #for i in range(20):
+        #    passage = Passage("this is a test",i,"NYT123"+str(i))
+        #    passages.append(passage)
         # dummy answer template to test AnswerProcessor
         ans_template = AnswerTemplate("what are you doing?")
 
