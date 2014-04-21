@@ -5,6 +5,7 @@
 
 from pymur import *
 from general_classes import *
+import sys
 
 
 class InfoRetriever:
@@ -26,6 +27,7 @@ class InfoRetriever:
         passages = []
         for query in queries:
             query = " ".join(query)
+            sys.stderr.write(query)
             # second argument is the number of documents desired
             docs = self.query_env.runQuery("#combine[passage50:25](" + query + ")", 20)
             for doc in docs:
