@@ -30,10 +30,10 @@ class InfoRetriever:
             sys.stderr.write(query + '\n')
             # second argument is the number of documents desired
             try:
-                p1 = subprocess.Popen([self.indri_loc, "".join(["-index=", self.path_to_idx]), \
-                               "".join(["-query=", '"#combine("', query,')"']), "-printSnippets=true"], \
+                p1 = subprocess.Popen([self.indri_loc, ''.join(['-index=', self.path_to_idx]),
+                'query="#combine(this is a test)"', '-printSnippets=true'],
                                       stdout=subprocess.PIPE, shell=True)
-
+                # ''.join(['-query=', '"#combine("', query,')"'])
                 results = (p1.communicate())
                 print results
             except:
