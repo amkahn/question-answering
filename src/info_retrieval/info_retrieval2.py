@@ -30,11 +30,12 @@ class InfoRetriever:
             sys.stderr.write(query + '\n')
             # second argument is the number of documents desired
             try:
-                p1 = subprocess.Popen([self.indri_loc, ''.join(['-index=', self.path_to_idx]),
-                'query="#combine(this is a test)"', '-printSnippets=true'],
-                                      stdout=subprocess.PIPE, shell=True)
+                print "Opening Popen object"
+                p1 = subprocess.Popen([self.indri_loc + ' -query="#combine(' + query + ')" -index=' + self.path_to_idx + ' -printSnippets=true'], stdout=subprocess.PIPE, shell=True)
                 # ''.join(['-query=', '"#combine("', query,')"'])
-                results = (p1.communicate())
+                print "Gathering output"
+                results = p1.communicate(input=None)
+		print "Output gathered"
                 print results
             except:
                 sys.stderr.write(str(sys.exc_info()[0]) +' ' + str(sys.exc_info()[1]) + ' ' + str(sys.exc_info()[2]) + '\n')
@@ -43,6 +44,13 @@ class InfoRetriever:
 
 
 
+# quick testing script 
+def main():
+    ir = InfoRetriever("\home2\cjaja\classwork\spring-2014\ling573\question-answering\src\index")
+    ir.retrieve_passages(["test query"])
+
+
+main()
 
 
 
