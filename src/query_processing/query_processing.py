@@ -1,5 +1,5 @@
 # LING 573 Question Answering System
-# Code last updated 4/15/14 by Andrea Kahn
+# Code last updated 4/22/14 by Andrea Kahn
 #
 # This code implements a QueryProcessor for the question answering system.
 
@@ -20,8 +20,29 @@ from general_classes import *
 class QueryProcessor(object):
     def __init__(self, question):
         self.question = question
+        self.query_voc = self.generate_voc()
 
-	# This method returns a set of SearchQuery objects.
+    # This method returns a dictionary of unigrams appearing in the original question and
+    # target mapped to their counts.
+    def generate_voc(self):
+        tokenized_q = nltk.word_tokenize(self.question.q)
+        tokenized_target = nltk.word_tokenize(self.question.target)
+		# FIXME: Strip out punctuation tokens (here is a temporary fix)
+        punctuation = ['?','.',',']
+        query_terms = filter(lambda x: x not in punctuation, tokenized_q + tokenized_target)
+        query_dict = {}
+
+        for term in query_terms:
+            if query_dict.get(term) == None:
+                query_dict[term] = 1
+            else:
+                query_dict[term] += 1
+        
+#       sys.stderr.write("DEBUG  Here is the query vocabulary: %s\n" % query_dict)
+        return query_dict
+
+
+	# This method returns a list of SearchQuery objects.
     def generate_queries(self):
         tokenized_q = nltk.word_tokenize(self.question.q)
         tokenized_target = nltk.word_tokenize(self.question.target)
@@ -30,15 +51,9 @@ class QueryProcessor(object):
         query_terms = filter(lambda x: x not in punctuation, tokenized_q + tokenized_target)
         query_dict = {}
         
-        # NB: For now, the weights of the search terms are equal to the counts of the term
-        # in the question plus the target.
-        for term in query_terms:
-            if query_dict.get(term) == None:
-                query_dict[term] = 1
-            else:
-                query_dict[term] += 1
-
-        query = SearchQuery(query_dict, 1)
+        # NB: For now, the weights of the search terms in the SearchQuery are equal to the
+        # counts of the term in the question plus the target.
+        query = SearchQuery(self.query_voc, 1)
 #       sys.stderr.write("DEBUG  Here is the search query: %s\n" % query.to_string())
 
 		# FIXME: Issue with leading escape character in some questions 
@@ -53,11 +68,14 @@ class QueryProcessor(object):
 		# might be slightlydifferent.
 
         if self.question.type=="FACTOID":		
-			# do some sort of text-processing on the natural-language question and context
-			# to determine NE type
-			# generate a corresponding AnswerTemplate object
-			# return it
-            return None
+            # do some sort of text-processing on the natural-language question and context
+            # to determine NE type
+            # generate a corresponding AnswerTemplate object
+            # return it
+            ans_template = AnswerTemplate(set(self.query_voc.keys()))
+#           sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template.to_string())
+            
+            return ans_template
 
         else:
             sys.stderr.write("Warning: System can only handle \"factoid\" questions\n")

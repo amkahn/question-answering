@@ -4,7 +4,7 @@
 # will be run with correct version on Patas
 #
 # LING 573 Question Answering System
-# Last edited on 4/17/14 by Andrea Kahn
+# Code last updated on 4/22/14 by Andrea Kahn
 #
 # This is the wrapper script.
 
@@ -49,7 +49,7 @@ def main():
 
 	# for a given Question object:
     for question in questions:
-#        sys.stderr.write("DEBUG  Here is the question: %s\n" % question.to_string())
+#       sys.stderr.write("DEBUG  Here is the question: %s\n" % question.to_string())
 
 		# instantiate a QueryProcessor and use it to generate a set of searches and an AnswerTemplate object
         qp = QueryProcessor(question)
@@ -58,7 +58,7 @@ def main():
 #       sys.stderr.write("DEBUG  Here are the search queries: %s\n" % search_queries)
 		
         ans_template = qp.generate_ans_template()
-#		sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template)
+#       sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template.to_string())
 
    		# use the InfoRetriever, the document index, and the search queries to generate a set of passages
         ir = InfoRetriever(index_path)
@@ -71,7 +71,7 @@ def main():
         #    passage = Passage("this is a test",i,"NYT123"+str(i))
         #    passages.append(passage)
         # dummy answer template to test AnswerProcessor
-        ans_template = AnswerTemplate("what are you doing?")
+        # ans_template = AnswerTemplate("what are you doing?")
 
    		# instantiate an AnswerProcessor that takes set of passages and the AnswerTemplate object
         ap = AnswerProcessor(passages,ans_template)

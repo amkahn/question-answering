@@ -1,8 +1,11 @@
 # LING 573 Question Answering System
-# Code last updated 4/18/14 by Claire Jaja
+# Code last updated 4/22/14 by Andrea Kahn
+#
 # This code holds classes that need to be accessed by various parts of the system.
 
+
 from collections import defaultdict
+
 
 # A Question object has the attributes id (a float corresponding to the TREC question ID),
 # type (a string corresponding to the question type; always "factoid" in our system, but
@@ -45,19 +48,25 @@ class SearchQuery(object):
 		return to_return
 
 
-# An AnswerTemplate object has the attributes original_question (a string with the original
-# question) and type_weights (a dictionary for the weights of each NE type, where the weights
-# will be used to reweight AnswerCandidate objects).
+# An AnswerTemplate object has the attributes query_terms (a set of basic search query terms
+# from the original question) and type_weights (a dictionary for the weights of each NE type,
+# where the weights will be used to reweight AnswerCandidate objects).
+
 class AnswerTemplate:
-    def __init__(self,question):
+    def __init__(self,query_terms):
         # should the AnswerTemplate get the question and then generate the template from that?
         # or should the QueryProcessor generate the pieces and then pass them to the AnswerTemplate
-        self.original_question = question
+        self.query_terms = query_terms
         # should the default weight of a type be 0 or some small number?
         self.type_weights = defaultdict(lambda:0)
         # by default, set weights for person, organization, and location to 1
         for x in ["person","organization","location"]:
             self.type_weights[x] = 1
+
+    # This method returns a string representing the AnswerTemplate instance (used for debugging).
+    def to_string(self):
+        to_return = "query_terms: %s; type_weights: %s" % (self.query_terms, self.type_weights)
+        return to_return
 
     # This method changes the weight of the given type to the given weight.
     # If the type is not already in the type_weights dictionary, it is added.
@@ -71,7 +80,9 @@ class AnswerTemplate:
         pass
 
 
-# Wrapper class for passages and weights returned by indri/lemur
+# A Passage object has the attributes passage (a string), weight (a float), and doc_id (a
+# float). This is a wrapper class for passages and weights returned by indri/lemur. 
+
 class Passage:
     def __init__(self, passage, weight, doc_id):
         self.passage = passage
