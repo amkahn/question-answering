@@ -1,12 +1,15 @@
 # LING 573 Question Answering System
-# Code last updated 4/17/14 by Clara Gordon
+# Code last updated 4/22/14 by Claire Jaja
 # This code implements an InfoRetriever for the question answering system.
 
 
 # from pymur import *
-from general_classes import *
 import sys
 import subprocess
+# this needs to be commented out when running this code directly
+# can be added back in when running from the wrapper script
+# has to do with the paths Python checks for modules
+#from general_classes import *
 
 
 class InfoRetriever:
@@ -31,11 +34,11 @@ class InfoRetriever:
             # second argument is the number of documents desired
             try:
                 print "Opening Popen object"
-                p1 = subprocess.Popen([self.indri_loc + ' -query="#combine(' + query + ')" -index=' + self.path_to_idx + ' -printSnippets=true'], stdout=subprocess.PIPE, shell=True)
+                p1 = subprocess.Popen([self.indri_loc,'-query="#combine(' + query + ')"', '-index=' + self.path_to_idx, '-printSnippets=true'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 # ''.join(['-query=', '"#combine("', query,')"'])
                 print "Gathering output"
-                results = p1.communicate(input=None)
-		print "Output gathered"
+                results = p1.communicate()
+                print "Output gathered"
                 print results
             except:
                 sys.stderr.write(str(sys.exc_info()[0]) +' ' + str(sys.exc_info()[1]) + ' ' + str(sys.exc_info()[2]) + '\n')
@@ -46,7 +49,7 @@ class InfoRetriever:
 
 # quick testing script 
 def main():
-    ir = InfoRetriever("\home2\cjaja\classwork\spring-2014\ling573\question-answering\src\index")
+    ir = InfoRetriever("/home2/cjaja/classwork/spring-2014/ling573/question-answering/src/index")
     ir.retrieve_passages(["test query"])
 
 

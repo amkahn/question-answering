@@ -1,7 +1,7 @@
 # document index files are too big to store in github
 src/index
-src/index2
-src/index3
+src/index_*
+src/index.cmd
 # keep test scripts and output locally
 src/test.*
 src/status.txt
