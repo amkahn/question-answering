@@ -42,12 +42,13 @@ def index_documents(document_collection,index_folder):
 	# set stemmer
 	# two possible stemmers - "porter" (overgeneralizes), "krovetz" (doesn't overgeneralize)
 	# indri/lemur doc says this is optional, so I think we can just omit to not stem
-	i.setStemmer("porter")
+	i.setStemmer("krovetz")
 
 	# make sure that the metadata we just added is indexed and searchable
 	# we will make sure "title" is indexed for both forward and backward searches
-	# is this the place to make sure we'll be able to access doc IDs?
-	i.setMetadataIndexedFields(["title"], ["title"])
+	# I don't think we need this since "title" doesn't show up in our documents
+    # and the trectext file adding automatically adds TREC fields
+	#i.setMetadataIndexedFields(["title"], ["title"])
 
 	# make index - the InfoRetriever can access this by knowing the path
 	i.create(index_folder)
