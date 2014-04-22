@@ -33,9 +33,11 @@ class InfoRetriever:
                 p1 = subprocess.Popen([self.indri_loc, "".join("-index=", self.path_to_idx), \
                                "".join("-query=", '"#combine("', query,')"'), "-printSnippets=true"], \
                                       stdout=subprocess.PIPE, shell=True)
+
                 results = (p1.communicate())
                 print results
             except:
+                print "Unexpected error:", sys.exc_info()[0]
                 sys.stderr.write("Couldn't run query: " + query + '\n')
 
 
