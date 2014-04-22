@@ -37,7 +37,7 @@ class InfoRetriever:
                 results = (p1.communicate())
                 print results
             except:
-                print "Unexpected error:", sys.exc_info()[0]
+                sys.stderr.write(str(sys.exc_info()[0]) +' ' + str(sys.exc_info()[1]) + ' ' + str(sys.exc_info()[2]) + '\n')
                 sys.stderr.write("Couldn't run query: " + query + '\n')
 
 
