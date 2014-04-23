@@ -7,7 +7,6 @@ from operator import itemgetter, attrgetter
 from collections import Counter, defaultdict
 import nltk
 import sys
-from bs4 import BeautifulSoup
 
 class AnswerProcessor:
     def __init__(self,passages,answer_template,stopword_list=[]):
@@ -15,6 +14,8 @@ class AnswerProcessor:
         self.answer_template = answer_template
         self.ranked_answers = []
         self.stopword_list = stopword_list
+        self.stopword_list.add("'s")
+        self.punctuation = {':',"'","''",'(',')','&',';','_','.','!','?',','}
 
 #    def generate_and_rank_answers_old(self):
 #        # get answers from the passages
@@ -29,12 +30,12 @@ class AnswerProcessor:
     def generate_and_rank_answers(self):
         # get answers from the passages
         self.extract_answers()
-        # remove answers with query words
-        self.remove_query_words()
+        # filter answers
+        self.filter_answers()
         # combine answer weights
         self.combine_answers()
         # reweight answers based on answer template
-        self.reweight_answers()           
+        self.reweight_answers()
         # sort answers by score
         self.rank_answers()
         # return top 20 highest ranked answers
@@ -79,20 +80,31 @@ class AnswerProcessor:
         for answer,score in answer_score.iteritems():
             if len(answer.split()) == 1:
                 self.unigram_answers.append((answer,score))
-            # initialize answer candidate with answer and random doc ID from doc IDs it occured in
-            ac = AnswerCandidate(answer,next(iter(answer_docs[answer])))
+            # initialize answer candidate with answer and the doc IDs where it occured in
+            ac = AnswerCandidate(answer,answer_docs[answer])
             ac.set_score(score)
             self.ranked_answers.append(ac)
 
-    # remove words from original question and stop words
-    def remove_query_words(self):
+    # remove answers with words from original query, punctuation, or starting/ending with stop word:w
+
+    def filter_answers(self):
         # go through answers
         for i in xrange(len(self.ranked_answers)-1,-1,-1):
             answer = self.ranked_answers[i]
-            for word in answer.answer.split():
-                # if any word in the answer is in the list of query terms
-                punctuation = [':',"'","''",'(',')','&',';','_','.','!','?',',']
-                if word.lower() in self.answer_template.query_terms or word.lower() in self.stopword_list or word in punctuation:
+            answer_words = answer.answer.split()
+            for j in range(len(answer_words)):
+                # if any word in the answer is in the list of query terms or the punctuation list
+                
+                # or the first or last word is in the stop word list
+                if j==0 or j==len(answer_words)-1:
+                    if answer_words[j].lower() in self.stopword_list:
+                        del self.ranked_answers[i]
+                        break
+
+               # if (i==0 and answer_words[i].lower() in self.stopword_list) or (i==len(answer_words) and answer_words[i].lower() in self.stopword_list):
+               #     del self.ranked_answers[i]
+               #     break
+                if answer_words[j].lower() in self.answer_template.query_terms or answer_words[j] in self.punctuation:
                     # remove that answer
                     del self.ranked_answers[i]
                     break
@@ -113,6 +125,11 @@ class AnswerProcessor:
 
     # a method to check candidate answers against the answer template
     def reweight_answers(self):
+        # remove answers if not in more than one snippet 
+        for i in xrange(len(self.ranked_answers)-1,-1,-1):
+            answer = self.ranked_answers[i]
+            if len(answer.doc_ids) < 2:
+                del self.ranked_answers[i]
         for answer_candidate in self.ranked_answers:
             # find NEs and types
             for NE_type,weight in self.answer_template.type_weights.iteritems():
@@ -127,9 +144,9 @@ class AnswerProcessor:
 
 
 class AnswerCandidate:
-    def __init__(self,answer,doc_id):
+    def __init__(self,answer,doc_ids):
         self.answer = answer
-        self.doc_id = doc_id
+        self.doc_ids = doc_ids
         self.score = 0
 
     def set_score(self,score):
