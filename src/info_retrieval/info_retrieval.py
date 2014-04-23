@@ -48,6 +48,8 @@ class InfoRetriever:
                 weight =  - float(header[3][1:])
                 passage_text = split[1].replace('...', ' ')
                 passage_text = passage_text.replace('\n', ' ')
+                # remove excess spacing
+                passage_text = passage_text.replace(' +', ' ')
                 # construct passage objects
                 passage = Passage(passage_text, weight, doc_no)
                 passages.append(passage)
