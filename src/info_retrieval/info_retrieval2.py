@@ -11,6 +11,7 @@ import subprocess
 # has to do with the paths Python checks for modules
 #from general_classes import *
 
+#TODO remove elipses
 
 class InfoRetriever:
 
@@ -34,7 +35,9 @@ class InfoRetriever:
             # second argument is the number of documents desired
             try:
                 print "Opening Popen object"
-                args = [self.indri_loc,'-query=#combine(' + query + ')', '-index=' + self.path_to_idx, '-printSnippets=true']
+                args = [self.indri_loc,'-query=#combine(' + query + ')', 
+                       '-index=' + self.path_to_idx, '-printSnippets=true',
+                         '-trecFormat=true', '-count=20']
                 print args
                 p1 = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 # ''.join(['-query=', '"#combine("', query,')"'])
