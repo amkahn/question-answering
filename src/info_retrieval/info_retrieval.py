@@ -32,7 +32,7 @@ class InfoRetriever:
             try:
                 args = [self.indri_loc,'-query=#combine(' + query + ')', 
                        '-index=' + self.path_to_idx, '-printSnippets=true',
-                         '-trecFormat=true', '-printSnippets=true', '-count=20']
+                         '-trecFormat=true', '-printSnippets=true', '-count=100']
                 p1 = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 results = p1.communicate()[0][2:]
             except:

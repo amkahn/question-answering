@@ -5,6 +5,8 @@
 from general_classes import AnswerTemplate, Passage
 from operator import itemgetter, attrgetter
 from collections import Counter, defaultdict
+import nltk
+import sys
 
 class AnswerProcessor:
     def __init__(self,passages,answer_template):
@@ -12,33 +14,48 @@ class AnswerProcessor:
         self.answer_template = answer_template
         self.ranked_answers = []
 
+#    def generate_and_rank_answers_old(self):
+#        # get answers from the passages
+#        self.extract_answers()
+#        # reweight answers based on answer template
+#        self.reweight_answers()           
+#        # sort answers by score
+#        self.rank_answers()
+#        # return top 20 highest ranked answers
+#        return self.ranked_answers[:20]
+
     def generate_and_rank_answers(self):
         # get answers from the passages
         self.extract_answers()
+        # remove answers with query words
+        self.remove_query_words()
+        # combine answer weights
+        self.combine_answers()
         # reweight answers based on answer template
         self.reweight_answers()           
         # sort answers by score
         self.rank_answers()
         # return top 20 highest ranked answers
-        return self.ranked_answers[:20]
+        if len(self.ranked_answers) >= 20:
+            return self.ranked_answers[:20]
+        else:
+            return self.ranked_answers
 
     # a method to extract possible answers from the passages and rank them
-    def extract_answers(self):
-        # for now, just take the entire text of the passage as the answer
-        for passage in self.passages:
-            answer_candidate = AnswerCandidate(" ".join(passage.passage),passage.doc_id)
-            answer_candidate.set_score(passage.weight)
-            self.ranked_answers.append(answer_candidate)
-            # later, do something more clever, like count n-grams
-            # also increment scores based on something like inverse passage rank
+#    def extract_answers_old(self):
+#        # for now, just take the first 250 characters of the passage as the answer
+#        for passage in self.passages:
+#            answer_candidate = AnswerCandidate(passage.passage[:250],passage.doc_id)
+#            answer_candidate.set_score(passage.weight)
+#            self.ranked_answers.append(answer_candidate)
 
-    def extract_answers2(self):
+    def extract_answers(self):
         # here's a possible clever answer extractor
         answer_docs = defaultdict(set)
         answer_score = defaultdict(lambda:0)
+        self.unigram_answers = []
         for passage in self.passages:
-            passage_list = passage.passage.split()
-            print passage_list, passage.weight
+            passage_list = nltk.word_tokenize(passage.passage)
             for i in range(len(passage_list)):
                 answers = []
                 # unigram
@@ -56,29 +73,39 @@ class AnswerProcessor:
                     # higher score is still better, but now will be all positive
                     answer_score[answer] += (-passage.weight)**-1
        # then find answers with highest score?
-        answer_score_list = []
         for answer,score in answer_score.iteritems():
-            ac = AnswerCandidate(answer,answer_docs[answer])
+            if len(answer.split()) == 1:
+                self.unigram_answers.append((answer,score))
+            # initialize answer candidate with answer and random doc ID from doc IDs it occured in
+            ac = AnswerCandidate(answer,next(iter(answer_docs[answer])))
             ac.set_score(score)
-            answer_score_list.append(ac)
-        #sorted_answers = sorted(answer_score_list,reverse=True,key=itemgetter(1))
-        # remove words from original question and stop words
+            self.ranked_answers.append(ac)
 
-        self.combine_answers(answer_score_list)
-        sorted_answers = sorted(answer_score_list,reverse=True,key=attrgetter('score'))
-        return sorted_answers
-
+    # remove words from original question and stop words
+    def remove_query_words(self):
+        # go through answers
+        for i in xrange(len(self.ranked_answers)-1,-1,-1):
+            answer = self.ranked_answers[i]
+            for word in answer.answer.split():
+                # if any word in the answer is in the list of query terms
+                if word.lower() in self.answer_template.query_terms or word in ['&',';','_','the','of','it','he','is','this','that','.','!','?',',']:
+            # also increment scores based on something like inverse passage rank
+                    # remove that answer
+                    del self.ranked_answers[i]
+                    break
+            else:
+                continue
 
     # combine answer candidates so that unigrams aren't highest
-    def combine_answers(self,answers):
+    def combine_answers(self):
         # update score of each answer
         # to be current score + sum of scores of answer unigrams in it
-        for answer in answers:
+        for answer in self.ranked_answers:
             if len(answer.answer.split()) > 1: # only update non-unigram scores
                 new_score = answer.score
-                for other_answer in answers:
-                    if len(other_answer.answer.split()) == 1 and other_answer.answer in answer.answer:
-                        new_score += other_answer.score
+                for unigram_answer,score in self.unigram_answers:
+                        if unigram_answer in answer.answer:
+                            new_score += score
                 answer.set_score(new_score) 
 
     # a method to check candidate answers against the answer template

@@ -56,7 +56,9 @@ class AnswerTemplate:
     def __init__(self,query_terms):
         # should the AnswerTemplate get the question and then generate the template from that?
         # or should the QueryProcessor generate the pieces and then pass them to the AnswerTemplate
-        self.query_terms = query_terms
+        self.query_terms = set()
+        for query_term in query_terms:
+            self.query_terms.add(query_term.lower())
         # should the default weight of a type be 0 or some small number?
         self.type_weights = defaultdict(lambda:0)
         # by default, set weights for person, organization, and location to 1
