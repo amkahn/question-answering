@@ -96,5 +96,5 @@ class Passage:
 
     # This method returns a string representing the Question instance (used for debugging).
     def to_string(self):
-        to_return = "passage: %s; weight: %s" % (self.search_terms, self.weight)
+        to_return = "passage: %s; weight: %s" % (self.passage, self.weight)
         return to_return
