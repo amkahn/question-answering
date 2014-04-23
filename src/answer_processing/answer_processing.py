@@ -56,6 +56,7 @@ class AnswerProcessor:
         self.unigram_answers = []
         for passage in self.passages:
             passage_list = nltk.word_tokenize(passage.passage)
+            sys.stderr.write("Tokenized passage is"+str(passage_list)+"\n")
             for i in range(len(passage_list)):
                 answers = []
                 # unigram
@@ -88,7 +89,8 @@ class AnswerProcessor:
             answer = self.ranked_answers[i]
             for word in answer.answer.split():
                 # if any word in the answer is in the list of query terms
-                if word.lower() in self.answer_template.query_terms or word in ['&',';','_','the','of','it','he','is','this','that','.','!','?',',']:
+                stopwords_and_punctuation = ['&',';','_','and','was','his','her','their','them','they','then','the','of','it','he','is','this','that','.','!','?',',']
+                if word.lower() in self.answer_template.query_terms or word in stopwords_and_punctuation:
             # also increment scores based on something like inverse passage rank
                     # remove that answer
                     del self.ranked_answers[i]
