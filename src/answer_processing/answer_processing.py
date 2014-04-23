@@ -91,7 +91,6 @@ class AnswerProcessor:
                 # if any word in the answer is in the list of query terms
                 stopwords_and_punctuation = ['&',';','_','and','was','his','her','their','them','they','then','the','of','it','he','is','this','that','.','!','?',',']
                 if word.lower() in self.answer_template.query_terms or word in stopwords_and_punctuation:
-            # also increment scores based on something like inverse passage rank
                     # remove that answer
                     del self.ranked_answers[i]
                     break
