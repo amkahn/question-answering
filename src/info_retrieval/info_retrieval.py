@@ -46,6 +46,7 @@ class InfoRetriever:
                 header = split[0].split(' ')
                 doc_no = header[1]
                 weight =  - float(header[3][1:])
+                passage_text = split[1]
                 passage_text = split[1].replace('...', ' ')
                 passage_text = passage_text.replace('\n', ' ')
                 # remove excess spacing
