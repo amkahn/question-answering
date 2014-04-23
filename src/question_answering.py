@@ -77,7 +77,9 @@ def main():
         passages = ir.retrieve_passages(search_queries)
         end_ir = time.clock()
         ir_time += (end_ir - begin_ir)
-#       sys.stderr.write("DEBUG  Here are the passages: %s\n" % passages)
+        sys.stderr.write("DEBUG  Here are the passages: %s\n")
+        for passage in passages:
+            sys.stderr.write(passage.to_string()+"\n")
         sys.stderr.write("DEBUG  Passage retrieval took %s seconds\n" % (end_ir - begin_ir))
         
         # dummy set of passage objects to test AnswerProcessor
