@@ -5,3 +5,5 @@ src/index.cmd
 # keep test scripts and output locally
 src/test.*
 src/status.txt
+# compiled Python files cause merge issues
+*.pyc

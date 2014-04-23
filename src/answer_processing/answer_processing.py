@@ -42,12 +42,24 @@ class AnswerProcessor:
             return self.ranked_answers
 
     # a method to extract possible answers from the passages and rank them
+<<<<<<< HEAD
 #    def extract_answers_old(self):
 #        # for now, just take the first 250 characters of the passage as the answer
 #        for passage in self.passages:
 #            answer_candidate = AnswerCandidate(passage.passage[:250],passage.doc_id)
 #            answer_candidate.set_score(passage.weight)
 #            self.ranked_answers.append(answer_candidate)
+=======
+    def extract_answers(self):
+        # for now, just take the entire text of the passage as the answer
+        for passage in self.passages:
+            # TODO changed this - deleted the join method on the passage text -Clara
+            answer_candidate = AnswerCandidate(passage.passage,passage.doc_id)
+            answer_candidate.set_score(passage.weight)
+            self.ranked_answers.append(answer_candidate)
+            # later, do something more clever, like count n-grams
+            # also increment scores based on something like inverse passage rank
+>>>>>>> 3d0b555fd857b6fe2405655d744965f9f3f41ed6
 
     def extract_answers(self):
         # here's a possible clever answer extractor
