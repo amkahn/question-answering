@@ -51,6 +51,8 @@ class InfoRetriever:
                 # construct passage objects
                 passage = Passage(passage_text, weight, doc_no)
                 passages.append(passage)
+
+        return passages
               
             
 # quick testing script 

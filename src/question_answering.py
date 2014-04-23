@@ -10,19 +10,17 @@
 
 
 import sys
+import time
 from general_classes import *
 from query_processing.query_processing import *
 from info_retrieval.info_retrieval import *
 from answer_processing.answer_processing import *
-from bs4 import BeautifulSoup
 from pymur import *
+from bs4 import BeautifulSoup
 from os import listdir, path, walk
 
 
 def main():
-	# script needs to have passed in:
-	# path to TREC question file, path to index, optionally path to output file
-
 	# first argument is the TREC question file
     q_file = open(sys.argv[1],'r')
 	
@@ -36,10 +34,13 @@ def main():
     # run-tag for output file - maybe later add as fourth argument?
     run_tag = "test"
 
-	# comments taken from our shared Google Doc
-	# instantiate an InfoRetriever using a set of documents
-	# actually, no need, index is stored in set location, InfoRetriever can access it there
-	# instead, index document collection - happens in separate script
+    # Keep track of the total time required for some processes.
+    query_gen_time = 0
+    ans_temp_gen_time = 0
+    ir_time = 0
+    ans_gen_time = 0
+
+	# NB: indexing of document collection happens in separate script
 
 	# do XML stripping of TREC question file
     questions = generate_q_list(q_file)
@@ -55,18 +56,30 @@ def main():
 		# instantiate a QueryProcessor and use it to generate a set of searches and an AnswerTemplate object
         qp = QueryProcessor(question)
 		
+        begin_query_gen = time.clock()
         search_queries = qp.generate_queries()
+        end_query_gen = time.clock()
+        query_gen_time += (end_query_gen - begin_query_gen)
 #       sys.stderr.write("DEBUG  Here are the search queries: %s\n" % search_queries)
-		
+#       sys.stderr.write("DEBUG  Generating the search queries took %s seconds\n" % (end_query_gen - begin_query_gen))
+
+        begin_ans_temp_gen = time.clock()
         ans_template = qp.generate_ans_template()
+        end_ans_temp_gen = time.clock()
+        ans_temp_gen_time += (end_ans_temp_gen - begin_ans_temp_gen)
 #       sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template.to_string())
+#       sys.stderr.write("DEBUG  Generating the answer template took %s seconds\n" % (end_ans_temp_gen - begin_ans_temp_gen))
 
    		# use the InfoRetriever, the document index, and the search queries to generate a set of passages
         ir = InfoRetriever(index_path)
         
+        begin_ir = time.clock()
         passages = ir.retrieve_passages(search_queries)
+        end_ir = time.clock()
+        ir_time += (end_ir - begin_ir)
 #       sys.stderr.write("DEBUG  Here are the passages: %s\n" % passages)
-
+        sys.stderr.write("DEBUG  Passage retrieval took %s seconds\n" % (end_ir - begin_ir))
+        
         # dummy set of passage objects to test AnswerProcessor
         # passages = []
         # for i in range(20):
@@ -79,12 +92,20 @@ def main():
         ap = AnswerProcessor(passages,ans_template)
 
         # get a ranked list of answers
+        begin_ans_gen = time.clock()
         ranked_answers = ap.generate_and_rank_answers()
+        end_ans_gen = time.clock()
+        ans_gen_time += (end_ans_gen - begin_ans_gen)
+        sys.stderr.write("DEBUG  Generating and reranking answers took %s seconds\n" % (end_ans_gen - begin_ans_gen))
 
 		# do formatting on answer list
         for answer in ranked_answers:
             output.write("%s %s %s %s\n" % (question.id, run_tag, answer.doc_id, answer.answer))
 
+    sys.stderr.write("Query generation took %s seconds\n" % query_gen_time)
+    sys.stderr.write("Answer template generation took %s seconds\n" % ans_temp_gen_time)
+    sys.stderr.write("Passage retrieval took %s seconds\n" % ir_time)
+    sys.stderr.write("Answer generation and ranking took %s seconds\n" % ans_gen_time)
 
 # This method takes an XML file of questions as input, creates relevant Question objects,
 # and returns them in a list.
