@@ -18,6 +18,7 @@ from bs4 import BeautifulSoup
 from pymur import *
 from os import listdir, path, walk
 
+
 def main():
 	# script needs to have passed in:
 	# path to TREC question file, path to index, optionally path to output file
@@ -49,7 +50,7 @@ def main():
 
 	# for a given Question object:
     for question in questions:
-#       sys.stderr.write("DEBUG  Here is the question: %s\n" % question.to_string())
+#       sys.stderr.write("\nDEBUG  Here is the question: %s\n" % question.to_string())
 
 		# instantiate a QueryProcessor and use it to generate a set of searches and an AnswerTemplate object
         qp = QueryProcessor(question)
@@ -64,12 +65,13 @@ def main():
         ir = InfoRetriever(index_path)
         
         passages = ir.retrieve_passages(search_queries)
+#       sys.stderr.write("DEBUG  Here are the passages: %s\n" % passages)
 
         # dummy set of passage objects to test AnswerProcessor
-        #passages = []
-        #for i in range(20):
-        #    passage = Passage("this is a test",i,"NYT123"+str(i))
-        #    passages.append(passage)
+        # passages = []
+        # for i in range(20):
+        #     passage = Passage("this is a test",i,"NYT123"+str(i))
+        #     passages.append(passage)
         # dummy answer template to test AnswerProcessor
         # ans_template = AnswerTemplate("what are you doing?")
 

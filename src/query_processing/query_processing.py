@@ -6,30 +6,36 @@
 
 import sys
 import nltk
+import re
 from general_classes import *
 
-# TODO: A QueryProcessor should be initialized with the Question object, but should it
-# have this question as an attribute, or should it have attributes id, type, q, target that
-# match those of the question?
-# Advantage of first approach: allows us to change the Question and have the QueryProcessor
-# update automatically (not sure we'd ever do this).
-# Advantage of second approach: saves typing (access the id with self.id, versus self.question.id).
 
 # A QueryProcessor object has the attribute "question", a Question object.
 
 class QueryProcessor(object):
+
     def __init__(self, question):
         self.question = question
         self.query_voc = self.generate_voc()
 
+
     # This method returns a dictionary of unigrams appearing in the original question and
     # target mapped to their counts.
+    
     def generate_voc(self):
         tokenized_q = nltk.word_tokenize(self.question.q)
         tokenized_target = nltk.word_tokenize(self.question.target)
-		# FIXME: Strip out punctuation tokens (here is a temporary fix)
-        punctuation = ['?','.',',']
-        query_terms = filter(lambda x: x not in punctuation, tokenized_q + tokenized_target)
+        query_terms = tokenized_q + tokenized_target
+
+        # TODO: Decide how to handle punctuation within tokens. For now, just delete it.
+        # Consider replacing hyphens with spaces (would want to do this before tokenizing).
+
+#       sys.stderr.write("DEBUG  Here are the query terms before stripping interior punctuation: %s\n" % query_terms)
+        for i in range(len(query_terms)):
+        	query_terms[i] = re.sub(r'\W', '', query_terms[i])
+        query_terms = filter(lambda x: x != '', query_terms)
+       
+#       sys.stderr.write("DEBUG  Here are the query terms after punctuation stripping: %s\n" % query_terms)
         query_dict = {}
 
         for term in query_terms:
@@ -43,23 +49,17 @@ class QueryProcessor(object):
 
 
 	# This method returns a list of SearchQuery objects.
+	
     def generate_queries(self):
-        tokenized_q = nltk.word_tokenize(self.question.q)
-        tokenized_target = nltk.word_tokenize(self.question.target)
-		# FIXME: Strip out punctuation tokens (here is a temporary fix)
-        punctuation = ['?','.',',']
-        query_terms = filter(lambda x: x not in punctuation, tokenized_q + tokenized_target)
-        query_dict = {}
-        
         # NB: For now, the weights of the search terms in the SearchQuery are equal to the
         # counts of the term in the question plus the target.
         query = SearchQuery(self.query_voc, 1)
 #       sys.stderr.write("DEBUG  Here is the search query: %s\n" % query.to_string())
 
-		# FIXME: Issue with leading escape character in some questions 
         return [query]
 	
 	# This method returns an AnswerTemplate object.
+	
     def generate_ans_template(self):
 	
 		# NB: The following if statement should always evaluate as True in our system, but
