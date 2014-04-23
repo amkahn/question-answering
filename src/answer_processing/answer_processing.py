@@ -7,12 +7,14 @@ from operator import itemgetter, attrgetter
 from collections import Counter, defaultdict
 import nltk
 import sys
+from bs4 import BeautifulSoup
 
 class AnswerProcessor:
-    def __init__(self,passages,answer_template):
+    def __init__(self,passages,answer_template,stopword_list=[]):
         self.passages = passages
         self.answer_template = answer_template
         self.ranked_answers = []
+        self.stopword_list = stopword_list
 
 #    def generate_and_rank_answers_old(self):
 #        # get answers from the passages
@@ -56,7 +58,7 @@ class AnswerProcessor:
         self.unigram_answers = []
         for passage in self.passages:
             passage_list = nltk.word_tokenize(passage.passage)
-            sys.stderr.write("Tokenized passage is"+str(passage_list)+"\n")
+            #sys.stderr.write("Tokenized passage is"+str(passage_list)+"\n")
             for i in range(len(passage_list)):
                 answers = []
                 # unigram
@@ -89,8 +91,8 @@ class AnswerProcessor:
             answer = self.ranked_answers[i]
             for word in answer.answer.split():
                 # if any word in the answer is in the list of query terms
-                stopwords_and_punctuation = ['&',';','_','and','was','his','her','their','them','they','then','the','of','it','he','is','this','that','.','!','?',',']
-                if word.lower() in self.answer_template.query_terms or word in stopwords_and_punctuation:
+                punctuation = [':',"'","''",'(',')','&',';','_','.','!','?',',']
+                if word.lower() in self.answer_template.query_terms or word.lower() in self.stopword_list or word in punctuation:
                     # remove that answer
                     del self.ranked_answers[i]
                     break

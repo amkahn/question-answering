@@ -34,6 +34,11 @@ def main():
     # run-tag for output file - maybe later add as fourth argument?
     run_tag = "test"
 
+    # stop word list
+    stopword_file = open("stoplist.dft")
+    stopword_list = extract_stopwords(stopword_file)
+    #sys.stderr.write("Stop words are: "+str(stopword_list))
+
     # Keep track of the total time required for some processes.
     query_gen_time = 0
     ans_temp_gen_time = 0
@@ -77,9 +82,9 @@ def main():
         passages = ir.retrieve_passages(search_queries)
         end_ir = time.clock()
         ir_time += (end_ir - begin_ir)
-        sys.stderr.write("DEBUG  Here are the passages: %s\n")
-        for passage in passages:
-            sys.stderr.write(passage.to_string()+"\n")
+        #sys.stderr.write("DEBUG  Here are the passages: %s\n")
+        #for passage in passages:
+        #    sys.stderr.write(passage.to_string()+"\n")
         sys.stderr.write("DEBUG  Passage retrieval took %s seconds\n" % (end_ir - begin_ir))
         
         # dummy set of passage objects to test AnswerProcessor
@@ -91,7 +96,7 @@ def main():
         # ans_template = AnswerTemplate("what are you doing?")
 
    		# instantiate an AnswerProcessor that takes set of passages and the AnswerTemplate object
-        ap = AnswerProcessor(passages,ans_template)
+        ap = AnswerProcessor(passages,ans_template,stopword_list)
 
         # get a ranked list of answers
         begin_ans_gen = time.clock()
@@ -102,6 +107,7 @@ def main():
 
 		# do formatting on answer list
         for answer in ranked_answers:
+            #sys.stderr.write("DEBUG: Answer %s with score %s\n" % (answer.answer, answer.score))
             output.write("%s %s %s %s\n" % (question.id, run_tag, answer.doc_id, answer.answer))
 
     sys.stderr.write("Query generation took %s seconds\n" % query_gen_time)
@@ -133,6 +139,14 @@ def generate_q_list(xml_file):
 			question = Question(id, type, q, target)
 			questions.append(question)
 	return questions
+
+def extract_stopwords(stopword_file):
+    stopword_list = set()
+    parsed_stopword_file = BeautifulSoup(stopword_file)
+    stopwords = parsed_stopword_file.find_all("word")
+    for stopword in stopwords:
+        stopword_list.add(str(stopword.get_text()))
+    return stopword_list
 
 
 if __name__ == '__main__':
