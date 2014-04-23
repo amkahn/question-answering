@@ -1,5 +1,269 @@
-Opening Popen object
-['/NLP_TOOLS/info_retrieval/indri/latest/bin/IndriRunQuery', '-query=#combine(test query)', '-index=/home2/cjaja/classwork/spring-2014/ling573/question-answering/src/index', '-printSnippets=true', '-trecFormat=true', '-count=20']
-Gathering output
-Output gathered
-("0 Q0 NYT19991006.0236 1 -6.39412 indri\n...walls. As for the rest of their QUERIES, I decided\nthat this would be a...few hours earlier in the week\nconducting TEST searches at five children's search\nsites, but...wanted to put both claims to a TEST.\nAs usual, my children's opinions differed from mine.\nThey were charmed by all five sites, found each intuitively\neasy to navigate, never ran across a single inappropriate\nlink and got so diverted when their QUERIES led them\nonto intellectual tangents that they...\n0 Q0 NYT19990704.0091 2 -6.65647 indri\n1999-07-04 18:59 A9082 &Cx1f; tta-z u a &Cx13; &Cx11;\nBC-CITIZENSHIP-TEST-ART- 07-04 1221 BC-CITIZENSHIP-TEST-ART-2TAKES-NYT\n(ATTN: N.Y., N.C.) IMMIGRATION AGENCY WEIGHS CHANGES\nIN CITIZENSHIP TEST (ART ADV: Photos are being sent\nto NYT photo clients. Graphic is being sent to NYT\ngraphic clients. Non-subscribers can make individual\npurchase by calling (888) 603-1036 or (888) 346-9867.)\n(mk) By SUSAN SACHS c.1999 N.Y. Times News Service\nNEW YORK _ If all it took to become a citizen was\nknowing what caused the...million applicants for citizenship\n_ the biggest group ever _ who now are waiting anxiously\nto be TESTED on their knowledge of English, civics\nand history. The TEST is at the core of one of the\nweightier decisions any nation can make: Who...\n0 Q0 NYT19981116.0098 3 -6.71101 indri\n...shop with a sign stating, ``Fail Your Emissions\nTEST? See us.'' That sounds like just the...and repair\nvehicles that fail the new emissions TEST _ this could\nbe an illuminating experience. I circled...I saw your\nsign out front about emissions TESTS. I hope you can\nhelp me. My daughter's car failed its emissions TEST\nlast week. It failed for something called NOx...\n0 Q0 NYT19981116.0086 4 -6.71101 indri\n...shop with a sign stating, ``Fail Your Emissions\nTEST? See us.'' That sounds like just the...and repair\nvehicles that fail the new emissions TEST _ this could\nbe an illuminating experience. I circled...I saw your\nsign out front about emissions TESTS. I hope you can\nhelp me. My daughter's car failed its emissions TEST\nlast week. It failed for something called NOx...\n0 Q0 APW19991015.0105 5 -6.72326 indri\n...10:12 washington EPA Helps Gore on Animal TESTING\nWASHINGTON (AP) -- The Clinton administration took\nsteps this week to minimize animal TESTING after animal\nrights protesters demanding the change...animal experiments\nshould be performed when other TEST methods are available.\nIt also called for a delay in the TESTING of several\nchemicals while new methods are developed and said\nfederal funds will be dedicated to finding more alternative\nTESTING methods. The letter was released Friday by...\n0 Q0 NYT20000113.0341 6 -6.84547 indri\n...-13 21:02 A5522 &Cx1f; tta-z u a BC-ANTIMISSILE-TEST-ART-\n01-13 1067 BC-ANTIMISSILE-TEST-ART-NYT SUCCESS OF\nMISSILE INTERCEPTOR TEST IS QUESTIONED (ART ADV: Graphic\nis being sent to NYT graphic clients. Nonsubscribers\ncan make individual purchase by calling 888-603-1036\nor 888-346-9867.) (sw) By JAMES GLANZ c.2000 N.Y.\nTimes News Service A critical TEST of an interceptor\ndesigned to destroy ballistic...carrying nuclear or\nbiological weapons. In the TEST, the interceptor did\nhit a mock warhead...in the interceptor's field of\nview, the TEST last October may not have succeeded,\nthese...\n0 Q0 NYT19981123.0472 7 -6.90322 indri\n...-23 22:08 A5955 &Cx1f; taf-z u a &Cx13; &Cx11; BC-SAT-EDUC-NYT\n&LR; 11-23 0973 BC-SAT-EDUC-NYT COLLEGE BOARD STUDY\nSHOWS TEST PREP COURSES HAVE MINIMAL VALUE (JT) By\nETHAN BRONNER c.1998 N.Y. Times News Service The College\nBoard, sponsor of the SAT, the nation's leading college\nentrance exam, has found in a comprehensive new study\nthat TEST preparation courses, a multi-million-dollar\nindustry...of 19 points _ than in the verbal TEST,\nwhere it averaged nine points. And the...\n0 Q0 APW19980611.0804 8 -6.91866 indri\n...the first week of its existence, to TEST its nuclear\narsenal, was not just a...had a 24-hour hot-line receiving\nQUERIES. These QUERIES were addressed in the programme\nin a...went into biological detail when answering\na QUERY about pain and irritation in the female...star\nRichard Gere, suggested publicly that HIV TESTING\nshould be mandatory and that those TESTING positive\nshould be made to wear badges...\n0 Q0 NYT19981126.0212 9 -6.99526 indri\n...the company made me undergo a drug TEST. My TEST\ncame back negative, but the company declined to hire\nme. Isn't it illegal for a company to make you take\na drug TEST before they've offered you a job? Shouldn't...ask\njob applicants to take a drug TEST. _Companies don't\nhave to pay you for taking a drug TEST, since you're\nnot yet an employee doing...\n0 Q0 NYT19981021.0041 10 -7.01414 indri\n...A IMMIGRANT'S DEATH IN HOUSTON DRAWS RIGHTS QUERY\n&QL; A7948 BC-EXP-NY-GAY-RALLY-NYT...A IMMIGRANT'S\nDEATH IN HOUSTON DRAWS RIGHTS QUERY &QL; A7928 BC-SPOT-BUDGET-BOS\n254 22...TRICKY ISSUE IN CALIFORNIA RACE &QL; A7263\nBC-TEST-TEX 13 17:02 U A EDITORS: A7262 BC-TEST-TEX\n13 17:02 U A EDITORS: A7157 BC-MUSEUM-TEXAS-TEX 840\n16:13 R A FORT WORTH'S AMON CARTER MUSEUM TO BE REBUILT\nTO EXAND SPACE &QL; A7155 BC-TEST-TEX 13 16:13 U A\nEDITORS...\n0 Q0 APW19981225.0348 11 -7.03633 indri\n...WELLINGTON, New Zealand _ After an abandoned first\nTEST due to rain, New Zealand and India make final\npreparations Friday for Saturday's second TEST at\nthe Basin Reserve. BC-Sports-Cricket-New Zealand-India.\nHas moved. By Ihithisham Kamardeen. MELBOURNE, Australia\n_ Australian strike bowler Glenn McGrath passes a\nfitness TEST Friday and will play in Saturday's fourth\nTEST against England at the Melbourne Cricket Ground...\n0 Q0 NYT19990730.0365 12 -7.0896 indri\n...Microsoft. ``Right now, we are working on TESTING\na solution and steps for customers to...headaches\nin the past. Rather Jet sends QUERIES to various data\nbases when the Office programs request data. The QUERIES\ncan be used to trigger low-level operating system\ncommands _ including commands that erase files or\nentire hard drives. Because of the extensive integration\nbetween Office applications and Windows, such a QUERY\ncan be sent on behalf of a...\n0 Q0 NYT19990730.0346 13 -7.0896 indri\n...Microsoft. ``Right now, we are working on TESTING\na solution and steps for customers to...headaches\nin the past. Rather Jet sends QUERIES to various data\nbases when the Office programs request data. The QUERIES\ncan be used to trigger low-level operating system\ncommands _ including commands that erase files or\nentire hard drives. Because of the extensive integration\nbetween Office applications and Windows, such a QUERY\ncan be sent on behalf of a...\n0 Q0 NYT19990730.0403 14 -7.09045 indri\n...Microsoft. ``Right now, we are working on TESTING\na solution and steps for customers to...headaches\nin the past. Rather Jet sends QUERIES to various data\nbases when the Office programs request data. The QUERIES\ncan be used to trigger low-level operating system\ncommands _ including commands that erase files or\nentire hard drives. Because of the extensive integration\nbetween Office applications and Windows, such a QUERY\ncan be sent on behalf of a...\n0 Q0 NYT19990730.0401 15 -7.09045 indri\n...Microsoft. ``Right now, we are working on TESTING\na solution and steps for customers to...headaches\nin the past. Rather Jet sends QUERIES to various data\nbases when the Office programs request data. The QUERIES\ncan be used to trigger low-level operating system\ncommands _ including commands that erase files or\nentire hard drives. Because of the extensive integration\nbetween Office applications and Windows, such a QUERY\ncan be sent on behalf of a...\n0 Q0 XIE19981121.0090 16 -7.10085 indri\n1998-11-21 Switzerland Opposes India's Nuclear TESTS\nNEW DELHI, November 21 (Xinhua) -- Visiting Switzerland\nPresident Flavio Cotti Saturday reiterated his country's\nstance vis-a-vis the nuclear TESTS conducted by India\nin May this year. Switzerland opposed Indian nuclear\nTESTS. Following India's nuclear TESTS Switzerland\nhas almost frozen its capital flow...\n0 Q0 NYT19981016.0087 17 -7.11658 indri\n...Council declined Friday to answer a written QUERY\non why average netsurfers in Beijing no longer could\ndial up the CNN Web site. ``It's not an easy question\nto handle,'' explained an official in the State Council's\ninformation office, which had considered the QUERY\nfor two working days. During the glow...\n0 Q0 NYT19981016.0086 18 -7.11658 indri\n...Council declined Friday to answer a written QUERY\non why average netsurfers in Beijing no longer could\ndial up the CNN Web site. ``It's not an easy question\nto handle,'' explained an official in the State Council's\ninformation office, which had considered the QUERY\nfor two working days. During the glow...\n0 Q0 NYT19990204.0476 19 -7.12191 indri\n...part on whether the cardiologist overlooked prior\nTEST results and medical opinions that indicated that\nLewis had a life-threatening heart condition. The\nlawyers for Harris-Lewis alleged that Mudge failed\nto disseminate among his medical team at the Brigham\nand Women's Hospital the findings of TESTS done on\nLewis at New England Baptist...\n0 Q0 NYT19990204.0466 20 -7.12191 indri\n...part on whether the cardiologist overlooked prior\nTEST results and medical opinions that indicated that\nLewis had a life-threatening heart condition. The\nlawyers for Harris-Lewis alleged that Mudge failed\nto disseminate among his medical team at the Brigham\nand Women's Hospital the findings of TESTS done on\nLewis at New England Baptist...\n", '')
+section Q0 NYT19991006.0236 1 -6.39412 indri
+...walls. As for the rest of their QUERIES, I decided
+that this would be a...few hours earlier in the week
+conducting TEST searches at five children's search
+sites, but...wanted to put both claims to a TEST.
+As usual, my children's opinions differed from mine.
+They were charmed by all five sites, found each intuitively
+easy to navigate, never ran across a single inappropriate
+link and got so diverted when their QUERIES led them
+onto intellectual tangents that they...
+header ['Q0', 'NYT19991006.0236', '1', '-6.39412', '']
+doc_no NYT19991006.0236
+weight -6.39412
+text  walls. As for the rest of their QUERIES, I decided that this would be a few hours earlier in the week conducting TEST searches at five children's search sites, but wanted to put both claims to a TEST. As usual, my children's opinions differed from mine. They were charmed by all five sites, found each intuitively easy to navigate, never ran across a single inappropriate link and got so diverted when their QUERIES led them onto intellectual tangents that they 
+section Q0 NYT19990704.0091 2 -6.65647 indri
+1999-07-04 18:59 A9082 &Cx1f; tta-z u a &Cx13; &Cx11;
+BC-CITIZENSHIP-TEST-ART- 07-04 1221 BC-CITIZENSHIP-TEST-ART-2TAKES-NYT
+(ATTN: N.Y., N.C.) IMMIGRATION AGENCY WEIGHS CHANGES
+IN CITIZENSHIP TEST (ART ADV: Photos are being sent
+to NYT photo clients. Graphic is being sent to NYT
+graphic clients. Non-subscribers can make individual
+purchase by calling (888) 603-1036 or (888) 346-9867.)
+(mk) By SUSAN SACHS c.1999 N.Y. Times News Service
+NEW YORK _ If all it took to become a citizen was
+knowing what caused the...million applicants for citizenship
+_ the biggest group ever _ who now are waiting anxiously
+to be TESTED on their knowledge of English, civics
+and history. The TEST is at the core of one of the
+weightier decisions any nation can make: Who...
+header ['Q0', 'NYT19990704.0091', '2', '-6.65647', '']
+doc_no NYT19990704.0091
+weight -6.65647
+text 1999-07-04 18:59 A9082 &Cx1f; tta-z u a &Cx13; &Cx11; BC-CITIZENSHIP-TEST-ART- 07-04 1221 BC-CITIZENSHIP-TEST-ART-2TAKES-NYT (ATTN: N.Y., N.C.) IMMIGRATION AGENCY WEIGHS CHANGES IN CITIZENSHIP TEST (ART ADV: Photos are being sent to NYT photo clients. Graphic is being sent to NYT graphic clients. Non-subscribers can make individual purchase by calling (888) 603-1036 or (888) 346-9867.) (mk) By SUSAN SACHS c.1999 N.Y. Times News Service NEW YORK _ If all it took to become a citizen was knowing what caused the million applicants for citizenship _ the biggest group ever _ who now are waiting anxiously to be TESTED on their knowledge of English, civics and history. The TEST is at the core of one of the weightier decisions any nation can make: Who 
+section Q0 NYT19981116.0098 3 -6.71101 indri
+...shop with a sign stating, ``Fail Your Emissions
+TEST? See us.'' That sounds like just the...and repair
+vehicles that fail the new emissions TEST _ this could
+be an illuminating experience. I circled...I saw your
+sign out front about emissions TESTS. I hope you can
+help me. My daughter's car failed its emissions TEST
+last week. It failed for something called NOx...
+header ['Q0', 'NYT19981116.0098', '3', '-6.71101', '']
+doc_no NYT19981116.0098
+weight -6.71101
+text  shop with a sign stating, ``Fail Your Emissions TEST? See us.'' That sounds like just the and repair vehicles that fail the new emissions TEST _ this could be an illuminating experience. I circled I saw your sign out front about emissions TESTS. I hope you can help me. My daughter's car failed its emissions TEST last week. It failed for something called NOx 
+section Q0 NYT19981116.0086 4 -6.71101 indri
+...shop with a sign stating, ``Fail Your Emissions
+TEST? See us.'' That sounds like just the...and repair
+vehicles that fail the new emissions TEST _ this could
+be an illuminating experience. I circled...I saw your
+sign out front about emissions TESTS. I hope you can
+help me. My daughter's car failed its emissions TEST
+last week. It failed for something called NOx...
+header ['Q0', 'NYT19981116.0086', '4', '-6.71101', '']
+doc_no NYT19981116.0086
+weight -6.71101
+text  shop with a sign stating, ``Fail Your Emissions TEST? See us.'' That sounds like just the and repair vehicles that fail the new emissions TEST _ this could be an illuminating experience. I circled I saw your sign out front about emissions TESTS. I hope you can help me. My daughter's car failed its emissions TEST last week. It failed for something called NOx 
+section Q0 APW19991015.0105 5 -6.72326 indri
+...10:12 washington EPA Helps Gore on Animal TESTING
+WASHINGTON (AP) -- The Clinton administration took
+steps this week to minimize animal TESTING after animal
+rights protesters demanding the change...animal experiments
+should be performed when other TEST methods are available.
+It also called for a delay in the TESTING of several
+chemicals while new methods are developed and said
+federal funds will be dedicated to finding more alternative
+TESTING methods. The letter was released Friday by...
+header ['Q0', 'APW19991015.0105', '5', '-6.72326', '']
+doc_no APW19991015.0105
+weight -6.72326
+text  10:12 washington EPA Helps Gore on Animal TESTING WASHINGTON (AP) -- The Clinton administration took steps this week to minimize animal TESTING after animal rights protesters demanding the change animal experiments should be performed when other TEST methods are available. It also called for a delay in the TESTING of several chemicals while new methods are developed and said federal funds will be dedicated to finding more alternative TESTING methods. The letter was released Friday by 
+section Q0 NYT20000113.0341 6 -6.84547 indri
+...-13 21:02 A5522 &Cx1f; tta-z u a BC-ANTIMISSILE-TEST-ART-
+01-13 1067 BC-ANTIMISSILE-TEST-ART-NYT SUCCESS OF
+MISSILE INTERCEPTOR TEST IS QUESTIONED (ART ADV: Graphic
+is being sent to NYT graphic clients. Nonsubscribers
+can make individual purchase by calling 888-603-1036
+or 888-346-9867.) (sw) By JAMES GLANZ c.2000 N.Y.
+Times News Service A critical TEST of an interceptor
+designed to destroy ballistic...carrying nuclear or
+biological weapons. In the TEST, the interceptor did
+hit a mock warhead...in the interceptor's field of
+view, the TEST last October may not have succeeded,
+these...
+header ['Q0', 'NYT20000113.0341', '6', '-6.84547', '']
+doc_no NYT20000113.0341
+weight -6.84547
+text  -13 21:02 A5522 &Cx1f; tta-z u a BC-ANTIMISSILE-TEST-ART- 01-13 1067 BC-ANTIMISSILE-TEST-ART-NYT SUCCESS OF MISSILE INTERCEPTOR TEST IS QUESTIONED (ART ADV: Graphic is being sent to NYT graphic clients. Nonsubscribers can make individual purchase by calling 888-603-1036 or 888-346-9867.) (sw) By JAMES GLANZ c.2000 N.Y. Times News Service A critical TEST of an interceptor designed to destroy ballistic carrying nuclear or biological weapons. In the TEST, the interceptor did hit a mock warhead in the interceptor's field of view, the TEST last October may not have succeeded, these 
+section Q0 NYT19981123.0472 7 -6.90322 indri
+...-23 22:08 A5955 &Cx1f; taf-z u a &Cx13; &Cx11; BC-SAT-EDUC-NYT
+&LR; 11-23 0973 BC-SAT-EDUC-NYT COLLEGE BOARD STUDY
+SHOWS TEST PREP COURSES HAVE MINIMAL VALUE (JT) By
+ETHAN BRONNER c.1998 N.Y. Times News Service The College
+Board, sponsor of the SAT, the nation's leading college
+entrance exam, has found in a comprehensive new study
+that TEST preparation courses, a multi-million-dollar
+industry...of 19 points _ than in the verbal TEST,
+where it averaged nine points. And the...
+header ['Q0', 'NYT19981123.0472', '7', '-6.90322', '']
+doc_no NYT19981123.0472
+weight -6.90322
+text  -23 22:08 A5955 &Cx1f; taf-z u a &Cx13; &Cx11; BC-SAT-EDUC-NYT &LR; 11-23 0973 BC-SAT-EDUC-NYT COLLEGE BOARD STUDY SHOWS TEST PREP COURSES HAVE MINIMAL VALUE (JT) By ETHAN BRONNER c.1998 N.Y. Times News Service The College Board, sponsor of the SAT, the nation's leading college entrance exam, has found in a comprehensive new study that TEST preparation courses, a multi-million-dollar industry of 19 points _ than in the verbal TEST, where it averaged nine points. And the 
+section Q0 APW19980611.0804 8 -6.91866 indri
+...the first week of its existence, to TEST its nuclear
+arsenal, was not just a...had a 24-hour hot-line receiving
+QUERIES. These QUERIES were addressed in the programme
+in a...went into biological detail when answering
+a QUERY about pain and irritation in the female...star
+Richard Gere, suggested publicly that HIV TESTING
+should be mandatory and that those TESTING positive
+should be made to wear badges...
+header ['Q0', 'APW19980611.0804', '8', '-6.91866', '']
+doc_no APW19980611.0804
+weight -6.91866
+text  the first week of its existence, to TEST its nuclear arsenal, was not just a had a 24-hour hot-line receiving QUERIES. These QUERIES were addressed in the programme in a went into biological detail when answering a QUERY about pain and irritation in the female star Richard Gere, suggested publicly that HIV TESTING should be mandatory and that those TESTING positive should be made to wear badges 
+section Q0 NYT19981126.0212 9 -6.99526 indri
+...the company made me undergo a drug TEST. My TEST
+came back negative, but the company declined to hire
+me. Isn't it illegal for a company to make you take
+a drug TEST before they've offered you a job? Shouldn't...ask
+job applicants to take a drug TEST. _Companies don't
+have to pay you for taking a drug TEST, since you're
+not yet an employee doing...
+header ['Q0', 'NYT19981126.0212', '9', '-6.99526', '']
+doc_no NYT19981126.0212
+weight -6.99526
+text  the company made me undergo a drug TEST. My TEST came back negative, but the company declined to hire me. Isn't it illegal for a company to make you take a drug TEST before they've offered you a job? Shouldn't ask job applicants to take a drug TEST. _Companies don't have to pay you for taking a drug TEST, since you're not yet an employee doing 
+section Q0 NYT19981021.0041 10 -7.01414 indri
+...A IMMIGRANT'S DEATH IN HOUSTON DRAWS RIGHTS QUERY
+&QL; A7948 BC-EXP-NY-GAY-RALLY-NYT...A IMMIGRANT'S
+DEATH IN HOUSTON DRAWS RIGHTS QUERY &QL; A7928 BC-SPOT-BUDGET-BOS
+254 22...TRICKY ISSUE IN CALIFORNIA RACE &QL; A7263
+BC-TEST-TEX 13 17:02 U A EDITORS: A7262 BC-TEST-TEX
+13 17:02 U A EDITORS: A7157 BC-MUSEUM-TEXAS-TEX 840
+16:13 R A FORT WORTH'S AMON CARTER MUSEUM TO BE REBUILT
+TO EXAND SPACE &QL; A7155 BC-TEST-TEX 13 16:13 U A
+EDITORS...
+header ['Q0', 'NYT19981021.0041', '10', '-7.01414', '']
+doc_no NYT19981021.0041
+weight -7.01414
+text  A IMMIGRANT'S DEATH IN HOUSTON DRAWS RIGHTS QUERY &QL; A7948 BC-EXP-NY-GAY-RALLY-NYT A IMMIGRANT'S DEATH IN HOUSTON DRAWS RIGHTS QUERY &QL; A7928 BC-SPOT-BUDGET-BOS 254 22 TRICKY ISSUE IN CALIFORNIA RACE &QL; A7263 BC-TEST-TEX 13 17:02 U A EDITORS: A7262 BC-TEST-TEX 13 17:02 U A EDITORS: A7157 BC-MUSEUM-TEXAS-TEX 840 16:13 R A FORT WORTH'S AMON CARTER MUSEUM TO BE REBUILT TO EXAND SPACE &QL; A7155 BC-TEST-TEX 13 16:13 U A EDITORS 
+section Q0 APW19981225.0348 11 -7.03633 indri
+...WELLINGTON, New Zealand _ After an abandoned first
+TEST due to rain, New Zealand and India make final
+preparations Friday for Saturday's second TEST at
+the Basin Reserve. BC-Sports-Cricket-New Zealand-India.
+Has moved. By Ihithisham Kamardeen. MELBOURNE, Australia
+_ Australian strike bowler Glenn McGrath passes a
+fitness TEST Friday and will play in Saturday's fourth
+TEST against England at the Melbourne Cricket Ground...
+header ['Q0', 'APW19981225.0348', '11', '-7.03633', '']
+doc_no APW19981225.0348
+weight -7.03633
+text  WELLINGTON, New Zealand _ After an abandoned first TEST due to rain, New Zealand and India make final preparations Friday for Saturday's second TEST at the Basin Reserve. BC-Sports-Cricket-New Zealand-India. Has moved. By Ihithisham Kamardeen. MELBOURNE, Australia _ Australian strike bowler Glenn McGrath passes a fitness TEST Friday and will play in Saturday's fourth TEST against England at the Melbourne Cricket Ground 
+section Q0 NYT19990730.0365 12 -7.0896 indri
+...Microsoft. ``Right now, we are working on TESTING
+a solution and steps for customers to...headaches
+in the past. Rather Jet sends QUERIES to various data
+bases when the Office programs request data. The QUERIES
+can be used to trigger low-level operating system
+commands _ including commands that erase files or
+entire hard drives. Because of the extensive integration
+between Office applications and Windows, such a QUERY
+can be sent on behalf of a...
+header ['Q0', 'NYT19990730.0365', '12', '-7.0896', '']
+doc_no NYT19990730.0365
+weight -7.0896
+text  Microsoft. ``Right now, we are working on TESTING a solution and steps for customers to headaches in the past. Rather Jet sends QUERIES to various data bases when the Office programs request data. The QUERIES can be used to trigger low-level operating system commands _ including commands that erase files or entire hard drives. Because of the extensive integration between Office applications and Windows, such a QUERY can be sent on behalf of a 
+section Q0 NYT19990730.0346 13 -7.0896 indri
+...Microsoft. ``Right now, we are working on TESTING
+a solution and steps for customers to...headaches
+in the past. Rather Jet sends QUERIES to various data
+bases when the Office programs request data. The QUERIES
+can be used to trigger low-level operating system
+commands _ including commands that erase files or
+entire hard drives. Because of the extensive integration
+between Office applications and Windows, such a QUERY
+can be sent on behalf of a...
+header ['Q0', 'NYT19990730.0346', '13', '-7.0896', '']
+doc_no NYT19990730.0346
+weight -7.0896
+text  Microsoft. ``Right now, we are working on TESTING a solution and steps for customers to headaches in the past. Rather Jet sends QUERIES to various data bases when the Office programs request data. The QUERIES can be used to trigger low-level operating system commands _ including commands that erase files or entire hard drives. Because of the extensive integration between Office applications and Windows, such a QUERY can be sent on behalf of a 
+section Q0 NYT19990730.0403 14 -7.09045 indri
+...Microsoft. ``Right now, we are working on TESTING
+a solution and steps for customers to...headaches
+in the past. Rather Jet sends QUERIES to various data
+bases when the Office programs request data. The QUERIES
+can be used to trigger low-level operating system
+commands _ including commands that erase files or
+entire hard drives. Because of the extensive integration
+between Office applications and Windows, such a QUERY
+can be sent on behalf of a...
+header ['Q0', 'NYT19990730.0403', '14', '-7.09045', '']
+doc_no NYT19990730.0403
+weight -7.09045
+text  Microsoft. ``Right now, we are working on TESTING a solution and steps for customers to headaches in the past. Rather Jet sends QUERIES to various data bases when the Office programs request data. The QUERIES can be used to trigger low-level operating system commands _ including commands that erase files or entire hard drives. Because of the extensive integration between Office applications and Windows, such a QUERY can be sent on behalf of a 
+section Q0 NYT19990730.0401 15 -7.09045 indri
+...Microsoft. ``Right now, we are working on TESTING
+a solution and steps for customers to...headaches
+in the past. Rather Jet sends QUERIES to various data
+bases when the Office programs request data. The QUERIES
+can be used to trigger low-level operating system
+commands _ including commands that erase files or
+entire hard drives. Because of the extensive integration
+between Office applications and Windows, such a QUERY
+can be sent on behalf of a...
+header ['Q0', 'NYT19990730.0401', '15', '-7.09045', '']
+doc_no NYT19990730.0401
+weight -7.09045
+text  Microsoft. ``Right now, we are working on TESTING a solution and steps for customers to headaches in the past. Rather Jet sends QUERIES to various data bases when the Office programs request data. The QUERIES can be used to trigger low-level operating system commands _ including commands that erase files or entire hard drives. Because of the extensive integration between Office applications and Windows, such a QUERY can be sent on behalf of a 
+section Q0 XIE19981121.0090 16 -7.10085 indri
+1998-11-21 Switzerland Opposes India's Nuclear TESTS
+NEW DELHI, November 21 (Xinhua) -- Visiting Switzerland
+President Flavio Cotti Saturday reiterated his country's
+stance vis-a-vis the nuclear TESTS conducted by India
+in May this year. Switzerland opposed Indian nuclear
+TESTS. Following India's nuclear TESTS Switzerland
+has almost frozen its capital flow...
+header ['Q0', 'XIE19981121.0090', '16', '-7.10085', '']
+doc_no XIE19981121.0090
+weight -7.10085
+text 1998-11-21 Switzerland Opposes India's Nuclear TESTS NEW DELHI, November 21 (Xinhua) -- Visiting Switzerland President Flavio Cotti Saturday reiterated his country's stance vis-a-vis the nuclear TESTS conducted by India in May this year. Switzerland opposed Indian nuclear TESTS. Following India's nuclear TESTS Switzerland has almost frozen its capital flow 
+section Q0 NYT19981016.0087 17 -7.11658 indri
+...Council declined Friday to answer a written QUERY
+on why average netsurfers in Beijing no longer could
+dial up the CNN Web site. ``It's not an easy question
+to handle,'' explained an official in the State Council's
+information office, which had considered the QUERY
+for two working days. During the glow...
+header ['Q0', 'NYT19981016.0087', '17', '-7.11658', '']
+doc_no NYT19981016.0087
+weight -7.11658
+text  Council declined Friday to answer a written QUERY on why average netsurfers in Beijing no longer could dial up the CNN Web site. ``It's not an easy question to handle,'' explained an official in the State Council's information office, which had considered the QUERY for two working days. During the glow 
+section Q0 NYT19981016.0086 18 -7.11658 indri
+...Council declined Friday to answer a written QUERY
+on why average netsurfers in Beijing no longer could
+dial up the CNN Web site. ``It's not an easy question
+to handle,'' explained an official in the State Council's
+information office, which had considered the QUERY
+for two working days. During the glow...
+header ['Q0', 'NYT19981016.0086', '18', '-7.11658', '']
+doc_no NYT19981016.0086
+weight -7.11658
+text  Council declined Friday to answer a written QUERY on why average netsurfers in Beijing no longer could dial up the CNN Web site. ``It's not an easy question to handle,'' explained an official in the State Council's information office, which had considered the QUERY for two working days. During the glow 
+section Q0 NYT19990204.0476 19 -7.12191 indri
+...part on whether the cardiologist overlooked prior
+TEST results and medical opinions that indicated that
+Lewis had a life-threatening heart condition. The
+lawyers for Harris-Lewis alleged that Mudge failed
+to disseminate among his medical team at the Brigham
+and Women's Hospital the findings of TESTS done on
+Lewis at New England Baptist...
+header ['Q0', 'NYT19990204.0476', '19', '-7.12191', '']
+doc_no NYT19990204.0476
+weight -7.12191
+text  part on whether the cardiologist overlooked prior TEST results and medical opinions that indicated that Lewis had a life-threatening heart condition. The lawyers for Harris-Lewis alleged that Mudge failed to disseminate among his medical team at the Brigham and Women's Hospital the findings of TESTS done on Lewis at New England Baptist 
+section Q0 NYT19990204.0466 20 -7.12191 indri
+...part on whether the cardiologist overlooked prior
+TEST results and medical opinions that indicated that
+Lewis had a life-threatening heart condition. The
+lawyers for Harris-Lewis alleged that Mudge failed
+to disseminate among his medical team at the Brigham
+and Women's Hospital the findings of TESTS done on
+Lewis at New England Baptist...
+
+header ['Q0', 'NYT19990204.0466', '20', '-7.12191', '']
+doc_no NYT19990204.0466
+weight -7.12191
+text  part on whether the cardiologist overlooked prior TEST results and medical opinions that indicated that Lewis had a life-threatening heart condition. The lawyers for Harris-Lewis alleged that Mudge failed to disseminate among his medical team at the Brigham and Women's Hospital the findings of TESTS done on Lewis at New England Baptist  
