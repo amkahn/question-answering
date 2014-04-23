@@ -33,17 +33,17 @@ class InfoRetriever:
             sys.stderr.write(query + '\n')
             # second argument is the number of documents desired
             try:
-                args = [self.indri_loc,'-query=#combine(' + query + ')', '-index=' + self.path_to_idx, '-printSnippets=true']
-                print args
+                args = [self.indri_loc,'-query=#combine(' + query + ')', '-index=' + self.path_to_idx, '-printSnippets=true', '-count=20']
                 p1 = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-                # ''.join(['-query=', '"#combine("', query,')"'])
-                results = p1.communicate()
-                results = results.split('\n0')
+                results = p1.communicate()[1][2:]
+                results = results.split('\n0 ')
                 for section in results:
-                    split = section.split('indri')
-                    doc_no = split[0][2]
-                    weight = float(split[0][4])
+                    split = section.split('indri\n...')
+                    header = split[0].split(' ')
+                    doc_no = header[1]
+                    weight = - float(header[3][1:])
                     passage_text = split[1].replace('...', '')
+                    passage_text = passage_text.replace('\n', '')
                     print "doc_no", doc_no
                     print "weight", weight
                     print "text", passage_text
