@@ -92,4 +92,9 @@ class Passage:
         # I'm adding something here for the ID of the doc the passage came from
         # feel free to modify, just using for testing the AnswerProcessor - Claire
         self.doc_id = doc_id
+    	# This method returns a string representing the SearchQuery instance (used for debugging).
 
+    # This method returns a string representing the Question instance (used for debugging).
+    def to_string(self):
+        to_return = "passage: %s; weight: %s" % (self.passage, self.weight)
+        return to_return
