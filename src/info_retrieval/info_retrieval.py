@@ -1,5 +1,5 @@
 # LING 573 Question Answering System
-# Code last updated 4/22/14 by Claire Jaja
+# Code last updated 4/24/14 by Clara Gordon
 # This code implements an InfoRetriever for the question answering system.
 
 
@@ -24,12 +24,15 @@ class InfoRetriever:
     def retrieve_passages(self, queries):
 
         passages = []
+
         for query in queries:
             
+            # extract query text from passage object
             query = " ".join(query.search_terms.keys())  
             sys.stderr.write(query + '\n')
 
             try:
+		# run IndriRunQuery with appropriate command line arguments
                 args = [self.indri_loc,'-query=#combine(' + query + ')', 
                        '-index=' + self.path_to_idx, '-printSnippets=true',
                          '-trecFormat=true', '-printSnippets=true', '-count=100'
@@ -39,19 +42,22 @@ class InfoRetriever:
             except:
                 sys.stderr.write(str(sys.exc_info()[0]) +' ' + str(sys.exc_info()[1]) + ' ' + str(sys.exc_info()[2]) + '\n')
                 sys.stderr.write("Couldn't run query: " + query + '\n')
+            # split each document and snippet results
             results = results.split('\n0 ')
              
             # extract fields from Indri output
             for section in results:
+		# split apart header and text portions
                 split = section.split('indri\n')
                 header = split[0].split(' ')
-                doc_no = header[1]
+                # extract doc # and weight from header
+		doc_no = header[1]
                 weight =  - float(header[3][1:])
                 passage_text = split[1]
                 passage_text = split[1].replace('...', ' ')
                 passage_text = passage_text.replace('\n', ' ')
                 # remove excess spacing
-                passage_text = passage_text.replace(' +', ' ')
+                passage_text = passage_text.replace(r' +', ' ')
                 # construct passage objects
                 passage = Passage(passage_text, weight, doc_no)
                 passages.append(passage)
@@ -59,7 +65,7 @@ class InfoRetriever:
         return passages
               
             
-# quick testing script 
+# quick testing script - used for debugging 
 # def main():
     # ir = InfoRetriever("/home2/cjaja/classwork/spring-2014/ling573/question-answering/src/index")
     # ir.retrieve_passages(["test query"])
