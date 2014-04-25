@@ -1,5 +1,21 @@
 Claire Jaja, Andrea Kahn, Clara Gordon
-4/3/2014
+4/25/2014
 
-This repository holds our project for LING 573: Systems and Applications.
-We will be creating a basic question answering (QA) system.
+This repository holds our question answering system for LING 573: Systems and Applications.
+
+Our main code is in three scripts within the src directory.
+
+1. index_documents.py : This script indexes a given document collection for later use in information retrieval. It takes two arguments.  The first argument is the path to the document collection (for the AQUAINT corpus, this is "/corpora/LDC/LDC02T31."  The second argument is the folder to put the index in - WARNING: All contents of this folder will be deleted when this script is run.  Indexing of the AQUAINT corpus takes approximately 6 hours.
+We created two versions of the index for D2, one using the Porter stemmer (called "index") and one using the Krovetz stemmer (called "index_krovetz").  The commands we ran to index the document collection is as follows:
+./index_documents.py /corpora/LDC/LDC02T31 /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/index
+./index_documents.py /corpora/LDC/LDC02T31 /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/index_krovetz
+
+2. question_answering.py : This script runs our question answering system on a given question file.  It takes four arguments.  The first argument is the TREC-format question file.  The second argument is the path to the index.  The third argument is the run tag.  The fourth argument is the output file.
+For the D2 run, preliminary tests on the first thirty questions in the devtest set had better results with the Krovetz-stemmed index than the Porter-stemmed index, so we ran the entire set of questions with the Krovetz-stemmed index.  The command we ran to get answers for the TREC questions is as follows:
+./question_answering/py /dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/index_krovetz D2 outputs/D2.outputs
+
+3. question_answering.sh : This script runs our question answering system and then evaluates the output.  It takes the same arguments as question_answering.py and will run the evaluation script in both strict and lenient mode on the output.  Note that this script is currently hard-coded to use the pattern file for the devtest set.
+
+Our code is divided into three main modules, which live within the query_processing, info_retrieval, and answer_processing folders.  Some additional classes are defined with the general_classes module.  Our script uses a stopword list (taken from the Indri/Lemur documentation) in Indri/Lemur parameter XML format which sits in the src directory, named "stoplist.dft".
+
+Third-party modules that we use include: BeautifulSoup, NLTK, and pymur (Python wrapper for Indri/Lemur).
