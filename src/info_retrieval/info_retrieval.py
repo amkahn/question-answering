@@ -29,13 +29,13 @@ class InfoRetriever:
             
             # extract query text from passage object
             query = " ".join(query.search_terms.keys())  
-            sys.stderr.write(query + '\n')
+#            sys.stderr.write(query + '\n')
 
             try:
 		# run IndriRunQuery with appropriate command line arguments
                 args = [self.indri_loc,'-query=#combine(' + query + ')', 
                        '-index=' + self.path_to_idx, '-printSnippets=true',
-                         '-trecFormat=true', '-printSnippets=true', '-count=100'
+                         '-trecFormat=true', '-count=100'
                         'stoplist.dft']
                 p1 = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 results = p1.communicate()[0][2:]

@@ -32,9 +32,13 @@ def main():
 
     # fourth argument is the results file
     output = open(sys.argv[4],'w')
+    
+    # path to the directory containing this script, so it can be run by scripts in other directories
+    dir = path.dirname(__file__)
 
-    # stop word list
-    stopword_file = open("stoplist.dft")
+    # stopword list
+    stopword_filename = path.join(dir, "stoplist.dft")
+    stopword_file = open(stopword_filename)
     stopword_list = extract_stopwords(stopword_file)
     #sys.stderr.write("Stop words are: "+str(stopword_list))
 
