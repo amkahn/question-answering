@@ -104,6 +104,8 @@ def main():
             doc_id = next(iter(answer.doc_ids))
             output.write("%s %s %s %s\n" % (question.id, run_tag, doc_id, answer.answer))
 
+    output.close()
+
     sys.stderr.write("Query generation took %s seconds\n" % query_gen_time)
     sys.stderr.write("Answer template generation took %s seconds\n" % ans_temp_gen_time)
     sys.stderr.write("Passage retrieval took %s seconds\n" % ir_time)
