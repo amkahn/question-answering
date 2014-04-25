@@ -85,25 +85,20 @@ class AnswerProcessor:
             ac.set_score(score)
             self.ranked_answers.append(ac)
 
-    # remove answers with words from original query, punctuation, or starting/ending with stop word:w
-
+    # remove answers with words from original query, punctuation, or starting/ending with stop word
     def filter_answers(self):
         # go through answers
         for i in xrange(len(self.ranked_answers)-1,-1,-1):
             answer = self.ranked_answers[i]
             answer_words = answer.answer.split()
             for j in range(len(answer_words)):
-                # if any word in the answer is in the list of query terms or the punctuation list
-                
-                # or the first or last word is in the stop word list
+                # if the first or last word is in the stop word list
                 if j==0 or j==len(answer_words)-1:
                     if answer_words[j].lower() in self.stopword_list:
                         del self.ranked_answers[i]
                         break
 
-               # if (i==0 and answer_words[i].lower() in self.stopword_list) or (i==len(answer_words) and answer_words[i].lower() in self.stopword_list):
-               #     del self.ranked_answers[i]
-               #     break
+                # or if any word in the answer is in the list of query terms or the punctuation list
                 if answer_words[j].lower() in self.answer_template.query_terms or answer_words[j] in self.punctuation:
                     # remove that answer
                     del self.ranked_answers[i]

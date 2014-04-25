@@ -27,12 +27,11 @@ def main():
 	# second argument is the path to the index
     index_path = sys.argv[2]
 
-	# should the output file be a third argument?
-	# or should we output the stdout?
-    output = sys.stdout
+    # third argument is the run tag
+    run_tag = sys.argv[3]
 
-    # run-tag for output file - maybe later add as fourth argument?
-    run_tag = "test"
+    # fourth argument is the results file
+    output = open(sys.argv[4],'w')
 
     # stop word list
     stopword_file = open("stoplist.dft")
@@ -82,18 +81,11 @@ def main():
         passages = ir.retrieve_passages(search_queries)
         end_ir = time.clock()
         ir_time += (end_ir - begin_ir)
-        #sys.stderr.write("DEBUG  Here are the passages: %s\n")
+        #sys.stderr.write("DEBUG  Here are the passages: \n")
         #for passage in passages:
         #    sys.stderr.write(passage.to_string()+"\n")
-        sys.stderr.write("DEBUG  Passage retrieval took %s seconds\n" % (end_ir - begin_ir))
+        #sys.stderr.write("DEBUG  Passage retrieval took %s seconds\n" % (end_ir - begin_ir))
         
-        # dummy set of passage objects to test AnswerProcessor
-        # passages = []
-        # for i in range(20):
-        #     passage = Passage("this is a test",i,"NYT123"+str(i))
-        #     passages.append(passage)
-        # dummy answer template to test AnswerProcessor
-        # ans_template = AnswerTemplate("what are you doing?")
 
    		# instantiate an AnswerProcessor that takes set of passages and the AnswerTemplate object
         ap = AnswerProcessor(passages,ans_template,stopword_list)
@@ -103,11 +95,12 @@ def main():
         ranked_answers = ap.generate_and_rank_answers()
         end_ans_gen = time.clock()
         ans_gen_time += (end_ans_gen - begin_ans_gen)
-        sys.stderr.write("DEBUG  Generating and reranking answers took %s seconds\n" % (end_ans_gen - begin_ans_gen))
+        #sys.stderr.write("DEBUG  Generating and reranking answers took %s seconds\n" % (end_ans_gen - begin_ans_gen))
 
 		# do formatting on answer list
         for answer in ranked_answers:
             #sys.stderr.write("DEBUG: Answer %s with score %s\n" % (answer.answer, answer.score))
+            #sys.stderr.write("DEBUG: Answer %s found in: %s\n" % (answer.answer, answer.doc_ids))
             doc_id = next(iter(answer.doc_ids))
             output.write("%s %s %s %s\n" % (question.id, run_tag, doc_id, answer.answer))
 
