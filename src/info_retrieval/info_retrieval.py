@@ -1,5 +1,5 @@
 # LING 573 Question Answering System
-# Code last updated 4/23/14 by Clara Gordon
+# Code last updated 4/24/14 by Clara Gordon
 # This code implements an InfoRetriever for the question answering system.
 
 
@@ -42,6 +42,7 @@ class InfoRetriever:
             except:
                 sys.stderr.write(str(sys.exc_info()[0]) +' ' + str(sys.exc_info()[1]) + ' ' + str(sys.exc_info()[2]) + '\n')
                 sys.stderr.write("Couldn't run query: " + query + '\n')
+            # split each document and snippet results
             results = results.split('\n0 ')
              
             # extract fields from Indri output
@@ -56,7 +57,7 @@ class InfoRetriever:
                 passage_text = split[1].replace('...', ' ')
                 passage_text = passage_text.replace('\n', ' ')
                 # remove excess spacing
-                passage_text = passage_text.replace(' +', ' ')
+                passage_text = passage_text.replace(r' +', ' ')
                 # construct passage objects
                 passage = Passage(passage_text, weight, doc_no)
                 passages.append(passage)
