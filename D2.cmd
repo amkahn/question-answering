@@ -1,5 +1,5 @@
 question_file = /dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml
-doc_index = /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/index_krovetz
+doc_index = /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/index
 run_tag = D2
 output_file = outputs/D2.outputs
 
