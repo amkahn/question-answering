@@ -6,8 +6,8 @@ This repository holds our question answering system for LING 573: Systems and Ap
 SRC
 Our main code is in three scripts within the src directory.
 
-1. index_documents.py : This script indexes a given document collection for later use in information retrieval. It takes two arguments.  The first argument is the path to the document collection (for the AQUAINT corpus, this is "/corpora/LDC/LDC02T31."  The second argument is the directory to put the index in - WARNING: All contents of this directory will be deleted when this script is run.  Indexing of the AQUAINT corpus takes approximately 6 hours.
-We created two versions of the index for D2, one using the Porter stemmer (called "index") and one using the Krovetz stemmer (called "index_krovetz").  The commands we ran to index the document collection is as follows:
+1. index_documents.py : This script indexes a given document collection for later use in information retrieval. It takes two arguments.  The first argument is the path to the document collection (for the AQUAINT corpus, this is "/corpora/LDC/LDC02T31").  The second argument is the directory to put the index in. - WARNING: All contents of this directory will be deleted when this script is run.  Indexing of the AQUAINT corpus takes approximately 6 hours.
+We created two versions of the index for D2, one using the Porter stemmer (called "index") and one using the Krovetz stemmer (called "index_krovetz").  The commands we ran to index the document collection are as follows:
 ./index_documents.py /corpora/LDC/LDC02T31 /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/index
 ./index_documents.py /corpora/LDC/LDC02T31 /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/index_krovetz
 

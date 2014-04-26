@@ -1,0 +1,17 @@
+What did football play Moon professional in position Warren
+DEBUG  Passage retrieval took 0.0 seconds
+DEBUG  Generating and reranking answers took 1.8 seconds
+play did Moon college in Where Warren
+DEBUG  Passage retrieval took 0.01 seconds
+DEBUG  Generating and reranking answers took 1.91 seconds
+what In Moon born year was Warren
+<type 'exceptions.KeyboardInterrupt'>  <traceback object at 0x8416f80>
+Couldn't run query: what In Moon born year was Warren
+Traceback (most recent call last):
+  File "./question_answering.py", line 154, in <module>
+    main()
+  File "./question_answering.py", line 82, in main
+    passages = ir.retrieve_passages(search_queries)
+  File "/home2/cgordon1/LING573/question-answering/src/info_retrieval/info_retrieval.py", line 46, in retrieve_passages
+    results = results.split('\n0 ')
+UnboundLocalError: local variable 'results' referenced before assignment
