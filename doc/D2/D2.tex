@@ -47,6 +47,16 @@ A description of the major design, methodological, and algorithmic decisions in 
 
 \subsection{System architecture}
 
+The question-answering system is run by a wrapper script, question_answering.py, which 
+
+Classes that are used by multiple modules in the pipeline are defined in the module general_classes.py. These include:
+
+\begin{itemize}
+\item Question class: A Question object stores as attributes the TREC question ID, the question type, the TREC natural-language question stored as a string, and the "target" (the context given for a set of questions in TREC 2004-2006; defaults to None).
+\item SearchQuery class: A SearchQuery object stores as attributes a dictionary of search terms, each of which can be one or more words, mapped to weights indicating how important those terms are perceived as being, and an overall weight for the query, which will be used to calculate the probability of the corresponding AnswerCandidate.
+\item AnswerTemplate class: An AnswerTemplate object stores as attributes a set of basic search query terms from the original question and a dictionary for the weights of each NE type, where the weights will be used to reweight AnswerCandidate objects during answer processing.
+\end{itemize}
+
 \subsubsection{Query processing}
 
 \subsubsection{Information Retrieval}
