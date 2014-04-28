@@ -52,7 +52,12 @@ Classes that are used by multiple modules in the pipeline are defined in the mod
 
 \subsubsection{Query processing}
 
-\subsubsection{Retrieval}
+\subsubsection{Information Retrieval}
+
+The infomation retrieval module uses the Indri/Lemur IR system to retrieve a series of twenty  snippets and associated documents for each set of query terms passed to it by the query processing module. Although the Python wrapper pymur is used to index the document collection, this portion of the system uses the subprocess module to directly query Indri using command line arguments. This is necessary because certain Indri functions, such as snippet retrieval, are not available in the wrapper. 
+
+Once the snippets and associated document metadata are retrieved from standard out, a series of character-based split commands is used to segment the string into the relevant fields: document ID number, document weight, and snippet text. These fields are used to construct a Passage object. A list of these objects is then passed to the answer processing module, which uses the snippets and associated metadata to derive answer candidates.   
+
 
 \subsubsection{Answer candidate extraction and ranking}
 
