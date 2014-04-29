@@ -41,7 +41,7 @@ We implemented a question answering system to handle factoid questions from the 
 
 \section{System Overview}
 
-A description of the major design, methodological, and algorithmic decisions in your project. It often includes a schematic of the system architecture.
+Our system is coded in Python. Third-party modules that we use include Indri/Lemur (for IR), Pymur (a Python wrapper for Indri/Lemur), Beautiful Soup (for XML parsing), NLTK (for tokenization). We chose Indri/Lemur for IR because of its specific handling of TREC-formatted question files. We currently use a stopword list taken from the Indri/Lemur documentation.
 
 \begin{figure}
   \centering
@@ -51,7 +51,7 @@ A description of the major design, methodological, and algorithmic decisions in 
 
 \section{Approach}
 
-The question-answering system is called by a wrapper script, question\_answering.py, which takes as arguments a file containing questions in TREC QA format, a path to the document index, a run tag, and a path to the desired output file. It uses the third-party module Beautiful Soup to parse the XML in the TREC document and generate a list of questions. It then passes the questions one-by-one to the pipeline described below. For each question, for each answer returned, it prints the question, the run tag, the document ID associated with the answer, and the answer to the output file.
+The question answering system is run by a wrapper script, question\_answering.py, which takes as arguments a file containing questions in TREC QA format, a path to the document index, a run tag, and a path to the desired output file. It uses the third-party module Beautiful Soup to parse the XML in the TREC document and generate a list of questions. It then passes the questions one-by-one to the pipeline described below. For each question, for each answer returned, it prints the question, the run tag, the document ID associated with the answer, and the answer to the output file.
 
 Classes that are used by multiple modules in the pipeline are defined in the module general\_classes.py. These include:
 
@@ -92,7 +92,7 @@ Lastly, the answers are ranked by score, and the top 20 are returned.  When the 
 
 \section{Results}
 
-At this point, we are reporting only baseline results, shown in Table 1 below.
+We evaluated our results using the mean reciprocal rank (MRR) measure with strict and lenient evaluation. At this point, we are reporting only baseline results, shown in Table 1 below.
 
 \vspace{5mm}
 {\centering
