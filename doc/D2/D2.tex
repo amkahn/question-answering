@@ -48,13 +48,18 @@ Classes that are used by multiple modules in the pipeline are defined in the mod
 \item Question class: A Question object stores as attributes the TREC question ID, the question type, the TREC natural-language question stored as a string, and the "target" (the context given for a set of questions in TREC 2004-2006; defaults to None).
 \item SearchQuery class: A SearchQuery object stores as attributes a dictionary of search terms, each of which can be one or more words, mapped to weights indicating how important those terms are perceived as being, and an overall weight for the query, which will be used to calculate the probability of the corresponding AnswerCandidate.
 \item AnswerTemplate class: An AnswerTemplate object stores as attributes a set of basic search query terms from the original question and a dictionary for the weights of each NE type, where the weights will be used to reweight AnswerCandidate objects during answer processing.
+\item Passage class: A Passage object stores as attributes the text of a passage returned by Indri/Lemur, a weight, and the ID of the document from which this passage was extracted.
 \end{itemize}
 
 \subsubsection{Query processing}
 
+The query processing module is responsible for creating one or more weighted search queries (which are passed to the information retrieval module to be used for passage retrieval) and instantiating an answer template (which is passed to the answer processing module to be used during answer ranking). A QueryProcessor object is instantiated with a Question object and generates a vocabulary, a list of words (i.e., whitespace-tokenized strings) occurring in the question/target and their counts. This vocabulary is used to instantiate an AnswerTemplate object. (In subsequent versions of the system, we plan to implement a more sophisticated approach toward answer template creation, including question classification.)
+
+The QueryProcessor is then used to generate a list of weighted search queries, each of which is in turn a set of weighted search terms. In the current version of the system, the QueryProcessor generates just one search query, which is the set of words occurring in the question and target with their counts as weights. In subsequent versions of the system, we plan to explore more sophisticated methods of query generation, including query expansion, as well as to test generating multiple weighted search queries for one question.
+
 \subsubsection{Information Retrieval}
 
-The infomation retrieval module uses the Indri/Lemur IR system to retrieve a series of twenty  snippets and associated documents for each set of query terms passed to it by the query processing module. Although the Python wrapper pymur is used to index the document collection, this portion of the system uses the subprocess module to directly query Indri using command line arguments. This is necessary because certain Indri functions, such as snippet retrieval, are not available in the wrapper. 
+The infomation retrieval module uses the Indri/Lemur IR system to retrieve a series of twenty snippets and associated documents for each set of query terms passed to it by the query processing module. Although the Python wrapper pymur is used to index the document collection, this portion of the system uses the subprocess module to directly query Indri using command line arguments. This is necessary because certain Indri functions, such as snippet retrieval, are not available in the wrapper. 
 
 Once the snippets and associated document metadata are retrieved from standard out, a series of character-based split commands is used to segment the string into the relevant fields: document ID number, document weight, and snippet text. These fields are used to construct a Passage object. A list of these objects is then passed to the answer processing module, which uses the snippets and associated metadata to derive answer candidates.   
 
