@@ -45,9 +45,7 @@ A description of the major design, methodological, and algorithmic decisions in 
 
 \section{Approach}
 
-\subsection{System architecture}
-
-The question-answering system is run by a wrapper script, question\_answering.py, which 
+The question-answering system is called by a wrapper script, question\_answering.py, which takes as arguments a file containing questions in TREC QA format, a path to the document index, a run tag, and a path to the desired output file. It uses the third-party module Beautiful Soup to parse the XML in the TREC document and generate a list of questions. It then passes the questions one-by-one to the pipeline described below. For each question, for each answer returned, it prints the question, the run tag, the document ID associated with the answer, and the answer to the output file.
 
 Classes that are used by multiple modules in the pipeline are defined in the module general\_classes.py. These include:
 
@@ -57,6 +55,10 @@ Classes that are used by multiple modules in the pipeline are defined in the mod
 \item AnswerTemplate class: An AnswerTemplate object stores as attributes a set of basic search query terms from the original question and a dictionary for the weights of each NE type, where the weights will be used to reweight AnswerCandidate objects during answer processing.
 \item Passage class: A Passage object stores as attributes the text of a passage returned by Indri/Lemur, a weight, and the ID of the document from which this passage was extracted.
 \end{itemize}
+
+\subsection{System architecture}
+
+Our pipeline for the processing of a single question consists of three components, described below. The pipeline takes a Question object as input and outputs a list of AnswerCandidate objects.
 
 \subsubsection{Query processing}
 
@@ -69,7 +71,6 @@ The QueryProcessor is then used to generate a list of weighted search queries, e
 The infomation retrieval module uses the Indri/Lemur IR system to retrieve a series of twenty snippets and associated documents for each set of query terms passed to it by the query processing module. Although the Python wrapper pymur is used to index the document collection, this portion of the system uses the subprocess module to directly query Indri using command line arguments. This is necessary because certain Indri functions, such as snippet retrieval, are not available in the wrapper. 
 
 Once the snippets and associated document metadata are retrieved from standard out, a series of character-based split commands is used to segment the string into the relevant fields: document ID number, document weight, and snippet text. These fields are used to construct a Passage object. A list of these objects is then passed to the answer processing module, which uses the snippets and associated metadata to derive answer candidates.   
-
 
 \subsubsection{Answer candidate extraction and ranking}
 
