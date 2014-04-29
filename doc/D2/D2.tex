@@ -28,10 +28,16 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-    Later, this section will have the abstract - a short high-level overview of the paper, usually 150 words or so.
+
+We implemented a question answering system to handle factoid questions from the QA track of the Text Retrieval Conference (TREC), using the AQUAINT Corpus of English News Text as a document collection.
+
 \end{abstract}
 
 \section{Introduction}
+
+Question answering (QA) has long been a prominent problem in the field of natural language processing. In contrast to information retrieval (IR) systems, which return relevant documents based on search terms, a question answering system takes a natural-language question as input and outputs a natural-language answer. IR is typically a component of the system, but the addition of question and answer processing prevents users from having to sift through long documents to find the information they are seeking.
+
+We implemented a question answering system to handle factoid questions from the QA track of the Text Retrieval Conference (TREC), using the AQUAINT Corpus of English News Text as a document collection.
 
 \section{System Overview}
 
@@ -66,7 +72,7 @@ The query processing module is responsible for creating one or more weighted sea
 
 The QueryProcessor is then used to generate a list of weighted search queries, each of which is in turn a set of weighted search terms. In the current version of the system, the QueryProcessor generates just one search query, which is the set of words occurring in the question and target with their counts as weights. In subsequent versions of the system, we plan to explore more sophisticated methods of query generation, including query expansion, as well as to test generating multiple weighted search queries for one question.
 
-\subsubsection{Information Retrieval}
+\subsubsection{Information retrieval}
 
 The infomation retrieval module uses the Indri/Lemur IR system to retrieve a series of twenty snippets and associated documents for each set of query terms passed to it by the query processing module. Although the Python wrapper pymur is used to index the document collection, this portion of the system uses the subprocess module to directly query Indri using command line arguments. This is necessary because certain Indri functions, such as snippet retrieval, are not available in the wrapper. 
 
