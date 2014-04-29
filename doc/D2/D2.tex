@@ -43,6 +43,10 @@ We implemented a question answering system to handle factoid questions from the 
 
 Our system is coded in Python. Third-party modules that we use include Indri/Lemur (for IR), Pymur (a Python wrapper for Indri/Lemur), Beautiful Soup (for XML parsing), NLTK (for tokenization). We chose Indri/Lemur for IR because of its specific handling of TREC-formatted question files. We currently use a stopword list taken from the Indri/Lemur documentation.
 
+We used Pymur to index the document collection. We created two indexes using two different stemming methods: Porter stemming, which is more aggressive, and Krovetz stemming. To obtain baseline results, we used the Porter-stemmed index as input to our system.
+
+The core of our system is a three-part pipeline, consisting of modules for question processing, IR, and answer processing, respectively. The system architecture is shown in the figure below.
+
 \begin{figure}
   \centering
     \includegraphics[width=0.5\textwidth]{system_architecture.jpg}
@@ -51,7 +55,7 @@ Our system is coded in Python. Third-party modules that we use include Indri/Lem
 
 \section{Approach}
 
-The question answering system is run by a wrapper script, question\_answering.py, which takes as arguments a file containing questions in TREC QA format, a path to the document index, a run tag, and a path to the desired output file. It uses the third-party module Beautiful Soup to parse the XML in the TREC document and generate a list of questions. It then passes the questions one-by-one to the pipeline described below. For each question, for each answer returned, it prints the question, the run tag, the document ID associated with the answer, and the answer to the output file.
+The question answering system is called by a wrapper script, question\_answering.py, which takes as arguments a file containing questions in TREC QA format, a path to the document index, a run tag, and a path to the desired output file. It uses the third-party module Beautiful Soup to parse the XML in the TREC document and generate a list of questions. It then passes the questions one-by-one to the pipeline described below. For each question, for each answer returned, it prints the question, the run tag, the document ID associated with the answer, and the answer to the output file.
 
 Classes that are used by multiple modules in the pipeline are defined in the module general\_classes.py. These include:
 
