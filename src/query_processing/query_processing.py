@@ -55,7 +55,6 @@ class QueryProcessor(object):
         # counts of the term in the question plus the target.
         query = SearchQuery(self.query_voc, 1)
 #       sys.stderr.write("DEBUG  Here is the search query: %s\n" % query.to_string())
-
         return [query]
 	
 	# This method returns an AnswerTemplate object.
