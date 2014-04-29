@@ -104,6 +104,10 @@ Baseline & 0.00511 & 0.02894 \\ \hline
 
 Our baseline results are very low.  Error analysis indicates that this is most likely the result of the low quality of the snippets returned at retrieval time.  Additionally, there are some duplicate documents, so an answer may be retained as being from more than one document when in reality, it is from two identical documents and should be treated as being from one document and thus discarded.
 
+In subsequent versions of the system, we hope to address the first issue by augmenting the query processing module to include query expansion. Better search queries (and more of them) will hopefully improve the quality of the snippets returned in the information retrieval module.
+
+In addition, we plan to encode more information in the answer template by implementing question classification in the query processing module. This will hopefully facilitate better answer generation and ranking in the answer processing module.
+
 \section{Conclusion}
 
 \nocite{*}
