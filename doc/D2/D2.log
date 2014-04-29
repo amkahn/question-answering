@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  28 APR 2014 21:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  28 APR 2014 21:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -170,8 +170,33 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 29.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 1314) in paragraph at lines 32--33
-[]\OT1/ptm/m/n/10.95 We im-ple-mented a ques-tion an-swer-ing
+Underfull \hbox (badness 1571) in paragraph at lines 32--33
+[]\OT1/ptm/m/n/10.95 In this pa-per, we de-scribe a ques-tion
+ []
+
+
+Underfull \hbox (badness 1783) in paragraph at lines 32--33
+\OT1/ptm/m/n/10.95 an-swer-ing sys-tem for han-dling fac-toid
+ []
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 32--33
+\OT1/ptm/m/n/10.95 ques-tions. The sys-tem, im-ple-mented
+ []
+
+
+Underfull \hbox (badness 2073) in paragraph at lines 32--33
+\OT1/ptm/m/n/10.95 in Python, fol-lows a typ-i-cal pipeline,
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 32--33
+\OT1/ptm/m/n/10.95 re-trieval, and an-swer can-di-date ex-trac-
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 32--33
+\OT1/ptm/m/n/10.95 tion and rank-ing mod-ules. Us-ing the
  []
 
 <system_architecture.jpg, id=1, 692.5875pt x 1251.67625pt>
@@ -220,24 +245,22 @@ Underfull \hbox (badness 1062) in paragraph at lines 83--84
 
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 103.
-[3] (./D2.bbl) [4
-
-] (./D2.aux) ) 
+[3] (./D2.bbl) [4] (./D2.aux) ) 
 Here is how much of TeX's memory you used:
  1731 strings out of 493315
  25009 string characters out of 6137904
- 86313 words of memory out of 5000000
+ 87313 words of memory out of 5000000
  5151 multiletter control sequences out of 15000+600000
  21739 words of font info for 49 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  37i,9n,23p,1047b,256s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}<
-/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/
-2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on D2.pdf (4 pages, 127953 bytes).
+{/usr/local/texlive/2013/texmf-dist/fonts/enc/dv
+ips/base/8r.enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/courier/ucrr
+8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/t
+exlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on D2.pdf (4 pages, 128068 bytes).
 PDF statistics:
  39 PDF objects out of 1000 (max. 8388607)
  26 compressed objects within 1 object stream
