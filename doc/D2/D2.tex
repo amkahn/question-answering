@@ -64,7 +64,7 @@ Classes that are used by multiple modules in the pipeline are defined in the mod
 
 \subsection{System architecture}
 
-Our pipeline for the processing of a single question consists of three components, described below. The pipeline takes a Question object as input and outputs a list of AnswerCandidate objects.
+Our pipeline for the processing of a single question consists of three components that live in three separate modules, described below. The pipeline takes a Question object as input and outputs a list of AnswerCandidate objects.
 
 \subsubsection{Query processing}
 
@@ -114,7 +114,11 @@ In subsequent versions of the system, we hope to address the first issue by augm
 
 In addition, we plan to encode more information in the answer template by implementing question classification in the query processing module. This will hopefully facilitate better answer generation and ranking in the answer processing module.
 
+We created two document indexes: one using Porter stemming and one using Krovetz stemming. Initial testing on a small question set demonstrated better results using the Krovetz-stemmed index. Due to issues we encountered with Indri/Lemur when using the Krovetz-stemmed index with the full question set, we used the Porter-stemmed index instead in the baseline system. In subsequent versions of our system, we plan to explore using the Krovetz-stemmed index to see if we achieve better results.
+
 \section{Conclusion}
+
+We implemented a baseline question answering system to handle factoid questions from the TREC QA shared task using the AQUAINT Corpus as a document collection. Our baseline results were very low, most likely due to the poor quality of the snippets returned by the IR component of the system, duplicate documents in the document collection, and the primitive methods we used for query processing. In future development, we plan to implement query expansion and question classification, and as well as to explore using a document index created with a different stemmer.
 
 \nocite{*}
 \bibliographystyle{acl}
