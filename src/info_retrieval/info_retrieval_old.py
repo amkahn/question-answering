@@ -6,6 +6,7 @@
 from pymur import *
 from general_classes import *
 import sys
+from nltk import *
 
 
 class InfoRetriever:
@@ -30,7 +31,7 @@ class InfoRetriever:
             sys.stderr.write(query + '\n')
             # second argument is the number of documents desired
             try:
-                docs = self.query_env.runQuery("#combine[passage50:25](" + query + ")", 20)
+                docs = self.query_env.runQuery("#combine[passage100:25](" + query + ")", 20)
             except:
                 docs = []
                 sys.stderr.write("Couldn't run query: " + query + '\n')
@@ -39,7 +40,8 @@ class InfoRetriever:
                 begin = doc.begin
                 end = doc.end
                 doc_id = self.query_env.documents([doc_num])[0].metadata['docno'] # need this for output
-                passage = Passage(self.index.document(doc_num, True)[begin:end], doc.score, doc_id)
+                passage_text = ' '.join(nltk.word_tokenize(" ".join([x for x in doc.text.split("<TEXT>")[1].split() if "<" not in x]))[begin:end])
+                passage = Passage(passage_text, doc.score, doc_id)
                 passages.append(passage)
 
         return passages
