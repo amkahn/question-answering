@@ -44,4 +44,6 @@ class InfoRetriever:
 
         return passages
 
+# nltk.word_tokenize(" ".join([x for x in doc.text.split("<TEXT>")[1].split() if "<" not in x]))[begin:end]
+# would be better w/ XML parsing (use BeautifulSoup), take out "TEXT" attributes, get rid of <P> </P>??
 
