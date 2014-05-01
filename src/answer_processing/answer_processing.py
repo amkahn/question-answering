@@ -16,6 +16,9 @@ class AnswerProcessor:
         self.stopword_list = stopword_list
         self.stopword_list.add("'s")
         self.punctuation = {':',"'","''",'(',')','&',';','_','.','!','?',',','-','--'}
+        #for passage in self.passages:
+        #    sys.stderr.write("PASSAGE: "+passage.passage+"\n")
+
 
 #    def generate_and_rank_answers_old(self):
 #        # get answers from the passages
@@ -58,24 +61,25 @@ class AnswerProcessor:
         answer_score = defaultdict(lambda:0)
         self.unigram_answers = []
         for passage in self.passages:
-            passage_list = nltk.word_tokenize(passage.passage)
+            passage_list = [nltk.word_tokenize(t) for t in nltk.sent_tokenize(passage.passage)]
             #sys.stderr.write("Tokenized passage is"+str(passage_list)+"\n")
-            for i in range(len(passage_list)):
-                answers = []
-                # unigram
-                answers.append(passage_list[i])
-                if i < len(passage_list) - 1: # can do bigrams
-                    answers.append(" ".join(passage_list[i:i+2]))
-                    if i < len(passage_list) - 2: # can do trigrams
-                        answers.append(" ".join(passage_list[i:i+3]))
-                        if i < len(passage_list) - 3: # can do 4-grams
-                            answers.append(" ".join(passage_list[i:i+4]))
-                for answer in answers:
-                    answer_docs[answer].add(passage.doc_id)
+            for sentence in passage_list:
+                for i in range(len(sentence)):
+                    # unigram
                     # passage weight is negative - closer to 0 is better
                     # change to positive, then take inverse
                     # higher score is still better, but now will be all positive
-                    answer_score[answer] += (-passage.weight)**-1
+                    answer_score[sentence[i]] += (-passage.weight)**-1
+                    answer_docs[sentence[i]].add(passage.doc_id)
+                    if i < len(sentence) - 1: # can do bigrams
+                        answer_score[" ".join(sentence[i:i+2])] += (-passage.weight)**-1
+                        answer_docs[" ".join(sentence[i:i+2])].add(passage.doc_id)
+                        if i < len(sentence) - 2: # can do trigrams
+                            answer_score[" ".join(sentence[i:i+3])] += (-passage.weight)**-1
+                            answer_docs[" ".join(sentence[i:i+3])].add(passage.doc_id)
+                            if i < len(sentence) - 3: # can do 4-grams
+                                answer_score[" ".join(sentence[i:i+4])] += (-passage.weight)**-1
+                                answer_docs[" ".join(sentence[i:i+4])].add(passage.doc_id)
        # then find answers with highest score?
         for answer,score in answer_score.iteritems():
             if len(answer.split()) == 1:
@@ -123,7 +127,7 @@ class AnswerProcessor:
         # remove answers if not in more than one snippet 
         for i in xrange(len(self.ranked_answers)-1,-1,-1):
             answer = self.ranked_answers[i]
-            if len(answer.doc_ids) < 2:
+            if len(answer.doc_ids) < 3:
                 del self.ranked_answers[i]
         for answer_candidate in self.ranked_answers:
             # find NEs and types

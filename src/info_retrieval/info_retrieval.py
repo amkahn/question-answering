@@ -31,7 +31,7 @@ class InfoRetriever:
             sys.stderr.write(query + '\n')
             # second argument is the number of documents desired
             try:
-                docs = self.query_env.runQuery("#combine[passage100:20](" + query + ")", 20)
+                docs = self.query_env.runQuery("#combine[passage100:20](" + query + ")", 100)
             except:
                 docs = []
                 sys.stderr.write("Couldn't run query: " + query + '\n')
@@ -41,11 +41,11 @@ class InfoRetriever:
                 end = doc.end
 
                 orig_doc  = self.query_env.documents([doc_num])[0] # need this for output
-		doc_id  = orig_doc.metadata['docno']
-		
-		orig_text = " ".join([x for x in orig_doc.text.split("<TEXT>")[1].split() if "<" not in x])
-		passage_text = ' '.join(nltk.word_tokenize(orig_text)[begin:end])
-		print "passage text", passage_text
+                doc_id  = orig_doc.metadata['docno']
+
+                orig_text = " ".join([x for x in orig_doc.text.split("<TEXT>")[1].split() if "<" not in x])
+                passage_text = ' '.join(nltk.word_tokenize(orig_text)[begin:end])
+               # print "passage text", passage_text
                 passage = Passage(passage_text, doc.score, doc_id)
                 passages.append(passage)
 
