@@ -85,7 +85,7 @@ class AnswerProcessor:
             if len(answer.split()) == 1:
                 self.unigram_answers.append((answer,score))
             # initialize answer candidate with answer and the doc IDs where it occured in
-            ac = AnswerCandidate(answer,answer_docs[answer])
+            ac = AnswerCandidate(self.answer_template.question_id,answer,answer_docs[answer])
             ac.set_score(score)
             self.ranked_answers.append(ac)
 
@@ -143,7 +143,8 @@ class AnswerProcessor:
 
 
 class AnswerCandidate:
-    def __init__(self,answer,doc_ids):
+    def __init__(self,question_id,answer,doc_ids):
+        self.question_id = question_id
         self.answer = answer
         self.doc_ids = doc_ids
         self.score = 0

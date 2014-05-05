@@ -71,7 +71,7 @@ class QueryProcessor(object):
             # to determine NE type
             # generate a corresponding AnswerTemplate object
             # return it
-            ans_template = AnswerTemplate(set(self.query_voc.keys()))
+            ans_template = AnswerTemplate(self.question.id,set(self.query_voc.keys()))
 #           sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template.to_string())
             
             return ans_template

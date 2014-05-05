@@ -53,9 +53,8 @@ class SearchQuery(object):
 # where the weights will be used to reweight AnswerCandidate objects).
 
 class AnswerTemplate:
-    def __init__(self,query_terms):
-        # should the AnswerTemplate get the question and then generate the template from that?
-        # or should the QueryProcessor generate the pieces and then pass them to the AnswerTemplate
+    def __init__(self,question_id,query_terms):
+        self.question_id = question_id
         self.query_terms = set()
         for query_term in query_terms:
             self.query_terms.add(query_term.lower())
