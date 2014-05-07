@@ -7,7 +7,6 @@ import pymur
 from general_classes import *
 import sys
 import nltk 
-from xgoogle.search import GoogleSearch
 
 
 class InfoRetriever:
@@ -27,19 +26,8 @@ class InfoRetriever:
     # the query-processing module
     def retrieve_passages(self, queries):
         passages = []
-        web_results = []
-        for query in queries:	
-        	query = " ".join(query.search_terms.keys())
-
-            passages.extend(self.get_passages(query))
-        	web_results.extend(self.web_search(query))
-        return passages, web_results
-
-
-
-	def get_passages(self, query):
-	
-		passages = []
+        for query in queries:
+            query = " ".join(query.search_terms.keys())
             sys.stderr.write(query + '\n')
             # second argument is the number of documents desired
             try:
@@ -60,19 +48,8 @@ class InfoRetriever:
                # print "passage text", passage_text
                 passage = Passage(passage_text, doc.score, doc_id)
                 passages.append(passage)
+
         return passages
-            
-	def web_search(self, query):
-		
-		web_results = []
-		gs = GoogleSearch(query)
-		gs.results_per_page = 25
-		results = gs.get_results()
-		for res in results:
-			web_results.append(res.title.encode('utf8')
-		
-		return web_results
-			
+
 # nltk.word_tokenize(" ".join([x for x in doc.text.split("<TEXT>")[1].split() if "<" not in x]))[begin:end]
 # would be better w/ XML parsing (use BeautifulSoup), take out "TEXT" attributes, get rid of <P> </P>??
-
