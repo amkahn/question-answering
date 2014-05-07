@@ -70,16 +70,20 @@ class AnswerProcessor:
                     # change to positive, then take inverse
                     # higher score is still better, but now will be all positive
                     answer_score[sentence[i]] += (-passage.weight)**-1
-                    answer_docs[sentence[i]].add(passage.doc_id)
+                    if passage.doc_id:
+                        answer_docs[sentence[i]].add(passage.doc_id)
                     if i < len(sentence) - 1: # can do bigrams
                         answer_score[" ".join(sentence[i:i+2])] += (-passage.weight)**-1
-                        answer_docs[" ".join(sentence[i:i+2])].add(passage.doc_id)
+                        if passage.doc_id:
+                            answer_docs[" ".join(sentence[i:i+2])].add(passage.doc_id)
                         if i < len(sentence) - 2: # can do trigrams
                             answer_score[" ".join(sentence[i:i+3])] += (-passage.weight)**-1
-                            answer_docs[" ".join(sentence[i:i+3])].add(passage.doc_id)
+                            if passage.doc_id:
+                                answer_docs[" ".join(sentence[i:i+3])].add(passage.doc_id)
                             if i < len(sentence) - 3: # can do 4-grams
                                 answer_score[" ".join(sentence[i:i+4])] += (-passage.weight)**-1
-                                answer_docs[" ".join(sentence[i:i+4])].add(passage.doc_id)
+                                if passage.doc_id:
+                                    answer_docs[" ".join(sentence[i:i+4])].add(passage.doc_id)
        # then find answers with highest score?
         for answer,score in answer_score.iteritems():
             if len(answer.split()) == 1:
@@ -89,26 +93,34 @@ class AnswerProcessor:
             ac.set_score(score)
             self.ranked_answers.append(ac)
 
-    # remove answers with words from original query, punctuation, or starting/ending with stop word
+    # remove answers with words from original query or "..." starting/ending with punctuation or stop word
     def filter_answers(self):
         # go through answers
         for i in xrange(len(self.ranked_answers)-1,-1,-1):
             answer = self.ranked_answers[i]
             answer_words = answer.answer.split()
+
+            # remove answers if not in at least one document
+            if len(answer.doc_ids) == 0:
+                del self.ranked_answers[i]
+                break
+
             for j in range(len(answer_words)):
                 # if the first or last word is in the stop word list
                 if j==0 or j==len(answer_words)-1:
-                    if answer_words[j].lower() in self.stopword_list:
+                    if answer_words[j].lower() in self.stopword_list or answer_words[j].lower() in self.punctuation:
                         del self.ranked_answers[i]
                         break
 
                 # or if any word in the answer is in the list of query terms or the punctuation list
-                if answer_words[j].lower() in self.answer_template.query_terms or answer_words[j] in self.punctuation:
+                if answer_words[j].lower() in self.answer_template.query_terms or answer_words[j] == "...":
                     # remove that answer
                     del self.ranked_answers[i]
                     break
+
             else:
                 continue
+
 
     # combine answer candidates so that unigrams aren't highest
     def combine_answers(self):
@@ -124,11 +136,6 @@ class AnswerProcessor:
 
     # a method to check candidate answers against the answer template
     def reweight_answers(self):
-        # remove answers if not in more than one snippet 
-        for i in xrange(len(self.ranked_answers)-1,-1,-1):
-            answer = self.ranked_answers[i]
-            if len(answer.doc_ids) < 3:
-                del self.ranked_answers[i]
         for answer_candidate in self.ranked_answers:
             # find NEs and types
             for NE_type,weight in self.answer_template.type_weights.iteritems():
