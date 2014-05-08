@@ -14,8 +14,8 @@ class AnswerProcessor:
         self.answer_template = answer_template
         self.ranked_answers = []
         self.stopword_list = stopword_list
-        self.stopword_list.add("'s")
-        self.punctuation = {':',"'","''",'(',')','&',';','_','.','!','?',',','-','--'}
+        self.stopword_list |= {"'s","n't","ca","wo","did"}
+        self.punctuation = {':',"'","''",'(',')','&',';','_','.','!','?',',','-','--','...','`','``'}
         #for passage in self.passages:
         #    sys.stderr.write("PASSAGE: "+passage.passage+"\n")
 
@@ -59,6 +59,7 @@ class AnswerProcessor:
         # here's a possible clever answer extractor
         answer_docs = defaultdict(set)
         answer_score = defaultdict(lambda:0)
+        number_passages = Counter()
         self.unigram_answers = []
         for passage in self.passages:
             passage_list = [nltk.word_tokenize(t) for t in nltk.sent_tokenize(passage.passage)]
@@ -71,25 +72,38 @@ class AnswerProcessor:
                     # higher score is still better, but now will be all positive
                     answer_score[sentence[i]] += (-passage.weight)**-1
                     if passage.doc_id:
+                        number_passages[sentence[i]] += 1
                         answer_docs[sentence[i]].add(passage.doc_id)
+                    else:
+                        number_passages[sentence[i]] += 10
                     if i < len(sentence) - 1: # can do bigrams
                         answer_score[" ".join(sentence[i:i+2])] += (-passage.weight)**-1
                         if passage.doc_id:
+                            number_passages[" ".join(sentence[i:i+2])] += 1
                             answer_docs[" ".join(sentence[i:i+2])].add(passage.doc_id)
+                        else:
+                            number_passages[" ".join(sentence[i:i+2])] += 10
                         if i < len(sentence) - 2: # can do trigrams
                             answer_score[" ".join(sentence[i:i+3])] += (-passage.weight)**-1
                             if passage.doc_id:
+                                number_passages[" ".join(sentence[i:i+3])] += 1
                                 answer_docs[" ".join(sentence[i:i+3])].add(passage.doc_id)
+                            else:
+                                number_passages[" ".join(sentence[i:i+3])] += 10
                             if i < len(sentence) - 3: # can do 4-grams
                                 answer_score[" ".join(sentence[i:i+4])] += (-passage.weight)**-1
                                 if passage.doc_id:
+                                    number_passages[" ".join(sentence[i:i+4])] += 1
                                     answer_docs[" ".join(sentence[i:i+4])].add(passage.doc_id)
+                                else:
+                                    number_passages[" ".join(sentence[i:i+4])] += 10
        # then find answers with highest score?
         for answer,score in answer_score.iteritems():
-            if len(answer.split()) == 1:
+            if len(answer.split()) == 1 and answer not in self.punctuation:
                 self.unigram_answers.append((answer,score))
             # initialize answer candidate with answer and the doc IDs where it occured in
             ac = AnswerCandidate(self.answer_template.question_id,answer,answer_docs[answer])
+            ac.number_passages = number_passages[answer]
             ac.set_score(score)
             self.ranked_answers.append(ac)
 
@@ -103,23 +117,24 @@ class AnswerProcessor:
             # remove answers if not in at least one document
             if len(answer.doc_ids) == 0:
                 del self.ranked_answers[i]
-                break
+            elif answer.number_passages < 10:
+                del self.ranked_answers[i]
+            else:
+                for j in range(len(answer_words)):
+                    # if the first or last word is in the stop word list
+                    if j==0 or j==len(answer_words)-1:
+                        if answer_words[j].lower() in self.stopword_list or answer_words[j].lower() in self.punctuation:
+                            del self.ranked_answers[i]
+                            break
 
-            for j in range(len(answer_words)):
-                # if the first or last word is in the stop word list
-                if j==0 or j==len(answer_words)-1:
-                    if answer_words[j].lower() in self.stopword_list or answer_words[j].lower() in self.punctuation:
+                    # or if any word in the answer is in the list of query terms or the punctuation list
+                    if answer_words[j].lower() in self.answer_template.query_terms or answer_words[j] == "...":
+                        # remove that answer
                         del self.ranked_answers[i]
                         break
 
-                # or if any word in the answer is in the list of query terms or the punctuation list
-                if answer_words[j].lower() in self.answer_template.query_terms or answer_words[j] == "...":
-                    # remove that answer
-                    del self.ranked_answers[i]
-                    break
-
-            else:
-                continue
+                else:
+                    continue
 
 
     # combine answer candidates so that unigrams aren't highest
@@ -155,6 +170,7 @@ class AnswerCandidate:
         self.answer = answer
         self.doc_ids = doc_ids
         self.score = 0
+        self.number_passages = 0
 
     def set_score(self,score):
         self.score = score

@@ -64,16 +64,17 @@ class InfoRetriever:
 
         p_snippets = []
         results = []
-        query_url = '+'.join(query)
+        query_url = '+'.join(query.search_terms.keys())
         r = requests.get("http://www.ask.com/web?q=" + query_url)
         data = r.text
         soup = BeautifulSoup(data)
         for p in soup.find_all('p'):
-            if p['class'] == ['abstract', 'txt3']:
-                p_snippets.append(p.get_text().encode('utf-8'))
+            if 'class' in p.attrs.keys():
+                if p['class'] == ['abstract', 'txt3']:
+                    p_snippets.append(p.get_text().encode('utf-8'))
 
         for snippet in p_snippets:
-            results.append(Passage(snippet, math.log(0.8), None))
+            results.append(Passage(snippet, math.log(0.9), None))
 
         return results
 
