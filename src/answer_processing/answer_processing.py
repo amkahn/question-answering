@@ -14,7 +14,7 @@ class AnswerProcessor:
         self.answer_template = answer_template
         self.ranked_answers = []
         self.stopword_list = stopword_list
-        self.stopword_list |= {"'s","n't","ca","wo","did"}
+        self.stopword_list |= {"'m","'s","n't","ca","wo","did"}
         self.punctuation = {':',"'","''",'(',')','&',';','_','.','!','?',',','-','--','...','`','``'}
         #for passage in self.passages:
         #    sys.stderr.write("PASSAGE: "+passage.passage+"\n")
@@ -114,8 +114,9 @@ class AnswerProcessor:
             answer = self.ranked_answers[i]
             answer_words = answer.answer.split()
 
-            # remove answers if not in at least one document
-            if len(answer.doc_ids) == 0:
+            # remove answers if not in at least two documents
+            # try different number of documents to see
+            if len(answer.doc_ids) < 2:
                 del self.ranked_answers[i]
             elif answer.number_passages < 10:
                 del self.ranked_answers[i]

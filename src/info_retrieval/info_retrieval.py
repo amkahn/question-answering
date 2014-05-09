@@ -38,7 +38,7 @@ class InfoRetriever:
     def trec_passages(self, query):
         query = " ".join(query.search_terms.keys())
         passages = []
-        sys.stderr.write(query + '\n')
+        #sys.stderr.write(query + '\n')
         # second argument is the number of documents desired
         try:
             docs = self.query_env.runQuery("#combine[passage100:50](" + query + ")", 100)
@@ -75,6 +75,9 @@ class InfoRetriever:
 
         for snippet in p_snippets:
             results.append(Passage(snippet, math.log(0.9), None))
+
+        if not results:
+            sys.stderr.write("No web search results for query: "+query_url+"\n")
 
         return results
 
