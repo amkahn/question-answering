@@ -8,6 +8,7 @@ import sys
 import nltk
 import re
 from general_classes import *
+from collections import defaultdict
 
 
 # A QueryProcessor object has the attribute "question", a Question object.
@@ -56,7 +57,8 @@ class QueryProcessor(object):
         query = SearchQuery(self.query_voc, 1)
 #       sys.stderr.write("DEBUG  Here is the search query: %s\n" % query.to_string())
         return [query]
-	
+
+
 	# This method returns an AnswerTemplate object.
 	
     def generate_ans_template(self):
@@ -66,13 +68,25 @@ class QueryProcessor(object):
 		# of questions, for which the text-processing and AnswerTemplate-generation steps
 		# might be slightlydifferent.
 
-        if self.question.type=="FACTOID":		
-            # do some sort of text-processing on the natural-language question and context
-            # to determine NE type
+        if self.question.type=="FACTOID":
+            # attempt to predict answer type and set relevant weights accordingly
+            # by default, assign all answer types some small weight
+            ans_types = defaultdict(lambda: 0.1)
+            sys.stderr.write("DEBUG  Here is the query vocabulary: %s\n" % query_voc.keys())
+            for query_term in query_voc.keys():
+                if query_term in ['who']:
+                    sys.stderr.write("DEBUG  Query contains %s; setting person weight\n" % query_term)
+                    ans_types['person'] = 0.9
+                if query_term in ['where']:
+                    sys.stderr.write("DEBUG  Query contains %s; setting location weight\n" % query_term)
+                    ans_types['location'] = 0.9
+                if query_term in ['when']:
+                    sys.stderr.write("DEBUG  Query contains %s; setting time_ex weight\n" % query_term)
+                    ans_types['time_ex'] = 0.9
+
             # generate a corresponding AnswerTemplate object
-            # return it
-            ans_template = AnswerTemplate(self.question.id,set(self.query_voc.keys()))
-#           sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template.to_string())
+            ans_template = AnswerTemplate(self.question.id,set(self.query_voc.keys()),ans_types)
+            sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template.to_string())
             
             return ans_template
 
