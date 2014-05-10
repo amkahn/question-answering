@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE trec2005qa [
+
+<!-- ======================================================================
+      TREC 2006 QA track data definition
+
+      Written 2004-05-11 by Jochen L. Leidner <leidner@acm.org>.
+      Modified 2004-05-21 by Ellen Voorhees <ellen.voorhees@nist.gov>
+      Modified 2005-06-14 by Hoa Dang <hoa.dang@nist.gov>
+     ====================================================================== -->
+
+    <!ELEMENT trecqa  (target+)           >
+    <!ELEMENT target   (qa+)              >
+    <!ELEMENT qa      (q, as)             >
+    <!ELEMENT q       (CDATA)    > <!-- don't want text of question parsed -->
+    <!ELEMENT as      (a*, nugget*)      >
+
+    <!ATTLIST trecqa
+                      year  CDATA #REQUIRED
+                      task CDATA #REQUIRED>
+
+    <!ATTLIST target  id    ID    #REQUIRED
+                      text  CDATA #REQUIRED>
+
+    <!ATTLIST q       id    ID    #REQUIRED
+                      type  (FACTOID|LIST|OTHER) #REQUIRED>
+
+    <!ATTLIST a       src   CDATA #REQUIRED
+                      regex CDATA #IMPLIED >
+
+    <!ATTLIST nugget  id     ID   #REQUIRED
+                      type   (VITAL|OKAY)        #REQUIRED>
+<!-- ====================================================================== -->
+]>
+
+<trecqa year="2006" task="main">
+<target id = "141" text = "Warren Moon">
+    <qa>
+	<q id = "141.1" type="FACTOID">
+	    What position did Moon play in professional football?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "141.2" type="FACTOID">
+	    Where did Moon play in college?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "141.3" type="FACTOID">
+	    In what year was Moon born?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "141.4" type="FACTOID">
+	    How many times was Moon a Pro Bowler?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "141.5" type="FACTOID">
+	    Who is Warren Moon's agent?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "141.6" type="LIST">
+	    Who have coached Moon in professional football?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "141.7" type="LIST">
+	    List the professional teams for which Moon has been a player.
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "141.8" type="OTHER">
+	    Other
+	</q>
+    </qa>
+</target>
+
+
+<target id = "142" text = "LPGA">
+    <qa>
+	<q id = "142.1" type="FACTOID">
+	    What does LPGA stand for?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "142.2" type="FACTOID">
+	    Where is the LPGA headquartered?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "142.3" type="FACTOID">
+	    How many events are part of the LPGA tour?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "142.4" type="FACTOID">
+	    When does the LPGA celebrate its 50th anniversary?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "142.5" type="FACTOID">
+	    How many people were founders of LPGA?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "142.6" type="LIST">
+	    Name past and present LPGA commissioners.
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "142.7" type="LIST">
+	    Name tournaments in which LPGA players have participated.
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "142.8" type="OTHER">
+	    Other
+	</q>
+    </qa>
+</target>
+
+
+<target id = "143" text = "American Enterprise Institute">
+    <qa>
+	<q id = "143.1" type="FACTOID">
+	    Where is the Institute located?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "143.2" type="FACTOID">
+	    What is the full title of the organization?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "143.3" type="FACTOID">
+	    When was it founded?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "143.4" type="FACTOID">
+	    Who is the senior vice president of the American Enterprise Institute?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "143.5" type="FACTOID">
+	    What is the zip code of the American Enterprise Institute?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "143.6" type="LIST">
+	    Who have been "scholars" at the Institute?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "143.7" type="LIST">
+	    Who have been "fellows" at the Institute?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "143.8" type="OTHER">
+	    Other
+	</q>
+    </qa>
+</target>
+
+
+<target id = "144" text = "82nd Airborne Division">
+    <qa>
+	<q id = "144.1" type="FACTOID">
+	    Where in the U.S. is the division based?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "144.2" type="FACTOID">
+	    When was the division formed?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "144.3" type="FACTOID">
+	    How many personnel comprise the division?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "144.4" type="FACTOID">
+	    What is the division's motto?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "144.5" type="FACTOID">
+	    What is the division's official song?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "144.6" type="LIST">
+	    In what conflicts has the division participated?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "144.7" type="LIST">
+	    Who have commanded the division?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "144.8" type="OTHER">
+	    Other
+	</q>
+    </qa>
+</target>
+
+
+<target id = "145" text = "John William King convicted of murder">
+    <qa>
+	<q id = "145.1" type="FACTOID">
+	    How many non-white members of the jury were there?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "145.2" type="FACTOID">
+	    Who was the foreman for the jury?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "145.3" type="FACTOID">
+	    Where was the trial held?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "145.4" type="FACTOID">
+	    When was King convicted?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "145.5" type="FACTOID">
+	    Who was the victim of the murder?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "145.6" type="LIST">
+	    What defense and prosecution attorneys participated in the trial?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "145.7" type="OTHER">
+	    Other
+	</q>
+    </qa>
+</target>
+
+
+<target id = "146" text = "Pakistani government overthrown in 1999">
+    <qa>
+	<q id = "146.1" type="FACTOID">
+	    Who was the leader deposed by the overthrow?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "146.2" type="FACTOID">
+	    When did the overthrown government come to power?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "146.3" type="FACTOID">
+	    What group accomplished the overthrow?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "146.4" type="FACTOID">
+	    Who was the nominal leader after the overthrow?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "146.5" type="FACTOID">
+	    For what crime was the deposed leader found guilty?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "146.6" type="LIST">
+	    Which countries formally disapproved of the overthrow?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "146.7" type="OTHER">
+	    Other
+	</q>
+    </qa>
+</target>
+
+
+<target id = "147" text = "Britain's Prince Edward marries">
+    <qa>
+	<q id = "147.1" type="FACTOID">
+	    When did Prince Edward engage to marry?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "147.2" type="FACTOID">
+	    Who did the Prince marry?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "147.3" type="FACTOID">
+	    Where did they honeymoon?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "147.4" type="FACTOID">
+	    Where was Edward in line for the throne at the time of the wedding?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "147.5" type="FACTOID">
+	    What was the Prince's occupation?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "147.6" type="FACTOID">
+	    How many people viewed the wedding on television?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "147.7" type="LIST">
+	    What individuals were at the wedding?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "147.8" type="OTHER">
+	    Other
+	</q>
+    </qa>
+</target>
+
+
+<target id = "148" text = "tourists massacred at Luxor in 1997">
+    <qa>
+	<q id = "148.1" type="FACTOID">
+	    In what country is Luxor?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "148.2" type="FACTOID">
+	    On what date did the massacre happen?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "148.3" type="FACTOID">
+	    How many people died from the massacre?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "148.4" type="FACTOID">
+	    At what site in Luxor did the massacre occur?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "148.5" type="FACTOID">
+	    Which terrorist organization claimed responsibility for the massacre?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "148.6" type="LIST">
+	    Tourists from which countries were among the dead?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "148.7" type="OTHER">
+	    Other
+	</q>
+    </qa>
+</target>
+
+
+<target id = "149" text = "The Daily Show">
+    <qa>
+	<q id = "149.1" type="FACTOID">
+	    The Daily Show appears on what cable channel?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "149.2" type="FACTOID">
+	    The Daily Show parodies what other type of TV program?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "149.3" type="FACTOID">
+	    Who is host of The Daily Show?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "149.4" type="FACTOID">
+	    At what time is The Daily Show initially televised?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "149.5" type="FACTOID">
+	    Who is the creator of The Daily Show?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "149.6" type="FACTOID">
+	    What was the title for The Daily Show's 2000 election coverage?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "149.7" type="LIST">
+	    What celebrities have appeared on The Daily Show?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "149.8" type="OTHER">
+	    Other
+	</q>
+    </qa>
+</target>
+
+
+<target id = "150" text = "television show Cheers">
+    <qa>
+	<q id = "150.1" type="FACTOID">
+	    In what year was the final episode telecast?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "150.2" type="FACTOID">
+	    What network aired the show?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "150.3" type="FACTOID">
+	    Who played Diane Chambers?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "150.4" type="FACTOID">
+	    Who played Sam Malone the bartender?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "150.5" type="FACTOID">
+	    What Boston bar was the inspiration for Cheers' bar?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "150.6" type="FACTOID">
+	    What year was the program first broadcast?
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "150.7" type="LIST">
+	    Name supporting actors who performed in Cheers.
+	</q>
+    </qa>
+
+    <qa>
+	<q id = "150.8" type="OTHER">
+	    Other
+	</q>
+    </qa>
+</target>

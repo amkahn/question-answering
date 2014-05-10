@@ -127,7 +127,7 @@ class Quail:
 
     
     # This method {INSERT TEXT HERE}
-    def process_web_cache(web_cache):
+    def process_web_cache(self, web_cache):
         cached_results = defaultdict(list)
         for line in web_cache:
             line = line.strip()
