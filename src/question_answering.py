@@ -24,10 +24,10 @@ from collections import defaultdict
 
 
 def main():
-	# first argument is the TREC question file
+	# first argument is the path to the TREC question file
     q_file = open(sys.argv[1],'r')
 	
-	# second argument is the path to the index
+	# second argument is the path to the document index
     index_path = sys.argv[2]
 
     # third argument is web cached results for the questions
@@ -36,7 +36,7 @@ def main():
     # fourth argument is the run tag
     run_tag = sys.argv[4]
 
-    # fifth argument is the output file
+    # fifth argument is the path to the output file
     output = open(sys.argv[5],'w')
 
     quail = Quail(q_file, index_path, web_cache)

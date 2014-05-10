@@ -53,20 +53,17 @@ class SearchQuery(object):
 # where the weights will be used to reweight AnswerCandidate objects).
 
 class AnswerTemplate:
-    def __init__(self,question_id,query_terms):
+    def __init__(self,question_id,query_terms,type_weights):
         self.question_id = question_id
-        self.query_terms = set()
-        for query_term in query_terms:
-            self.query_terms.add(query_term.lower())
-        # should the default weight of a type be 0 or some small number?
-        self.type_weights = defaultdict(lambda:0)
-        # by default, set weights for person, organization, and location to 1
-        for x in ["person","organization","location"]:
-            self.type_weights[x] = 1
+        self.query_terms = query_terms
+#        self.query_terms = set()
+#        for query_term in query_terms:
+#            self.query_terms.add(query_term.lower())
+        self.type_weights = type_weights
 
     # This method returns a string representing the AnswerTemplate instance (used for debugging).
     def to_string(self):
-        to_return = "query_terms: %s; type_weights: %s" % (self.query_terms, self.type_weights)
+        to_return = "question_id: %s; query_terms: %s; type_weights: %s" % (self.question_id; self.query_terms, self.type_weights)
         return to_return
 
     # This method changes the weight of the given type to the given weight.
