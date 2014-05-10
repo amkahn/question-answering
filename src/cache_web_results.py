@@ -7,7 +7,7 @@
 # Code last updated on 5/9/2014 by Claire Jaja
 #
 # This script will retrieve and cache web results for all the questions in the test set.
-# It waits 10 seconds between queries to avoid being throttled.
+# It waits 1 second between queries to avoid being throttled.
 
 
 import sys
@@ -40,15 +40,14 @@ def main():
     for question in questions:
         web_snippets[question.id] = []
         query = "+".join(question.target.split()) + "+" + "+".join(question.q.split())
-        r = requests.get("http://www.ask.com/web?q="+query)
-        data = r.text
-        #full_text[question.id] = data.encode('utf-8')
-        soup = BeautifulSoup(data)
-        for p in soup.find_all('p'):
-            if 'class' in p.attrs.keys():
-                if p['class'] == ['abstract','txt3']:
-                    web_snippets[question.id].append(p.get_text().encode('utf-8'))
-        time.sleep(10)
+        for i in range(1,5):
+            r = requests.get("http://www.search.ask.com/web?q="+query+"&page="+str(i))
+            data = r.text
+            #full_text[question.id] = data.encode('utf-8')
+            soup = BeautifulSoup(data)
+            for element in soup.find_all('span',{'class':'nDesc'}):
+                web_snippets[question.id].append(element.get_text().encode('utf-8'))
+            time.sleep(1)
 
 
     for id, snippets in web_snippets.items():
