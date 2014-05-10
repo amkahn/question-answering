@@ -69,7 +69,8 @@ def extract_stopwords(stopword_file):
     return stopword_list
 
 
-# This method {INSERT TEXT HERE}
+# This method takes a question and a question-answering object
+# and runs the question through the question-answering pipeline.
 def process_question(question,object):
     ranked_answers = object.process_question(question)
     return ranked_answers
@@ -126,8 +127,10 @@ class Quail:
         return questions
 
     
-    # This method {INSERT TEXT HERE}
-    def process_web_cache(web_cache):
+    # This method reads in a web cache file and stores it in a dictionary.
+    # It returns a dictionary where the key is the question ID
+    # and the value is a list of web search snippets.
+    def process_web_cache(self,web_cache):
         cached_results = defaultdict(list)
         for line in web_cache:
             line = line.strip()
@@ -139,7 +142,8 @@ class Quail:
         return cached_results
 
 
-    # This method {INSERT TEXT HERE}
+    # This method runs the question answering pipeline on a single question.
+    # It returns a ranked list of AnswerCandidate objects.
     def process_question(self,question):
         #sys.stderr.write("\nDEBUG  Here is the question: %s\n" % question.to_string())
 
