@@ -58,10 +58,28 @@ def main():
             output.write("%s %s %s %s\n" % (answer.question_id, run_tag, doc_id, answer.answer))
     output.close()
 
+
+# This method takes an XML file of stopwords as input and returns a list of the stopwords.
+def extract_stopwords(stopword_file):
+    stopword_list = set()
+    parsed_stopword_file = BeautifulSoup(stopword_file)
+    stopwords = parsed_stopword_file.find_all("word")
+    for stopword in stopwords:
+        stopword_list.add(str(stopword.get_text()))
+    return stopword_list
+
+
+# This method {INSERT TEXT HERE}
 def process_question(question,object):
     ranked_answers = object.process_question(question)
     return ranked_answers
 
+
+
+# A Quail object has attributes q_file (a path to a TREC question file), index_path (a path
+# to a document index), and cached_results (a path to a file of cached web results).
+# It contains methods for generating a list of questions from the TREC question file, processing
+# the web cache, and processing individual questions.
 
 class Quail:
     def __init__(self,q_file,index_path, web_cache):
@@ -80,8 +98,10 @@ class Quail:
 
     	# NB: indexing of document collection happens in separate script
 
+
     # This method takes an XML file of questions as input, creates relevant Question objects,
     # and returns them in a list.
+    
     def generate_q_list(self):
 	    # parse the xml file using BeautifulSoup
     	# create relevant Question objects from the parse tree
@@ -105,6 +125,8 @@ class Quail:
         self.q_file.close()
         return questions
 
+    
+    # This method {INSERT TEXT HERE}
     def process_web_cache(web_cache):
         cached_results = defaultdict(list)
         for line in web_cache:
@@ -116,6 +138,8 @@ class Quail:
 
         return cached_results
 
+
+    # This method {INSERT TEXT HERE}
     def process_question(self,question):
         #sys.stderr.write("\nDEBUG  Here is the question: %s\n" % question.to_string())
 
@@ -148,14 +172,6 @@ class Quail:
 
         return ranked_answers
 
-
-def extract_stopwords(stopword_file):
-    stopword_list = set()
-    parsed_stopword_file = BeautifulSoup(stopword_file)
-    stopwords = parsed_stopword_file.find_all("word")
-    for stopword in stopwords:
-        stopword_list.add(str(stopword.get_text()))
-    return stopword_list
 
 
 if __name__ == '__main__':
