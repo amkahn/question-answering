@@ -116,7 +116,7 @@ class AnswerProcessor:
 
             # remove answers if not in at least two documents
             # try different number of documents to see
-            if len(answer.doc_ids) < 2:
+            if len(answer.doc_ids) < 1:
                 del self.ranked_answers[i]
             elif answer.number_passages < 10:
                 del self.ranked_answers[i]
