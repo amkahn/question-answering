@@ -72,8 +72,8 @@ class QueryProcessor(object):
             # attempt to predict answer type and set relevant weights accordingly
             # by default, assign all answer types some small weight
             ans_types = defaultdict(lambda: 0.1)
-            sys.stderr.write("DEBUG  Here is the query vocabulary: %s\n" % query_voc.keys())
-            for query_term in query_voc.keys():
+            sys.stderr.write("DEBUG  Here is the query vocabulary: %s\n" % self.query_voc.keys())
+            for query_term in self.query_voc.keys():
                 if query_term in ['who']:
                     sys.stderr.write("DEBUG  Query contains %s; setting person weight\n" % query_term)
                     ans_types['person'] = 0.9
