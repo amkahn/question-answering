@@ -6,7 +6,7 @@
 q_name = TREC-2006
 q_file = /dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml
 
-Executable = cached_web_results/cache_web_results.py
+Executable = cache_web_results.py
 Output = cached_web_results/cache_web_results.$(q_name).out
 Error = cached_web_results/cache_web_results.$(q_name).err
 Log = cached_web_results/cache_web_results.$(q_name).log
