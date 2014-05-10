@@ -59,6 +59,8 @@ def main():
 
 	# for a given Question object:
     for question in questions:
+        # wait 1 second to make sure there's a delay between web searches
+        time.sleep(1)
 #       sys.stderr.write("\nDEBUG  Here is the question: %s\n" % question.to_string())
 
 		# instantiate a QueryProcessor and use it to generate a set of searches and an AnswerTemplate object

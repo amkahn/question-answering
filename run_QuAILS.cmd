@@ -13,7 +13,7 @@ log = run_QuAILS.$(run_tag).log
 error = run_QuAILS.$(run_tag).err
 transfer_executable = false
 request_memory = 1024
-Queue
+#Queue
 
 doc_index = /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.krovetz.stoplist
 run_tag = index.krovetz.stoplist.2docIDs
@@ -25,10 +25,10 @@ doc_index = /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/in
 run_tag = index.none.stoplist.2docIDs
 output_file = outputs/index.none.stoplist.2docIDs.out
 results_file = $(run_tag)
-Queue
+#Queue
 
 doc_index = /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.none.none
 run_tag = index.none.none
 output_file = outputs/index.none.none.2docIDs.out
 results_file = $(run_tag)
-Queue
+#Queue

@@ -20,6 +20,7 @@ from bs4 import BeautifulSoup
 from os import listdir, path, walk
 import multiprocessing
 from functools import partial
+from collections import defaultdict
 
 
 def main():
@@ -29,13 +30,16 @@ def main():
 	# second argument is the path to the index
     index_path = sys.argv[2]
 
-    # third argument is the run tag
-    run_tag = sys.argv[3]
+    # third argument is web cached results for the questions
+    web_cache = open(sys.argv[3],'r')
 
-    # fourth argument is the results file
-    output = open(sys.argv[4],'w')
+    # fourth argument is the run tag
+    run_tag = sys.argv[4]
 
-    quail = Quail(q_file, index_path)
+    # fifth argument is the output file
+    output = open(sys.argv[5],'w')
+
+    quail = Quail(q_file, index_path, web_cache)
 
     questions = quail.generate_q_list()
 	# filter for only factoid questions
@@ -60,9 +64,11 @@ def process_question(question,object):
 
 
 class Quail:
-    def __init__(self,q_file,index_path):
+    def __init__(self,q_file,index_path, web_cache):
         self.q_file = q_file
         self.index_path = index_path
+        self.cached_results = self.process_web_cache(web_cache)
+
         # path to the directory containing this script, so it can be run by scripts in other directories
         self.dir = path.dirname(__file__)
 
@@ -99,6 +105,16 @@ class Quail:
         self.q_file.close()
         return questions
 
+    def process_web_cache(web_cache):
+        cached_results = defaultdict(list)
+        for line in web_cache:
+            line = line.strip()
+            if line.startswith("QUESTION ID:"):
+                question_id = line.split()[-1]
+            elif line:
+                cached_results[question_id].append(line)
+
+        return cached_results
 
     def process_question(self,question):
         #sys.stderr.write("\nDEBUG  Here is the question: %s\n" % question.to_string())
@@ -110,7 +126,7 @@ class Quail:
         #sys.stderr.write("DEBUG  Here are the search queries: %s\n" % search_queries)
 
         ans_template = qp.generate_ans_template()
-       #sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template.to_string())
+        #sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template.to_string())
 
         # use the InfoRetriever, the document index, and the search queries to generate a set of passages
         ir = InfoRetriever(self.index_path)
@@ -119,6 +135,10 @@ class Quail:
         #sys.stderr.write("DEBUG  Here are the passages: \n")
         #for passage in passages:
         #    sys.stderr.write(passage.to_string()+"\n")
+
+        # add web cached results to passages
+        for cached_result in self.cached_results[question.id]:
+            passages.append(Passage(cached_result, math.log(0.9), None))
 
        	# instantiate an AnswerProcessor that takes set of passages and the AnswerTemplate object
         ap = AnswerProcessor(passages,ans_template,self.stopword_list)
