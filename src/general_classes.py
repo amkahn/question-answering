@@ -63,7 +63,7 @@ class AnswerTemplate:
 
     # This method returns a string representing the AnswerTemplate instance (used for debugging).
     def to_string(self):
-        to_return = "question_id: %s; query_terms: %s; type_weights: %s" % (self.question_id; self.query_terms, self.type_weights)
+        to_return = "question_id: %s; query_terms: %s; type_weights: %s" % (self.question_id, self.query_terms, self.type_weights)
         return to_return
 
     # This method changes the weight of the given type to the given weight.

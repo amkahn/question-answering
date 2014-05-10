@@ -28,10 +28,10 @@ class InfoRetriever:
     # the query-processing module
     def retrieve_passages(self, queries):
         passages = []
-        web_results = []
+        #web_results = []
         for query in queries:
             passages.extend(self.trec_passages(query))
-            passages.extend(self.web_search(query))
+            #passages.extend(self.web_search(query))
         return passages
 
 
