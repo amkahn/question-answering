@@ -135,3 +135,23 @@
 	   Disk (KB)            :        2        2          
 	   Memory (MB)          :     1099     1024          
 ...
+000 (127458.003.000) 05/10 17:37:06 Job submitted from host: <192.168.100.50:50435>
+...
+001 (127458.003.000) 05/10 17:37:08 Job executing on host: <192.168.100.57:47771>
+...
+006 (127458.003.000) 05/10 17:37:16 Image size of job updated: 2
+	3  -  MemoryUsage of job (MB)
+	2108  -  ResidentSetSize of job (KB)
+...
+006 (127458.003.000) 05/10 17:42:16 Image size of job updated: 1401436
+	328  -  MemoryUsage of job (MB)
+	335304  -  ResidentSetSize of job (KB)
+...
+006 (127458.003.000) 05/10 17:47:16 Image size of job updated: 1469704
+	388  -  MemoryUsage of job (MB)
+	396456  -  ResidentSetSize of job (KB)
+...
+006 (127458.003.000) 05/10 17:52:16 Image size of job updated: 1529952
+	453  -  MemoryUsage of job (MB)
+	463796  -  ResidentSetSize of job (KB)
+...

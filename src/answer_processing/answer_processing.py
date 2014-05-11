@@ -109,6 +109,7 @@ class AnswerProcessor:
 
     # remove answers with words from original query or "..." starting/ending with punctuation or stop word
     def filter_answers(self):
+        query_terms = [x.lower() for x in self.answer_template.query_terms]
         # go through answers
         for i in xrange(len(self.ranked_answers)-1,-1,-1):
             answer = self.ranked_answers[i]
@@ -117,20 +118,24 @@ class AnswerProcessor:
             # remove answers if not in at least two documents
             # try different number of documents to see
             if len(answer.doc_ids) < 1:
+                #sys.stderr.write("Deleting - doesn't occur in any AQUAINT doc.\n")
                 del self.ranked_answers[i]
             elif answer.number_passages < 10:
+                #sys.stderr.write("Deleting - doesn't occur in at least 10 passages.\n")
                 del self.ranked_answers[i]
             else:
                 for j in range(len(answer_words)):
-                    # if the first or last word is in the stop word list
+                    # if the first or last word is in the stop word list or punctuation list
                     if j==0 or j==len(answer_words)-1:
                         if answer_words[j].lower() in self.stopword_list or answer_words[j].lower() in self.punctuation:
+                            #sys.stderr.write("Deleting - starts or ends with stopword or punctuation.\n")
                             del self.ranked_answers[i]
                             break
 
-                    # or if any word in the answer is in the list of query terms or the punctuation list
-                    if answer_words[j].lower() in self.answer_template.query_terms or answer_words[j] == "...":
+                    # or if any word in the answer is in the list of query terms
+                    if answer_words[j].lower() in query_terms or answer_words[j] == "...":
                         # remove that answer
+                        #sys.stderr.write("Deleting - includes query terms or ...\n")
                         del self.ranked_answers[i]
                         break
 

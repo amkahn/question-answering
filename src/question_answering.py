@@ -135,8 +135,8 @@ class Quail:
         for line in web_cache:
             line = line.strip()
             if line.startswith("QUESTION ID:"):
-                question_id = line.split()[-1]
-            elif line:
+                question_id = float(line.split()[-1])
+            elif line != '':
                 cached_results[question_id].append(line)
 
         return cached_results
@@ -165,6 +165,7 @@ class Quail:
         #    sys.stderr.write(passage.to_string()+"\n")
 
         # add web cached results to passages
+        #sys.stderr.write("Adding "+str(len(self.cached_results[question.id]))+" web result passages for "+str(question.id)+"\n")
         for cached_result in self.cached_results[question.id]:
             passages.append(Passage(cached_result, math.log(0.9), None))
 

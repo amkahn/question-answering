@@ -40,8 +40,9 @@ def main():
     for question in questions:
         web_snippets[question.id] = []
         query = "+".join(question.target.split()) + "+" + "+".join(question.q.split())
-        for i in range(1,5):
+        for i in range(1,2):
             r = requests.get("http://www.search.ask.com/web?q="+query+"&page="+str(i))
+            sys.stderr.write("Getting search results for query: '"+query+"' from page: "+str(i)+"\n")
             data = r.text
             #full_text[question.id] = data.encode('utf-8')
             soup = BeautifulSoup(data)

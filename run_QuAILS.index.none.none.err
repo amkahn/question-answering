@@ -1,816 +1,198 @@
 DEBUG  Here is the query vocabulary: ['What', 'did', 'football', 'play', 'Moon', 'professional', 'in', 'position', 'Warren']
-DEBUG  Here is the answer template: question_id: 141.1; query_terms: set(['What', 'position', 'did', 'football', 'play', 'Moon', 'in', 'professional', 'Warren']); type_weights: defaultdict(<function <lambda> at 0x16d8e140>, {})
+DEBUG  Here is the answer template: question_id: 141.1; query_terms: set(['What', 'position', 'did', 'football', 'play', 'Moon', 'in', 'professional', 'Warren']); type_weights: defaultdict(<function <lambda> at 0x1685c140>, {})
 DEBUG  Here is the query vocabulary: ['What', 'bar', 'for', 'show', 'Boston', 'television', 'Cheers', 'the', 'was', 'inspiration']
-DEBUG  Here is the answer template: question_id: 150.5; query_terms: set(['What', 'bar', 'for', 'show', 'Boston', 'television', 'Cheers', 'the', 'was', 'inspiration']); type_weights: defaultdict(<function <lambda> at 0x16d8f140>, {})
+DEBUG  Here is the answer template: question_id: 150.5; query_terms: set(['What', 'bar', 'for', 'show', 'Boston', 'television', 'Cheers', 'the', 'was', 'inspiration']); type_weights: defaultdict(<function <lambda> at 0x1685d140>, {})
 DEBUG  Here is the query vocabulary: ['play', 'did', 'Moon', 'college', 'in', 'Where', 'Warren']
-DEBUG  Here is the answer template: question_id: 141.2; query_terms: set(['play', 'did', 'Moon', 'college', 'in', 'Where', 'Warren']); type_weights: defaultdict(<function <lambda> at 0x16d8e140>, {})
+DEBUG  Here is the answer template: question_id: 141.2; query_terms: set(['play', 'did', 'Moon', 'college', 'in', 'Where', 'Warren']); type_weights: defaultdict(<function <lambda> at 0x1685c140>, {})
 DEBUG  Here is the query vocabulary: ['Cheers', 'What', 'show', 'television', 'broadcast', 'program', 'year', 'the', 'was', 'first']
-DEBUG  Here is the answer template: question_id: 150.6; query_terms: set(['broadcast', 'What', 'show', 'television', 'Cheers', 'program', 'year', 'the', 'was', 'first']); type_weights: defaultdict(<function <lambda> at 0x16d8f140>, {})
+DEBUG  Here is the answer template: question_id: 150.6; query_terms: set(['broadcast', 'What', 'show', 'television', 'Cheers', 'program', 'year', 'the', 'was', 'first']); type_weights: defaultdict(<function <lambda> at 0x1685d140>, {})
 DEBUG  Here is the query vocabulary: ['what', 'In', 'Moon', 'born', 'year', 'was', 'Warren']
-DEBUG  Here is the answer template: question_id: 141.3; query_terms: set(['what', 'In', 'Moon', 'born', 'year', 'was', 'Warren']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 141.3; query_terms: set(['what', 'In', 'Moon', 'born', 'year', 'was', 'Warren']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['a', 'Bowler', 'many', 'Pro', 'Moon', 'How', 'times', 'was', 'Warren']
-DEBUG  Here is the answer template: question_id: 141.4; query_terms: set(['a', 'Bowler', 'many', 'Pro', 'Moon', 'How', 'times', 'was', 'Warren']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 141.4; query_terms: set(['a', 'Bowler', 'many', 'Pro', 'Moon', 'How', 'times', 'was', 'Warren']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['Cup', 'series', 'of', 'races', 'Winston', 'How', 'part', 'are', 'many', 'the']
-DEBUG  Here is the answer template: question_id: 151.1; query_terms: set(['Cup', 'series', 'Winston', 'How', 'races', 'are', 'of', 'part', 'many', 'the']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 151.1; query_terms: set(['Cup', 'series', 'Winston', 'How', 'races', 'are', 'of', 'part', 'many', 'the']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['is', 'Who', 'agent', 'Moon', 's', 'Warren']
-DEBUG  Here is the answer template: question_id: 141.5; query_terms: set(['is', 'Who', 'agent', 'Moon', 's', 'Warren']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 141.5; query_terms: set(['is', 'Who', 'agent', 'Moon', 's', 'Warren']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['a', 'What', 'tobacco', 'Cup', 'of', 'is', 'Winston', 'sponsor', 'series', 'the', 'company']
-DEBUG  Here is the answer template: question_id: 151.4; query_terms: set(['a', 'What', 'tobacco', 'Cup', 'of', 'is', 'Winston', 'sponsor', 'series', 'the', 'company']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 151.4; query_terms: set(['a', 'What', 'tobacco', 'Cup', 'of', 'is', 'Winston', 'sponsor', 'series', 'the', 'company']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['What', 'does', 'LPGA', 'stand', 'for']
-DEBUG  Here is the answer template: question_id: 142.1; query_terms: set(['What', 'does', 'LPGA', 'stand', 'for']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 142.1; query_terms: set(['What', 'does', 'LPGA', 'stand', 'for']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['LPGA', 'is', 'headquartered', 'Where', 'the']
-DEBUG  Here is the answer template: question_id: 142.2; query_terms: set(['Where', 'headquartered', 'is', 'LPGA', 'the']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 142.2; query_terms: set(['Where', 'headquartered', 'is', 'LPGA', 'the']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['week', 'On', 'what', 'run', 'for', 'Cup', 'of', 'Winston', 'races', 'are', 'the', 'day']
-DEBUG  Here is the answer template: question_id: 151.5; query_terms: set(['week', 'On', 'what', 'run', 'for', 'Cup', 'of', 'Winston', 'races', 'are', 'the', 'day']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 151.5; query_terms: set(['week', 'On', 'what', 'run', 'for', 'Cup', 'of', 'Winston', 'races', 'are', 'the', 'day']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['of', 'How', 'tour', 'part', 'LPGA', 'are', 'many', 'the', 'events']
-DEBUG  Here is the answer template: question_id: 142.3; query_terms: set(['of', 'How', 'tour', 'part', 'LPGA', 'are', 'many', 'the', 'events']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['league', 'What', 'for', 'Cup', 'considered', 'series', 'is', 'Winston', 'the', 'minor']
-DEBUG  Here is the answer template: question_id: 151.6; query_terms: set(['league', 'What', 'for', 'Cup', 'considered', 'series', 'is', 'Winston', 'the', 'minor']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 142.3; query_terms: set(['of', 'How', 'tour', 'part', 'LPGA', 'are', 'many', 'the', 'events']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['50th', 'When', 'anniversary', 'does', 'LPGA', 'the', 'its', 'celebrate']
-DEBUG  Here is the answer template: question_id: 142.4; query_terms: set(['50th', 'When', 'anniversary', 'does', 'LPGA', 'the', 'its', 'celebrate']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 142.4; query_terms: set(['50th', 'When', 'anniversary', 'does', 'LPGA', 'the', 'its', 'celebrate']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['league', 'What', 'for', 'Cup', 'considered', 'series', 'is', 'Winston', 'the', 'minor']
+DEBUG  Here is the answer template: question_id: 151.6; query_terms: set(['league', 'What', 'for', 'Cup', 'considered', 'series', 'is', 'Winston', 'the', 'minor']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['people', 'of', 'How', 'LPGA', 'were', 'founders', 'many']
-DEBUG  Here is the answer template: question_id: 142.5; query_terms: set(['people', 'of', 'How', 'LPGA', 'were', 'founders', 'many']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 142.5; query_terms: set(['people', 'of', 'How', 'LPGA', 'were', 'founders', 'many']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['Mozart', 'Wolfgang', 'Where', 'born', 'Amadeus', 'was']
-DEBUG  Here is the answer template: question_id: 152.1; query_terms: set(['was', 'Wolfgang', 'Mozart', 'born', 'Amadeus', 'Where']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 152.1; query_terms: set(['was', 'Wolfgang', 'Mozart', 'born', 'Amadeus', 'Where']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['Mozart', 'Wolfgang', 'When', 'born', 'Amadeus', 'was']
-DEBUG  Here is the answer template: question_id: 152.2; query_terms: set(['Mozart', 'Wolfgang', 'When', 'born', 'Amadeus', 'was']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 152.2; query_terms: set(['Mozart', 'Wolfgang', 'When', 'born', 'Amadeus', 'was']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['Institute', 'is', 'located', 'American', 'Enterprise', 'the', 'Where']
-DEBUG  Here is the answer template: question_id: 143.1; query_terms: set(['Institute', 'is', 'located', 'American', 'Enterprise', 'the', 'Where']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 143.1; query_terms: set(['Institute', 'is', 'located', 'American', 'Enterprise', 'the', 'Where']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['What', 'Mozart', 'did', 'die', 'year', 'Amadeus', 'Wolfgang']
-DEBUG  Here is the answer template: question_id: 152.3; query_terms: set(['What', 'Mozart', 'did', 'die', 'Amadeus', 'year', 'Wolfgang']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 152.3; query_terms: set(['What', 'Mozart', 'did', 'die', 'Amadeus', 'year', 'Wolfgang']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['Mozart', 'Wolfgang', 'Who', 's', 'Amadeus', 'rival', 'was']
-DEBUG  Here is the answer template: question_id: 152.5; query_terms: set(['Mozart', 'Wolfgang', 'Who', 's', 'Amadeus', 'rival', 'was']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 152.5; query_terms: set(['Mozart', 'Wolfgang', 'Who', 's', 'Amadeus', 'rival', 'was']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['What', 'full', 'title', 'Institute', 'of', 'is', 'American', 'Enterprise', 'organization', 'the']
-DEBUG  Here is the answer template: question_id: 143.2; query_terms: set(['What', 'full', 'title', 'Institute', 'of', 'is', 'American', 'Enterprise', 'organization', 'the']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 143.2; query_terms: set(['What', 'full', 'title', 'Institute', 'of', 'is', 'American', 'Enterprise', 'organization', 'the']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['Mozart', 'did', 'many', 'How', 'Amadeus', 'have', 'Wolfgang', 'children']
-DEBUG  Here is the answer template: question_id: 152.6; query_terms: set(['Mozart', 'did', 'many', 'How', 'Amadeus', 'have', 'Wolfgang', 'children']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 152.6; query_terms: set(['Mozart', 'did', 'many', 'How', 'Amadeus', 'have', 'Wolfgang', 'children']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['was', 'Hitchcock', 'When', 'Alfred', 'born']
-DEBUG  Here is the answer template: question_id: 153.1; query_terms: set(['When', 'Hitchcock', 'was', 'Alfred', 'born']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['Institute', 'When', 'it', 'founded', 'American', 'Enterprise', 'was']
-DEBUG  Here is the answer template: question_id: 143.3; query_terms: set(['Institute', 'When', 'it', 'founded', 'American', 'Enterprise', 'was']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 153.1; query_terms: set(['When', 'Hitchcock', 'was', 'Alfred', 'born']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['was', 'Hitchcock', 'Where', 'Alfred', 'born']
-DEBUG  Here is the answer template: question_id: 153.2; query_terms: set(['Where', 'Hitchcock', 'was', 'Alfred', 'born']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 153.2; query_terms: set(['Where', 'Hitchcock', 'was', 'Alfred', 'born']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['Institute', 'When', 'it', 'founded', 'American', 'Enterprise', 'was']
+DEBUG  Here is the answer template: question_id: 143.3; query_terms: set(['Institute', 'When', 'it', 'founded', 'American', 'Enterprise', 'was']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['What', 'Hitchcock', 'movie', 's', 'Alfred', 'was', 'first']
-DEBUG  Here is the answer template: question_id: 153.3; query_terms: set(['What', 'Hitchcock', 'movie', 's', 'Alfred', 'was', 'first']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 153.3; query_terms: set(['What', 'Hitchcock', 'movie', 's', 'Alfred', 'was', 'first']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['vice', 'Institute', 'of', 'is', 'Who', 'American', 'Enterprise', 'president', 'senior', 'the']
-DEBUG  Here is the answer template: question_id: 143.4; query_terms: set(['vice', 'Institute', 'of', 'is', 'Who', 'American', 'Enterprise', 'president', 'senior', 'the']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 143.4; query_terms: set(['vice', 'Institute', 'of', 'is', 'Who', 'American', 'Enterprise', 'president', 'senior', 'the']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['Hitchcock', 'did', 'Oscar', 'How', 'awards', 'Alfred', 'many', 'win']
-DEBUG  Here is the answer template: question_id: 153.5; query_terms: set(['Hitchcock', 'did', 'Oscar', 'How', 'awards', 'Alfred', 'many', 'win']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 153.5; query_terms: set(['Hitchcock', 'did', 'Oscar', 'How', 'awards', 'Alfred', 'many', 'win']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['did', 'die', 'Hitchcock', 'When', 'Alfred']
-DEBUG  Here is the answer template: question_id: 153.6; query_terms: set(['did', 'die', 'Hitchcock', 'When', 'Alfred']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 153.6; query_terms: set(['did', 'die', 'Hitchcock', 'When', 'Alfred']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['did', 'die', 'Hitchcock', 'Where', 'Alfred']
-DEBUG  Here is the answer template: question_id: 153.7; query_terms: set(['did', 'die', 'Hitchcock', 'Where', 'Alfred']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['What', 'code', 'zip', 'Institute', 'of', 'is', 'American', 'Enterprise', 'the']
-DEBUG  Here is the answer template: question_id: 143.5; query_terms: set(['What', 'code', 'zip', 'Institute', 'of', 'is', 'American', 'Enterprise', 'the']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 153.7; query_terms: set(['did', 'die', 'Hitchcock', 'Where', 'Alfred']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['What', 'Reeve', 'Christopher', 'paralyzed', 'year', 'was']
-DEBUG  Here is the answer template: question_id: 154.1; query_terms: set(['What', 'Reeve', 'Christopher', 'paralyzed', 'year', 'was']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 154.1; query_terms: set(['What', 'Reeve', 'Christopher', 'paralyzed', 'year', 'was']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['What', 'code', 'zip', 'Institute', 'of', 'is', 'American', 'Enterprise', 'the']
+DEBUG  Here is the answer template: question_id: 143.5; query_terms: set(['What', 'code', 'zip', 'Institute', 'of', 'is', 'American', 'Enterprise', 'the']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['Reeve', 'movies', 'did', 'many', 'make', 'How', 'Christopher', 'Superman', 'he']
-DEBUG  Here is the answer template: question_id: 154.2; query_terms: set(['Reeve', 'How', 'did', 'many', 'make', 'movies', 'Christopher', 'he', 'Superman']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['82nd', 'division', 'based', 'Division', 'is', 'US', 'Airborne', 'in', 'the', 'Where']
-DEBUG  Here is the answer template: question_id: 144.1; query_terms: set(['82nd', 'division', 'based', 'Division', 'is', 'US', 'Airborne', 'in', 'the', 'Where']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 154.2; query_terms: set(['Reeve', 'How', 'did', 'many', 'make', 'movies', 'Christopher', 'he', 'Superman']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['what', 'made', 'Reeve', 'these', 'years', 'movies', 'Christopher', 'were', 'During', 'Superman']
-DEBUG  Here is the answer template: question_id: 154.3; query_terms: set(['what', 'made', 'Reeve', 'these', 'years', 'movies', 'Christopher', 'were', 'During', 'Superman']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 154.3; query_terms: set(['what', 'made', 'Reeve', 'these', 'years', 'movies', 'Christopher', 'were', 'During', 'Superman']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['82nd', 'division', 'based', 'Division', 'is', 'US', 'Airborne', 'in', 'the', 'Where']
+DEBUG  Here is the answer template: question_id: 144.1; query_terms: set(['82nd', 'division', 'based', 'Division', 'is', 'US', 'Airborne', 'in', 'the', 'Where']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['Reeve', 'movies', 'actress', 'most', 'Christopher', 'Which', 'in', 'the', 'with', 'costarred', 'Superman']
-DEBUG  Here is the answer template: question_id: 154.4; query_terms: set(['Reeve', 'most', 'actress', 'movies', 'Christopher', 'Which', 'in', 'the', 'with', 'costarred', 'Superman']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 154.4; query_terms: set(['Reeve', 'most', 'actress', 'movies', 'Christopher', 'Which', 'in', 'the', 'with', 'costarred', 'Superman']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['82nd', 'division', 'Division', 'formed', 'When', 'Airborne', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 144.2; query_terms: set(['82nd', 'division', 'Division', 'formed', 'When', 'Airborne', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 144.2; query_terms: set(['82nd', 'division', 'Division', 'formed', 'When', 'Airborne', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['theatrical', 'What', 'his', 'Reeve', 'did', 'career', 'Christopher', 'year', 'commence']
-DEBUG  Here is the answer template: question_id: 154.5; query_terms: set(['theatrical', 'What', 'his', 'Reeve', 'did', 'career', 'Christopher', 'year', 'commence']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['82nd', 'division', 'Division', 'personnel', 'Airborne', 'How', 'many', 'the', 'comprise']
-DEBUG  Here is the answer template: question_id: 144.3; query_terms: set(['82nd', 'division', 'Division', 'personnel', 'Airborne', 'How', 'many', 'the', 'comprise']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 154.5; query_terms: set(['theatrical', 'What', 'his', 'Reeve', 'did', 'career', 'Christopher', 'year', 'commence']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['Chavez', 'of', 'is', 'Hugo', 'which', 'country', 'president']
-DEBUG  Here is the answer template: question_id: 155.1; query_terms: set(['Chavez', 'of', 'is', 'Hugo', 'which', 'country', 'president']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['82nd', 'division', 'What', 'Division', 'is', 'Airborne', 's', 'motto', 'the']
-DEBUG  Here is the answer template: question_id: 144.4; query_terms: set(['82nd', 'division', 'What', 'Division', 'is', 'Airborne', 's', 'motto', 'the']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 155.1; query_terms: set(['Chavez', 'of', 'is', 'Hugo', 'which', 'country', 'president']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['82nd', 'division', 'Division', 'personnel', 'Airborne', 'How', 'many', 'the', 'comprise']
+DEBUG  Here is the answer template: question_id: 144.3; query_terms: set(['82nd', 'division', 'Division', 'personnel', 'Airborne', 'How', 'many', 'the', 'comprise']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['Chavez', 'old', 'elected', 'Hugo', 'when', 'How', 'was', 'first']
 DEBUG  Query contains when; setting time_ex weight
-DEBUG  Here is the answer template: question_id: 155.2; query_terms: set(['Chavez', 'old', 'How', 'Hugo', 'when', 'elected', 'was', 'first']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {'time_ex': 0.9})
+DEBUG  Here is the answer template: question_id: 155.2; query_terms: set(['Chavez', 'old', 'How', 'Hugo', 'when', 'elected', 'was', 'first']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {'time_ex': 0.9})
+DEBUG  Here is the query vocabulary: ['82nd', 'division', 'What', 'Division', 'is', 'Airborne', 's', 'motto', 'the']
+DEBUG  Here is the answer template: question_id: 144.4; query_terms: set(['82nd', 'division', 'What', 'Division', 'is', 'Airborne', 's', 'motto', 'the']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['Chavez', 'from', 'did', 'Hugo', 'graduate', 'Where']
-DEBUG  Here is the answer template: question_id: 155.3; query_terms: set(['Chavez', 'from', 'did', 'Hugo', 'graduate', 'Where']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['82nd', 'division', 'What', 'song', 'is', 'official', 'Airborne', 'Division', 's', 'the']
-DEBUG  Here is the answer template: question_id: 144.5; query_terms: set(['82nd', 'division', 'What', 'song', 'is', 'official', 'Airborne', 'Division', 's', 'the']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 155.3; query_terms: set(['Chavez', 'from', 'did', 'Hugo', 'graduate', 'Where']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['What', 'Chavez', 'from', 'did', 'Hugo', 'school', 'graduate', 'this', 'year']
-DEBUG  Here is the answer template: question_id: 155.4; query_terms: set(['What', 'Chavez', 'from', 'did', 'Hugo', 'school', 'graduate', 'this', 'year']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 155.4; query_terms: set(['What', 'Chavez', 'from', 'did', 'Hugo', 'school', 'graduate', 'this', 'year']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['82nd', 'division', 'What', 'song', 'is', 'official', 'Airborne', 'Division', 's', 'the']
+DEBUG  Here is the answer template: question_id: 144.5; query_terms: set(['82nd', 'division', 'What', 'song', 'is', 'official', 'Airborne', 'Division', 's', 'the']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['What', 'Chavez', 'did', 'of', 'Hugo', 'receive', '2000', 'vote', 'percentage', 'the', 'Presidential']
-DEBUG  Here is the answer template: question_id: 155.6; query_terms: set(['What', 'Chavez', 'did', 'of', 'Hugo', 'receive', '2000', 'vote', 'percentage', 'the', 'Presidential']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 155.6; query_terms: set(['What', 'Chavez', 'did', 'of', 'Hugo', 'receive', '2000', 'vote', 'percentage', 'the', 'Presidential']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['King', 'there', 'jury', 'of', 'were', 'nonwhite', 'convicted', 'William', 'How', 'murder', 'members', 'many', 'the', 'John']
-DEBUG  Here is the answer template: question_id: 145.1; query_terms: set(['King', 'murder', 'jury', 'of', 'there', 'nonwhite', 'convicted', 'How', 'many', 'John', 'members', 'were', 'the', 'William']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 145.1; query_terms: set(['King', 'murder', 'jury', 'of', 'there', 'nonwhite', 'convicted', 'How', 'many', 'John', 'members', 'were', 'the', 'William']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['Chavez', 'Hugo', '1998', 'Who', 's', 'his', 'race', 'in', 'was', 'Presidential', 'opponent']
-DEBUG  Here is the answer template: question_id: 155.7; query_terms: set(['Chavez', '1998', 'Hugo', 's', 'his', 'race', 'in', 'was', 'Who', 'Presidential', 'opponent']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['foreman', 'murder', 'jury', 'for', 'King', 'of', 'Who', 'convicted', 'William', 'the', 'John', 'was']
-DEBUG  Here is the answer template: question_id: 145.2; query_terms: set(['foreman', 'murder', 'jury', 'for', 'King', 'of', 'Who', 'convicted', 'John', 'the', 'William', 'was']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 155.7; query_terms: set(['Chavez', '1998', 'Hugo', 's', 'his', 'race', 'in', 'was', 'Who', 'Presidential', 'opponent']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['founded', 'Who', 'NASCAR']
-DEBUG  Here is the answer template: question_id: 156.1; query_terms: set(['founded', 'Who', 'NASCAR']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 156.1; query_terms: set(['founded', 'Who', 'NASCAR']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['founded', 'was', 'When', 'NASCAR']
-DEBUG  Here is the answer template: question_id: 156.2; query_terms: set(['founded', 'When', 'was', 'NASCAR']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 156.2; query_terms: set(['founded', 'When', 'was', 'NASCAR']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['foreman', 'murder', 'jury', 'for', 'King', 'of', 'Who', 'convicted', 'William', 'the', 'John', 'was']
+DEBUG  Here is the answer template: question_id: 145.2; query_terms: set(['foreman', 'murder', 'jury', 'for', 'King', 'of', 'Who', 'convicted', 'John', 'the', 'William', 'was']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['control', 'from', 'founder', 'of', 'Who', 'took', 'NASCAR', 'the']
-DEBUG  Here is the answer template: question_id: 156.3; query_terms: set(['control', 'from', 'founder', 'of', 'Who', 'took', 'NASCAR', 'the']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 156.3; query_terms: set(['control', 'from', 'founder', 'of', 'Who', 'took', 'NASCAR', 'the']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['King', 'murder', 'trial', 'Where', 'convicted', 'William', 'held', 'of', 'the', 'John', 'was']
-DEBUG  Here is the answer template: question_id: 145.3; query_terms: set(['King', 'murder', 'held', 'of', 'was', 'convicted', 'trial', 'John', 'the', 'William', 'Where']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 145.3; query_terms: set(['King', 'murder', 'held', 'of', 'was', 'convicted', 'trial', 'John', 'the', 'William', 'Where']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['from', 'rights', 'TV', 'money', 'NASCAR', 'annually', 'How', 'much', 'does', 'generate']
-DEBUG  Here is the answer template: question_id: 156.5; query_terms: set(['from', 'rights', 'TV', 'money', 'NASCAR', 'annually', 'How', 'much', 'does', 'generate']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['William', 'murder', 'King', 'of', 'When', 'convicted', 'John', 'was']
-DEBUG  Here is the answer template: question_id: 145.4; query_terms: set(['King', 'murder', 'of', 'When', 'convicted', 'William', 'John', 'was']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 156.5; query_terms: set(['from', 'rights', 'TV', 'money', 'NASCAR', 'annually', 'How', 'much', 'does', 'generate']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['holds', 'career', 'of', 'Who', 'NASCAR', 'record', 'victories', 'in', 'the']
-DEBUG  Here is the answer template: question_id: 156.6; query_terms: set(['Who', 'career', 'of', 'holds', 'NASCAR', 'record', 'victories', 'in', 'the']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['King', 'murder', 'of', 'Who', 'convicted', 'William', 'victim', 'the', 'John', 'was']
-DEBUG  Here is the answer template: question_id: 145.5; query_terms: set(['King', 'murder', 'of', 'Who', 'convicted', 'John', 'victim', 'the', 'William', 'was']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 156.6; query_terms: set(['Who', 'career', 'of', 'holds', 'NASCAR', 'record', 'victories', 'in', 'the']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['William', 'murder', 'King', 'of', 'When', 'convicted', 'John', 'was']
+DEBUG  Here is the answer template: question_id: 145.4; query_terms: set(['King', 'murder', 'of', 'When', 'convicted', 'William', 'John', 'was']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['What', 'career', 'of', 'is', 'NASCAR', 'record', 'victories', 'in', 'the', 'total']
-DEBUG  Here is the answer template: question_id: 156.7; query_terms: set(['What', 'career', 'of', 'is', 'NASCAR', 'record', 'victories', 'in', 'the', 'total']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['in', 'government', '1999', 'deposed', 'Who', 'by', 'overthrow', 'the', 'Pakistani', 'was', 'leader', 'overthrown']
-DEBUG  Here is the answer template: question_id: 146.1; query_terms: set(['government', '1999', 'deposed', 'Who', 'leader', 'overthrow', 'in', 'the', 'Pakistani', 'was', 'by', 'overthrown']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 156.7; query_terms: set(['What', 'career', 'of', 'is', 'NASCAR', 'record', 'victories', 'in', 'the', 'total']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['King', 'murder', 'of', 'Who', 'convicted', 'William', 'victim', 'the', 'John', 'was']
+DEBUG  Here is the answer template: question_id: 145.5; query_terms: set(['King', 'murder', 'of', 'Who', 'convicted', 'John', 'victim', 'the', 'William', 'was']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['What', 'United', 'of', 'number', 'nations', 'member', '2000', 'UN', 'in', 'the', 'Nations', 'was']
-DEBUG  Here is the answer template: question_id: 157.1; query_terms: set(['What', 'United', 'of', 'number', 'nations', 'member', '2000', 'UN', 'in', 'the', 'Nations', 'was']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['1999', 'power', 'government', 'did', 'When', 'to', 'in', 'the', 'Pakistani', 'come', 'overthrown']
-DEBUG  Here is the answer template: question_id: 146.2; query_terms: set(['power', 'to', '1999', 'government', 'When', 'did', 'in', 'the', 'Pakistani', 'come', 'overthrown']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 157.1; query_terms: set(['What', 'United', 'of', 'number', 'nations', 'member', '2000', 'UN', 'in', 'the', 'Nations', 'was']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['in', 'government', '1999', 'deposed', 'Who', 'by', 'overthrow', 'the', 'Pakistani', 'was', 'leader', 'overthrown']
+DEBUG  Here is the answer template: question_id: 146.1; query_terms: set(['government', '1999', 'deposed', 'Who', 'leader', 'overthrow', 'in', 'the', 'Pakistani', 'was', 'by', 'overthrown']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['United', 'Council', 'many', 'Nations', 'How', 'UN', 'are', 'members', 'in', 'the', 'Security', 'nonpermanent']
-DEBUG  Here is the answer template: question_id: 157.2; query_terms: set(['United', 'members', 'many', 'Nations', 'How', 'UN', 'are', 'Council', 'in', 'the', 'Security', 'nonpermanent']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['What', 'group', 'government', '1999', 'in', 'accomplished', 'overthrow', 'the', 'Pakistani', 'overthrown']
-DEBUG  Here is the answer template: question_id: 146.3; query_terms: set(['What', 'group', 'government', '1999', 'overthrow', 'accomplished', 'in', 'the', 'Pakistani', 'overthrown']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 157.2; query_terms: set(['United', 'members', 'many', 'Nations', 'How', 'UN', 'are', 'Council', 'in', 'the', 'Security', 'nonpermanent']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['1999', 'power', 'government', 'did', 'When', 'to', 'in', 'the', 'Pakistani', 'come', 'overthrown']
+DEBUG  Here is the answer template: question_id: 146.2; query_terms: set(['power', 'to', '1999', 'government', 'When', 'did', 'in', 'the', 'Pakistani', 'come', 'overthrown']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['a', 'on', 'United', 'serve', 'long', 'Nations', 'member', 'How', 'does', 'nonpermanent', 'Council', 'UN', 'the', 'Security']
-DEBUG  Here is the answer template: question_id: 157.3; query_terms: set(['a', 'on', 'United', 'serve', 'long', 'Nations', 'member', 'How', 'does', 'nonpermanent', 'Council', 'UN', 'the', 'Security']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['after', 'in', 'government', '1999', 'Who', 'nominal', 'overthrow', 'the', 'Pakistani', 'was', 'leader', 'overthrown']
-DEBUG  Here is the answer template: question_id: 146.4; query_terms: set(['Who', 'government', '1999', 'overthrow', 'after', 'nominal', 'in', 'the', 'Pakistani', 'was', 'leader', 'overthrown']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 157.3; query_terms: set(['a', 'on', 'United', 'serve', 'long', 'Nations', 'member', 'How', 'does', 'nonpermanent', 'Council', 'UN', 'the', 'Security']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['What', 'group', 'government', '1999', 'in', 'accomplished', 'overthrow', 'the', 'Pakistani', 'overthrown']
+DEBUG  Here is the answer template: question_id: 146.3; query_terms: set(['What', 'group', 'government', '1999', 'overthrow', 'accomplished', 'in', 'the', 'Pakistani', 'overthrown']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['rotate', 'often', 'presidency', 'of', 'Nations', 'United', 'How', 'does', 'Council', 'UN', 'the', 'Security']
-DEBUG  Here is the answer template: question_id: 157.4; query_terms: set(['United', 'often', 'presidency', 'of', 'Nations', 'How', 'rotate', 'does', 'Council', 'UN', 'the', 'Security']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['what', 'For', 'government', '1999', 'deposed', 'guilty', 'crime', 'in', 'found', 'the', 'Pakistani', 'was', 'leader', 'overthrown']
-DEBUG  Here is the answer template: question_id: 146.5; query_terms: set(['what', 'For', 'government', '1999', 'deposed', 'guilty', 'crime', 'in', 'found', 'the', 'Pakistani', 'was', 'leader', 'overthrown']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 157.4; query_terms: set(['United', 'often', 'presidency', 'of', 'Nations', 'How', 'rotate', 'does', 'Council', 'UN', 'the', 'Security']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['after', 'in', 'government', '1999', 'Who', 'nominal', 'overthrow', 'the', 'Pakistani', 'was', 'leader', 'overthrown']
+DEBUG  Here is the answer template: question_id: 146.4; query_terms: set(['Who', 'government', '1999', 'overthrow', 'after', 'nominal', 'in', 'the', 'Pakistani', 'was', 'leader', 'overthrown']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['United', 'August', 'for', '1999', 'of', 'Who', 'Nations', 'UN', 'Council', 'President', 'the', 'was', 'Security']
-DEBUG  Here is the answer template: question_id: 157.5; query_terms: set(['United', 'August', 'for', '1999', 'of', 'Who', 'Nations', 'UN', 'Council', 'President', 'the', 'was', 'Security']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['engage', 'did', 'marry', 'When', 's', 'to', 'Britain', 'Edward', 'marries', 'Prince']
-DEBUG  Here is the answer template: question_id: 147.1; query_terms: set(['engage', 'did', 'marry', 'When', 'Britain', 'to', 's', 'Edward', 'marries', 'Prince']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['did', 'marry', 'Who', 's', 'Britain', 'Edward', 'the', 'marries', 'Prince']
-DEBUG  Here is the answer template: question_id: 147.2; query_terms: set(['did', 'marry', 'Who', 's', 'Britain', 'Edward', 'the', 'marries', 'Prince']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 157.5; query_terms: set(['United', 'August', 'for', '1999', 'of', 'Who', 'Nations', 'UN', 'Council', 'President', 'the', 'was', 'Security']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['what', 'For', 'government', '1999', 'deposed', 'guilty', 'crime', 'in', 'found', 'the', 'Pakistani', 'was', 'leader', 'overthrown']
+DEBUG  Here is the answer template: question_id: 146.5; query_terms: set(['what', 'For', 'government', '1999', 'deposed', 'guilty', 'crime', 'in', 'found', 'the', 'Pakistani', 'was', 'leader', 'overthrown']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['affairs', 'United', 'for', 'is', 'Who', 'political', 'SecretaryGeneral', 'Nations', 'UN', 'the']
-DEBUG  Here is the answer template: question_id: 157.7; query_terms: set(['affairs', 'United', 'for', 'is', 'Who', 'political', 'SecretaryGeneral', 'Nations', 'UN', 'the']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['did', 'marries', 'honeymoon', 's', 'Britain', 'Edward', 'they', 'Where', 'Prince']
-DEBUG  Here is the answer template: question_id: 147.3; query_terms: set(['did', 'Where', 'honeymoon', 'Britain', 's', 'Edward', 'they', 'marries', 'Prince']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 157.7; query_terms: set(['affairs', 'United', 'for', 'is', 'Who', 'political', 'SecretaryGeneral', 'Nations', 'UN', 'the']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['engage', 'did', 'marry', 'When', 's', 'to', 'Britain', 'Edward', 'marries', 'Prince']
+DEBUG  Here is the answer template: question_id: 147.1; query_terms: set(['engage', 'did', 'marry', 'When', 'Britain', 'to', 's', 'Edward', 'marries', 'Prince']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['did', 'marry', 'Who', 's', 'Britain', 'Edward', 'the', 'marries', 'Prince']
+DEBUG  Here is the answer template: question_id: 147.2; query_terms: set(['did', 'marry', 'Who', 's', 'Britain', 'Edward', 'the', 'marries', 'Prince']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['1992', 'University', 'Who', 'became', 'in', 'President', 'Tufts']
-DEBUG  Here is the answer template: question_id: 158.1; query_terms: set(['1992', 'University', 'Who', 'became', 'in', 'President', 'Tufts']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['throne', 'for', 'Where', 'of', 'time', 'marries', 's', 'Prince', 'wedding', 'Britain', 'Edward', 'at', 'in', 'line', 'was', 'the']
-DEBUG  Here is the answer template: question_id: 147.4; query_terms: set(['throne', 'the', 'in', 'for', 'was', 'of', 'wedding', 'Britain', 'marries', 's', 'Edward', 'at', 'time', 'line', 'Where', 'Prince']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 158.1; query_terms: set(['1992', 'University', 'Who', 'became', 'in', 'President', 'Tufts']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['did', 'marries', 'honeymoon', 's', 'Britain', 'Edward', 'they', 'Where', 'Prince']
+DEBUG  Here is the answer template: question_id: 147.3; query_terms: set(['did', 'Where', 'honeymoon', 'Britain', 's', 'Edward', 'they', 'marries', 'Prince']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['did', 'University', 'Over', 'preside', 'other', 'which', 'Tufts', 'university', 'he']
-DEBUG  Here is the answer template: question_id: 158.2; query_terms: set(['university', 'did', 'University', 'preside', 'other', 'which', 'he', 'Over', 'Tufts']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 158.2; query_terms: set(['university', 'did', 'University', 'preside', 'other', 'which', 'he', 'Over', 'Tufts']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['throne', 'for', 'Where', 'of', 'time', 'marries', 's', 'Prince', 'wedding', 'Britain', 'Edward', 'at', 'in', 'line', 'was', 'the']
+DEBUG  Here is the answer template: question_id: 147.4; query_terms: set(['throne', 'the', 'in', 'for', 'was', 'of', 'wedding', 'Britain', 'marries', 's', 'Edward', 'at', 'time', 'line', 'Where', 'Prince']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['What', '1992', 'was', 'University', 'when', 'became', 'in', 'president', 'he', 'endowment', 'Tufts']
 DEBUG  Query contains when; setting time_ex weight
-DEBUG  Here is the answer template: question_id: 158.3; query_terms: set(['What', '1992', 'endowment', 'University', 'when', 'became', 'in', 'president', 'Tufts', 'was', 'he']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {'time_ex': 0.9})
-DEBUG  Here is the query vocabulary: ['What', 'marries', 'Britain', 's', 'Edward', 'the', 'was', 'Prince', 'occupation']
-DEBUG  Here is the answer template: question_id: 147.5; query_terms: set(['What', 'was', 'Britain', 's', 'Edward', 'the', 'marries', 'Prince', 'occupation']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 158.3; query_terms: set(['What', '1992', 'endowment', 'University', 'when', 'became', 'in', 'president', 'Tufts', 'was', 'he']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {'time_ex': 0.9})
 DEBUG  Here is the query vocabulary: ['What', 'University', 'current', 'endowment', 'is', 'Tufts']
-DEBUG  Here is the answer template: question_id: 158.4; query_terms: set(['What', 'University', 'current', 'endowment', 'is', 'Tufts']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['on', 'television', 'people', 'many', 's', 'How', 'Britain', 'Edward', 'wedding', 'the', 'marries', 'Prince', 'viewed']
-DEBUG  Here is the answer template: question_id: 147.6; query_terms: set(['on', 'television', 'people', 'many', 'Britain', 'How', 's', 'Edward', 'wedding', 'the', 'marries', 'Prince', 'viewed']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 158.4; query_terms: set(['What', 'University', 'current', 'endowment', 'is', 'Tufts']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['What', 'marries', 'Britain', 's', 'Edward', 'the', 'was', 'Prince', 'occupation']
+DEBUG  Here is the answer template: question_id: 147.5; query_terms: set(['What', 'was', 'Britain', 's', 'Edward', 'the', 'marries', 'Prince', 'occupation']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['University', 'many', 'make', 'up', 'How', 'schools', 'the', 'university', 'Tufts']
-DEBUG  Here is the answer template: question_id: 158.5; query_terms: set(['university', 'many', 'University', 'up', 'How', 'schools', 'the', 'make', 'Tufts']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 158.5; query_terms: set(['university', 'many', 'University', 'up', 'How', 'schools', 'the', 'make', 'Tufts']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['on', 'television', 'people', 'many', 's', 'How', 'Britain', 'Edward', 'wedding', 'the', 'marries', 'Prince', 'viewed']
+DEBUG  Here is the answer template: question_id: 147.6; query_terms: set(['on', 'television', 'people', 'many', 'Britain', 'How', 's', 'Edward', 'wedding', 'the', 'marries', 'Prince', 'viewed']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['located', 'is', 'Where', 'University', 'Tufts']
-DEBUG  Here is the answer template: question_id: 158.7; query_terms: set(['located', 'is', 'Where', 'University', 'Tufts']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['what', 'massacred', '1997', 'country', 'is', 'in', 'Luxor', 'at', 'In', 'tourists']
-DEBUG  Here is the answer template: question_id: 148.1; query_terms: set(['what', 'massacred', '1997', 'country', 'is', 'In', 'tourists', 'at', 'in', 'Luxor']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 158.7; query_terms: set(['located', 'is', 'Where', 'University', 'Tufts']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['founded', 'What', 'WalMart', 'was', 'year']
-DEBUG  Here is the answer template: question_id: 159.1; query_terms: set(['founded', 'What', 'WalMart', 'was', 'year']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 159.1; query_terms: set(['founded', 'What', 'WalMart', 'was', 'year']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['founded', 'WalMart', 'Who']
-DEBUG  Here is the answer template: question_id: 159.2; query_terms: set(['founded', 'WalMart', 'Who']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['On', 'what', 'massacred', '1997', 'did', 'Luxor', 'massacre', 'tourists', 'at', 'in', 'date', 'the', 'happen']
-DEBUG  Here is the answer template: question_id: 148.2; query_terms: set(['On', 'what', 'massacred', '1997', 'did', 'happen', 'massacre', 'tourists', 'at', 'in', 'date', 'the', 'Luxor']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 159.2; query_terms: set(['founded', 'WalMart', 'Who']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['what', 'massacred', '1997', 'country', 'is', 'in', 'Luxor', 'at', 'In', 'tourists']
+DEBUG  Here is the answer template: question_id: 148.1; query_terms: set(['what', 'massacred', '1997', 'country', 'is', 'In', 'tourists', 'at', 'in', 'Luxor']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['many', 'employees', 'there', 'US', 'How', 'WalMart', 'are', 'in', 'the']
-DEBUG  Here is the answer template: question_id: 159.4; query_terms: set(['many', 'employees', 'there', 'US', 'How', 'WalMart', 'are', 'in', 'the']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 159.4; query_terms: set(['many', 'employees', 'there', 'US', 'How', 'WalMart', 'are', 'in', 'the']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
+DEBUG  Here is the query vocabulary: ['On', 'what', 'massacred', '1997', 'did', 'Luxor', 'massacre', 'tourists', 'at', 'in', 'date', 'the', 'happen']
+DEBUG  Here is the answer template: question_id: 148.2; query_terms: set(['On', 'what', 'massacred', '1997', 'did', 'happen', 'massacre', 'tourists', 'at', 'in', 'date', 'the', 'Luxor']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['worldwide', 'stores', 'many', 'How', 'WalMart', 'does', 'operate']
-DEBUG  Here is the answer template: question_id: 159.5; query_terms: set(['worldwide', 'stores', 'many', 'How', 'WalMart', 'does', 'operate']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['from', '1997', 'people', 'many', 'massacre', 'Luxor', 'How', 'at', 'in', 'massacred', 'the', 'tourists', 'died']
-DEBUG  Here is the answer template: question_id: 148.3; query_terms: set(['from', '1997', 'people', 'many', 'massacre', 'tourists', 'How', 'at', 'in', 'massacred', 'the', 'Luxor', 'died']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 159.5; query_terms: set(['worldwide', 'stores', 'many', 'How', 'WalMart', 'does', 'operate']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['many', 'there', 'India', 'outlets', 'How', 'WalMart', 'are', 'in']
-DEBUG  Here is the answer template: question_id: 159.6; query_terms: set(['many', 'there', 'India', 'outlets', 'How', 'WalMart', 'are', 'in']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 159.6; query_terms: set(['many', 'there', 'India', 'outlets', 'How', 'WalMart', 'are', 'in']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['many', 'there', 'outlets', 'How', 'WalMart', 'China', 'are', 'in']
-DEBUG  Here is the answer template: question_id: 159.7; query_terms: set(['many', 'there', 'outlets', 'How', 'WalMart', 'China', 'are', 'in']); type_weights: defaultdict(<function <lambda> at 0x16898ed8>, {})
-DEBUG  Here is the query vocabulary: ['what', 'massacred', 'tourists', '1997', 'did', 'massacre', 'site', 'occur', 'At', 'in', 'the', 'Luxor', 'at']
-DEBUG  Here is the answer template: question_id: 148.4; query_terms: set(['what', 'massacred', '1997', 'did', 'Luxor', 'massacre', 'site', 'occur', 'At', 'in', 'the', 'tourists', 'at']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 159.7; query_terms: set(['many', 'there', 'outlets', 'How', 'WalMart', 'China', 'are', 'in']); type_weights: defaultdict(<function <lambda> at 0x1652ded8>, {})
+DEBUG  Here is the query vocabulary: ['from', '1997', 'people', 'many', 'massacre', 'Luxor', 'How', 'at', 'in', 'massacred', 'the', 'tourists', 'died']
+DEBUG  Here is the answer template: question_id: 148.3; query_terms: set(['from', '1997', 'people', 'many', 'massacre', 'tourists', 'How', 'at', 'in', 'massacred', 'the', 'Luxor', 'died']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['IMF', 'many', 'nations', 'member', 'How', 'are', 'in', 'the']
-DEBUG  Here is the answer template: question_id: 160.1; query_terms: set(['IMF', 'many', 'nations', 'member', 'How', 'are', 'in', 'the']); type_weights: defaultdict(<function <lambda> at 0x16898ed8>, {})
-DEBUG  Here is the query vocabulary: ['terrorist', 'massacred', '1997', 'for', 'massacre', 'Luxor', 'responsibility', 'at', 'Which', 'in', 'claimed', 'organization', 'the', 'tourists']
-DEBUG  Here is the answer template: question_id: 148.5; query_terms: set(['terrorist', 'massacred', '1997', 'for', 'massacre', 'tourists', 'responsibility', 'at', 'Which', 'in', 'claimed', 'organization', 'the', 'Luxor']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 160.1; query_terms: set(['IMF', 'many', 'nations', 'member', 'How', 'are', 'in', 'the']); type_weights: defaultdict(<function <lambda> at 0x1652ded8>, {})
+DEBUG  Here is the query vocabulary: ['what', 'massacred', 'tourists', '1997', 'did', 'massacre', 'site', 'occur', 'At', 'in', 'the', 'Luxor', 'at']
+DEBUG  Here is the answer template: question_id: 148.4; query_terms: set(['what', 'massacred', '1997', 'did', 'Luxor', 'massacre', 'site', 'occur', 'At', 'in', 'the', 'tourists', 'at']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['received', 'IMF', 'country', 'loan', 'by', 'Which', 'largest', 'the', 'ever', 'granted']
-DEBUG  Here is the answer template: question_id: 160.3; query_terms: set(['received', 'IMF', 'country', 'loan', 'Which', 'largest', 'the', 'ever', 'by', 'granted']); type_weights: defaultdict(<function <lambda> at 0x16898ed8>, {})
+DEBUG  Here is the answer template: question_id: 160.3; query_terms: set(['received', 'IMF', 'country', 'loan', 'Which', 'largest', 'the', 'ever', 'by', 'granted']); type_weights: defaultdict(<function <lambda> at 0x1652ded8>, {})
 DEBUG  Here is the query vocabulary: ['What', 'IMF', 'loan', 'by', 'record', 'amount', 'the', 'was', 'granted']
-DEBUG  Here is the answer template: question_id: 160.4; query_terms: set(['What', 'IMF', 'loan', 'record', 'amount', 'the', 'was', 'by', 'granted']); type_weights: defaultdict(<function <lambda> at 0x16898ed8>, {})
-DEBUG  Here is the query vocabulary: ['on', 'what', 'cable', 'Show', 'Daily', 'The', 'appears', 'channel']
-DEBUG  Here is the answer template: question_id: 149.1; query_terms: set(['on', 'what', 'cable', 'Show', 'Daily', 'The', 'appears', 'channel']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 160.4; query_terms: set(['What', 'IMF', 'loan', 'record', 'amount', 'the', 'was', 'by', 'granted']); type_weights: defaultdict(<function <lambda> at 0x1652ded8>, {})
+DEBUG  Here is the query vocabulary: ['terrorist', 'massacred', '1997', 'for', 'massacre', 'Luxor', 'responsibility', 'at', 'Which', 'in', 'claimed', 'organization', 'the', 'tourists']
+DEBUG  Here is the answer template: question_id: 148.5; query_terms: set(['terrorist', 'massacred', '1997', 'for', 'massacre', 'tourists', 'responsibility', 'at', 'Which', 'in', 'claimed', 'organization', 'the', 'Luxor']); type_weights: defaultdict(<function <lambda> at 0x16515668>, {})
 DEBUG  Here is the query vocabulary: ['What', 'does', 'stand', 'for', 'IMF']
-DEBUG  Here is the answer template: question_id: 160.5; query_terms: set(['What', 'does', 'stand', 'for', 'IMF']); type_weights: defaultdict(<function <lambda> at 0x16898ed8>, {})
-DEBUG  Here is the query vocabulary: ['parodies', 'what', 'Show', 'TV', 'of', 'Daily', 'other', 'program', 'The', 'type']
-DEBUG  Here is the answer template: question_id: 149.2; query_terms: set(['parodies', 'what', 'Show', 'TV', 'of', 'Daily', 'other', 'program', 'The', 'type']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
+DEBUG  Here is the answer template: question_id: 160.5; query_terms: set(['What', 'does', 'stand', 'for', 'IMF']); type_weights: defaultdict(<function <lambda> at 0x1652ded8>, {})
 DEBUG  Here is the query vocabulary: ['founded', 'was', 'the', 'When', 'IMF']
-DEBUG  Here is the answer template: question_id: 160.6; query_terms: set(['founded', 'When', 'the', 'was', 'IMF']); type_weights: defaultdict(<function <lambda> at 0x16898ed8>, {})
-DEBUG  Here is the query vocabulary: ['headquartered', 'is', 'Where', 'the', 'IMF']
-DEBUG  Here is the answer template: question_id: 160.7; query_terms: set(['Where', 'is', 'headquartered', 'the', 'IMF']); type_weights: defaultdict(<function <lambda> at 0x16898ed8>, {})
-DEBUG  Here is the query vocabulary: ['Show', 'of', 'is', 'Who', 'Daily', 'host', 'The']
-DEBUG  Here is the answer template: question_id: 149.3; query_terms: set(['Show', 'of', 'is', 'Who', 'Daily', 'host', 'The']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['city', 'what', '1999', 'Game', 'held', 'AllStar', 'Baseball', 'In', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 161.1; query_terms: set(['city', 'what', '1999', 'Game', 'held', 'AllStar', 'Baseball', 'In', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16898ed8>, {})
-DEBUG  Here is the query vocabulary: ['what', 'televised', 'Show', 'initially', 'is', 'Daily', 'At', 'time', 'The']
-DEBUG  Here is the answer template: question_id: 149.4; query_terms: set(['what', 'televised', 'Show', 'initially', 'is', 'Daily', 'At', 'time', 'The']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['scheduled', 'city', 'what', '1999', 'originally', 'AllStar', 'Game', 'Baseball', 'In', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 161.2; query_terms: set(['scheduled', 'city', 'what', '1999', 'originally', 'Game', 'AllStar', 'Baseball', 'In', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16898ed8>, {})
-DEBUG  Here is the query vocabulary: ['Show', 'creator', 'of', 'is', 'Who', 'Daily', 'The', 'the']
-DEBUG  Here is the answer template: question_id: 149.5; query_terms: set(['Show', 'creator', 'of', 'is', 'Who', 'Daily', 'The', 'the']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['What', 'played', 'name', 'was', '1999', 'of', 'is', 'ballpark', 'Game', 'AllStar', 'game', 'Baseball', 'the', 'where']
-DEBUG  Query contains where; setting location weight
-DEBUG  Here is the answer template: question_id: 161.4; query_terms: set(['What', 'name', 'played', '1999', 'of', 'is', 'ballpark', 'AllStar', 'where', 'Game', 'game', 'Baseball', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16898ed8>, {'location': 0.9})
-DEBUG  Here is the query vocabulary: ['What', 'for', 'title', 'Show', '2000', 'Daily', 's', 'election', 'coverage', 'The', 'was', 'the']
-DEBUG  Here is the answer template: question_id: 149.6; query_terms: set(['What', 'for', 'Show', 'title', 's', 'Daily', '2000', 'election', 'coverage', 'The', 'was', 'the']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['What', 'capacity', 'Game', '1999', 'of', 'is', 'ballpark', 'seating', 'AllStar', 'Baseball', 'the']
-DEBUG  Here is the answer template: question_id: 161.5; query_terms: set(['What', 'capacity', '1999', 'of', 'is', 'ballpark', 'seating', 'Game', 'Baseball', 'the', 'AllStar']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['what', 'episode', 'television', 'show', 'In', 'telecast', 'Cheers', 'year', 'the', 'was', 'final']
-DEBUG  Here is the answer template: question_id: 150.1; query_terms: set(['what', 'episode', 'show', 'year', 'television', 'telecast', 'Cheers', 'In', 'the', 'was', 'final']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['What', '1999', 'of', 'Game', 'AllStar', 'Baseball', 'date', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 161.6; query_terms: set(['What', '1999', 'of', 'Game', 'AllStar', 'Baseball', 'date', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['aired', 'network', 'show', 'What', 'Cheers', 'the', 'television']
-DEBUG  Here is the answer template: question_id: 150.2; query_terms: set(['What', 'network', 'show', 'aired', 'Cheers', 'the', 'television']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['MVP', 'Player', '1999', 'of', 'Who', 'Game', 'AllStar', 'Valuable', 'Most', 'game', 'Baseball', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 161.7; query_terms: set(['MVP', 'Most', '1999', 'of', 'Who', 'AllStar', 'Valuable', 'Player', 'Game', 'game', 'Baseball', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['television', 'played', 'show', 'Who', 'Diane', 'Cheers', 'Chambers']
-DEBUG  Here is the answer template: question_id: 150.3; query_terms: set(['television', 'played', 'show', 'Who', 'Diane', 'Cheers', 'Chambers']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['Cheers', 'television', 'bartender', 'Sam', 'played', 'Who', 'Malone', 'show', 'the']
-DEBUG  Here is the answer template: question_id: 150.4; query_terms: set(['Malone', 'television', 'bartender', 'Sam', 'played', 'Who', 'Cheers', 'show', 'the']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['circles', 'stone', 'did', 'of', 'When', 'begin', 'construction', 'UK', 'in', 'the']
-DEBUG  Here is the answer template: question_id: 169.1; query_terms: set(['circles', 'stone', 'did', 'of', 'When', 'begin', 'construction', 'UK', 'in', 'the']); type_weights: defaultdict(<function <lambda> at 0x16898ed8>, {})
-DEBUG  Here is the query vocabulary: ['body', 'what', 'Multiple', 'cancer', 'of', 'is', 'Myeloma', 'part', 'in', 'the']
-DEBUG  Here is the answer template: question_id: 162.1; query_terms: set(['body', 'what', 'Multiple', 'cancer', 'of', 'is', 'Myeloma', 'part', 'in', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['circles', 'stone', 'UK', 'many', 'Approximately', 'how', 'been', 'have', 'in', 'found', 'the']
-DEBUG  Here is the answer template: question_id: 169.2; query_terms: set(['circles', 'stone', 'have', 'many', 'Approximately', 'how', 'been', 'UK', 'in', 'found', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac050>, {})
-DEBUG  Here is the query vocabulary: ['What', 'used', 'Multiple', 'is', 'myeloma', 'drug', 'Myeloma', 'to', 'treat']
-DEBUG  Here is the answer template: question_id: 162.2; query_terms: set(['What', 'used', 'Multiple', 'is', 'myeloma', 'drug', 'Myeloma', 'to', 'treat']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['What', 'used', 'multiple', 'for', 'form', 'of', 'myeloma', 'been', 'Myeloma', 'other', 'treatment', 'Multiple', 'has']
-DEBUG  Here is the answer template: question_id: 162.3; query_terms: set(['What', 'used', 'multiple', 'for', 'form', 'of', 'myeloma', 'been', 'Myeloma', 'other', 'treatment', 'Multiple', 'has']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['circles', 'Stonehenge', 'built', 'When', 'stone', 'was']
-DEBUG  Here is the answer template: question_id: 169.3; query_terms: set(['circles', 'stone', 'built', 'When', 'Stonehenge', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac050>, {})
-DEBUG  Here is the query vocabulary: ['circles', 'what', 'built', 'Stonehenge', 'county', 'In', 'stone', 'was']
-DEBUG  Here is the answer template: question_id: 169.4; query_terms: set(['circles', 'what', 'built', 'Stonehenge', 'county', 'In', 'stone', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac050>, {})
-DEBUG  Here is the query vocabulary: ['every', 'multiple', 'many', 'Myeloma', 'myeloma', 'Multiple', 'How', 'Americans', 'year', 'develop']
-DEBUG  Here is the answer template: question_id: 162.4; query_terms: set(['multiple', 'many', 'develop', 'myeloma', 'Myeloma', 'How', 'every', 'Americans', 'year', 'Multiple']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['circles', 'What', 'is', 'stone', 'UK', 'in', 'the', 'oldest', 'circle']
-DEBUG  Here is the answer template: question_id: 169.6; query_terms: set(['circles', 'stone', 'is', 'What', 'UK', 'in', 'the', 'oldest', 'circle']); type_weights: defaultdict(<function <lambda> at 0x16aac050>, {})
-DEBUG  Here is the query vocabulary: ['multiple', 'deaths', 'caused', 'in', 'myeloma', 'US', 'Myeloma', 'annually', 'How', 'are', 'many', 'Multiple', 'the', 'by']
-DEBUG  Here is the answer template: question_id: 162.5; query_terms: set(['multiple', 'deaths', 'caused', 'myeloma', 'US', 'Myeloma', 'annually', 'How', 'are', 'in', 'Multiple', 'the', 'many', 'by']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['album', 'on', 'Spite', 'Prine', 'many', 'of', 'How', 'are', 'In', 'the', 'John', 'Ourselves', 'songs']
-DEBUG  Here is the answer template: question_id: 170.1; query_terms: set(['album', 'on', 'Spite', 'Prine', 'of', 'In', 'How', 'are', 'many', 'the', 'John', 'Ourselves', 'songs']); type_weights: defaultdict(<function <lambda> at 0x16aac050>, {})
-DEBUG  Here is the query vocabulary: ['Hermitage', 'is', 'located', 'the', 'Where', 'Museum']
-DEBUG  Here is the answer template: question_id: 163.1; query_terms: set(['Hermitage', 'is', 'located', 'the', 'Where', 'Museum']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['a', 'What', 'hit', 'for', 'song', 'Prine', 'Strait', '1', 'John', 'was', 'George']
-DEBUG  Here is the answer template: question_id: 170.2; query_terms: set(['a', 'What', 'hit', 'for', 'song', 'Prine', 'Strait', '1', 'John', 'was', 'George']); type_weights: defaultdict(<function <lambda> at 0x16aac050>, {})
-DEBUG  Here is the query vocabulary: ['what', 'Museum', 'Hermitage', 'of', 'is', 'located', 'banks', 'Along', 'river', 'the']
-DEBUG  Here is the answer template: question_id: 163.2; query_terms: set(['the', 'what', 'Hermitage', 'of', 'Museum', 'located', 'banks', 'Along', 'river', 'is']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['a', 'what', 'removed', 'did', 'Prine', 'In', 'tumor', 'cancerous', 'have', 'year', 'John']
-DEBUG  Here is the answer template: question_id: 170.3; query_terms: set(['a', 'what', 'John', 'did', 'Prine', 'year', 'tumor', 'cancerous', 'have', 'In', 'removed']); type_weights: defaultdict(<function <lambda> at 0x16aac050>, {})
-DEBUG  Here is the query vocabulary: ['begin', 'what', 'for', 'Hermitage', 'did', 'museum', 'In', 'Catherine', 'Great', 'year', 'the', 'Museum', 'buying']
-DEBUG  Here is the answer template: question_id: 163.3; query_terms: set(['Great', 'begin', 'for', 'Hermitage', 'did', 'museum', 'year', 'Catherine', 'what', 'In', 'the', 'Museum', 'buying']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['For', 'did', 'many', 'years', 'how', 'smoke', 'Prine', 'John']
-DEBUG  Here is the answer template: question_id: 170.4; query_terms: set(['For', 'did', 'many', 'years', 'how', 'smoke', 'Prine', 'John']); type_weights: defaultdict(<function <lambda> at 0x16aac050>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Hermitage', 'of', 'is', 'collection', 'the', 'Museum', 'size']
-DEBUG  Here is the answer template: question_id: 163.4; query_terms: set(['What', 'Hermitage', 'of', 'is', 'collection', 'the', 'Museum', 'size']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['Stephen', 'was', 'When', 'Wynn', 'born']
-DEBUG  Here is the answer template: question_id: 171.1; query_terms: set(['Stephen', 'When', 'was', 'Wynn', 'born']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Wynn', 'acquired', 'company', 'in', '2000', 'Resorts', 's', 'Mirage', 'Stephen']
-DEBUG  Here is the answer template: question_id: 171.2; query_terms: set(['What', 'Wynn', 'acquired', 'company', 'Mirage', 's', 'Resorts', '2000', 'in', 'Stephen']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['a', 'city', 'what', 'for', 'be', 'museum', 'there', 'satellite', 'will', 'Hermitage', 'In', 'the', 'Museum']
-DEBUG  Here is the answer template: question_id: 163.6; query_terms: set(['a', 'city', 'what', 'for', 'be', 'museum', 'there', 'satellite', 'will', 'Hermitage', 'In', 'the', 'Museum']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Wynn', 'name', 'of', 'is', 'casino', '1998', 'Vegas', 'in', 'Stephen', 'new', 'the', 'Las', 'opened']
-DEBUG  Here is the answer template: question_id: 171.3; query_terms: set(['What', 'Wynn', 'name', 'in', 'of', 'is', 'casino', 'opened', 'Vegas', '1998', 'Stephen', 'new', 'the', 'Las']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['Hermitage', 'of', 'is', 'Who', 'director', 'the', 'Museum']
-DEBUG  Here is the answer template: question_id: 163.7; query_terms: set(['Hermitage', 'of', 'is', 'Who', 'director', 'the', 'Museum']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['and', 'talent', 'start', 'Who', 'theaters', 'cabarets', 'to', 'manager', 'hired', 'new', 'Stephen', 'Wynn', 'the', 'was', 'by', 'arenas']
-DEBUG  Here is the answer template: question_id: 171.4; query_terms: set(['and', 'talent', 'Wynn', 'to', 'Who', 'manager', 'cabarets', 'start', 'theaters', 'hired', 'Stephen', 'new', 'the', 'was', 'by', 'arenas']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['born', 'was', 'Judi', 'Where', 'Dench']
-DEBUG  Here is the answer template: question_id: 164.1; query_terms: set(['Where', 'born', 'Judi', 'was', 'Dench']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['Judi', 'married', 'is', 'Who', 'to', 'she', 'Dench']
-DEBUG  Here is the answer template: question_id: 164.3; query_terms: set(['Judi', 'Who', 'is', 'married', 'to', 'she', 'Dench']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['Judi', 'for', 'Oscars', 'many', 'nominated', 'been', 'How', 'she', 'Dench', 'has']
-DEBUG  Here is the answer template: question_id: 164.4; query_terms: set(['Judi', 'for', 'How', 'many', 'been', 'Oscars', 'nominated', 'Dench', 'has', 'she']); type_weights: defaultdict(<function <lambda> at 0x16aac140>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Wynn', 'name', 'of', 'is', 'casino', 'Mississippi', 's', 'in', 'Stephen', 'newest', 'the']
-DEBUG  Here is the answer template: question_id: 171.5; query_terms: set(['What', 'Wynn', 'name', 'of', 'is', 'casino', 'Mississippi', 's', 'in', 'Stephen', 'newest', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['Judi', 'Oscars', 'many', 'How', 'won', 'she', 'Dench', 'has']
-DEBUG  Here is the answer template: question_id: 164.5; query_terms: set(['Judi', 'Oscars', 'many', 'How', 'won', 'she', 'Dench', 'has']); type_weights: defaultdict(<function <lambda> at 0x16aac140>, {})
-DEBUG  Here is the query vocabulary: ['Judi', 'many', 'How', 'won', 'Awards', 'she', 'Tony', 'Dench', 'has']
-DEBUG  Here is the answer template: question_id: 164.6; query_terms: set(['Judi', 'many', 'How', 'won', 'Awards', 'she', 'Tony', 'Dench', 'has']); type_weights: defaultdict(<function <lambda> at 0x16aac140>, {})
-DEBUG  Here is the query vocabulary: ['and', 'city', 'what', 'Ben', 'business', 'did', 's', 'begin', 'Jerry', 'state', 'In', 'the']
-DEBUG  Here is the answer template: question_id: 172.1; query_terms: set(['and', 'city', 'what', 'Ben', 'business', 'state', 'did', 'begin', 'Jerry', 's', 'In', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['what', 'In', 'Judi', 'born', 'she', 'year', 'Dench', 'was']
-DEBUG  Here is the answer template: question_id: 164.7; query_terms: set(['what', 'In', 'Judi', 'born', 'she', 'year', 'Dench', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac140>, {})
-DEBUG  Here is the query vocabulary: ['what', 'celebrated', 'In', 'Queen', '100th', 's', 'Birthday', 'year', 'Mum', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 165.1; query_terms: set(['what', 'Queen', 'celebrated', 'year', '100th', 's', 'Birthday', 'In', 'Mum', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16898c08>, {})
-DEBUG  Here is the query vocabulary: ['and', 'do', 'What', 'Ben', 'Jerry', 's', 'produce']
-DEBUG  Here is the answer template: question_id: 172.2; query_terms: set(['and', 'do', 'What', 'Ben', 'Jerry', 's', 'produce']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Ben', 'name', 'is', 'Jerry', 's', 'last']
-DEBUG  Here is the answer template: question_id: 172.3; query_terms: set(['What', 'Ben', 'name', 'is', 'Jerry', 's', 'last']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'wore', 'her', 'that', 'color', 'was', 'Queen', '100th', 'lunch', 's', 'birthday', 'she', 'Mum', 'Birthday', 'the', 'dress', 'at']
-DEBUG  Here is the answer template: question_id: 165.2; query_terms: set(['What', 'wore', 'her', 'that', 'color', 'dress', 'Queen', '100th', 'lunch', 's', 'birthday', 'she', 'Mum', 'Birthday', 'the', 'was', 'at']); type_weights: defaultdict(<function <lambda> at 0x16898c08>, {})
-DEBUG  Here is the query vocabulary: ['What', 'last', 'name', 'is', 'Jerry', 's', 'Ben']
-DEBUG  Here is the answer template: question_id: 172.4; query_terms: set(['What', 'last', 'name', 'is', 'Jerry', 's', 'Ben']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['a', 'What', 'Ben', 'named', 'after', 'had', 'Jerry', 'band', 's', 'them', 'rock', 'flavor']
-DEBUG  Here is the answer template: question_id: 172.5; query_terms: set(['a', 'What', 'Ben', 'after', 'had', 'named', 'Jerry', 'band', 's', 'them', 'rock', 'flavor']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['2000', 'what', 'Ben', 'for', 'price', 'Unilever', 'Jerry', 's', 'purchased', 'in']
-DEBUG  Here is the answer template: question_id: 172.6; query_terms: set(['what', 'Ben', 'for', 's', 'price', 'Unilever', 'Jerry', '2000', 'purchased', 'in']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'name', 'Queen', '100th', 's', 'Birthday', 'birth', 'Mother', 'Mum', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 165.4; query_terms: set(['What', 'name', 'Queen', '100th', 's', 'Birthday', 'birth', 'Mother', 'Mum', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16898c08>, {})
-DEBUG  Here is the query vocabulary: ['what', 'country', 'is', 'headquartered', 'Organization', 'In', 'World', 'the', 'Tourism', 'WTO']
-DEBUG  Here is the answer template: question_id: 173.1; query_terms: set(['what', 'World', 'country', 'is', 'headquartered', 'In', 'Organization', 'the', 'Tourism', 'WTO']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['on', 'her', '100', 'many', 'granted', 'Queen', 'years', '100th', 'How', 's', 'Birthday', 'she', 'in', 'Press', 'earth', 'the', 'has', 'interviews', 'Mum']
-DEBUG  Here is the answer template: question_id: 165.5; query_terms: set(['on', 'her', 'Mum', 'many', 'granted', 'Queen', 'years', '100th', 'How', 's', 'Birthday', 'interviews', 'she', 'in', 'Press', 'earth', '100', 'has', 'the']); type_weights: defaultdict(<function <lambda> at 0x16898c08>, {})
-DEBUG  Here is the query vocabulary: ['What', '1995', 'tourist', 'to', 'country', 'destination', 'according', 'reports', 'Tourism', 'most', 'Organization', 'in', 'popular', 'World', 'the', 'was', 'WTO']
-DEBUG  Here is the answer template: question_id: 173.2; query_terms: set(['was', 'What', '1995', 'tourist', 'most', 'country', 'destination', 'World', 'according', 'reports', 'to', 'in', 'popular', 'Organization', 'the', 'Tourism', 'WTO']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Queen', 'her', 'title', 'married', 'when', '100th', 's', 'Birthday', 'she', 'Mum', 'the', 'was', 'him', 'husband']
-DEBUG  Query contains when; setting time_ex weight
-DEBUG  Here is the answer template: question_id: 165.6; query_terms: set(['What', 'married', 'her', 'title', 'Queen', 'when', '100th', 's', 'Birthday', 'she', 'Mum', 'the', 'was', 'him', 'husband']); type_weights: defaultdict(<function <lambda> at 0x16898c08>, {'time_ex': 0.9})
-DEBUG  Here is the query vocabulary: ['1996', 'of', 'Who', 'Tourism', 'director', 'Organization', 'in', 'World', 'the', 'was', 'WTO']
-DEBUG  Here is the answer template: question_id: 173.3; query_terms: set(['World', '1996', 'of', 'Who', 'was', 'director', 'in', 'Organization', 'the', 'Tourism', 'WTO']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'his', 'title', 'Queen', 'when', '100th', 's', 'Birthday', 'Mum', 'the', 'was', 'died', 'he']
-DEBUG  Query contains when; setting time_ex weight
-DEBUG  Here is the answer template: question_id: 165.7; query_terms: set(['What', 'his', 'title', 'Queen', 'when', '100th', 's', 'Birthday', 'Mum', 'the', 'was', 'died', 'he']); type_weights: defaultdict(<function <lambda> at 0x16898c08>, {'time_ex': 0.9})
-DEBUG  Here is the query vocabulary: ['1995', 'World', 'to', 'many', 'according', 'reports', 'How', 'China', 'Organization', 'in', 'visited', 'Tourism', 'tourists', 'WTO']
-DEBUG  Here is the answer template: question_id: 173.4; query_terms: set(['1995', 'How', 'many', 'in', 'according', 'reports', 'visited', 'to', 'China', 'Organization', 'World', 'Tourism', 'tourists', 'WTO']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['outbreak', 'avian', '1997', 'many', 'in', 'humans', 'Hong', 'Kong', 'How', 'infected', 'were', 'flu', 'with']
-DEBUG  Here is the answer template: question_id: 166.1; query_terms: set(['avian', '1997', 'many', 'were', 'humans', 'Hong', 'Kong', 'flu', 'How', 'infected', 'in', 'outbreak', 'with']); type_weights: defaultdict(<function <lambda> at 0x16898c08>, {})
-DEBUG  Here is the query vocabulary: ['What', '1997', 'Tourism', 'had', 'according', 'reports', 'to', 'rate', 'growth', 'Organization', 'in', 'World', 'the', 'highest', 'tourism', 'continent', 'WTO']
-DEBUG  Here is the answer template: question_id: 173.5; query_terms: set(['What', 'World', '1997', 'tourism', 'had', 'according', 'reports', 'to', 'rate', 'growth', 'in', 'Organization', 'the', 'highest', 'Tourism', 'continent', 'WTO']); type_weights: defaultdict(<function <lambda> at 0x16aac050>, {})
-DEBUG  Here is the query vocabulary: ['outbreak', 'avian', '1997', 'of', 'in', 'humans', 'Hong', 'Kong', 'How', 'many', 'flu', 'died']
-DEBUG  Here is the answer template: question_id: 166.2; query_terms: set(['avian', '1997', 'of', 'humans', 'Hong', 'Kong', 'flu', 'How', 'in', 'outbreak', 'many', 'died']); type_weights: defaultdict(<function <lambda> at 0x16898c08>, {})
-DEBUG  Here is the query vocabulary: ['AFBF', 'Farm', 'When', 'founded', 'American', 'Bureau', 'the', 'was', 'Federation']
-DEBUG  Here is the answer template: question_id: 174.1; query_terms: set(['AFBF', 'Farm', 'When', 'founded', 'American', 'Bureau', 'the', 'was', 'Federation']); type_weights: defaultdict(<function <lambda> at 0x16aac050>, {})
-DEBUG  Here is the query vocabulary: ['outbreak', 'avian', 'in', 'to', 'may', 'stop', 'of', 'chickens', 'disease', 'Kong', 'flu', 'How', 'humans', 'spread', 'were', 'further', 'the', 'Hong', 'slaughtered']
-DEBUG  Here is the answer template: question_id: 166.3; query_terms: set(['avian', 'How', 'may', 'of', 'were', 'stop', 'disease', 'Kong', 'flu', 'to', 'humans', 'spread', 'in', 'further', 'outbreak', 'the', 'Hong', 'chickens', 'slaughtered']); type_weights: defaultdict(<function <lambda> at 0x16898c80>, {})
-DEBUG  Here is the query vocabulary: ['AFBF', '1999', 'of', 'Who', 'Farm', 'American', 'Bureau', 'in', 'president', 'the', 'was', 'Federation']
-DEBUG  Here is the answer template: question_id: 174.2; query_terms: set(['AFBF', '1999', 'of', 'Who', 'Farm', 'American', 'Bureau', 'in', 'president', 'the', 'was', 'Federation']); type_weights: defaultdict(<function <lambda> at 0x16aac050>, {})
-DEBUG  Here is the query vocabulary: ['represents', 'families', 'AFBF', 'Farm', 'many', 'how', 'American', 'Bureau', 'The', 'Federation']
-DEBUG  Here is the answer template: question_id: 174.3; query_terms: set(['represents', 'families', 'AFBF', 'Farm', 'many', 'how', 'American', 'Bureau', 'The', 'Federation']); type_weights: defaultdict(<function <lambda> at 0x16aac050>, {})
-DEBUG  Here is the query vocabulary: ['What', '1997', 'of', 'flu', 'avian', 'Kong', 'strain', 'broke', 'in', 'outbreak', 'Hong', 'out']
-DEBUG  Here is the answer template: question_id: 166.4; query_terms: set(['What', '1997', 'of', 'flu', 'avian', 'Kong', 'strain', 'broke', 'in', 'outbreak', 'Hong', 'out']); type_weights: defaultdict(<function <lambda> at 0x16898c80>, {})
-DEBUG  Here is the query vocabulary: ['What', 'disaster', 'congress', '1999', 'Federation', 'July', 'American', 'for', 'Farm', 'amount', 'Bureau', 'in', 'aid', 'the', 'total', 'was', 'asked', 'AFBF']
-DEBUG  Here is the answer template: question_id: 174.4; query_terms: set(['What', 'disaster', 'congress', '1999', 'AFBF', 'amount', 'for', 'Farm', 'American', 'asked', 'Bureau', 'in', 'aid', 'July', 'total', 'was', 'the', 'Federation']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['outbreak', 'What', 'appeared', 'of', 'within', 'flu', 'avian', 'Kong', 'strain', 'two', 'in', 'years', 'new', 'Hong', 'next', 'the']
-DEBUG  Here is the answer template: question_id: 166.5; query_terms: set(['What', 'appeared', 'of', 'within', 'flu', 'avian', 'new', 'Kong', 'strain', 'two', 'in', 'outbreak', 'Hong', 'years', 'next', 'the']); type_weights: defaultdict(<function <lambda> at 0x16898c80>, {})
-DEBUG  Here is the query vocabulary: ['Wheel', 'city', 'what', 'is', 'located', 'Millennium', 'In', 'the']
-DEBUG  Here is the answer template: question_id: 167.1; query_terms: set(['Wheel', 'city', 'what', 'is', 'located', 'Millennium', 'In', 'the']); type_weights: defaultdict(<function <lambda> at 0x16898c80>, {})
-DEBUG  Here is the query vocabulary: ['a', 'turkey', 'what', 'Federation', 'AFBF', 'all', 'Farm', 'of', 'is', 'American', 'According', 'to', 'dinner', 'cost', 'Bureau', 'the', 'with', 'average', 'trimmings']
-DEBUG  Here is the answer template: question_id: 174.5; query_terms: set(['a', 'turkey', 'what', 'Federation', 'Farm', 'of', 'is', 'all', 'According', 'to', 'American', 'cost', 'Bureau', 'dinner', 'the', 'trimmings', 'with', 'average', 'AFBF']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['Wheel', 'is', 'high', 'How', 'Millennium', 'the']
-DEBUG  Here is the answer template: question_id: 167.2; query_terms: set(['Wheel', 'is', 'high', 'How', 'Millennium', 'the']); type_weights: defaultdict(<function <lambda> at 0x16898c80>, {})
-DEBUG  Here is the query vocabulary: ['Wheel', 'What', 'name', 'is', 'Millennium', 'popular', 'the', 'its']
-DEBUG  Here is the answer template: question_id: 167.3; query_terms: set(['Wheel', 'What', 'name', 'is', 'Millennium', 'popular', 'the', 'its']); type_weights: defaultdict(<function <lambda> at 0x16aac140>, {})
-DEBUG  Here is the query vocabulary: ['Gonzales', 'old', 'shipwreck', 'Elian', 'of', 'How', 'repatriation', 'at', 'time', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 175.1; query_terms: set(['old', 'shipwreck', 'Elian', 'Gonzales', 'time', 'How', 'repatriation', 'at', 'of', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['Wheel', 'built', 'Who', 'it', 'Millennium', 'the']
-DEBUG  Here is the answer template: question_id: 167.4; query_terms: set(['Wheel', 'built', 'Who', 'it', 'Millennium', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac140>, {})
-DEBUG  Here is the query vocabulary: ['Wheel', 'passenger', 'capsules', 'many', 'it', 'How', 'does', 'Millennium', 'contain', 'the']
-DEBUG  Here is the answer template: question_id: 167.5; query_terms: set(['Wheel', 'passenger', 'capsules', 'many', 'it', 'How', 'does', 'Millennium', 'contain', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac140>, {})
-DEBUG  Here is the query vocabulary: ['staying', 'Gonzales', 'Elian', 'was', 'Who', 'Florida', 'repatriation', 'of', 'in', 'with']
-DEBUG  Here is the answer template: question_id: 175.2; query_terms: set(['staying', 'in', 'Elian', 'Gonzales', 'Who', 'Florida', 'repatriation', 'of', 'was', 'with']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['paintings', 'many', 'completed', 'Charles', 'Approximately', 'how', 'has', 'Prince']
-DEBUG  Here is the answer template: question_id: 168.1; query_terms: set(['paintings', 'many', 'completed', 'Charles', 'Approximately', 'how', 'has', 'Prince']); type_weights: defaultdict(<function <lambda> at 0x16aac140>, {})
-DEBUG  Here is the query vocabulary: ['Gonzales', 'Elian', 'Where', 'of', 'father', 'repatriation', 's', 'at', 'time', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 175.3; query_terms: set(['was', 'Elian', 'Gonzales', 'time', 'father', 'repatriation', 's', 'at', 'of', 'the', 'Where']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['What', 'his', 'paintings', 'for', 'of', 'is', 'Charles', 'paid', 'one', 'record', 'amount', 'the', 'ever', 'Prince']
-DEBUG  Here is the answer template: question_id: 168.3; query_terms: set(['What', 'his', 'paintings', 'for', 'of', 'is', 'Charles', 'paid', 'one', 'record', 'amount', 'the', 'ever', 'Prince']); type_weights: defaultdict(<function <lambda> at 0x16aac140>, {})
-DEBUG  Here is the query vocabulary: ['Attorney', 'Gonzales', 'repatriation', 'of', 'Who', 'US', 'General', 'Elian', 'at', 'time', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 175.4; query_terms: set(['Attorney', 'time', 'repatriation', 'Gonzales', 'Who', 'US', 'General', 'Elian', 'at', 'of', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['What', 'his', 'paintings', 'is', 'Charles', 'medium', 'painting', 'Prince', 'usual']
-DEBUG  Here is the answer template: question_id: 168.4; query_terms: set(['What', 'his', 'paintings', 'is', 'Charles', 'medium', 'painting', 'Prince', 'usual']); type_weights: defaultdict(<function <lambda> at 0x16aac140>, {})
-DEBUG  Here is the query vocabulary: ['On', 'what', 'return', 'to', 'did', 'of', 'Cuba', 'Elian', 'repatriation', 'Gonzales', 'date']
-DEBUG  Here is the answer template: question_id: 175.5; query_terms: set(['On', 'what', 'return', 'Elian', 'Cuba', 'did', 'of', 'to', 'repatriation', 'Gonzales', 'date']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['What', 'his', 'paintings', 'Charles', 'subjects', 'are', 'Prince', 'usual']
-DEBUG  Here is the answer template: question_id: 168.5; query_terms: set(['What', 'his', 'paintings', 'Charles', 'subjects', 'are', 'Prince', 'usual']); type_weights: defaultdict(<function <lambda> at 0x16aac140>, {})
-DEBUG  Here is the query vocabulary: ['a', 'What', 'his', 'paintings', 'showed', 'Charles', 'Prince', 'other', 'twoprince', 'exhibition', 'in', 'London', 'with', 'prince']
-DEBUG  Here is the answer template: question_id: 168.6; query_terms: set(['a', 'What', 'his', 'paintings', 'showed', 'Charles', 'prince', 'other', 'twoprince', 'exhibition', 'in', 'London', 'with', 'Prince']); type_weights: defaultdict(<function <lambda> at 0x16aac140>, {})
-DEBUG  Here is the query vocabulary: ['directed', 'and', 'movie', 'Who', 'Gentleman', 'An', 'Officer', 'a', 'the']
-DEBUG  Here is the answer template: question_id: 176.2; query_terms: set(['directed', 'and', 'movie', 'Who', 'Gentleman', 'An', 'Officer', 'a', 'the']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['Lamarr', 'What', 'Hedy', 'of', 's', 'birth', 'date', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 179.1; query_terms: set(['Lamarr', 'What', 'Hedy', 'of', 's', 'birth', 'date', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['and', 'a', 'what', 'did', 'movie', 'In', 'Gentleman', 'academy', 'An', 'awards', 'Officer', 'year', 'the', 'win']
-DEBUG  Here is the answer template: question_id: 176.3; query_terms: set(['and', 'a', 'what', 'did', 'movie', 'year', 'Gentleman', 'academy', 'An', 'awards', 'Officer', 'In', 'the', 'win']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['Lamarr', 'What', 'Hedy', 'name', 'her', 'at', 'birth', 'was']
-DEBUG  Here is the answer template: question_id: 179.2; query_terms: set(['Lamarr', 'What', 'Hedy', 'name', 'her', 'at', 'birth', 'was']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['city', 'what', 'Hedy', 'Lamarr', 'born', 'she', 'In', 'was']
-DEBUG  Here is the answer template: question_id: 179.3; query_terms: set(['city', 'what', 'Hedy', 'Lamarr', 'born', 'she', 'In', 'was']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['and', 'a', 'What', 'from', 'song', 'movie', 'Gentleman', 'award', 'an', 'won', 'Officer', 'academy', 'the', 'An']
-DEBUG  Here is the answer template: question_id: 176.4; query_terms: set(['and', 'a', 'What', 'from', 'song', 'movie', 'Gentleman', 'award', 'an', 'won', 'Officer', 'academy', 'the', 'An']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['On', 'what', 'Hedy', 'Lamarr', 'did', 'die', 'date']
-DEBUG  Here is the answer template: question_id: 179.4; query_terms: set(['On', 'what', 'Hedy', 'Lamarr', 'did', 'die', 'date']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['did', 'Lamarr', 'What', 'Hedy', 'invent']
-DEBUG  Here is the answer template: question_id: 179.6; query_terms: set(['did', 'Lamarr', 'What', 'Hedy', 'invent']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['city', 'what', 'Parliament', 'Lebanese', 'is', 'located', 'In', 'the']
-DEBUG  Here is the answer template: question_id: 180.1; query_terms: set(['city', 'what', 'Parliament', 'Lebanese', 'is', 'located', 'In', 'the']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['and', 'sings', 'song', 'Who', 'Gentleman', 'An', 'credits', 'Officer', 'a', 'during', 'the', 'final']
-DEBUG  Here is the answer template: question_id: 176.5; query_terms: set(['and', 'sings', 'song', 'Who', 'Gentleman', 'An', 'credits', 'Officer', 'a', 'during', 'the', 'final']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['Lebanese', 'Parliament', 'many', 'in', 'How', 'are', 'seats', 'the']
-DEBUG  Here is the answer template: question_id: 180.2; query_terms: set(['Lebanese', 'Parliament', 'many', 'seats', 'How', 'are', 'in', 'the']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['and', 'a', 'What', 'bar', 'movie', 'Florida', 'Gentleman', 'An', 'featured', 'Officer', 'in', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 176.6; query_terms: set(['and', 'a', 'What', 'bar', 'movie', 'in', 'Florida', 'An', 'featured', 'Officer', 'Gentleman', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['Lebanese', 'Parliament', 'of', 'is', 'Who', 'Speaker', 'the']
-DEBUG  Here is the answer template: question_id: 180.3; query_terms: set(['Lebanese', 'Parliament', 'of', 'is', 'Who', 'Speaker', 'the']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['Lebanese', 'Parliament', 'Deputy', 'of', 'is', 'Who', 'Speaker', 'the']
-DEBUG  Here is the answer template: question_id: 180.4; query_terms: set(['Lebanese', 'Parliament', 'Deputy', 'of', 'is', 'Who', 'Speaker', 'the']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['Blue', 'What', 'play', 'Deep', 'game', 'can']
-DEBUG  Here is the answer template: question_id: 177.1; query_terms: set(['Blue', 'What', 'play', 'Deep', 'game', 'can']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['and', 'Blue', 'February', 'in', '1996', 'Who', 'Deep', 'Kasparov', 'won', 'Gary', 'the', 'between', 'match']
-DEBUG  Here is the answer template: question_id: 177.2; query_terms: set(['and', 'Blue', 'February', '1996', 'Who', 'Deep', 'Kasparov', 'won', 'in', 'the', 'between', 'match', 'Gary']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['a', 'Lebanese', 'term', 'Parliament', 'many', 'of', 'years', 'How', 'are', 'in', 'the']
-DEBUG  Here is the answer template: question_id: 180.6; query_terms: set(['a', 'Lebanese', 'term', 'Parliament', 'of', 'in', 'years', 'How', 'are', 'many', 'the']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['Blue', '1996', 'money', 'Deep', 'How', 'much', 'match', 'in', 'the', 'was', 'wagered']
-DEBUG  Here is the answer template: question_id: 177.3; query_terms: set(['Blue', '1996', 'money', 'Deep', 'How', 'much', 'wagered', 'in', 'the', 'was', 'match']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['league', 'What', 'United', 'Club', 'Football', 'play', 'British', 'does', 'Manchester', 'in']
-DEBUG  Here is the answer template: question_id: 181.1; query_terms: set(['league', 'What', 'United', 'Club', 'Football', 'play', 'British', 'does', 'Manchester', 'in']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'United', 'plays', 'name', 'Club', 'of', 'is', 'Football', 'Manchester', 'stadium', 'in', 'the', 'where']
-DEBUG  Query contains where; setting location weight
-DEBUG  Here is the answer template: question_id: 181.2; query_terms: set(['What', 'United', 'plays', 'name', 'Club', 'of', 'is', 'Football', 'Manchester', 'stadium', 'in', 'the', 'where']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {'location': 0.9})
-DEBUG  Here is the query vocabulary: ['Blue', '1996', 'of', 'Deep', 'how', 'games', 'many', 'The', 'match', 'consisted']
-DEBUG  Here is the answer template: question_id: 177.4; query_terms: set(['Blue', '1996', 'of', 'Deep', 'how', 'games', 'many', 'The', 'match', 'consisted']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['and', 'Blue', 'in', '1997', 'May', 'Who', 'Deep', 'Kasparov', 'won', 'Gary', 'the', 'between', 'match']
-DEBUG  Here is the answer template: question_id: 177.5; query_terms: set(['and', 'Blue', '1997', 'May', 'Who', 'Deep', 'Kasparov', 'won', 'in', 'the', 'between', 'match', 'Gary']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['Football', 'United', 'Club', 'of', 'is', 'Who', 'manager', 'Manchester', 'the']
-DEBUG  Here is the answer template: question_id: 181.3; query_terms: set(['United', 'Club', 'of', 'is', 'Football', 'manager', 'Manchester', 'the', 'Who']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['Football', 'United', 'Club', 'of', 'is', 'Who', 'Manchester', 'the', 'captain']
-DEBUG  Here is the answer template: question_id: 181.4; query_terms: set(['United', 'Club', 'of', 'is', 'Football', 'Manchester', 'the', 'captain', 'Who']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['Blue', '1997', 'scan', 'many', 'could', 'per', 'How', 'second', 'Deep', 'in', 'moves']
-DEBUG  Here is the answer template: question_id: 177.6; query_terms: set(['Blue', '1997', 'scan', 'many', 'could', 'per', 'How', 'second', 'Deep', 'in', 'moves']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['Football', 'United', 'for', 'Club', 'is', 'Who', 'Manchester', 'keeper', 'the']
-DEBUG  Here is the answer template: question_id: 181.5; query_terms: set(['United', 'for', 'Club', 'is', 'Football', 'Manchester', 'keeper', 'the', 'Who']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['dismantled', 'methamphetamine', 'Arizona', 'many', 'in', 'labs', 'How', 'were', '1998']
-DEBUG  Here is the answer template: question_id: 178.1; query_terms: set(['dismantled', 'methamphetamine', 'Arizona', 'many', 'were', 'labs', 'How', 'in', '1998']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'United', 'for', 'club', 'is', 'Football', 'feeder', 'Club', 'Manchester', 'the']
-DEBUG  Here is the answer template: question_id: 181.7; query_terms: set(['What', 'United', 'for', 'club', 'is', 'Football', 'feeder', 'Club', 'Manchester', 'the']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['dismantled', 'methamphetamine', 'nationwide', 'many', 'in', 'US', 'labs', 'How', 'were', 'the', '1998']
-DEBUG  Here is the answer template: question_id: 178.2; query_terms: set(['dismantled', 'methamphetamine', 'nationwide', 'many', 'were', 'US', 'labs', 'How', 'in', 'the', '1998']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['Edinburgh', 'performers', 'appeared', 'many', 'Fringe', 'How', 'at', '1998', 'the']
-DEBUG  Here is the answer template: question_id: 182.1; query_terms: set(['Edinburgh', 'performers', 'appeared', 'many', 'Fringe', 'How', 'at', '1998', 'the']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['labs', 'methamphetamine', 'Clinton', 'for', 'did', 'money', 'Administration', 'budget', 'shutting', 'down', 'How', '2000', 'much', 'in', 'the']
-DEBUG  Here is the answer template: question_id: 178.3; query_terms: set(['down', 'methamphetamine', 'Clinton', 'for', 'did', 'money', 'Administration', 'budget', 'labs', 'How', 'shutting', 'much', 'in', 'the', '2000']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['Edinburgh', 'What', 'of', 'Fringe', 'number', 'at', 'performances', 'the', 'total', 'was', '1998']
-DEBUG  Here is the answer template: question_id: 182.2; query_terms: set(['Edinburgh', 'What', 'of', 'Fringe', 'number', 'at', 'performances', 'the', 'total', 'was', '1998']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['town', 'and', 'what', 'no', 'found', 'did', 'compound', 'methamphetamine', 'but', 'killing', 'labs', 'destroy', 'a', 'In', 'lab', 'ATF', 'the', 'dozens', 'FBI', 'Texas']
-DEBUG  Here is the answer template: question_id: 178.4; query_terms: set(['town', 'and', 'what', 'no', 'did', 'In', 'methamphetamine', 'but', 'killing', 'labs', 'destroy', 'Texas', 'a', 'compound', 'lab', 'found', 'the', 'dozens', 'FBI', 'ATF']); type_weights: defaultdict(<function <lambda> at 0x16aac2a8>, {})
-DEBUG  Here is the query vocabulary: ['Edinburgh', 'what', '1998', 'is', 'Fringe', 'month', 'held', 'In', 'the']
-DEBUG  Here is the answer template: question_id: 182.4; query_terms: set(['Edinburgh', 'what', '1998', 'is', 'Fringe', 'month', 'held', 'In', 'the']); type_weights: defaultdict(<function <lambda> at 0x16898de8>, {})
-DEBUG  Here is the query vocabulary: ['Edinburgh', 'what', 'country', 'is', 'Fringe', 'held', 'In', 'the', '1998']
-DEBUG  Here is the answer template: question_id: 182.5; query_terms: set(['Edinburgh', 'what', 'country', 'is', 'Fringe', 'held', 'In', 'the', '1998']); type_weights: defaultdict(<function <lambda> at 0x16898de8>, {})
-DEBUG  Here is the query vocabulary: ['a', 'on', 'What', 'bottles', 'in', 'company', 'labels', 'methamphetamine', 'lab', 'chemical', 's', 'were', 'found', 'labs']
-DEBUG  Here is the answer template: question_id: 178.5; query_terms: set(['a', 'on', 'What', 'bottles', 'company', 'labels', 'methamphetamine', 'lab', 'chemical', 's', 'were', 'in', 'found', 'labs']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['Edinburgh', 'what', 'Fringe', '1998', 'In', 'begun', 'year', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 182.6; query_terms: set(['Edinburgh', 'what', '1998', 'Fringe', 'year', 'begun', 'In', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16880578>, {})
-DEBUG  Here is the query vocabulary: ['plant', 'avocado', 'in', 'When', 'US', 'cultivated', 'the', 'was', 'avocados', 'first']
-DEBUG  Here is the answer template: question_id: 188.5; query_terms: set(['plant', 'avocado', 'in', 'When', 'US', 'cultivated', 'the', 'was', 'avocados', 'first']); type_weights: defaultdict(<function <lambda> at 0x16880578>, {})
-DEBUG  Here is the query vocabulary: ['On', 'what', 'of', 'Africa', 'elected', 'Mbeki', 'Thabo', 'date', 'president', 'was', 'South']
-DEBUG  Here is the answer template: question_id: 183.1; query_terms: set(['On', 'what', 'of', 'Africa', 'elected', 'Mbeki', 'Thabo', 'date', 'president', 'was', 'South']); type_weights: defaultdict(<function <lambda> at 0x16880578>, {})
-DEBUG  Here is the query vocabulary: ['What', 'crops', 'threatens', 'avocado', 'insect', 'pest', 'avocados']
-DEBUG  Here is the answer template: question_id: 188.6; query_terms: set(['What', 'crops', 'threatens', 'avocado', 'insect', 'pest', 'avocados']); type_weights: defaultdict(<function <lambda> at 0x16aac398>, {})
-DEBUG  Here is the query vocabulary: ['succeed', 'elected', 'did', 'of', 'Africa', 'Whom', 'as', 'Mbeki', 'Thabo', 'president', 'South']
-DEBUG  Here is the answer template: question_id: 183.2; query_terms: set(['Mbeki', 'Whom', 'did', 'of', 'Africa', 'elected', 'as', 'succeed', 'Thabo', 'president', 'South']); type_weights: defaultdict(<function <lambda> at 0x16898c08>, {})
-DEBUG  Here is the query vocabulary: ['publishes', 'her', 'Rowling', 'Kathleen', 'Who', 'Joanne', 'books']
-DEBUG  Here is the answer template: question_id: 189.2; query_terms: set(['publishes', 'her', 'Rowling', 'Kathleen', 'Who', 'Joanne', 'books']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['this', 'Kathleen', 'her', 'for', 'publisher', 'did', 'pay', 'Rowling', 'How', 'manuscript', 'much', 'Joanne', 'first']
-DEBUG  Here is the answer template: question_id: 189.3; query_terms: set(['How', 'publisher', 'her', 'for', 'Rowling', 'this', 'pay', 'Kathleen', 'manuscript', 'much', 'did', 'first', 'Joanne']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['What', 'elected', 'of', 'belong', 'political', 'to', 'does', 'Thabo', 'Mbeki', 'party', 'president', 'Africa', 'South']
-DEBUG  Here is the answer template: question_id: 183.3; query_terms: set(['What', 'to', 'of', 'belong', 'political', 'elected', 'does', 'Thabo', 'Mbeki', 'party', 'president', 'Africa', 'South']); type_weights: defaultdict(<function <lambda> at 0x16898c08>, {})
-DEBUG  Here is the query vocabulary: ['what', 'her', 'Joanne', 'did', 'Kathleen', 'Rowling', 'In', 'writing', 'start', 'book', 'she', 'year', 'first']
-DEBUG  Here is the answer template: question_id: 189.4; query_terms: set(['what', 'her', 'Rowling', 'did', 'Kathleen', 'year', 'writing', 'Joanne', 'book', 'she', 'In', 'start', 'first']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Thabo', 'of', 'Africa', 'elected', 's', 'Mbeki', 'black', 'at', 'opposition', 'time', 'biggest', 'party', 'the', 'president', 'was', 'South', 'election']
-DEBUG  Here is the answer template: question_id: 183.5; query_terms: set(['What', 'of', 'Africa', 'election', 'elected', 's', 'Mbeki', 'black', 'Thabo', 'opposition', 'time', 'biggest', 'party', 'the', 'president', 'was', 'South', 'at']); type_weights: defaultdict(<function <lambda> at 0x16880500>, {})
-DEBUG  Here is the query vocabulary: ['2000', 'Kathleen', 'novel', 'For', 'Joanne', 'did', 'of', 'Rowling', 'in', 'Whitbread', 'award', 'receive', 's', 'Book', 'she', 'which', 'Year', 'the', 'Children']
-DEBUG  Here is the answer template: question_id: 189.5; query_terms: set(['the', 'novel', 'For', 'Rowling', 'Kathleen', 'of', 'Year', 'Whitbread', 'award', 'Children', 'Joanne', '2000', 'Book', 'she', 'which', 'in', 'did', 's', 'receive']); type_weights: defaultdict(<function <lambda> at 0x16aac6e0>, {})
-DEBUG  Here is the query vocabulary: ['old', 'elected', 'of', 'when', 'How', 'Mbeki', 'Thabo', 'president', 'Africa', 'was', 'South', 'he']
-DEBUG  Query contains when; setting time_ex weight
-DEBUG  Here is the answer template: question_id: 183.6; query_terms: set(['old', 'elected', 'of', 'when', 'How', 'Mbeki', 'Thabo', 'president', 'Africa', 'was', 'South', 'he']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {'time_ex': 0.9})
-DEBUG  Here is the query vocabulary: ['city', 'what', 'Rowling', 'Kathleen', 'born', 'In', 'was', 'Joanne']
-DEBUG  Here is the answer template: question_id: 189.6; query_terms: set(['city', 'what', 'Rowling', 'Kathleen', 'born', 'In', 'was', 'Joanne']); type_weights: defaultdict(<function <lambda> at 0x16898cf8>, {})
-DEBUG  Here is the query vocabulary: ['president', 'elected', 'did', 'many', 'of', 'in', 'Africa', 'How', 's', 'Mbeki', 'election', 'seats', 'party', 'the', 'win', 'South', 'Thabo']
-DEBUG  Here is the answer template: question_id: 183.7; query_terms: set(['seats', 'party', 'How', 'did', 'of', 'in', 'Africa', 'elected', 's', 'Mbeki', 'election', 'many', 'president', 'the', 'win', 'South', 'Thabo']); type_weights: defaultdict(<function <lambda> at 0x16880578>, {})
-DEBUG  Here is the query vocabulary: ['city', 'what', 'Rowling', 'did', 'Kathleen', 'in', '2000', 'Joanne', 'live', 'In']
-DEBUG  Here is the answer template: question_id: 189.7; query_terms: set(['city', 'what', 'Rowling', 'did', 'In', 'live', 'Kathleen', '2000', 'in', 'Joanne']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['city', 'what', 'Heinz', 'Co', 'H', 'is', 'J', 'headquartered', 'In', 'the', 'company']
-DEBUG  Here is the answer template: question_id: 190.1; query_terms: set(['city', 'what', 'Heinz', 'Co', 'H', 'is', 'J', 'headquartered', 'In', 'the', 'company']); type_weights: defaultdict(<function <lambda> at 0x168802a8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Chicago', '1999', 'of', 'date', 'the', 'was', 'Marathon']
-DEBUG  Here is the answer template: question_id: 184.1; query_terms: set(['What', 'Chicago', '1999', 'of', 'date', 'the', 'was', 'Marathon']); type_weights: defaultdict(<function <lambda> at 0x16880578>, {})
-DEBUG  Here is the query vocabulary: ['Heinz', 'J', 'Co', 'CEO', 'of', 'company', 'Who', 'became', 'H', 'in', 'the', '1998']
-DEBUG  Here is the answer template: question_id: 190.2; query_terms: set(['Heinz', 'Co', 'in', 'CEO', 'of', 'company', 'J', 'became', 'H', 'the', 'Who', '1998']); type_weights: defaultdict(<function <lambda> at 0x16aac500>, {})
-DEBUG  Here is the query vocabulary: ['distance', 'What', 'Chicago', '1999', 'of', 'the', 'was', 'Marathon']
-DEBUG  Here is the answer template: question_id: 184.2; query_terms: set(['distance', 'What', 'Chicago', '1999', 'of', 'the', 'was', 'Marathon']); type_weights: defaultdict(<function <lambda> at 0x16880578>, {})
-DEBUG  Here is the query vocabulary: ['accident', 'fortune', 'H', 'company', 'J', 'heir', 'an', 'to', 'Heinz', 'Which', 'in', 'aviation', 'the', 'was', 'killed', 'Co']
-DEBUG  Here is the answer template: question_id: 190.3; query_terms: set(['accident', 'fortune', 'H', 'company', 'J', 'heir', 'an', 'to', 'Heinz', 'Which', 'in', 'aviation', 'the', 'was', 'killed', 'Co']); type_weights: defaultdict(<function <lambda> at 0x16aac500>, {})
-DEBUG  Here is the query vocabulary: ['Who', 'Chicago', '1999', 'of', 'winner', 's', 'men', 'the', 'was', 'Marathon']
-DEBUG  Here is the answer template: question_id: 184.3; query_terms: set(['winner', 'Chicago', '1999', 'of', 'Who', 's', 'men', 'the', 'was', 'Marathon']); type_weights: defaultdict(<function <lambda> at 0x16880578>, {})
-DEBUG  Here is the query vocabulary: ['Who', 'Chicago', '1999', 'of', 'winner', 's', 'the', 'was', 'Marathon', 'women']
-DEBUG  Here is the answer template: question_id: 184.4; query_terms: set(['winner', 'Chicago', '1999', 'of', 'Who', 's', 'the', 'was', 'Marathon', 'women']); type_weights: defaultdict(<function <lambda> at 0x16aac578>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Heinz', 'Co', 'H', 'J', 'year', 'introduced', 'was', 'Ketchup']
-DEBUG  Here is the answer template: question_id: 190.4; query_terms: set(['What', 'Heinz', 'Co', 'H', 'J', 'year', 'introduced', 'was', 'Ketchup']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['prevent', 'Heinz', 'Co', 'H', 'J', 'disease', 'ketchup', 'helping', 'to', 'as', 'does', 'tout', 'Which', 'its']
-DEBUG  Here is the answer template: question_id: 190.5; query_terms: set(['prevent', 'Heinz', 'Co', 'H', 'J', 'disease', 'its', 'helping', 'to', 'as', 'does', 'tout', 'Which', 'ketchup']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['What', 'in', 'Chicago', '1999', 'men', 'winning', 's', 'time', 'the', 'was', 'Marathon']
-DEBUG  Here is the answer template: question_id: 184.5; query_terms: set(['What', 'Chicago', '1999', 'men', 'winning', 's', 'time', 'in', 'the', 'was', 'Marathon']); type_weights: defaultdict(<function <lambda> at 0x16898e60>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Federation', 'Rowing', 'by', 'abbreviation', 'also', 'known', 'International', 'the', 'is']
-DEBUG  Here is the answer template: question_id: 191.1; query_terms: set(['What', 'Federation', 'Rowing', 'abbreviation', 'also', 'known', 'International', 'the', 'by', 'is']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Chicago', '1999', 'in', 'winning', 's', 'time', 'the', 'was', 'Marathon', 'women']
-DEBUG  Here is the answer template: question_id: 184.6; query_terms: set(['What', 'Chicago', '1999', 'time', 'winning', 's', 'in', 'the', 'was', 'Marathon', 'women']); type_weights: defaultdict(<function <lambda> at 0x16880578>, {})
-DEBUG  Here is the query vocabulary: ['Federation', 'Cup', 'Rowing', 'When', 'held', 'World', 'International', 'the', 'was', 'first']
-DEBUG  Here is the answer template: question_id: 191.2; query_terms: set(['Federation', 'Cup', 'Rowing', 'When', 'held', 'International', 'World', 'the', 'was', 'first']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['Iditarod', 'city', 'what', 'Race', 'start', 'does', 'In', 'the']
-DEBUG  Here is the answer template: question_id: 185.1; query_terms: set(['Iditarod', 'city', 'what', 'start', 'Race', 'does', 'In', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac578>, {})
-DEBUG  Here is the query vocabulary: ['Iditarod', 'city', 'what', 'end', 'Race', 'does', 'In', 'the']
-DEBUG  Here is the answer template: question_id: 185.2; query_terms: set(['Iditarod', 'city', 'what', 'end', 'Race', 'does', 'In', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac578>, {})
-DEBUG  Here is the query vocabulary: ['What', 'titles', 'Federation', 'Cup', 'country', 'Rowing', 'overall', 'four', 'won', 'World', 'International', 'the', 'first']
-DEBUG  Here is the answer template: question_id: 191.3; query_terms: set(['What', 'Federation', 'Cup', 'International', 'country', 'Rowing', 'overall', 'four', 'titles', 'World', 'won', 'the', 'first']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['Iditarod', 'what', 'is', 'it', 'month', 'held', 'Race', 'In']
-DEBUG  Here is the answer template: question_id: 185.3; query_terms: set(['Iditarod', 'what', 'is', 'it', 'month', 'held', 'Race', 'In']); type_weights: defaultdict(<function <lambda> at 0x16aac578>, {})
-DEBUG  Here is the query vocabulary: ['in', 'Federation', 'of', 'Rowing', 'Who', '1989', 'elected', 'International', 'president', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 191.5; query_terms: set(['president', 'Federation', 'of', 'Rowing', 'Who', '1989', 'elected', 'in', 'International', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['Iditarod', 'founder', 'of', 'is', 'Who', 'Race', 'the']
-DEBUG  Here is the answer template: question_id: 185.4; query_terms: set(['Iditarod', 'founder', 'of', 'is', 'Who', 'Race', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac578>, {})
-DEBUG  Here is the query vocabulary: ['Olympic', 'Australia', 'raced', 'Federation', 'many', 'Rowing', 'How', '2000', 'Games', 'Sydney', 'in', 'boats', 'International', 'the']
-DEBUG  Here is the answer template: question_id: 191.6; query_terms: set(['Olympic', 'Australia', 'raced', 'Federation', 'many', 'Rowing', 'How', '2000', 'Games', 'Sydney', 'in', 'boats', 'International', 'the']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['Iditarod', 'Race', 'many', 'is', 'long', 'How', 'miles', 'the']
-DEBUG  Here is the answer template: question_id: 185.6; query_terms: set(['Iditarod', 'miles', 'many', 'is', 'long', 'How', 'Race', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac578>, {})
-DEBUG  Here is the query vocabulary: ['Iditarod', 'What', 'Race', 'is', 'in', 'record', 'won', 'which', 'time', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 185.7; query_terms: set(['Iditarod', 'What', 'won', 'is', 'time', 'record', 'Race', 'which', 'in', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac578>, {})
-DEBUG  Here is the query vocabulary: ['What', 'for', 'acronym', 'ETA', 'does', 'stand', 'Basque', 'the']
-DEBUG  Here is the answer template: question_id: 192.1; query_terms: set(['What', 'for', 'acronym', 'ETA', 'does', 'Basque', 'the', 'stand']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['Pyramids', 'Egypt', 'many', 'in', 'been', 'discovered', 'How', 'of', 'have', 'pyramids']
-DEBUG  Here is the answer template: question_id: 186.1; query_terms: set(['pyramids', 'Egypt', 'many', 'Pyramids', 'been', 'discovered', 'How', 'of', 'have', 'in']); type_weights: defaultdict(<function <lambda> at 0x16aac578>, {})
-DEBUG  Here is the query vocabulary: ['people', 'many', 'Approximately', 'how', 'ETA', 'Basque', 'has', 'killed']
-DEBUG  Here is the answer template: question_id: 192.2; query_terms: set(['people', 'many', 'Approximately', 'how', 'ETA', 'Basque', 'has', 'killed']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['a', 'On', 'what', 'did', '1998', 'Basque', 'ETA', 'in', 'date', 'announce', 'ceasefire']
-DEBUG  Here is the answer template: question_id: 192.4; query_terms: set(['a', 'On', 'what', 'did', '1998', 'in', 'ETA', 'Basque', 'date', 'announce', 'ceasefire']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['Great', 'city', 'what', 'Egypt', 'of', 'Pyramids', 'three', 'located', 'are', 'In', 'the']
-DEBUG  Here is the answer template: question_id: 186.2; query_terms: set(['city', 'Great', 'Egypt', 'of', 'In', 'what', 'three', 'located', 'are', 'Pyramids', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac578>, {})
-DEBUG  Here is the query vocabulary: ['What', 'this', 'begin', 'will', 'ETA', 'Basque', 'date', 'ceasefire']
-DEBUG  Here is the answer template: question_id: 192.5; query_terms: set(['What', 'this', 'begin', 'will', 'ETA', 'Basque', 'date', 'ceasefire']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['pyramid', 'built', 'Egypt', 'of', 'is', 'Pyramids', 'Which', 'largest', 'the', 'ever']
-DEBUG  Here is the answer template: question_id: 186.4; query_terms: set(['pyramid', 'built', 'Egypt', 'of', 'is', 'largest', 'Which', 'Pyramids', 'the', 'ever']); type_weights: defaultdict(<function <lambda> at 0x16aac578>, {})
-DEBUG  Here is the query vocabulary: ['What', 'end', 'would', 'that', 'did', 'this', 'ETA', 'Basque', 'date', 'announce', 'ceasefire']
-DEBUG  Here is the answer template: question_id: 192.6; query_terms: set(['What', 'end', 'would', 'that', 'did', 'this', 'ETA', 'Basque', 'date', 'announce', 'ceasefire']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['city', 'what', 'Food', 'is', 'headquartered', 'Program', 'In', 'World', 'the', 'WFP']
-DEBUG  Here is the answer template: question_id: 193.1; query_terms: set(['city', 'what', 'Food', 'is', 'headquartered', 'Program', 'In', 'World', 'the', 'WFP']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['What', 'pyramid', 'Egypt', 'of', 'is', 'Pyramids', 'height', 'largest', 'the']
-DEBUG  Here is the answer template: question_id: 186.5; query_terms: set(['What', 'pyramid', 'Egypt', 'of', 'is', 'largest', 'height', 'Pyramids', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac578>, {})
-DEBUG  Here is the query vocabulary: ['created', 'Food', 'When', 'Program', 'World', 'the', 'was', 'WFP']
-DEBUG  Here is the answer template: question_id: 193.2; query_terms: set(['created', 'Food', 'When', 'Program', 'World', 'the', 'was', 'WFP']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['Great', 'old', 'Egypt', 'of', 'three', 'How', 'are', 'Pyramids', 'the']
-DEBUG  Here is the answer template: question_id: 186.6; query_terms: set(['Great', 'old', 'Egypt', 'of', 'three', 'How', 'are', 'Pyramids', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac578>, {})
-DEBUG  Here is the query vocabulary: ['Food', 'of', 'Who', 'director', 'Program', 'World', 'the', 'was', 'WFP', 'first']
-DEBUG  Here is the answer template: question_id: 193.3; query_terms: set(['Food', 'of', 'Who', 'director', 'Program', 'World', 'the', 'was', 'WFP', 'first']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['origin', 'what', 'country', 'is', 'of', 'Amazon', 'In', 'the', 'River']
-DEBUG  Here is the answer template: question_id: 187.1; query_terms: set(['origin', 'what', 'country', 'is', 'In', 'Amazon', 'of', 'the', 'River']); type_weights: defaultdict(<function <lambda> at 0x16aac578>, {})
-DEBUG  Here is the query vocabulary: ['1997', 'Food', 'of', 'Who', 'director', 'Program', 'in', 'World', 'the', 'was', 'WFP']
-DEBUG  Here is the answer template: question_id: 193.4; query_terms: set(['1997', 'Food', 'of', 'Who', 'director', 'Program', 'in', 'World', 'the', 'was', 'WFP']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['what', 'country', 'is', 'of', 'Amazon', 'mouth', 'In', 'the', 'River']
-DEBUG  Here is the answer template: question_id: 187.2; query_terms: set(['what', 'country', 'is', 'In', 'Amazon', 'mouth', 'of', 'the', 'River']); type_weights: defaultdict(<function <lambda> at 0x16aac578>, {})
-DEBUG  Here is the query vocabulary: ['is', 'long', 'How', 'Amazon', 'the', 'River']
-DEBUG  Here is the answer template: question_id: 187.3; query_terms: set(['is', 'long', 'How', 'Amazon', 'the', 'River']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['what', 'Food', 'of', 'is', 'agency', 'an', 'Program', 'World', 'organization', 'The', 'WFP']
-DEBUG  Here is the answer template: question_id: 193.5; query_terms: set(['what', 'Food', 'of', 'is', 'agency', 'an', 'Program', 'organization', 'World', 'The', 'WFP']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['mountain', 'what', 'rise', 'Amazon', 'range', 'does', 'In', 'the', 'River']
-DEBUG  Here is the answer template: question_id: 187.5; query_terms: set(['mountain', 'what', 'rise', 'Amazon', 'range', 'does', 'In', 'the', 'River']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['distribute', 'countries', 'did', 'many', 'In', 'how', '2000', 'Food', 'food', 'in', 'Program', 'World', 'the', 'WFP']
-DEBUG  Here is the answer template: question_id: 193.6; query_terms: set(['in', 'countries', 'did', 'many', 'distribute', 'how', '2000', 'Food', 'food', 'In', 'Program', 'World', 'the', 'WFP']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['origin', 'What', 'name', 'of', 'is', 'Amazon', 'at', 'the', 'River', 'its']
-DEBUG  Here is the answer template: question_id: 187.6; query_terms: set(['origin', 'What', 'name', 'of', 'is', 'Amazon', 'at', 'the', 'River', 'its']); type_weights: defaultdict(<function <lambda> at 0x16aac398>, {})
-DEBUG  Here is the query vocabulary: ['Tournament', '1996', 'did', 'Super', 'tournament', 'place', 'take', 'World', 'the', 'Where', 'Chess']
-DEBUG  Here is the answer template: question_id: 194.1; query_terms: set(['tournament', '1996', 'did', 'Where', 'Tournament', 'place', 'take', 'World', 'the', 'Super', 'Chess']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['What', 'producer', 'is', 'avocado', 'US', 'state', 'the', 'highest', 'avocados']
-DEBUG  Here is the answer template: question_id: 188.1; query_terms: set(['What', 'producer', 'is', 'avocado', 'US', 'state', 'the', 'highest', 'avocados']); type_weights: defaultdict(<function <lambda> at 0x16aac398>, {})
-DEBUG  Here is the query vocabulary: ['What', 'of', 'is', 'avocado', 'fat', 'an', 'content', 'the', 'avocados']
-DEBUG  Here is the answer template: question_id: 188.2; query_terms: set(['What', 'of', 'is', 'avocado', 'fat', 'an', 'content', 'the', 'avocados']); type_weights: defaultdict(<function <lambda> at 0x16aac398>, {})
-DEBUG  Here is the query vocabulary: ['conclude', 'Tournament', '1996', 'did', 'tournament', 'When', 'this', 'Chess', 'World', 'Super']
-DEBUG  Here is the answer template: question_id: 194.2; query_terms: set(['conclude', 'tournament', '1996', 'did', 'Tournament', 'When', 'this', 'Chess', 'World', 'Super']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['Super', '1996', 'many', 'players', 'Tournament', 'How', 'Chess', 'World', 'participated']
-DEBUG  Here is the answer template: question_id: 194.3; query_terms: set(['1996', 'players', 'many', 'Tournament', 'How', 'Chess', 'participated', 'World', 'Super']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['on', 'What', 'of', 'Independence', 'Timor', 'election', 'date', 'the', 'East', 'was', 'independence']
-DEBUG  Here is the answer template: question_id: 195.1; query_terms: set(['on', 'What', 'was', 'of', 'election', 'date', 'the', 'East', 'Timor', 'Independence', 'independence']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['what', 'Padre', 'Pio', 'In', 'born', 'year', 'was']
-DEBUG  Here is the answer template: question_id: 199.1; query_terms: set(['what', 'Padre', 'Pio', 'year', 'born', 'In', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['born', 'was', 'Where', 'Padre', 'Pio']
-DEBUG  Here is the answer template: question_id: 199.2; query_terms: set(['Where', 'born', 'was', 'Padre', 'Pio']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'for', 'of', 'Timor', 'Independence', 'vote', 'percentage', 'East', 'was', 'the', 'independence']
-DEBUG  Here is the answer template: question_id: 195.2; query_terms: set(['What', 'for', 'was', 'of', 'independence', 'vote', 'percentage', 'East', 'Timor', 'the', 'Independence']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Padre', 'Pio', 'did', 'die', 'year']
-DEBUG  Here is the answer template: question_id: 199.3; query_terms: set(['What', 'Padre', 'Pio', 'did', 'die', 'year']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['old', 'Padre', 'Pio', 'when', 'How', 'was', 'died', 'he']
-DEBUG  Query contains when; setting time_ex weight
-DEBUG  Here is the answer template: question_id: 199.4; query_terms: set(['old', 'Padre', 'Pio', 'when', 'How', 'was', 'died', 'he']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {'time_ex': 0.9})
-DEBUG  Here is the query vocabulary: ['city', 'what', 'Padre', 'Pio', 'is', 's', 'In', 'tomb']
-DEBUG  Here is the answer template: question_id: 199.5; query_terms: set(['city', 'what', 'Padre', 'Pio', 'is', 's', 'In', 'tomb']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['what', 'From', 'separate', 'did', 'country', 'East', 'Timor', 'Independence']
-DEBUG  Here is the answer template: question_id: 195.3; query_terms: set(['what', 'From', 'separate', 'did', 'country', 'East', 'Timor', 'Independence']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['what', 'did', 'country', 'In', 'this', 'year', 'East', 'Timor', 'invade', 'Independence']
-DEBUG  Here is the answer template: question_id: 195.4; query_terms: set(['what', 'did', 'country', 'In', 'this', 'year', 'East', 'Timor', 'invade', 'Independence']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Padre', 'Pio', 'did', 'receive', 'stigmata', 'year', 'the', 'first']
-DEBUG  Here is the answer template: question_id: 199.6; query_terms: set(['What', 'Padre', 'Pio', 'did', 'receive', 'stigmata', 'year', 'the', 'first']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['On', 'what', 'Force', 'did', 'enter', 'INTERFET', 'in', 'date', 'International', 'the', 'East', 'Timor', 'Independence']
-DEBUG  Here is the answer template: question_id: 195.5; query_terms: set(['On', 'what', 'Force', 'did', 'in', 'INTERFET', 'enter', 'date', 'International', 'the', 'East', 'Timor', 'Independence']); type_weights: defaultdict(<function <lambda> at 0x16898cf8>, {})
-DEBUG  Here is the query vocabulary: ['city', 'what', 'born', 'Frank', 'Sinatra', 'In', 'was']
-DEBUG  Here is the answer template: question_id: 200.1; query_terms: set(['city', 'what', 'born', 'Frank', 'Sinatra', 'In', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Frank', 'Sinatra', 's', 'year', 'performance', 'was', 'first']
-DEBUG  Here is the answer template: question_id: 200.2; query_terms: set(['What', 'Frank', 'Sinatra', 's', 'year', 'performance', 'was', 'first']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['control', 'On', 'what', 'Transitional', 'to', 'did', 'over', 'Authority', 'INTERFET', 'turn', 'UN', 'in', 'date', 'UNTAET', 'East', 'Timor', 'Independence']
-DEBUG  Here is the answer template: question_id: 195.7; query_terms: set(['control', 'On', 'what', 'Transitional', 'turn', 'did', 'over', 'Authority', 'INTERFET', 'to', 'UN', 'in', 'date', 'UNTAET', 'East', 'Timor', 'Independence']); type_weights: defaultdict(<function <lambda> at 0x16898cf8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Frank', 'recording', 'Sinatra', 's', 'was', 'first']
-DEBUG  Here is the answer template: question_id: 200.3; query_terms: set(['What', 'Frank', 'recording', 'Sinatra', 's', 'was', 'first']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['did', 'die', 'When', 'Sinatra', 'Frank', 'he']
-DEBUG  Here is the answer template: question_id: 200.4; query_terms: set(['did', 'die', 'When', 'Sinatra', 'Frank', 'he']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['old', 'Sinatra', 'Frank', 'when', 'How', 'was', 'died', 'he']
-DEBUG  Query contains when; setting time_ex weight
-DEBUG  Here is the answer template: question_id: 200.5; query_terms: set(['old', 'Sinatra', 'Frank', 'when', 'How', 'was', 'died', 'he']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {'time_ex': 0.9})
-DEBUG  Here is the query vocabulary: ['William', 'was', 'When', 'Shakespeare', 'born']
-DEBUG  Here is the answer template: question_id: 201.1; query_terms: set(['William', 'When', 'was', 'Shakespeare', 'born']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['On', 'what', 'of', 'adopted', 'Adoption', 'date', 'the', 'was', 'Euro']
-DEBUG  Here is the answer template: question_id: 196.1; query_terms: set(['On', 'what', 'of', 'adopted', 'Adoption', 'date', 'the', 'was', 'Euro']); type_weights: defaultdict(<function <lambda> at 0x16898cf8>, {})
-DEBUG  Here is the query vocabulary: ['William', 'was', 'Where', 'Shakespeare', 'born']
-DEBUG  Here is the answer template: question_id: 201.2; query_terms: set(['William', 'Where', 'was', 'Shakespeare', 'born']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['did', 'die', 'William', 'When', 'Shakespeare']
-DEBUG  Here is the answer template: question_id: 201.3; query_terms: set(['did', 'die', 'William', 'When', 'Shakespeare']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['old', 'when', 'William', 'How', 'Shakespeare', 'was', 'died', 'he']
-DEBUG  Query contains when; setting time_ex weight
-DEBUG  Here is the answer template: question_id: 201.4; query_terms: set(['old', 'when', 'William', 'How', 'Shakespeare', 'was', 'died', 'he']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {'time_ex': 0.9})
-DEBUG  Here is the query vocabulary: ['countries', 'Union', 'many', 'originally', 'adopted', 'How', 'Adoption', 'of', 'the', 'Euro', 'European']
-DEBUG  Here is the answer template: question_id: 196.2; query_terms: set(['countries', 'Union', 'many', 'originally', 'adopted', 'How', 'Adoption', 'of', 'the', 'European', 'Euro']); type_weights: defaultdict(<function <lambda> at 0x16898cf8>, {})
-DEBUG  Here is the query vocabulary: ['William', 'did', 'many', 'write', 'How', 'Shakespeare', 'sonnets']
-DEBUG  Here is the answer template: question_id: 201.5; query_terms: set(['write', 'did', 'many', 'William', 'How', 'Shakespeare', 'sonnets']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['William', 'plays', 'did', 'many', 'write', 'How', 'Shakespeare']
-DEBUG  Here is the answer template: question_id: 201.6; query_terms: set(['write', 'plays', 'did', 'many', 'William', 'How', 'Shakespeare']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['was', 'Cole', 'Where', 'Porter', 'born']
-DEBUG  Here is the answer template: question_id: 202.1; query_terms: set(['Where', 'Cole', 'was', 'Porter', 'born']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['On', 'what', 'adopt', 'of', 'Greece', 'to', 'Adoption', 'allowed', 'date', 'the', 'was', 'Euro']
-DEBUG  Here is the answer template: question_id: 196.4; query_terms: set(['On', 'what', 'allowed', 'of', 'adopt', 'to', 'Adoption', 'Greece', 'date', 'the', 'was', 'Euro']); type_weights: defaultdict(<function <lambda> at 0x16880668>, {})
-DEBUG  Here is the query vocabulary: ['What', 'born', 'year', 'Cole', 'was', 'Porter']
-DEBUG  Here is the answer template: question_id: 202.2; query_terms: set(['What', 'born', 'year', 'Cole', 'was', 'Porter']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['What', 'did', 'die', 'year', 'Cole', 'Porter']
-DEBUG  Here is the answer template: question_id: 202.3; query_terms: set(['What', 'did', 'die', 'year', 'Cole', 'Porter']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['What', 'last', 'show', 's', 'Broadway', 'Cole', 'was', 'Porter']
-DEBUG  Here is the answer template: question_id: 202.5; query_terms: set(['What', 'last', 'show', 's', 'Broadway', 'Cole', 'was', 'Porter']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['scheduled', 'what', 'currencies', 'of', 'is', 'In', 'replace', 'to', 'completely', 'Adoption', 'year', 'the', 'national', 'Euro']
-DEBUG  Here is the answer template: question_id: 196.5; query_terms: set(['scheduled', 'what', 'currencies', 'of', 'is', 'year', 'replace', 'to', 'completely', 'Adoption', 'In', 'the', 'national', 'Euro']); type_weights: defaultdict(<function <lambda> at 0x16aac668>, {})
-DEBUG  Here is the query vocabulary: ['did', 'many', 'write', 'How', 'Cole', 'Porter', 'songs']
-DEBUG  Here is the answer template: question_id: 202.6; query_terms: set(['did', 'many', 'write', 'How', 'Cole', 'Porter', 'songs']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['What', 's', 'professional', 'Cole', 'was', 'musical', 'Porter', 'first']
-DEBUG  Here is the answer template: question_id: 202.7; query_terms: set(['What', 's', 'professional', 'Cole', 'was', 'musical', 'Porter', 'first']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['among', 'What', 'Nissan', 'automakers', 'Japanese', 'Corp', 'position', 'is']
-DEBUG  Here is the answer template: question_id: 203.1; query_terms: set(['among', 'What', 'Nissan', 'automakers', 'Japanese', 'Corp', 'position', 'is']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['Danish', 'what', 'voters', 'of', 'referendum', 'rejected', '2000', 'Adoption', 'In', 'adopting', 'the', 'percentage', 'Euro']
-DEBUG  Here is the answer template: question_id: 196.6; query_terms: set(['Danish', 'what', 'voters', 'of', 'percentage', 'referendum', 'rejected', '2000', 'Adoption', 'In', 'adopting', 'the', 'Euro']); type_weights: defaultdict(<function <lambda> at 0x16aac668>, {})
-DEBUG  Here is the query vocabulary: ['of', 'is', 'Who', 'Corp', 'president', 'Nissan']
-DEBUG  Here is the answer template: question_id: 203.2; query_terms: set(['of', 'is', 'Who', 'Corp', 'president', 'Nissan']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['city', 'what', 'Nissan', 'headquartered', 'Corp', 'In', 'is']
-DEBUG  Here is the answer template: question_id: 203.4; query_terms: set(['city', 'what', 'Nissan', 'headquartered', 'Corp', 'In', 'is']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['cloning', 'What', 'from', 'of', 'cells', 'successfully', 'cloned', 'adult', 'animal', 'mammals', 'mammal', 'the', 'was', 'first']
-DEBUG  Here is the answer template: question_id: 197.1; query_terms: set(['What', 'from', 'of', 'cells', 'successfully', 'cloned', 'cloning', 'animal', 'mammals', 'mammal', 'the', 'first', 'was', 'adult']); type_weights: defaultdict(<function <lambda> at 0x16aac668>, {})
-DEBUG  Here is the query vocabulary: ['What', 'car', 'Nissan', 'Corp', 'luxury', 'the', 'is']
-DEBUG  Here is the answer template: question_id: 203.5; query_terms: set(['What', 'car', 'Nissan', 'Corp', 'luxury', 'the', 'is']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['What', 'formerly', 'Nissan', 'as', 'Corp', 'known', 'was']
-DEBUG  Here is the answer template: question_id: 203.6; query_terms: set(['What', 'formerly', 'Nissan', 'as', 'Corp', 'known', 'was']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['What', 'from', 'this', 'of', 'cells', 'mammals', 'born', 'cloning', 'animal', 'year', 'was', 'adult']
-DEBUG  Here is the answer template: question_id: 197.2; query_terms: set(['What', 'from', 'this', 'of', 'cells', 'year', 'born', 'cloning', 'animal', 'mammals', 'was', 'adult']); type_weights: defaultdict(<function <lambda> at 0x16aac668>, {})
-DEBUG  Here is the query vocabulary: ['Mormons', 'Christ', 'of', 'Who', 'Saints', 'Jesus', 'founded', 'Latterday', 'Church', 'the']
-DEBUG  Here is the answer template: question_id: 204.1; query_terms: set(['founded', 'Christ', 'of', 'Who', 'Saints', 'Jesus', 'Mormons', 'Latterday', 'Church', 'the']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['what', 'from', 'adult', 'institute', 'of', 'cells', 'this', 'done', 'At', 'mammals', 'was', 'procedure', 'cloning']
-DEBUG  Here is the answer template: question_id: 197.3; query_terms: set(['cloning', 'what', 'from', 'institute', 'of', 'cells', 'this', 'done', 'adult', 'mammals', 'was', 'procedure', 'At']); type_weights: defaultdict(<function <lambda> at 0x16aac668>, {})
-DEBUG  Here is the query vocabulary: ['Mormons', 'what', 'Church', 'Christ', 'In', 'of', 'year', 'Saints', 'Jesus', 'founded', 'Latterday', 'church', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 204.2; query_terms: set(['church', 'founded', 'what', 'Christ', 'Saints', 'of', 'Church', 'year', 'Jesus', 'Mormons', 'Latterday', 'In', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['what', 'facility', 'this', 'country', 'is', 'Facility', 'Bushehr', 'Nuclear', 'located', 'In']
-DEBUG  Here is the answer template: question_id: 198.1; query_terms: set(['what', 'Facility', 'this', 'country', 'is', 'facility', 'Bushehr', 'located', 'Nuclear', 'In']); type_weights: defaultdict(<function <lambda> at 0x16aac668>, {})
-DEBUG  Here is the query vocabulary: ['begin', 'Christ', 'did', 'of', 'Mormon', 'Church', 'Saints', 'Jesus', 'Mormons', 'Latterday', 'church', 'the', 'Where']
-DEBUG  Here is the answer template: question_id: 204.3; query_terms: set(['begin', 'Christ', 'did', 'of', 'Mormon', 'church', 'Saints', 'Jesus', 'Mormons', 'Latterday', 'Church', 'the', 'Where']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['development', 'What', 'Bushehr', 'facility', 'this', 'country', 'is', 'Facility', 'assisting', 'Nuclear', 'of', 'the', 'with']
-DEBUG  Here is the answer template: question_id: 198.2; query_terms: set(['development', 'assisting', 'What', 'facility', 'this', 'country', 'is', 'Facility', 'Bushehr', 'of', 'Nuclear', 'the', 'with']); type_weights: defaultdict(<function <lambda> at 0x16aac668>, {})
-DEBUG  Here is the query vocabulary: ['Latterday', 'members', 'many', 'of', 'Saints', 'it', 'Jesus', 'Mormons', 'How', 'does', 'have', 'Church', 'Christ']
-DEBUG  Here is the answer template: question_id: 204.4; query_terms: set(['have', 'many', 'Church', 'Saints', 'it', 'Jesus', 'Mormons', 'How', 'Latterday', 'does', 'members', 'of', 'Christ']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Bushehr', 'facility', 'this', 'of', 'is', 'Facility', 'primary', 'purpose', 'Nuclear', 'claimed', 'the']
-DEBUG  Here is the answer template: question_id: 198.4; query_terms: set(['What', 'facility', 'this', 'of', 'is', 'Facility', 'Bushehr', 'primary', 'purpose', 'Nuclear', 'claimed', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac668>, {})
-DEBUG  Here is the query vocabulary: ['Christ', 'of', 'is', 'Church', 'Saints', 'Jesus', 'Mormons', 'Latterday', 'capital', 'the', 'Where', 'Mormon']
-DEBUG  Here is the answer template: question_id: 204.6; query_terms: set(['Christ', 'of', 'is', 'capital', 'Saints', 'Jesus', 'Mormons', 'Latterday', 'Church', 'the', 'Where', 'Mormon']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['What', 'reactor', 'for', 'facility', 'being', 'Nuclear', 'is', 'Facility', 'Bushehr', 'this', 'planned', 'model']
-DEBUG  Here is the answer template: question_id: 198.5; query_terms: set(['What', 'reactor', 'for', 'facility', 'being', 'Nuclear', 'is', 'Facility', 'Bushehr', 'this', 'planned', 'model']); type_weights: defaultdict(<function <lambda> at 0x16aac668>, {})
-DEBUG  Here is the query vocabulary: ['worldwide', 'Latterday', 'temples', 'many', 'Church', 'Saints', 'Jesus', 'Mormons', 'How', 'of', 'are', 'in', 'operation', 'Christ']
-DEBUG  Here is the answer template: question_id: 204.7; query_terms: set(['worldwide', 'in', 'temples', 'many', 'of', 'Saints', 'Jesus', 'Mormons', 'How', 'Latterday', 'are', 'Church', 'operation', 'Christ']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['on', 'What', 'facility', 'did', 'Nuclear', 'originally', 'work', 'Bushehr', 'this', 'year', 'Facility', 'start']
-DEBUG  Here is the answer template: question_id: 198.6; query_terms: set(['on', 'What', 'facility', 'did', 'Nuclear', 'originally', 'work', 'Bushehr', 'this', 'year', 'Facility', 'start']); type_weights: defaultdict(<function <lambda> at 0x16aac668>, {})
-DEBUG  Here is the query vocabulary: ['Great', 'old', 'Wall', 'of', 'is', 'How', 'China', 'the']
-DEBUG  Here is the answer template: question_id: 208.1; query_terms: set(['Great', 'old', 'Wall', 'of', 'is', 'How', 'China', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['1991', 'On', 'what', 'island', 'Pinatubo', 'eruption', 'Mt', 'of', 'Mount', 'is']
-DEBUG  Here is the answer template: question_id: 205.1; query_terms: set(['1991', 'On', 'what', 'island', 'Pinatubo', 'eruption', 'Mt', 'of', 'Mount', 'is']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['Great', 'Wall', 'of', 'is', 'long', 'How', 'China', 'the']
-DEBUG  Here is the answer template: question_id: 208.2; query_terms: set(['Great', 'Wall', 'of', 'is', 'long', 'How', 'China', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['1991', 'what', 'did', 'of', 'Mount', 'eruption', 'it', 'month', 'erupt', 'In', 'Pinatubo']
-DEBUG  Here is the answer template: question_id: 205.2; query_terms: set(['1991', 'what', 'did', 'of', 'Mount', 'eruption', 'it', 'month', 'erupt', 'In', 'Pinatubo']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['a', 'Great', 'used', 'Wall', 'of', 'it', 'long', 'How', 'as', 'defense', 'China', 'was']
-DEBUG  Here is the answer template: question_id: 208.3; query_terms: set(['a', 'Great', 'used', 'Wall', 'of', 'it', 'long', 'How', 'as', 'defense', 'China', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['1991', 'people', 'many', 'Mount', 'of', 'eruption', 'How', 'were', 'Pinatubo', 'killed']
-DEBUG  Here is the answer template: question_id: 205.3; query_terms: set(['1991', 'people', 'many', 'Mount', 'were', 'eruption', 'killed', 'How', 'of', 'Pinatubo']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['Great', 'built', 'wall', 'of', 'dynasty', 'Wall', 'China', 'which', 'Under', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 208.4; query_terms: set(['Great', 'built', 'wall', 'of', 'dynasty', 'Wall', 'China', 'which', 'Under', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['1991', 'people', 'many', 'Mount', 'of', 'eruption', 'How', 'were', 'Pinatubo', 'evacuated']
-DEBUG  Here is the answer template: question_id: 205.4; query_terms: set(['1991', 'people', 'many', 'Mount', 'were', 'eruption', 'How', 'of', 'Pinatubo', 'evacuated']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['Carolyn', 'Kennedy', 'did', 'up', 'she', 'Bessette', 'Where', 'grow']
-DEBUG  Here is the answer template: question_id: 209.1; query_terms: set(['Carolyn', 'Kennedy', 'did', 'up', 'she', 'Bessette', 'Where', 'grow']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['dormant', '1991', 'Mt', 'eruption', 'Pinatubo', 'had', 'been', 'How', 'long', 'of', 'Mount']
-DEBUG  Here is the answer template: question_id: 205.5; query_terms: set(['dormant', '1991', 'How', 'had', 'Pinatubo', 'eruption', 'been', 'Mt', 'long', 'of', 'Mount']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['school', 'Carolyn', 'Kennedy', 'did', 'high', 'to', 'she', 'Which', 'go', 'Bessette']
-DEBUG  Here is the answer template: question_id: 209.2; query_terms: set(['school', 'Carolyn', 'Kennedy', 'did', 'high', 'to', 'she', 'Which', 'go', 'Bessette']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['did', 'When', 'flood', 'the', 'occur', 'Johnstown']
-DEBUG  Here is the answer template: question_id: 206.1; query_terms: set(['did', 'When', 'flood', 'the', 'occur', 'Johnstown']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['Carolyn', 'Kennedy', 'did', 'to', 'college', 'she', 'Which', 'go', 'Bessette']
-DEBUG  Here is the answer template: question_id: 209.3; query_terms: set(['Carolyn', 'Kennedy', 'did', 'to', 'college', 'she', 'Which', 'go', 'Bessette']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['flood', 'people', 'perished', 'many', 'How', 'in', 'the', 'Johnstown']
-DEBUG  Here is the answer template: question_id: 206.2; query_terms: set(['How', 'perished', 'many', 'people', 'flood', 'in', 'the', 'Johnstown']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['married', 'Carolyn', 'Kennedy', 'Who', 'to', 'she', 'Bessette', 'was']
-DEBUG  Here is the answer template: question_id: 209.4; query_terms: set(['Who', 'Carolyn', 'Kennedy', 'married', 'to', 'she', 'Bessette', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['on', 'flood', 'water', 'How', 'much', 'fell', 'Johnstown']
-DEBUG  Here is the answer template: question_id: 206.3; query_terms: set(['on', 'flood', 'water', 'How', 'much', 'fell', 'Johnstown']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['Carolyn', 'Kennedy', 'married', 'When', 'she', 'Bessette', 'was']
-DEBUG  Here is the answer template: question_id: 209.5; query_terms: set(['Carolyn', 'Kennedy', 'married', 'When', 'she', 'Bessette', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'dam', 'flood', 'caused', 'the', 'Johnstown']
-DEBUG  Here is the answer template: question_id: 206.4; query_terms: set(['What', 'dam', 'flood', 'caused', 'the', 'Johnstown']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['On', 'what', 'Carolyn', 'Kennedy', 'did', 'die', 'she', 'date', 'Bessette']
-DEBUG  Here is the answer template: question_id: 209.6; query_terms: set(['On', 'what', 'Carolyn', 'Kennedy', 'did', 'die', 'she', 'date', 'Bessette']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['old', 'flood', 'dam', 'How', 'the', 'was', 'Johnstown']
-DEBUG  Here is the answer template: question_id: 206.5; query_terms: set(['old', 'flood', 'dam', 'How', 'the', 'was', 'Johnstown']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Janet', 'government', 'did', '1993', 'Reno', 'assume', 'she', 'in', 'position']
-DEBUG  Here is the answer template: question_id: 210.1; query_terms: set(['What', 'Janet', 'government', 'did', '1993', 'Reno', 'assume', 'she', 'in', 'position']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['what', 'is', 'flood', 'state', 'In', 'Johnstown']
-DEBUG  Here is the answer template: question_id: 206.6; query_terms: set(['what', 'is', 'flood', 'state', 'In', 'Johnstown']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Janet', 'to', 'did', '1993', 'Reno', 'prior', 'she', 'have', 'immediately', 'position']
-DEBUG  Here is the answer template: question_id: 210.2; query_terms: set(['What', 'Janet', 'prior', 'did', '1993', 'Reno', 'to', 'she', 'have', 'position', 'immediately']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['be', 'what', 'built', 'of', 'began', 'year', 'Pisa', 'to', 'Leaning', 'in', 'The', 'Tower']
-DEBUG  Here is the answer template: question_id: 207.1; query_terms: set(['be', 'what', 'in', 'built', 'of', 'began', 'Leaning', 'Pisa', 'to', 'year', 'The', 'Tower']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['Janet', 'her', 'Where', 'father', 'Reno', 'born', 'was']
-DEBUG  Here is the answer template: question_id: 210.3; query_terms: set(['Janet', 'her', 'was', 'father', 'Reno', 'born', 'Where']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['Janet', 'did', 'up', 'Reno', 'she', 'Where', 'grow']
-DEBUG  Here is the answer template: question_id: 210.4; query_terms: set(['Janet', 'did', 'up', 'Reno', 'she', 'Where', 'grow']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['to', 'did', 'of', 'it', 'long', 'Pisa', 'How', 'take', 'Leaning', 'the', 'Tower', 'build']
-DEBUG  Here is the answer template: question_id: 207.2; query_terms: set(['How', 'did', 'of', 'Pisa', 'long', 'it', 'to', 'take', 'Leaning', 'the', 'Tower', 'build']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['Attorney', 'Janet', 'her', 'Deputy', '1999', 'top', 'Who', 'Reno', 'in', 'was']
-DEBUG  Here is the answer template: question_id: 210.5; query_terms: set(['Attorney', 'Janet', 'her', 'Deputy', '1999', 'top', 'Who', 'Reno', 'in', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'angle', 'of', 'is', 'Leaning', 'Pisa', 'tilt', 'the', 'Tower']
-DEBUG  Here is the answer template: question_id: 207.3; query_terms: set(['tilt', 'What', 'angle', 'of', 'is', 'Pisa', 'Leaning', 'the', 'Tower']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['What', '1995', 'Janet', 'was', 'disease', 'Reno', 'diagnosed', 'in', 'with', 'she']
-DEBUG  Here is the answer template: question_id: 210.6; query_terms: set(['What', '1995', 'Janet', 'with', 'disease', 'Reno', 'diagnosed', 'in', 'was', 'she']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['1990', 'of', 'Leaning', 'Pisa', 'How', 's', 'much', 'in', 'straightened', 'the', 'was', 'Tower']
-DEBUG  Here is the answer template: question_id: 207.4; query_terms: set(['1990', 'of', 'in', 'Pisa', 'How', 's', 'much', 'Leaning', 'straightened', 'the', 'was', 'Tower']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['What', 'inducted', 'of', 'into', 'Fame', 'Patsy', 'Walk', 'Cline', 'she', 'year', 'the', 'was', 'Hollywood']
-DEBUG  Here is the answer template: question_id: 211.1; query_terms: set(['What', 'inducted', 'of', 'into', 'Patsy', 'Walk', 'Cline', 'she', 'year', 'Hollywood', 'the', 'was', 'Fame']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'of', 'Pisa', 'preservation', 'cost', 'Leaning', 'the', 'was', 'Tower']
-DEBUG  Here is the answer template: question_id: 207.5; query_terms: set(['What', 'of', 'Pisa', 'preservation', 'cost', 'Leaning', 'the', 'was', 'Tower']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['married', 'Who', 'Patsy', 'to', 'Cline', 'she', 'was']
-DEBUG  Here is the answer template: question_id: 211.2; query_terms: set(['Who', 'married', 'Patsy', 'to', 'Cline', 'she', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['of', 'is', 'Pisa', 'high', 'How', 'Leaning', 'Tower', 'the']
-DEBUG  Here is the answer template: question_id: 207.6; query_terms: set(['of', 'is', 'Pisa', 'high', 'How', 'Leaning', 'Tower', 'the']); type_weights: defaultdict(<function <lambda> at 0x16aac230>, {})
-DEBUG  Here is the query vocabulary: ['What', 'did', 'die', 'Patsy', 'Cline', 'she', 'year']
-DEBUG  Here is the answer template: question_id: 211.3; query_terms: set(['What', 'did', 'die', 'Patsy', 'Cline', 'she', 'year']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['did', 'die', 'Patsy', 'How', 'Cline', 'she']
-DEBUG  Here is the answer template: question_id: 211.4; query_terms: set(['did', 'die', 'Patsy', 'How', 'Cline', 'she']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['on', 'What', 'based', 'her', 'movie', 'life', 'Patsy', 'Cline', 'was']
-DEBUG  Here is the answer template: question_id: 211.5; query_terms: set(['on', 'What', 'based', 'her', 'movie', 'life', 'Patsy', 'Cline', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'name', 'her', 'of', 'producer', 'Patsy', 'Cline', 'the', 'was']
-DEBUG  Here is the answer template: question_id: 211.6; query_terms: set(['What', 'name', 'producer', 'of', 'Patsy', 'her', 'Cline', 'the', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Barry', 'Manilow', 'born', 'year', 'was', 'he']
-DEBUG  Here is the answer template: question_id: 212.1; query_terms: set(['What', 'Barry', 'Manilow', 'born', 'year', 'was', 'he']); type_weights: defaultdict(<function <lambda> at 0x16aac1b8>, {})
-DEBUG  Here is the query vocabulary: ['many', 'Manilow', 'married', 'times', 'How', 'Barry', 'has', 'he']
-DEBUG  Here is the answer template: question_id: 212.2; query_terms: set(['many', 'Manilow', 'married', 'times', 'How', 'Barry', 'has', 'he']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['What', 'name', 'that', 'of', 'is', 'about', 'Manilow', 'Barry', 'Harmonistas', 'the', 'musical', 'wrote', 'he']
-DEBUG  Here is the answer template: question_id: 212.3; query_terms: set(['about', 'name', 'that', 'of', 'is', 'What', 'musical', 'Barry', 'Harmonistas', 'the', 'Manilow', 'wrote', 'he']); type_weights: defaultdict(<function <lambda> at 0x16aac140>, {})
-DEBUG  Here is the query vocabulary: ['What', 'attend', 'did', 'Barry', 'Manilow', 'school', 'music', 'he']
-DEBUG  Here is the answer template: question_id: 212.4; query_terms: set(['What', 'attend', 'did', 'Barry', 'Manilow', 'school', 'music', 'he']); type_weights: defaultdict(<function <lambda> at 0x16aac140>, {})
-DEBUG  Here is the query vocabulary: ['and', 'singer', 'For', 'Barry', 'Manilow', '70', 'what', 'director', 's', 'female', 'in', 'the', 'pianist', 'was', 'musical', 'he']
-DEBUG  Here is the answer template: question_id: 212.5; query_terms: set(['and', 'singer', 'For', 'Barry', 'Manilow', 'in', 'what', 'director', 's', 'female', '70', 'the', 'pianist', 'was', 'musical', 'he']); type_weights: defaultdict(<function <lambda> at 0x16aac0c8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'for', 'did', 'Barry', 'Manilow', 'label', 'record', '2000', 'in', 'sing', 'he']
-DEBUG  Here is the answer template: question_id: 212.6; query_terms: set(['What', 'for', 'did', 'Barry', 'Manilow', 'label', 'record', '2000', 'in', 'sing', 'he']); type_weights: defaultdict(<function <lambda> at 0x16aac0c8>, {})
-DEBUG  Here is the query vocabulary: ['What', 'name', 'Meg', 'Ryan', 's', 'at', 'birth', 'was']
-DEBUG  Here is the answer template: question_id: 213.1; query_terms: set(['What', 'name', 'Meg', 'Ryan', 's', 'at', 'birth', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac0c8>, {})
-DEBUG  Here is the query vocabulary: ['Meg', 'married', 'Who', 'Ryan', 'to', 'she', 'was']
-DEBUG  Here is the answer template: question_id: 213.2; query_terms: set(['Meg', 'Who', 'married', 'Ryan', 'to', 'she', 'was']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['Meg', 'her', 'did', 'When', 'Ryan', 'she', 'meet', 'husband']
-DEBUG  Here is the answer template: question_id: 213.3; query_terms: set(['Meg', 'her', 'did', 'When', 'Ryan', 'she', 'meet', 'husband']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['a', 'what', 'own', 'did', 'movie', 'Meg', 'Ryan', 'bookstore', 'she', 'In']
-DEBUG  Here is the answer template: question_id: 213.5; query_terms: set(['a', 'what', 'own', 'did', 'movie', 'Meg', 'Ryan', 'bookstore', 'she', 'In']); type_weights: defaultdict(<function <lambda> at 0x16898f50>, {})
-DEBUG  Here is the query vocabulary: ['Meg', 'her', 'lead', 'that', 'movie', 'Who', 'Ryan', 'in', 'male', 'was']
-DEBUG  Here is the answer template: question_id: 213.6; query_terms: set(['Meg', 'her', 'lead', 'that', 'movie', 'Who', 'Ryan', 'in', 'male', 'was']); type_weights: defaultdict(<function <lambda> at 0x16aac0c8>, {})
-DEBUG  Here is the query vocabulary: ['a', 'what', 'own', 'business', 'Meg', 'did', 'movie', 'partyplanning', 'Ryan', 'she', 'In']
-DEBUG  Here is the answer template: question_id: 213.7; query_terms: set(['a', 'what', 'own', 'business', 'did', 'movie', 'Meg', 'Ryan', 'partyplanning', 'she', 'In']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['pageant', 'Where', 'held', '2000', 'Pageant', 'Miss', 'the', 'America', 'was']
-DEBUG  Here is the answer template: question_id: 214.1; query_terms: set(['pageant', 'was', 'Miss', 'held', '2000', 'Pageant', 'the', 'America', 'Where']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['aired', 'pageant', 'network', 'TV', '2000', 'Pageant', 'Which', 'the', 'America', 'Miss']
-DEBUG  Here is the answer template: question_id: 214.2; query_terms: set(['aired', 'pageant', 'network', 'TV', '2000', 'Pageant', 'Which', 'the', 'America', 'Miss']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['What', 'pageant', 'of', '2000', 'Pageant', 'date', 'Miss', 'the', 'America', 'was']
-DEBUG  Here is the answer template: question_id: 214.3; query_terms: set(['What', 'pageant', 'was', 'of', '2000', 'Pageant', 'date', 'the', 'America', 'Miss']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['Pageant', 'Miss', 'Who', '2000', 'crowned', 'America', 'was']
-DEBUG  Here is the answer template: question_id: 214.4; query_terms: set(['Pageant', 'was', 'Who', '2000', 'crowned', 'America', 'Miss']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['What', 'Pageant', 'from', 'was', '2000', 'state', 'America', 'Miss']
-DEBUG  Here is the answer template: question_id: 214.5; query_terms: set(['What', 'Pageant', 'from', 'Miss', 'state', '2000', 'America', 'was']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['judges', 'pageant', 'many', 'in', 'How', '2000', 'Pageant', 'were', 'the', 'America', 'Miss']
-DEBUG  Here is the answer template: question_id: 214.6; query_terms: set(['judges', 'pageant', 'many', 'were', 'How', '2000', 'Pageant', 'in', 'the', 'America', 'Miss']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['held', 'festival', 'Where', '1999', 'Sundance', 'the', 'Festival', 'was', 'Film']
-DEBUG  Here is the answer template: question_id: 215.1; query_terms: set(['1999', 'festival', 'was', 'held', 'Sundance', 'the', 'Festival', 'Where', 'Film']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['What', 'name', 'festival', 'of', 'is', 'director', '1999', 'Sundance', 'artistic', 'the', 'Festival', 'Film']
-DEBUG  Here is the answer template: question_id: 215.2; query_terms: set(['What', 'name', 'festival', 'of', 'is', 'director', '1999', 'Sundance', 'artistic', 'the', 'Festival', 'Film']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['held', 'festival', 'When', '1999', 'Sundance', 'the', 'Festival', 'was', 'Film']
-DEBUG  Here is the answer template: question_id: 215.3; query_terms: set(['1999', 'festival', 'When', 'held', 'Sundance', 'the', 'Festival', 'was', 'Film']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['1999', 'shown', 'appeared', 'two', 'actress', 'festival', 'Sundance', 'at', 'Which', 'in', 'films', 'the', 'Festival', 'Film']
-DEBUG  Here is the answer template: question_id: 215.4; query_terms: set(['shown', '1999', 'two', 'actress', 'festival', 'appeared', 'Sundance', 'at', 'Which', 'in', 'films', 'the', 'Festival', 'Film']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['Sundance', 'Play', 'won', 'festival', 'Screen', 'Award', '1999', 'Dramatic', 'at', 'Which', 'Film', 'the', 'Festival', 'film']
-DEBUG  Here is the answer template: question_id: 215.5; query_terms: set(['Play', 'won', 'film', 'festival', 'Screen', 'Award', '1999', 'Sundance', 'Dramatic', 'Which', 'the', 'Festival', 'Film', 'at']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
-DEBUG  Here is the query vocabulary: ['Sundance', 'festival', 'three', '1999', 'won', 'awards', 'at', 'Which', 'Film', 'the', 'Festival', 'film']
-DEBUG  Here is the answer template: question_id: 215.6; query_terms: set(['won', 'film', 'festival', 'three', '1999', 'Sundance', 'awards', 'at', 'Which', 'the', 'Festival', 'Film']); type_weights: defaultdict(<function <lambda> at 0x16898d70>, {})
+DEBUG  Here is the answer template: question_id: 160.6; query_terms: set(['founded', 'When', 'the', 'was', 'IMF']); type_weights: defaultdict(<function <lambda> at 0x1652ded8>, {})
