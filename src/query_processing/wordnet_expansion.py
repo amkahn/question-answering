@@ -10,6 +10,9 @@ from nltk.corpus import wordnet as wn
 
 def expand_query(query):
 	
+	
+	weighted_query_terms = {}
+	
 	q_length = len(query)
 	
 	for i in range (0, q_length):
@@ -26,7 +29,7 @@ def get_synset_similarity(t1, t2):
 
 	overlap = (get_synset_glosses(t1).intersection(get_synset_glosses(t2)))
 	print overlap
-	return len(overlap)
+	return overlap, len(overlap)
 
 
 
