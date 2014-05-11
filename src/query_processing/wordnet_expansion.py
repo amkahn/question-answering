@@ -63,6 +63,6 @@ def get_synset_glosses(t):
 
 ## debug code
 
-get_synset_similarity("dog", "domestic_dog")
+# get_synset_similarity("dog", "domestic_dog")
 
 
