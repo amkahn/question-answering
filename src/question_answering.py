@@ -145,7 +145,7 @@ class Quail:
     # This method runs the question answering pipeline on a single question.
     # It returns a ranked list of AnswerCandidate objects.
     def process_question(self,question):
-        #sys.stderr.write("\nDEBUG  Here is the question: %s\n" % question.to_string())
+        #sys.stderr.write("\nDEBUG  Here is the question: %s\n" % question)
 
 	    # instantiate a QueryProcessor and use it to generate a set of searches and an AnswerTemplate object
         qp = QueryProcessor(question)
@@ -154,7 +154,7 @@ class Quail:
         #sys.stderr.write("DEBUG  Here are the search queries: %s\n" % search_queries)
 
         ans_template = qp.generate_ans_template()
-        #sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template.to_string())
+        #sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template)
 
         # use the InfoRetriever, the document index, and the search queries to generate a set of passages
         ir = InfoRetriever(self.index_path)
@@ -162,7 +162,7 @@ class Quail:
         passages = ir.retrieve_passages(search_queries)
         #sys.stderr.write("DEBUG  Here are the passages: \n")
         #for passage in passages:
-        #    sys.stderr.write(passage.to_string()+"\n")
+        #    sys.stderr.write(passage+"\n")
 
         # add web cached results to passages
         #sys.stderr.write("Adding "+str(len(self.cached_results[question.id]))+" web result passages for "+str(question.id)+"\n")
