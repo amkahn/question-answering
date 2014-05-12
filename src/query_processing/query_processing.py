@@ -9,6 +9,11 @@ import nltk
 import re
 from general_classes import *
 from collections import defaultdict
+from nltk.corpus import wordnet as wn
+from nltk.corpus import wordnet_ic
+semcor_ic = wordnet_ic.ic('ic-semcor.dat')
+from nltk.corpus import lin_thesaurus as thes
+import heapq
 
 
 # A QueryProcessor object has the attribute "question", a Question object.
@@ -52,14 +57,54 @@ class QueryProcessor(object):
 	# This method returns a list of SearchQuery objects.
 	
     def generate_queries(self):
-        # NB: For now, the weights of the search terms in the SearchQuery are equal to the
+        # For now, the weights of the search terms in the SearchQuery are equal to the
         # counts of the term in the question plus the target.
-        query = SearchQuery(self.query_voc, 1)
+        initial_query = SearchQuery(self.query_voc, 1)
+        
+        # Using WordNet, expand
+        # Consider POS-tagging the query terms first and passing the expected POS (perhaps
+        # just categorized as noun, verb, or adj, ignoring queries that do not fall into
+        # these categories) as the 
+        
 #       sys.stderr.write("DEBUG  Here is the search query: %s\n" % query)
-        return [query]
+        return [initial_query, expanded_query]
+
+    
+    # This method takes a query term (string) and a maximum number of synonyms to return (int)
+    # as arguments and returns a list of 2-tuples in which the first element is the synonym
+    # and the second element is the similarity to the query term.
+    # TODO: Incorporate POS tagging of the question (perhaps in the generate_queries method),
+    # then have the below method take a POS as a second element, then filter so we only
+    # expand the query with terms that are the correct POS. POS appear to be simA.lsp,
+    # simV.lsp, and simN.lsp. Maybe we just want to expand query terms whose POS tags fall
+    # under the categories of adj, verb, and noun (this would have the added bonus of removing
+    # a lot of stopwords automatically).
+    
+    def expand_query(term, num_syns):
+        sys.stderr.write("DEBUG  Getting scored synonyms of %s\n" % term)
+        syns = thes.scored_synonyms(term)
+        sys.stderr.write("DEBUG  Here are the synsets returned from the Lin thesaurus: %s\n" % syns)
+
+        all_syns = []
+        # syn list is in the form ((POS, [syn, syn, syn]), (POS, [syn, syn, syn]) ...)
+        # concatenate all synonyms from the various lists (see TODO for possible change)
+        for element in syns:
+            all_syns.extend(element[1])
+        sys.stderr.write("DEBUG  Here are all the synonyms: %s\n" % all_syns)
+        
+        if len(syns) > num_syns:
+            sys.stderr.write("DEBUG  Found more synonyms than required; filtering by similarity measure\n")
+            # get n-best synonyms according to Lin similarity
+            top = heapq.nlargest(NUMBER_SYNONYMS, all_syns, key = lambda k: k[1])
+        else:
+            sys.stderr.write("DEBUG  Synonyms found do not exceed max number of synonyms desired; skipping filtering step\n")
+            top = syns
+        sys.stderr.write("DEBUG  Here are the top %s synonyms: %s\n" % (num_syns, top))
+        return top
 
 
-	# This method returns an AnswerTemplate object.
+	# This method performs question classification using regular expressions, then generates
+	# and returns an AnswerTemplate object.
 	
     def generate_ans_template(self):
 	
