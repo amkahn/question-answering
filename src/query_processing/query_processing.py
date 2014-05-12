@@ -71,7 +71,7 @@ class QueryProcessor(object):
         if self.question.type=="FACTOID":
             # by default, assign all answer types some small weight
             ans_types = defaultdict(lambda: 0.1)
-            sys.stderr.write("\nDEBUG  Here is the question: %s\n" % self.question.q)
+#           sys.stderr.write("\nDEBUG  Here is the question: %s\n" % self.question.q)
             
             # attempt to predict certain answer type using rules and set relevant weights accordingly
             person_match = re.compile(r'\b[Ww]+ho\b|\b[Ww]+hat (?:is|was) (?:his|her) name\b').search(self.question.q)
@@ -79,32 +79,28 @@ class QueryProcessor(object):
             loc_match = re.compile(r'\b[Ww]here\b|\b(?:[Ww]hat|[Ww]hich) (?:(?:is|was) the )?(?:city|state|province|territory|country|continent)\b').search(self.question.q)
             time_match = re.compile(r'\b[Ww]hen\b|\b(?:[Ww]hat|[Ww]hich) (?:(?:is|was) the )?(?:date|day|month|year|decade|century)\b').search(self.question.q)
             num_match = re.compile(r'\b[Hh]ow (?:much|many)\b').search(self.question.q)
-            
-#           for query_term in self.query_voc.keys():
-#           if query_term.lower() in ['who']:
+
             if person_match:
-                sys.stderr.write("DEBUG  Query contains %s; setting person weight\n" % person_match)
+#               sys.stderr.write("DEBUG  Query contains %s; setting person weight\n" % person_match.group(0))
                 ans_types['person'] = 0.9
             if name_match:
-                sys.stderr.write("DEBUG  Query contains %s; setting person and organization weight\n" % name_match)
+#               sys.stderr.write("DEBUG  Query contains %s; setting person and organization weight\n" % name_match.group(0))
                 ans_types['person'] = 0.9
                 ans_types['organization'] = 0.9
                 ans_type['object'] = 0.9
-#           if query_term.lower() in ['where']:
             if loc_match:
-                sys.stderr.write("DEBUG  Query contains %s; setting location weight\n" % loc_match)
+#               sys.stderr.write("DEBUG  Query contains %s; setting location weight\n" % loc_match.group(0))
                 ans_types['location'] = 0.9
-#           if query_term.lower() in ['when']:
             if time_match:
-                sys.stderr.write("DEBUG  Query contains %s; setting time_ex weight\n" % time_match)
+#               sys.stderr.write("DEBUG  Query contains %s; setting time_ex weight\n" % time_match.group(0))
                 ans_types['time_ex'] = 0.9
             if num_match:
-                sys.stderr.write("DEBUG  Query contains %s; setting number weight\n" % num_match)
+#               sys.stderr.write("DEBUG  Query contains %s; setting number weight\n" % num_match.group(0))
                 ans_types['number'] = 0.9                
 
             # generate a corresponding AnswerTemplate object
             ans_template = AnswerTemplate(self.question.id,set(self.query_voc.keys()),ans_types)
-            sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template.type_weights)
+#           sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template.type_weights)
             
             return ans_template
 

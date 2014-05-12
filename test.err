@@ -1,112 +1,112 @@
 
 DEBUG  Here is the question: What position did Moon play in professional football?
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b880b18>, {})
-
-DEBUG  Here is the question: In what year was Moon born?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b874718>; setting time_ex weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b880b18>, {'time_ex': 0.9})
-
-DEBUG  Here is the question: Who is Warren Moon's agent?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b874648>; setting person weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b880b18>, {'person': 0.9})
-
-DEBUG  Here is the question: Where is the LPGA headquartered?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b874718>; setting location weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b880b18>, {'location': 0.9})
-
-DEBUG  Here is the question: How many events are part of the LPGA tour?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b866b90>; setting number weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b87a0c8>, {'number': 0.9})
-
-DEBUG  Here is the question: What does LPGA stand for?
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b87a0c8>, {})
-
-DEBUG  Here is the question: How many times was Moon a Pro Bowler?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b866b90>; setting number weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x2b9e58e3c758>, {'number': 0.9})
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe93fb18>, {})
 
 DEBUG  Here is the question: Where did Moon play in college?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b866b90>; setting location weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b87a0c8>, {'location': 0.9})
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe93fb18>, {'location': 0.9})
+
+DEBUG  Here is the question: In what year was Moon born?
+DEBUG  Query contains what year; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe93fb18>, {'time_ex': 0.9})
+
+DEBUG  Here is the question: How many times was Moon a Pro Bowler?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe93fb18>, {'number': 0.9})
+
+DEBUG  Here is the question: Who is Warren Moon's agent?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe93fb18>, {'person': 0.9})
+
+DEBUG  Here is the question: What does LPGA stand for?
+
+DEBUG  Here is the question: Where is the LPGA headquartered?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe93fb18>, {})
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe93fb18>, {'location': 0.9})
+
+DEBUG  Here is the question: How many events are part of the LPGA tour?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe93fb18>, {'number': 0.9})
 
 DEBUG  Here is the question: When does the LPGA celebrate its 50th anniversary?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b7838b8>; setting time_ex weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b4712a8>, {'time_ex': 0.9})
-
-DEBUG  Here is the question: Where is the Institute located?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b7838b8>; setting location weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b471398>, {'location': 0.9})
-
-DEBUG  Here is the question: When was it founded?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b7838b8>; setting time_ex weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b86aed8>, {'time_ex': 0.9})
-
-DEBUG  Here is the question: What is the zip code of the American Enterprise Institute?
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b471398>, {})
-
-DEBUG  Here is the question: Who is the senior vice president of the American Enterprise Institute?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b783c60>; setting person weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b86aed8>, {'person': 0.9})
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532398>, {'time_ex': 0.9})
 
 DEBUG  Here is the question: How many people were founders of LPGA?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b783c60>; setting number weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b4712a8>, {'number': 0.9})
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532398>, {'number': 0.9})
+
+DEBUG  Here is the question: Where is the Institute located?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532398>, {'location': 0.9})
 
 DEBUG  Here is the question: What is the full title of the organization?
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b471398>, {})
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532398>, {})
+
+DEBUG  Here is the question: When was it founded?
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532398>, {'time_ex': 0.9})
+
+DEBUG  Here is the question: Who is the senior vice president of the American Enterprise Institute?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532398>, {'person': 0.9})
+
+DEBUG  Here is the question: What is the zip code of the American Enterprise Institute?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532398>, {})
 
 DEBUG  Here is the question: Where in the U.S. is the division based?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b7838b8>; setting location weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b471398>, {'location': 0.9})
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532398>, {'location': 0.9})
 
 DEBUG  Here is the question: When was the division formed?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b373ed0>; setting time_ex weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b471578>, {'time_ex': 0.9})
-
-DEBUG  Here is the question: What is the division's motto?
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b86af50>, {})
-
-DEBUG  Here is the question: How many non-white members of the jury were there?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b373ed0>; setting number weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b471500>, {'number': 0.9})
-
-DEBUG  Here is the question: Where was the trial held?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b373ed0>; setting location weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b471578>, {'location': 0.9})
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532500>, {'time_ex': 0.9})
 
 DEBUG  Here is the question: How many personnel comprise the division?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b866b90>; setting number weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b87a0c8>, {'number': 0.9})
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532500>, {'number': 0.9})
+
+DEBUG  Here is the question: What is the division's motto?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532500>, {})
 
 DEBUG  Here is the question: What is the division's official song?
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b86af50>, {})
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532500>, {})
+
+DEBUG  Here is the question: How many non-white members of the jury were there?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532578>, {'number': 0.9})
 
 DEBUG  Here is the question: Who was the foreman for the jury?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b866b90>; setting person weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b471500>, {'person': 0.9})
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532500>, {'person': 0.9})
 
-DEBUG  Here is the question: Who was the victim of the murder?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b783c60>; setting person weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b332398>, {'person': 0.9})
+DEBUG  Here is the question: Where was the trial held?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532500>, {'location': 0.9})
 
 DEBUG  Here is the question: When was King convicted?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b866b90>; setting time_ex weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x2b9e58e3c758>, {'time_ex': 0.9})
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe5322a8>, {'time_ex': 0.9})
 
-DEBUG  Here is the question: When did the overthrown government come to power?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b783c60>; setting time_ex weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b86ac80>, {'time_ex': 0.9})
-
-DEBUG  Here is the question: Who was the nominal leader after the overthrow?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b783c60>; setting person weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b4712a8>, {'person': 0.9})
+DEBUG  Here is the question: Who was the victim of the murder?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe5322a8>, {'person': 0.9})
 
 DEBUG  Here is the question: Who was the leader deposed by the overthrow?
-DEBUG  Query contains <_sre.SRE_Match object at 0x1b7838b8>; setting person weight
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b332398>, {'person': 0.9})
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe532500>, {'person': 0.9})
+
+DEBUG  Here is the question: When did the overthrown government come to power?
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe5322a8>, {'time_ex': 0.9})
 
 DEBUG  Here is the question: What group accomplished the overthrow?
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b86ac80>, {})
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe5322a8>, {})
+
+DEBUG  Here is the question: Who was the nominal leader after the overthrow?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x2b5b68757758>, {'person': 0.9})
 
 DEBUG  Here is the question: For what crime was the deposed leader found guilty?
-DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1b4712a8>, {})
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0xe5322a8>, {})
