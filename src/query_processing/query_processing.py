@@ -148,7 +148,7 @@ class QueryProcessor(object):
             # by default, assign all answer types some small weight
             ans_types = defaultdict(lambda: 0.1)
 #           sys.stderr.write("\nDEBUG  Here is the question: %s\n" % self.question.q)
-            
+         
             # attempt to predict certain answer type using rules and set relevant weights accordingly
             person_match = re.compile(r'\b[Ww]+ho\b|\b[Ww]+hat (?:is|was) (?:his|her) name\b').search(self.question.q)
             name_match = re.compile(r'\b[Ww]+hat (?:is|was) (?:the|its|their) name\b').search(self.question.q)
@@ -156,23 +156,33 @@ class QueryProcessor(object):
             time_match = re.compile(r'\b[Ww]hen\b|\b(?:[Ww]hat|[Ww]hich) (?:(?:is|was) the )?(?:date|day|month|year|decade|century)\b').search(self.question.q)
             num_match = re.compile(r'\b[Hh]ow (?:much|many)\b').search(self.question.q)
 
+            match_found = false
+
             if person_match:
 #               sys.stderr.write("DEBUG  Query contains %s; setting person weight\n" % person_match.group(0))
                 ans_types['person'] = 0.9
+                match_found = true
             if name_match:
 #               sys.stderr.write("DEBUG  Query contains %s; setting person and organization weight\n" % name_match.group(0))
                 ans_types['person'] = 0.9
                 ans_types['organization'] = 0.9
                 ans_type['object'] = 0.9
+                match_found = true
             if loc_match:
 #               sys.stderr.write("DEBUG  Query contains %s; setting location weight\n" % loc_match.group(0))
                 ans_types['location'] = 0.9
+                match_found = true
             if time_match:
 #               sys.stderr.write("DEBUG  Query contains %s; setting time_ex weight\n" % time_match.group(0))
                 ans_types['time_ex'] = 0.9
+                match_found = true
             if num_match:
 #               sys.stderr.write("DEBUG  Query contains %s; setting number weight\n" % num_match.group(0))
-                ans_types['number'] = 0.9                
+                ans_types['number'] = 0.9
+                match_found = true
+                
+            if not match_found:
+                ans_types['other'] = 0.5               
 
             # generate a corresponding AnswerTemplate object
             ans_template = AnswerTemplate(self.question.id,set(self.query_voc.keys()),ans_types)
