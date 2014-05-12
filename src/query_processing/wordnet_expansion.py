@@ -19,9 +19,9 @@ def expand_query(query):
     # should do some stopword removal here
 
     for word in query:
-        sys.stderr.write("DEBUG  Getting scored synonyms of %s\n" % word)
+#       sys.stderr.write("DEBUG  Getting scored synonyms of %s\n" % word)
         syns = thes.scored_synonyms(word)
-        sys.stderr.write("DEBUG  Here are the synsets returned from the Lin thesaurus: %s\n" % syns)
+#       sys.stderr.write("DEBUG  Here are the synsets returned from the Lin thesaurus: %s\n" % syns)
         
         # Clara: I was confused by the if statement below so temporarily replaced it with
         # what I thought should be happening here, for testing purposes.
@@ -31,14 +31,14 @@ def expand_query(query):
         # concatenate all synonyms from the various lists 
         for element in syns:
             all_syns.extend(element[1])
-        sys.stderr.write("DEBUG  Here is the all_syns list: %s\n" % all_syns)
+#       sys.stderr.write("DEBUG  Here is the all_syns list: %s\n" % all_syns)
         if len(all_syns) > NUMBER_SYNONYMS:
-            sys.stderr.write("DEBUG  Found more synonyms than required; filtering by similarity measure\n")
+#           sys.stderr.write("DEBUG  Found more synonyms than required; filtering by similarity measure\n")
             # get n-best synonyms according to Lin similarity
             top = heapq.nlargest(NUMBER_SYNONYMS, all_syns, key = lambda k: k[1])
-            sys.stderr.write("DEBUG  Here are the top synonyms: %s\n" % top)
+#           sys.stderr.write("DEBUG  Here are the top synonyms: %s\n" % top)
         else:
-            sys.stderr.write("DEBUG  Synonyms found do not exceed max number of synonyms desired; skipping filtering step\n")
+#           sys.stderr.write("DEBUG  Synonyms found do not exceed max number of synonyms desired; skipping filtering step\n")
             top = syns
         # add top synonyms to weighted term dict
         for element in top:

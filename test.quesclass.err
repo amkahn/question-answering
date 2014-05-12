@@ -1,0 +1,664 @@
+DEBUG  Here is the search query: search_terms: {'What': 1, 'did': 1, 'football': 1, 'play': 1, 'Moon': 2, 'professional': 1, 'in': 1, 'position': 1, 'Warren': 1}; weight: 1
+
+DEBUG  Here is the question: What position did Moon play in professional football?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1d013398>, {})
+DEBUG  Here is the search query: search_terms: {'vice': 1, 'Institute': 2, 'of': 1, 'is': 1, 'Who': 1, 'American': 2, 'Enterprise': 2, 'president': 1, 'senior': 1, 'the': 2}; weight: 1
+
+DEBUG  Here is the question: Who is the senior vice president of the American Enterprise Institute?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1d013398>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'1999': 1, 'power': 1, 'government': 2, 'did': 1, 'When': 1, 'to': 1, 'in': 1, 'the': 1, 'Pakistani': 1, 'come': 1, 'overthrown': 2}; weight: 1
+
+DEBUG  Here is the question: When did the overthrown government come to power?
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1d014398>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'what': 1, 'massacred': 1, 'tourists': 1, '1997': 1, 'did': 1, 'massacre': 1, 'site': 1, 'occur': 1, 'At': 1, 'in': 2, 'the': 1, 'Luxor': 2, 'at': 1}; weight: 1
+
+DEBUG  Here is the question: At what site in Luxor did the massacre occur?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1d014398>, {})
+DEBUG  Here is the search query: search_terms: {'Cheers': 1, 'What': 1, 'show': 1, 'television': 1, 'broadcast': 1, 'program': 1, 'year': 1, 'the': 1, 'was': 1, 'first': 1}; weight: 1
+
+DEBUG  Here is the question: What year was the program first broadcast?
+DEBUG  Query contains What year; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1d014398>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'Hitchcock': 2, 'did': 1, 'Oscar': 1, 'How': 1, 'awards': 1, 'Alfred': 1, 'many': 1, 'win': 1}; weight: 1
+
+DEBUG  Here is the question: How many Oscar awards did Hitchcock win?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1d015398>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'Chavez': 2, 'Hugo': 1, '1998': 1, 'Who': 1, 's': 1, 'his': 1, 'race': 1, 'in': 1, 'was': 1, 'Presidential': 1, 'opponent': 1}; weight: 1
+
+DEBUG  Here is the question: Who was Chavez's opponent in his 1998 Presidential race?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1d015398>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'1992': 1, 'University': 2, 'Who': 1, 'became': 1, 'in': 1, 'President': 1, 'Tufts': 2}; weight: 1
+
+DEBUG  Here is the question: Who became Tufts University President in 1992?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1d015398>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'did': 1, 'die': 1, 'Hitchcock': 2, 'When': 1, 'Alfred': 1}; weight: 1
+
+DEBUG  Here is the question: When did Hitchcock die?
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1d015398>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'play': 1, 'did': 1, 'Moon': 2, 'college': 1, 'in': 1, 'Where': 1, 'Warren': 1}; weight: 1
+
+DEBUG  Here is the question: Where did Moon play in college?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1d013398>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'did': 1, 'die': 1, 'Hitchcock': 2, 'Where': 1, 'Alfred': 1}; weight: 1
+
+DEBUG  Here is the question: Where did Hitchcock die?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'did': 1, 'University': 1, 'Over': 1, 'preside': 1, 'other': 1, 'which': 1, 'Tufts': 1, 'university': 1, 'he': 1}; weight: 1
+
+DEBUG  Here is the question: Over which other university did he preside?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1d015398>, {})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'code': 1, 'zip': 1, 'Institute': 2, 'of': 1, 'is': 1, 'American': 2, 'Enterprise': 2, 'the': 2}; weight: 1
+
+DEBUG  Here is the question: What is the zip code of the American Enterprise Institute?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1d013398>, {})
+DEBUG  Here is the search query: search_terms: {'founded': 1, 'Who': 1, 'NASCAR': 2}; weight: 1
+
+DEBUG  Here is the question: Who founded NASCAR?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1d015398>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'group': 1, 'government': 1, '1999': 1, 'in': 1, 'accomplished': 1, 'overthrow': 1, 'the': 1, 'Pakistani': 1, 'overthrown': 1}; weight: 1
+
+DEBUG  Here is the question: What group accomplished the overthrow?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1d014398>, {})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'Reeve': 2, 'Christopher': 2, 'paralyzed': 1, 'year': 1, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: What year was Christopher Reeve paralyzed?
+DEBUG  Query contains What year; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'Cup': 2, 'series': 1, 'of': 1, 'races': 1, 'Winston': 2, 'How': 1, 'part': 1, 'are': 1, 'many': 1, 'the': 1}; weight: 1
+
+DEBUG  Here is the question: How many races are part of the Winston Cup series?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'terrorist': 1, 'massacred': 1, '1997': 1, 'for': 1, 'massacre': 1, 'Luxor': 1, 'responsibility': 1, 'at': 1, 'Which': 1, 'in': 1, 'claimed': 1, 'organization': 1, 'the': 1, 'tourists': 1}; weight: 1
+
+DEBUG  Here is the question: Which terrorist organization claimed responsibility for the massacre?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1d014398>, {})
+DEBUG  Here is the search query: search_terms: {'what': 1, 'In': 1, 'Moon': 2, 'born': 1, 'year': 1, 'was': 1, 'Warren': 1}; weight: 1
+
+DEBUG  Here is the question: In what year was Moon born?
+DEBUG  Query contains what year; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'founded': 1, 'was': 1, 'When': 1, 'NASCAR': 2}; weight: 1
+
+DEBUG  Here is the question: When was NASCAR founded?
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'What': 1, '1992': 1, 'was': 1, 'University': 1, 'when': 1, 'became': 1, 'in': 1, 'president': 1, 'he': 1, 'endowment': 1, 'Tufts': 2}; weight: 1
+
+DEBUG  Here is the question: What was Tufts' endowment in 1992 when he became president?
+DEBUG  Query contains when; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'Reeve': 1, 'movies': 1, 'did': 1, 'many': 1, 'make': 1, 'How': 1, 'Christopher': 1, 'Superman': 1, 'he': 1}; weight: 1
+
+DEBUG  Here is the question: How many "Superman" movies did he make?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'control': 1, 'from': 1, 'founder': 1, 'of': 1, 'Who': 1, 'took': 1, 'NASCAR': 2, 'the': 1}; weight: 1
+
+DEBUG  Here is the question: Who took control of NASCAR from the founder?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'82nd': 1, 'division': 1, 'based': 1, 'Division': 1, 'is': 1, 'US': 1, 'Airborne': 1, 'in': 1, 'the': 2, 'Where': 1}; weight: 1
+
+DEBUG  Here is the question: Where in the U.S. is the division based?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab7d0>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'a': 1, 'Bowler': 1, 'many': 1, 'Pro': 1, 'Moon': 2, 'How': 1, 'times': 1, 'was': 1, 'Warren': 1}; weight: 1
+
+DEBUG  Here is the question: How many times was Moon a Pro Bowler?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'after': 1, 'in': 1, 'government': 1, '1999': 1, 'Who': 1, 'nominal': 1, 'overthrow': 1, 'the': 2, 'Pakistani': 1, 'was': 1, 'leader': 1, 'overthrown': 1}; weight: 1
+
+DEBUG  Here is the question: Who was the nominal leader after the overthrow?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'what': 1, 'made': 1, 'Reeve': 1, 'these': 1, 'years': 1, 'movies': 1, 'Christopher': 1, 'were': 1, 'During': 1, 'Superman': 1}; weight: 1
+
+DEBUG  Here is the question: During what years were these "Superman" movies made?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {})
+DEBUG  Here is the search query: search_terms: {'a': 1, 'What': 1, 'tobacco': 1, 'Cup': 2, 'of': 1, 'is': 1, 'Winston': 2, 'sponsor': 1, 'series': 1, 'the': 1, 'company': 1}; weight: 1
+
+DEBUG  Here is the question: What tobacco company is a sponsor of the Winston Cup series?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {})
+DEBUG  Here is the search query: search_terms: {'on': 1, 'what': 1, 'cable': 1, 'Show': 2, 'Daily': 2, 'The': 2, 'appears': 1, 'channel': 1}; weight: 1
+
+DEBUG  Here is the question: The Daily Show appears on what cable channel?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'University': 1, 'current': 1, 'endowment': 1, 'is': 1, 'Tufts': 2}; weight: 1
+
+DEBUG  Here is the question: What is Tufts' current endowment?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {})
+DEBUG  Here is the search query: search_terms: {'is': 1, 'Who': 1, 'agent': 1, 'Moon': 2, 's': 1, 'Warren': 2}; weight: 1
+
+DEBUG  Here is the question: Who is Warren Moon's agent?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'Reeve': 2, 'movies': 1, 'actress': 1, 'most': 1, 'Christopher': 1, 'Which': 1, 'in': 1, 'the': 1, 'with': 1, 'costarred': 1, 'Superman': 1}; weight: 1
+
+DEBUG  Here is the question: Which actress co-starred in the most "Superman" movies with Reeve?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {})
+DEBUG  Here is the search query: search_terms: {'82nd': 1, 'division': 1, 'Division': 1, 'formed': 1, 'When': 1, 'Airborne': 1, 'the': 1, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: When was the division formed?
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab7d0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'from': 1, 'rights': 1, 'TV': 1, 'money': 1, 'NASCAR': 2, 'annually': 1, 'How': 1, 'much': 1, 'does': 1, 'generate': 1}; weight: 1
+
+DEBUG  Here is the question: How much money does NASCAR generate from TV rights annually?
+DEBUG  Query contains How much; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'what': 1, 'For': 1, 'government': 1, '1999': 1, 'deposed': 1, 'guilty': 1, 'crime': 1, 'in': 1, 'found': 1, 'the': 1, 'Pakistani': 1, 'was': 1, 'leader': 1, 'overthrown': 1}; weight: 1
+
+DEBUG  Here is the question: For what crime was the deposed leader found guilty?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'does': 1, 'LPGA': 2, 'stand': 1, 'for': 1}; weight: 1
+
+DEBUG  Here is the question: What does LPGA stand for?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {})
+DEBUG  Here is the search query: search_terms: {'University': 1, 'many': 1, 'make': 1, 'up': 1, 'How': 1, 'schools': 1, 'the': 1, 'university': 1, 'Tufts': 1}; weight: 1
+
+DEBUG  Here is the question: How many schools make up the university?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'LPGA': 2, 'is': 1, 'headquartered': 1, 'Where': 1, 'the': 1}; weight: 1
+
+DEBUG  Here is the question: Where is the LPGA headquartered?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'parodies': 1, 'what': 1, 'Show': 2, 'TV': 1, 'of': 1, 'Daily': 2, 'other': 1, 'program': 1, 'The': 2, 'type': 1}; weight: 1
+
+DEBUG  Here is the question: The Daily Show parodies what other type of TV program?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {})
+DEBUG  Here is the search query: search_terms: {'holds': 1, 'career': 1, 'of': 1, 'Who': 1, 'NASCAR': 2, 'record': 1, 'victories': 1, 'in': 1, 'the': 1}; weight: 1
+
+DEBUG  Here is the question: Who holds the record of career victories in NASCAR?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'week': 1, 'On': 1, 'what': 1, 'run': 1, 'for': 1, 'Cup': 2, 'of': 1, 'Winston': 2, 'races': 1, 'are': 1, 'the': 2, 'day': 1}; weight: 1
+
+DEBUG  Here is the question: On what day of the week are races for the Winston Cup run?
+DEBUG  Query contains what day; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'82nd': 1, 'division': 1, 'Division': 1, 'personnel': 1, 'Airborne': 1, 'How': 1, 'many': 1, 'the': 1, 'comprise': 1}; weight: 1
+
+DEBUG  Here is the question: How many personnel comprise the division?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab7d0>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'of': 1, 'How': 1, 'tour': 1, 'part': 1, 'LPGA': 2, 'are': 1, 'many': 1, 'the': 1, 'events': 1}; weight: 1
+
+DEBUG  Here is the question: How many events are part of the LPGA tour?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'located': 1, 'is': 1, 'Where': 1, 'University': 1, 'Tufts': 2}; weight: 1
+
+DEBUG  Here is the question: Where is Tufts located?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'theatrical': 1, 'What': 1, 'his': 1, 'Reeve': 2, 'did': 1, 'career': 1, 'Christopher': 1, 'year': 1, 'commence': 1}; weight: 1
+
+DEBUG  Here is the question: What year did Reeve commence his theatrical career?
+DEBUG  Query contains What year; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'engage': 1, 'did': 1, 'marry': 1, 'When': 1, 's': 1, 'to': 1, 'Britain': 1, 'Edward': 2, 'marries': 1, 'Prince': 2}; weight: 1
+
+DEBUG  Here is the question: When did Prince Edward engage to marry?
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'Show': 2, 'of': 1, 'is': 1, 'Who': 1, 'Daily': 2, 'host': 1, 'The': 2}; weight: 1
+
+DEBUG  Here is the question: Who is host of The Daily Show?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'82nd': 1, 'division': 1, 'What': 1, 'Division': 1, 'is': 1, 'Airborne': 1, 's': 1, 'motto': 1, 'the': 1}; weight: 1
+
+DEBUG  Here is the question: What is the division's motto?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab7d0>, {})
+DEBUG  Here is the search query: search_terms: {'founded': 1, 'What': 1, 'WalMart': 2, 'was': 1, 'year': 1}; weight: 1
+
+DEBUG  Here is the question: What year was Wal-Mart founded?
+DEBUG  Query contains What year; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'career': 1, 'of': 1, 'is': 1, 'NASCAR': 2, 'record': 1, 'victories': 1, 'in': 1, 'the': 1, 'total': 1}; weight: 1
+
+DEBUG  Here is the question: What is the record career total of victories in NASCAR?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {})
+DEBUG  Here is the search query: search_terms: {'Chavez': 2, 'of': 1, 'is': 1, 'Hugo': 2, 'which': 1, 'country': 1, 'president': 1}; weight: 1
+
+DEBUG  Here is the question: Hugo Chavez is president of which country?
+DEBUG  Query contains which country; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'league': 1, 'What': 1, 'for': 1, 'Cup': 2, 'considered': 1, 'series': 1, 'is': 1, 'Winston': 2, 'the': 2, 'minor': 1}; weight: 1
+
+DEBUG  Here is the question: What is considered the minor league for the Winston Cup series?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {})
+DEBUG  Here is the search query: search_terms: {'50th': 1, 'When': 1, 'anniversary': 1, 'does': 1, 'LPGA': 2, 'the': 1, 'its': 1, 'celebrate': 1}; weight: 1
+
+DEBUG  Here is the question: When does the LPGA celebrate its 50th anniversary?
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'did': 1, 'marry': 1, 'Who': 1, 's': 1, 'Britain': 1, 'Edward': 1, 'the': 1, 'marries': 1, 'Prince': 2}; weight: 1
+
+DEBUG  Here is the question: Who did the Prince marry?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'founded': 1, 'WalMart': 2, 'Who': 1}; weight: 1
+
+DEBUG  Here is the question: Who founded Wal-Mart?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'82nd': 1, 'division': 1, 'What': 1, 'song': 1, 'is': 1, 'official': 1, 'Airborne': 1, 'Division': 1, 's': 1, 'the': 1}; weight: 1
+
+DEBUG  Here is the question: What is the division's official song?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab7d0>, {})
+DEBUG  Here is the search query: search_terms: {'what': 1, 'televised': 1, 'Show': 2, 'initially': 1, 'is': 1, 'Daily': 2, 'At': 1, 'time': 1, 'The': 2}; weight: 1
+
+DEBUG  Here is the question: At what time is The Daily Show initially televised?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {})
+DEBUG  Here is the search query: search_terms: {'Chavez': 2, 'old': 1, 'elected': 1, 'Hugo': 2, 'when': 1, 'How': 1, 'was': 1, 'first': 1}; weight: 1
+
+DEBUG  Here is the question: How old was Hugo Chavez when first elected?
+DEBUG  Query contains when; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'many': 1, 'employees': 1, 'there': 1, 'US': 1, 'How': 1, 'WalMart': 2, 'are': 1, 'in': 1, 'the': 1}; weight: 1
+
+DEBUG  Here is the question: How many Wal-Mart employees are there in the U.S.?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'people': 1, 'of': 1, 'How': 1, 'LPGA': 2, 'were': 1, 'founders': 1, 'many': 1}; weight: 1
+
+DEBUG  Here is the question: How many people were founders of LPGA?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'United': 1, 'of': 2, 'number': 1, 'nations': 1, 'member': 1, '2000': 1, 'UN': 2, 'in': 1, 'the': 2, 'Nations': 1, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: What was the number of member nations of the U.N. in 2000?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {})
+DEBUG  Here is the search query: search_terms: {'Mozart': 2, 'Wolfgang': 1, 'Where': 1, 'born': 1, 'Amadeus': 1, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: Where was Mozart born?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'did': 1, 'marries': 1, 'honeymoon': 1, 's': 1, 'Britain': 1, 'Edward': 1, 'they': 1, 'Where': 1, 'Prince': 1}; weight: 1
+
+DEBUG  Here is the question: Where did they honeymoon?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'Chavez': 2, 'from': 1, 'did': 1, 'Hugo': 1, 'graduate': 1, 'Where': 1}; weight: 1
+
+DEBUG  Here is the question: Where did Chavez graduate from?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'King': 1, 'there': 1, 'jury': 1, 'of': 2, 'were': 1, 'nonwhite': 1, 'convicted': 1, 'William': 1, 'How': 1, 'murder': 1, 'members': 1, 'many': 1, 'the': 1, 'John': 1}; weight: 1
+
+DEBUG  Here is the question: How many non-white members of the jury were there?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab7d0>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'Institute': 2, 'is': 1, 'located': 1, 'American': 1, 'Enterprise': 1, 'the': 1, 'Where': 1}; weight: 1
+
+DEBUG  Here is the question: Where is the Institute located?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'Mozart': 2, 'Wolfgang': 1, 'When': 1, 'born': 1, 'Amadeus': 1, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: When was Mozart born?
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'throne': 1, 'for': 1, 'Where': 1, 'of': 1, 'time': 1, 'marries': 1, 's': 1, 'Prince': 1, 'wedding': 1, 'Britain': 1, 'Edward': 2, 'at': 1, 'in': 1, 'line': 1, 'was': 1, 'the': 3}; weight: 1
+
+DEBUG  Here is the question: Where was Edward in line for the throne at the time of the wedding?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'Show': 2, 'creator': 1, 'of': 1, 'is': 1, 'Who': 1, 'Daily': 2, 'The': 2, 'the': 1}; weight: 1
+
+DEBUG  Here is the question: Who is the creator of The Daily Show?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'Chavez': 2, 'from': 1, 'did': 1, 'Hugo': 1, 'school': 1, 'graduate': 1, 'this': 1, 'year': 1}; weight: 1
+
+DEBUG  Here is the question: What year did Chavez graduate from this school?
+DEBUG  Query contains What year; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'Mozart': 2, 'did': 1, 'die': 1, 'year': 1, 'Amadeus': 1, 'Wolfgang': 1}; weight: 1
+
+DEBUG  Here is the question: What year did Mozart die?
+DEBUG  Query contains What year; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'worldwide': 1, 'stores': 1, 'many': 1, 'How': 1, 'WalMart': 2, 'does': 1, 'operate': 1}; weight: 1
+
+DEBUG  Here is the question: How many stores does Wal-Mart operate world-wide?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'full': 1, 'title': 1, 'Institute': 1, 'of': 1, 'is': 1, 'American': 1, 'Enterprise': 1, 'organization': 1, 'the': 2}; weight: 1
+
+DEBUG  Here is the question: What is the full title of the organization?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {})
+DEBUG  Here is the search query: search_terms: {'United': 1, 'Council': 1, 'many': 1, 'Nations': 1, 'How': 1, 'UN': 1, 'are': 1, 'members': 1, 'in': 1, 'the': 1, 'Security': 1, 'nonpermanent': 1}; weight: 1
+
+DEBUG  Here is the question: How many non-permanent members are in the Security Council?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'Mozart': 2, 'Wolfgang': 1, 'Who': 1, 's': 1, 'Amadeus': 1, 'rival': 1, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: Who was Mozart's rival?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'many': 1, 'there': 1, 'India': 1, 'outlets': 1, 'How': 1, 'WalMart': 2, 'are': 1, 'in': 1}; weight: 1
+
+DEBUG  Here is the question: How many Wal-Mart outlets are there in India?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'Chavez': 2, 'did': 1, 'of': 1, 'Hugo': 1, 'receive': 1, '2000': 1, 'vote': 1, 'percentage': 1, 'the': 1, 'Presidential': 1}; weight: 1
+
+DEBUG  Here is the question: What percentage of the 2000 Presidential vote did Chavez receive?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {})
+DEBUG  Here is the search query: search_terms: {'Mozart': 2, 'did': 1, 'many': 1, 'How': 1, 'Amadeus': 1, 'have': 1, 'Wolfgang': 1, 'children': 1}; weight: 1
+
+DEBUG  Here is the question: How many children did Mozart have?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'foreman': 1, 'murder': 1, 'jury': 1, 'for': 1, 'King': 1, 'of': 1, 'Who': 1, 'convicted': 1, 'William': 1, 'the': 2, 'John': 1, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: Who was the foreman for the jury?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab7d0>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'for': 1, 'title': 1, 'Show': 2, '2000': 1, 'Daily': 2, 's': 1, 'election': 1, 'coverage': 1, 'The': 2, 'was': 1, 'the': 1}; weight: 1
+
+DEBUG  Here is the question: What was the title for The Daily Show's 2000 election coverage?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {})
+DEBUG  Here is the search query: search_terms: {'many': 1, 'there': 1, 'outlets': 1, 'How': 1, 'WalMart': 2, 'China': 1, 'are': 1, 'in': 1}; weight: 1
+
+DEBUG  Here is the question: How many Wal-Mart outlets are there in China?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'was': 1, 'Hitchcock': 2, 'When': 1, 'Alfred': 1, 'born': 1}; weight: 1
+
+DEBUG  Here is the question: When was Hitchcock born?
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'Institute': 1, 'When': 1, 'it': 1, 'founded': 1, 'American': 1, 'Enterprise': 1, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: When was it founded?
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'marries': 1, 'Britain': 1, 's': 2, 'Edward': 1, 'the': 1, 'was': 1, 'Prince': 2, 'occupation': 1}; weight: 1
+
+DEBUG  Here is the question: What was the Prince's occupation?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {})
+DEBUG  Here is the search query: search_terms: {'a': 1, 'on': 1, 'United': 1, 'serve': 1, 'long': 1, 'Nations': 1, 'member': 1, 'How': 1, 'does': 1, 'nonpermanent': 1, 'Council': 1, 'UN': 1, 'the': 1, 'Security': 1}; weight: 1
+
+DEBUG  Here is the question: How long does a non-permanent member serve on the Security Council?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {})
+DEBUG  Here is the search query: search_terms: {'was': 1, 'Hitchcock': 2, 'Where': 1, 'Alfred': 1, 'born': 1}; weight: 1
+
+DEBUG  Here is the question: Where was Hitchcock born?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'received': 1, 'IMF': 2, 'country': 1, 'loan': 1, 'by': 1, 'Which': 1, 'largest': 1, 'the': 2, 'ever': 1, 'granted': 1}; weight: 1
+
+DEBUG  Here is the question: Which country received the largest loan ever granted by the IMF?
+DEBUG  Query contains Which country; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'Hitchcock': 2, 'movie': 1, 's': 1, 'Alfred': 1, 'was': 1, 'first': 1}; weight: 1
+
+DEBUG  Here is the question: What was Hitchcock's first movie?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'used': 1, 'multiple': 1, 'for': 1, 'form': 1, 'of': 1, 'myeloma': 1, 'been': 1, 'Myeloma': 1, 'other': 1, 'treatment': 1, 'Multiple': 1, 'has': 1}; weight: 1
+
+DEBUG  Here is the question: What other form of treatment has been used for multiple myeloma?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {})
+DEBUG  Here is the search query: search_terms: {'IMF': 2, 'many': 1, 'nations': 1, 'member': 1, 'How': 1, 'are': 1, 'in': 1, 'the': 1}; weight: 1
+
+DEBUG  Here is the question: How many member nations are in the IMF?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'King': 1, 'murder': 1, 'trial': 1, 'Where': 1, 'convicted': 1, 'William': 1, 'held': 1, 'of': 1, 'the': 1, 'John': 1, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: Where was the trial held?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab7d0>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'on': 1, 'television': 1, 'people': 1, 'many': 1, 's': 1, 'How': 1, 'Britain': 1, 'Edward': 1, 'wedding': 1, 'the': 1, 'marries': 1, 'Prince': 1, 'viewed': 1}; weight: 1
+
+DEBUG  Here is the question: How many people viewed the wedding on television?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'what': 1, 'episode': 1, 'television': 1, 'show': 1, 'In': 1, 'telecast': 1, 'Cheers': 1, 'year': 1, 'the': 1, 'was': 1, 'final': 1}; weight: 1
+
+DEBUG  Here is the question: In what year was the final episode telecast?
+DEBUG  Query contains what year; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'Judi': 1, 'many': 1, 'How': 1, 'won': 1, 'Awards': 1, 'she': 1, 'Tony': 1, 'Dench': 1, 'has': 1}; weight: 1
+
+DEBUG  Here is the question: How many Tony Awards has she won?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'IMF': 2, 'loan': 1, 'by': 1, 'record': 1, 'amount': 1, 'the': 2, 'was': 1, 'granted': 1}; weight: 1
+
+DEBUG  Here is the question: What was the record loan amount granted by the IMF?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {})
+DEBUG  Here is the search query: search_terms: {'rotate': 1, 'often': 1, 'presidency': 1, 'of': 1, 'Nations': 1, 'United': 1, 'How': 1, 'does': 1, 'Council': 1, 'UN': 1, 'the': 2, 'Security': 1}; weight: 1
+
+DEBUG  Here is the question: How often does the presidency of the Security Council rotate?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {})
+DEBUG  Here is the search query: search_terms: {'Wheel': 2, 'city': 1, 'what': 1, 'is': 1, 'located': 1, 'Millennium': 2, 'In': 1, 'the': 2}; weight: 1
+
+DEBUG  Here is the question: In what city is the Millennium Wheel located?
+DEBUG  Query contains what city; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'what': 1, 'In': 1, 'Judi': 1, 'born': 1, 'she': 1, 'year': 1, 'Dench': 1, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: In what year was she born?
+DEBUG  Query contains what year; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'William': 1, 'murder': 1, 'King': 2, 'of': 1, 'When': 1, 'convicted': 2, 'John': 1, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: When was King convicted?
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab7d0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'every': 1, 'multiple': 1, 'many': 1, 'Myeloma': 1, 'myeloma': 1, 'Multiple': 1, 'How': 1, 'Americans': 1, 'year': 1, 'develop': 1}; weight: 1
+
+DEBUG  Here is the question: How many Americans develop multiple myeloma every year?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'what': 1, 'massacred': 1, '1997': 1, 'country': 1, 'is': 1, 'in': 1, 'Luxor': 2, 'at': 1, 'In': 1, 'tourists': 1}; weight: 1
+
+DEBUG  Here is the question: In what country is Luxor?
+DEBUG  Query contains what country; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'aired': 1, 'network': 1, 'show': 2, 'What': 1, 'Cheers': 1, 'the': 1, 'television': 1}; weight: 1
+
+DEBUG  Here is the question: What network aired the show?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'does': 1, 'stand': 1, 'for': 1, 'IMF': 2}; weight: 1
+
+DEBUG  Here is the question: What does IMF stand for?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {})
+DEBUG  Here is the search query: search_terms: {'multiple': 1, 'deaths': 1, 'caused': 1, 'in': 1, 'myeloma': 1, 'US': 1, 'Myeloma': 1, 'annually': 1, 'How': 1, 'are': 1, 'many': 1, 'Multiple': 1, 'the': 1, 'by': 1}; weight: 1
+
+DEBUG  Here is the question: How many deaths are caused by multiple myeloma in the U.S. annually?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'King': 1, 'murder': 2, 'of': 2, 'Who': 1, 'convicted': 1, 'William': 1, 'victim': 1, 'the': 2, 'John': 1, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: Who was the victim of the murder?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab7d0>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'Wheel': 2, 'is': 1, 'high': 1, 'How': 1, 'Millennium': 2, 'the': 2}; weight: 1
+
+DEBUG  Here is the question: How high is the Millennium Wheel?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {})
+DEBUG  Here is the search query: search_terms: {'United': 1, 'August': 1, 'for': 1, '1999': 1, 'of': 1, 'Who': 1, 'Nations': 1, 'UN': 2, 'Council': 1, 'President': 1, 'the': 2, 'was': 1, 'Security': 1}; weight: 1
+
+DEBUG  Here is the question: Who was the President of the U.N. Security Council for August 1999?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'what': 1, 'celebrated': 1, 'In': 1, 'Queen': 2, '100th': 2, 's': 2, 'Birthday': 2, 'year': 1, 'Mum': 2, 'the': 2, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: In what year was the Queen Mum's 100th Birthday celebrated?
+DEBUG  Query contains what year; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1e1d7320>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'founded': 1, 'was': 1, 'the': 1, 'When': 1, 'IMF': 2}; weight: 1
+
+DEBUG  Here is the question: When was the IMF founded?
+DEBUG  Query contains When; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'On': 1, 'what': 1, 'massacred': 1, '1997': 1, 'did': 1, 'Luxor': 1, 'massacre': 1, 'tourists': 1, 'at': 1, 'in': 1, 'date': 1, 'the': 1, 'happen': 1}; weight: 1
+
+DEBUG  Here is the question: On what date did the massacre happen?
+DEBUG  Query contains what date; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'Wheel': 1, 'What': 1, 'name': 1, 'is': 1, 'Millennium': 1, 'popular': 1, 'the': 1, 'its': 1}; weight: 1
+
+DEBUG  Here is the question: What is its popular name?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {})
+DEBUG  Here is the search query: search_terms: {'television': 1, 'played': 1, 'show': 1, 'Who': 1, 'Diane': 1, 'Cheers': 1, 'Chambers': 1}; weight: 1
+
+DEBUG  Here is the question: Who played Diane Chambers?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'in': 1, 'government': 1, '1999': 1, 'deposed': 1, 'Who': 1, 'by': 1, 'overthrow': 1, 'the': 2, 'Pakistani': 1, 'was': 1, 'leader': 1, 'overthrown': 1}; weight: 1
+
+DEBUG  Here is the question: Who was the leader deposed by the overthrow?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab7d0>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'headquartered': 1, 'is': 1, 'Where': 1, 'the': 1, 'IMF': 2}; weight: 1
+
+DEBUG  Here is the question: Where is the IMF headquartered?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'wore': 1, 'her': 1, 'that': 1, 'color': 1, 'was': 1, 'Queen': 1, '100th': 1, 'lunch': 1, 's': 1, 'birthday': 1, 'she': 1, 'Mum': 1, 'Birthday': 1, 'the': 2, 'dress': 1, 'at': 1}; weight: 1
+
+DEBUG  Here is the question: What color was the dress that she wore at her birthday lunch?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1e1d7320>, {})
+DEBUG  Here is the search query: search_terms: {'Cheers': 1, 'television': 1, 'bartender': 1, 'Sam': 1, 'played': 1, 'Who': 1, 'Malone': 1, 'show': 1, 'the': 1}; weight: 1
+
+DEBUG  Here is the question: Who played Sam Malone the bartender?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'Hermitage': 2, 'is': 1, 'located': 1, 'the': 1, 'Where': 1, 'Museum': 2}; weight: 1
+
+DEBUG  Here is the question: Where is the Hermitage Museum located?
+DEBUG  Query contains Where; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'affairs': 1, 'United': 1, 'for': 1, 'is': 1, 'Who': 1, 'political': 1, 'SecretaryGeneral': 1, 'Nations': 1, 'UN': 1, 'the': 1}; weight: 1
+
+DEBUG  Here is the question: Who is the Secretary-General for political affairs?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'Wheel': 1, 'built': 1, 'Who': 1, 'it': 1, 'Millennium': 1, 'the': 1}; weight: 1
+
+DEBUG  Here is the question: Who built it?
+DEBUG  Query contains Who; setting person weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'person': 0.9})
+DEBUG  Here is the search query: search_terms: {'from': 1, '1997': 1, 'people': 1, 'many': 1, 'massacre': 1, 'Luxor': 1, 'How': 1, 'at': 1, 'in': 1, 'massacred': 1, 'the': 1, 'tourists': 1, 'died': 1}; weight: 1
+
+DEBUG  Here is the question: How many people died from the massacre?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab8c0>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'city': 1, 'what': 1, '1999': 2, 'Game': 2, 'held': 1, 'AllStar': 2, 'Baseball': 1, 'In': 1, 'the': 1, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: In what city was the 1999 All-Star Game held?
+DEBUG  Query contains what city; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'circles': 1, 'what': 1, 'built': 1, 'Stonehenge': 1, 'county': 1, 'In': 1, 'stone': 1, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: In what county was Stonehenge built?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {})
+DEBUG  Here is the search query: search_terms: {'what': 1, 'Museum': 2, 'Hermitage': 2, 'of': 1, 'is': 1, 'located': 1, 'banks': 1, 'Along': 1, 'river': 1, 'the': 2}; weight: 1
+
+DEBUG  Here is the question: Along the banks of what river is the Hermitage Museum located?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'bar': 2, 'for': 1, 'show': 1, 'Boston': 1, 'television': 1, 'Cheers': 2, 'the': 1, 'was': 1, 'inspiration': 1}; weight: 1
+
+DEBUG  Here is the question: What Boston bar was the inspiration for Cheers' bar?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfab500>, {})
+DEBUG  Here is the search query: search_terms: {'Wheel': 1, 'passenger': 1, 'capsules': 1, 'many': 1, 'it': 1, 'How': 1, 'does': 1, 'Millennium': 1, 'contain': 1, 'the': 1}; weight: 1
+
+DEBUG  Here is the question: How many passenger capsules does it contain?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'Ben': 2, 'name': 1, 'is': 1, 'Jerry': 1, 's': 2, 'last': 1}; weight: 1
+
+DEBUG  Here is the question: What is Ben's last name?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'name': 1, 'Queen': 2, '100th': 1, 's': 2, 'Birthday': 1, 'birth': 1, 'Mother': 1, 'Mum': 1, 'the': 2, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: What was the Queen Mother's birth name?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1e1d7320>, {})
+DEBUG  Here is the search query: search_terms: {'circles': 1, 'What': 1, 'is': 1, 'stone': 2, 'UK': 1, 'in': 1, 'the': 2, 'oldest': 1, 'circle': 1}; weight: 1
+
+DEBUG  Here is the question: What is the oldest stone circle in the UK?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'last': 1, 'name': 1, 'is': 1, 'Jerry': 2, 's': 2, 'Ben': 1}; weight: 1
+
+DEBUG  Here is the question: What is Jerry's last name?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {})
+DEBUG  Here is the search query: search_terms: {'a': 1, 'turkey': 1, 'what': 1, 'Federation': 1, 'AFBF': 2, 'all': 1, 'Farm': 1, 'of': 1, 'is': 1, 'American': 1, 'According': 1, 'to': 1, 'dinner': 1, 'cost': 1, 'Bureau': 1, 'the': 3, 'with': 1, 'average': 1, 'trimmings': 1}; weight: 1
+
+DEBUG  Here is the question: According to the AFBF, what is the average cost of a turkey dinner with all the trimmings?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {})
+DEBUG  Here is the search query: search_terms: {'scheduled': 1, 'city': 1, 'what': 1, '1999': 2, 'originally': 1, 'AllStar': 1, 'Game': 2, 'Baseball': 1, 'In': 1, 'the': 1, 'was': 1}; weight: 1
+
+DEBUG  Here is the question: In what city was the 1999 Game originally scheduled?
+DEBUG  Query contains what city; setting location weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'location': 0.9})
+DEBUG  Here is the search query: search_terms: {'begin': 1, 'what': 1, 'for': 1, 'Hermitage': 1, 'did': 1, 'museum': 1, 'In': 1, 'Catherine': 1, 'Great': 1, 'year': 1, 'the': 2, 'Museum': 1, 'buying': 1}; weight: 1
+
+DEBUG  Here is the question: In what year did Catherine the Great begin buying for the museum?
+DEBUG  Query contains what year; setting time_ex weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'time_ex': 0.9})
+DEBUG  Here is the search query: search_terms: {'paintings': 2, 'many': 1, 'completed': 1, 'Charles': 2, 'Approximately': 1, 'how': 1, 'has': 1, 'Prince': 2}; weight: 1
+
+DEBUG  Here is the question: Approximately how many paintings has Prince Charles completed?
+DEBUG  Query contains how many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'Blue': 1, '1996': 1, 'money': 1, 'Deep': 1, 'How': 1, 'much': 1, 'match': 1, 'in': 1, 'the': 1, 'was': 1, 'wagered': 1}; weight: 1
+
+DEBUG  Here is the question: How much money was wagered in the 1996 match?
+DEBUG  Query contains How much; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'a': 1, 'What': 1, 'Ben': 2, 'named': 1, 'after': 1, 'had': 1, 'Jerry': 2, 'band': 1, 's': 2, 'them': 1, 'rock': 1, 'flavor': 1}; weight: 1
+
+DEBUG  Here is the question: What rock band had a Ben & Jerry's flavor named after them?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {})
+DEBUG  Here is the search query: search_terms: {'album': 1, 'on': 1, 'Spite': 1, 'Prine': 1, 'many': 1, 'of': 1, 'How': 1, 'are': 1, 'In': 1, 'the': 1, 'John': 1, 'Ourselves': 1, 'songs': 1}; weight: 1
+
+DEBUG  Here is the question: How many songs are on the album "In Spite of Ourselves"?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'on': 1, 'her': 1, '100': 1, 'many': 1, 'granted': 1, 'Queen': 1, 'years': 1, '100th': 1, 'How': 1, 's': 1, 'Birthday': 1, 'she': 1, 'in': 1, 'Press': 1, 'earth': 1, 'the': 2, 'has': 1, 'interviews': 1, 'Mum': 1}; weight: 1
+
+DEBUG  Here is the question: How many interviews has she granted the Press in her 100 years on earth?
+DEBUG  Query contains How many; setting number weight
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1e1d7320>, {'number': 0.9})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'his': 1, 'paintings': 2, 'for': 1, 'of': 1, 'is': 1, 'Charles': 1, 'paid': 1, 'one': 1, 'record': 1, 'amount': 1, 'the': 1, 'ever': 1, 'Prince': 1}; weight: 1
+
+DEBUG  Here is the question: What is the record amount ever paid for one of his paintings?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1dfc3f50>, {})
+DEBUG  Here is the search query: search_terms: {'What': 1, 'played': 1, 'name': 1, 'was': 1, '1999': 1, 'of': 1, 'is': 1, 'ballpark': 1, 'Game': 1, 'AllStar': 1, 'game': 1, 'Baseball': 1, 'the': 3, 'where': 1}; weight: 1
+
+DEBUG  Here is the question: What is the name of the ballpark where the game was played?
+DEBUG  Query contains What is the name; setting person and organization weight
+Traceback (most recent call last):
+  File "/home2/amkahn/workspace/573/question-answering/src/question_answering.py", line 183, in <module>
+    main()
+  File "/home2/amkahn/workspace/573/question-answering/src/question_answering.py", line 50, in main
+    all_answers = pool.map(partial_process_question,questions)
+  File "/opt/python-2.7/lib/python2.7/multiprocessing/pool.py", line 250, in map
+    return self.map_async(func, iterable, chunksize).get()
+  File "/opt/python-2.7/lib/python2.7/multiprocessing/pool.py", line 554, in get
+    raise self._value
+NameError: global name 'ans_type' is not defined
+DEBUG  Here is the search query: search_terms: {'did': 1, 'Lamarr': 2, 'What': 1, 'Hedy': 2, 'invent': 1}; weight: 1
+
+DEBUG  Here is the question: What did Hedy Lamarr invent?
+DEBUG  Here is the answer template: defaultdict(<function <lambda> at 0x1e1d7230>, {})

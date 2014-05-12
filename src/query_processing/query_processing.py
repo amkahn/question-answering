@@ -59,14 +59,38 @@ class QueryProcessor(object):
     def generate_queries(self):
         # For now, the weights of the search terms in the SearchQuery are equal to the
         # counts of the term in the question plus the target.
+        # For now, just assign this query weight 1 (we can experiment with different weighting
+        # schemes).
+        # TODO: Did we want to add stopword removal here?
         initial_query = SearchQuery(self.query_voc, 1)
+        sys.stderr.write("DEBUG  Here is the initial query: %s\n" % initial_query)
         
-        # Using WordNet, expand
+        # Using WordNet, expand the initial query to form a second query containing the
+        # initial query terms and their top n synonyms (for now, n=3; we can experiment
+        # with different n to figure out what's optimal--and maybe we want a different
+        # n for different POSs).
+        #
         # Consider POS-tagging the query terms first and passing the expected POS (perhaps
         # just categorized as noun, verb, or adj, ignoring queries that do not fall into
-        # these categories) as the 
+        # these categories) to the expand_query method, which will filter synonyms accordingly.
+        #
+        # For now, just assign this query weight 1 (we can experiment with different weighting
+        # schemes).
+        expanded_voc = {}
+        for term in self.query_voc:
+            # copy the term and its weight to the dictionary for the expanded query
+            expanded_voc[term] = self.query_voc[term]
+            # get the top 3 synonyms of the term and their similarity measures
+            term_syns = self.expand_query(term, 3)
+            for item in term_syns:
+                # unpack the 2-tuple of synonym and similarity measure
+                syn, sim_measure = item
+                # add the synonym to the dictionary for the expanded query, assigning it
+                # weight = weight of original term * similarity measure of synonym
+                expanded_voc[syn] = expanded_voc[term] * sim_measure
+        expanded_query = SearchQuery(expanded_voc, 1)
         
-#       sys.stderr.write("DEBUG  Here is the search query: %s\n" % query)
+        sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % [initial_query, expanded_query])
         return [initial_query, expanded_query]
 
     
@@ -80,7 +104,7 @@ class QueryProcessor(object):
     # under the categories of adj, verb, and noun (this would have the added bonus of removing
     # a lot of stopwords automatically).
     
-    def expand_query(term, num_syns):
+    def expand_query(self, term, num_syns):
         sys.stderr.write("DEBUG  Getting scored synonyms of %s\n" % term)
         syns = thes.scored_synonyms(term)
         sys.stderr.write("DEBUG  Here are the synsets returned from the Lin thesaurus: %s\n" % syns)
