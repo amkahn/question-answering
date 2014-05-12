@@ -20,10 +20,10 @@ import heapq
 
 class QueryProcessor(object):
 
-    def __init__(self, question):
+    def __init__(self, question, stoplist=None):
         self.question = question
+        self.stoplist = stoplist
         self.query_voc = self.generate_voc()
-
 
     # This method returns a dictionary of unigrams appearing in the original question and
     # target mapped to their counts.
@@ -45,11 +45,14 @@ class QueryProcessor(object):
         query_dict = {}
 
         for term in query_terms:
-            if query_dict.get(term) == None:
-                query_dict[term] = 1
-            else:
-                query_dict[term] += 1
-        
+            if term.lower() not in self.stoplist:
+                if query_dict.get(term) == None:
+                    query_dict[term] = 1
+                else:
+                    query_dict[term] += 1
+#           else:
+#               sys.stderr.write("DEBUG  Removing stopword %s from query\n" % term)
+
 #       sys.stderr.write("DEBUG  Here is the query vocabulary: %s\n" % query_dict)
         return query_dict
 
@@ -61,21 +64,25 @@ class QueryProcessor(object):
         # counts of the term in the question plus the target.
         # For now, just assign this query weight 1 (we can experiment with different weighting
         # schemes).
-        # TODO: Did we want to add stopword removal here?
         initial_query = SearchQuery(self.query_voc, 1)
-        sys.stderr.write("DEBUG  Here is the initial query: %s\n" % initial_query)
+#       sys.stderr.write("DEBUG  Here is the initial query: %s\n" % initial_query)
         
         # Using WordNet, expand the initial query to form a second query containing the
         # initial query terms and their top n synonyms (for now, n=3; we can experiment
         # with different n to figure out what's optimal--and maybe we want a different
         # n for different POSs).
         #
-        # Consider POS-tagging the query terms first and passing the expected POS (perhaps
+        # TODO: Consider POS-tagging the query terms first and passing the expected POS (perhaps
         # just categorized as noun, verb, or adj, ignoring queries that do not fall into
         # these categories) to the expand_query method, which will filter synonyms accordingly.
         #
-        # For now, just assign this query weight 1 (we can experiment with different weighting
-        # schemes).
+        # TODO: Also consider filtering our named entities so these query terms are not expanded.
+        # Getting the synonyms of proper names leads to all kinds of problems!
+        #
+        # For now, since we still have a lot of work to do to prevent query expansion from
+        # introducing crazy errors, just assign this query weight 0 (we can experiment with
+        # different weighting schemes).
+
         expanded_voc = {}
         for term in self.query_voc:
             # copy the term and its weight to the dictionary for the expanded query
@@ -88,9 +95,9 @@ class QueryProcessor(object):
                 # add the synonym to the dictionary for the expanded query, assigning it
                 # weight = weight of original term * similarity measure of synonym
                 expanded_voc[syn] = expanded_voc[term] * sim_measure
-        expanded_query = SearchQuery(expanded_voc, 1)
+        expanded_query = SearchQuery(expanded_voc, 0)
         
-        sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % [initial_query, expanded_query])
+#       sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % [str(initial_query), str(expanded_query)])
         return [initial_query, expanded_query]
 
     
@@ -105,25 +112,25 @@ class QueryProcessor(object):
     # a lot of stopwords automatically).
     
     def expand_query(self, term, num_syns):
-        sys.stderr.write("DEBUG  Getting scored synonyms of %s\n" % term)
+#       sys.stderr.write("DEBUG  Getting scored synonyms of %s\n" % term)
         syns = thes.scored_synonyms(term)
-        sys.stderr.write("DEBUG  Here are the synsets returned from the Lin thesaurus: %s\n" % syns)
+#       sys.stderr.write("DEBUG  Here are the synsets returned from the Lin thesaurus: %s\n" % syns)
 
         all_syns = []
         # syn list is in the form ((POS, [syn, syn, syn]), (POS, [syn, syn, syn]) ...)
         # concatenate all synonyms from the various lists (see TODO for possible change)
         for element in syns:
             all_syns.extend(element[1])
-        sys.stderr.write("DEBUG  Here are all the synonyms: %s\n" % all_syns)
+#       sys.stderr.write("DEBUG  Here are all the synonyms: %s\n" % all_syns)
         
-        if len(syns) > num_syns:
-            sys.stderr.write("DEBUG  Found more synonyms than required; filtering by similarity measure\n")
+        if len(all_syns) > num_syns:
+#           sys.stderr.write("DEBUG  Found more synonyms than required; filtering by similarity measure\n")
             # get n-best synonyms according to Lin similarity
-            top = heapq.nlargest(NUMBER_SYNONYMS, all_syns, key = lambda k: k[1])
+            top = heapq.nlargest(num_syns, all_syns, key = lambda k: k[1])
         else:
-            sys.stderr.write("DEBUG  Synonyms found do not exceed max number of synonyms desired; skipping filtering step\n")
-            top = syns
-        sys.stderr.write("DEBUG  Here are the top %s synonyms: %s\n" % (num_syns, top))
+#           sys.stderr.write("DEBUG  Synonyms found do not exceed max number of synonyms desired; skipping filtering step\n")
+            top = all_syns
+#       sys.stderr.write("DEBUG  Here are the top %s synonyms: %s\n" % (num_syns, top))
         return top
 
 

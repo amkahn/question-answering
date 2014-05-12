@@ -130,6 +130,7 @@ class Quail:
     # This method reads in a web cache file and stores it in a dictionary.
     # It returns a dictionary where the key is the question ID
     # and the value is a list of web search snippets.
+    
     def process_web_cache(self,web_cache):
         cached_results = defaultdict(list)
         for line in web_cache:
@@ -148,7 +149,7 @@ class Quail:
         #sys.stderr.write("\nDEBUG  Here is the question: %s\n" % question)
 
 	    # instantiate a QueryProcessor and use it to generate a set of searches and an AnswerTemplate object
-        qp = QueryProcessor(question)
+        qp = QueryProcessor(question, self.stopword_list)
 		
         search_queries = qp.generate_queries()
         #sys.stderr.write("DEBUG  Here are the search queries: %s\n" % search_queries)

@@ -1,4 +1,4 @@
-question_file = test.TREC-2006.xml.first_100_lines
+question_file = test.TREC-2006.xml.first_6_q_groups
 doc_index = /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.porter.none
 web_cache = src/cached_web_results/TREC-2006.web_cache
 run_tag = test

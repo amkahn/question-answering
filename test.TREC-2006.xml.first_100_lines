@@ -83,18 +83,3 @@
 	</q>
     </qa>
 </target>
-
-
-<target id = "142" text = "LPGA">
-    <qa>
-	<q id = "142.1" type="FACTOID">
-	    What does LPGA stand for?
-	</q>
-    </qa>
-
-    <qa>
-	<q id = "142.2" type="FACTOID">
-	    Where is the LPGA headquartered?
-	</q>
-    </qa>
-

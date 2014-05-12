@@ -39,7 +39,7 @@ def expand_query(query):
 #           sys.stderr.write("DEBUG  Here are the top synonyms: %s\n" % top)
         else:
 #           sys.stderr.write("DEBUG  Synonyms found do not exceed max number of synonyms desired; skipping filtering step\n")
-            top = syns
+            top = all_syns
         # add top synonyms to weighted term dict
         for element in top:
             weighted_terms[element[0]] = element[1]
