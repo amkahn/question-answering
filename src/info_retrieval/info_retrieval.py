@@ -29,19 +29,19 @@ class InfoRetriever:
     def retrieve_passages(self, queries):
         passages = []
         for query in queries:
-            passages.extend(self.trec_passages(query))
-            #passages.extend(self.web_search(query))
+            if query.weight != 0:
+                passages.extend(self.trec_passages(query))
+                #passages.extend(self.web_search(query))
         return passages
 
 
     def trec_passages(self, query):
-	
-	# generate string of weights followed by terms
-	query_str = ""
-	for term in query.search_terms.keys():
-		query_str += str(query.search_terms[term]) + ' #1(' + term + ') ' 	
+        # generate string of weights followed by terms
+        query_str = ""
+        for term in query.search_terms.keys():
+            query_str += str(query.search_terms[term]) + ' #1(' + term + ') ' 	
        
-	passages = []
+        passages = []
         #sys.stderr.write(query_str + '\n')
        
         try:
@@ -60,7 +60,7 @@ class InfoRetriever:
             orig_text = " ".join([x for x in orig_doc.text.split("<TEXT>")[1].split() if "<" not in x])
             passage_text = ' '.join(nltk.word_tokenize(orig_text)[begin:end])
            # print "passage text", passage_text
-            passage = Passage(passage_text, doc.score, doc_id)
+            passage = Passage(passage_text, query.weight*(-doc.score**-1), doc_id)
             passages.append(passage)
         return passages
             
