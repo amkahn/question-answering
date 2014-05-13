@@ -167,7 +167,7 @@ class Quail:
         # add web cached results to passages
         #sys.stderr.write("Adding "+str(len(self.cached_results[question.id]))+" web result passages for "+str(question.id)+"\n")
         for cached_result in self.cached_results[question.id]:
-            passages.append(Passage(cached_result, math.log(0.9), None))
+            passages.append(Passage(cached_result, -math.log(0.9)**-1, None))
 
        	# instantiate an AnswerProcessor that takes set of passages and the AnswerTemplate object
         ap = AnswerProcessor(passages,ans_template,self.stopword_list)

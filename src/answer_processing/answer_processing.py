@@ -70,28 +70,28 @@ class AnswerProcessor:
                     # passage weight is negative - closer to 0 is better
                     # change to positive, then take inverse
                     # higher score is still better, but now will be all positive
-                    answer_score[sentence[i]] += (-passage.weight)**-1
+                    answer_score[sentence[i]] += passage.weight
                     if passage.doc_id:
                         number_passages[sentence[i]] += 1
                         answer_docs[sentence[i]].add(passage.doc_id)
                     else:
                         number_passages[sentence[i]] += 10
                     if i < len(sentence) - 1: # can do bigrams
-                        answer_score[" ".join(sentence[i:i+2])] += (-passage.weight)**-1
+                        answer_score[" ".join(sentence[i:i+2])] += passage.weight
                         if passage.doc_id:
                             number_passages[" ".join(sentence[i:i+2])] += 1
                             answer_docs[" ".join(sentence[i:i+2])].add(passage.doc_id)
                         else:
                             number_passages[" ".join(sentence[i:i+2])] += 10
                         if i < len(sentence) - 2: # can do trigrams
-                            answer_score[" ".join(sentence[i:i+3])] += (-passage.weight)**-1
+                            answer_score[" ".join(sentence[i:i+3])] += passage.weight
                             if passage.doc_id:
                                 number_passages[" ".join(sentence[i:i+3])] += 1
                                 answer_docs[" ".join(sentence[i:i+3])].add(passage.doc_id)
                             else:
                                 number_passages[" ".join(sentence[i:i+3])] += 10
                             if i < len(sentence) - 3: # can do 4-grams
-                                answer_score[" ".join(sentence[i:i+4])] += (-passage.weight)**-1
+                                answer_score[" ".join(sentence[i:i+4])] += passage.weight
                                 if passage.doc_id:
                                     number_passages[" ".join(sentence[i:i+4])] += 1
                                     answer_docs[" ".join(sentence[i:i+4])].add(passage.doc_id)
