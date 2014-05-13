@@ -28,7 +28,6 @@ class InfoRetriever:
     # the query-processing module
     def retrieve_passages(self, queries):
         passages = []
-        #web_results = []
         for query in queries:
             passages.extend(self.trec_passages(query))
             #passages.extend(self.web_search(query))
@@ -36,15 +35,20 @@ class InfoRetriever:
 
 
     def trec_passages(self, query):
-        query = " ".join(query.search_terms.keys())
-        passages = []
-        #sys.stderr.write(query + '\n')
-        # second argument is the number of documents desired
+	
+	# generate string of weights followed by terms
+	query_str = ""
+	for term in query.search_terms.keys():
+		query_str += str(query.search_terms[term]) + ' #1(' + term + ') ' 	
+       
+	passages = []
+        #sys.stderr.write(query_str + '\n')
+       
         try:
-            docs = self.query_env.runQuery("#combine[passage100:50](" + query + ")", 100)
+            docs = self.query_env.runQuery("#weight[passage100:50](" + query_str + ")", 100)
         except:
             docs = []
-            sys.stderr.write("Couldn't run query: " + query + '\n')
+            sys.stderr.write("Couldn't run query: " + query_str + '\n')
         for doc in docs:
             doc_num = doc.document
             begin = doc.begin
