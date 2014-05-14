@@ -150,15 +150,49 @@ class AnswerProcessor:
 
     # a method to check candidate answers against the answer template
     def reweight_answers(self):
+        # find NEs and types
+        # person, organization, object, location, time_ex, number, other
+
+        # for now, person, organization, and location share one regex
+        # just checking if it starts with capital letter
+        pers_org_loc_re = re.compile(r'^[A-Z]')
+
+        # time expressions
+        months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"]
+        date = [r"^([0-9]{1,2} ?(-|/) ?)?([0-9]{1,2} ?(-|/) ?)?[0-9]{2,4}$"]
+        time_ex_re = re.compile("|".join(months+date))
+
+        # numbers
+        number_words = ["one","two","three","four","five","six","seven","eight","nine","ten",
+"eleven","twelve","thirteen","fifteen","twenty","thirty","forty","fifty","hundred","thousand","million","billion"]
+        number_re = re.compile("|".join(number_words+["[0-9]"]))
+
+        # for now, don't capture objects (think about how to do this...)
+        # so everything else will be considered other
+
         for answer_candidate in self.ranked_answers:
-            # find NEs and types
-            for NE_type,weight in self.answer_template.type_weights.iteritems():
-                # if this NE type is in the answer_candidate
-                # set the score to the previous score times the type's weight
-                # for now, assume all NE types in all answer candidates
-                #new_score = answer_candidate.score*weight
-                #answer_candidate.set_score(new_score)
-                pass
+            # if person, organization, or location
+            # find which category has highest weight in answer template
+            # and upweight accordingly
+            if pers_org_loc_re.search(answer_candidate):
+                weights = []
+                weights.append(self.answer_template.type_weights['person'])
+                weights.append(self.answer_template.type_weights['organization'])
+                weights.append(self.answer_template.type_weights['location'])
+                weights.sort(reverse=True)
+                new_score = answer_candidate.score*weights[0]
+            # if time expression, upweight by that
+            elif time_ex_re.search(answer_candidate):
+                new_score = anwer_candidate.score*self.answer_template.type_weights['time_ex']
+            # if number, upweight by that
+            elif number_re.search(answer_candidate):
+                new_score = answer_candidate.score*self.answer_template.type_weights['number']
+            # else, upweight by other
+            else:
+                new_score = answer_candidate.score*self.answer_template.type_weights['other']
+
+            answer_candidate.set_score(new_score)
+
 
     def rank_answers(self):
         self.ranked_answers.sort(reverse=True,key=attrgetter('score'))

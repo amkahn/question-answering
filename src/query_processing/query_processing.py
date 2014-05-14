@@ -215,7 +215,7 @@ class QueryProcessor(object):
     def extract_ne(self, tokenized_q):
 
         ne = []
-        non_ne = []
+        non_ne = tokenized_q
 
         pos_tags = nltk.pos_tag(tokenized_q)
         extracted = nltk.ne_chunk(pos_tags, binary=True)
@@ -223,10 +223,13 @@ class QueryProcessor(object):
         for subtree in extracted.subtrees(lambda t: t.node == "NE"):
             leaves = subtree.leaves()
             # add space-delimited NE phrases to ne list
-            ne.append(' '.join(leaf[0] for leaf in leaves))
+            current_ne = ' '.join(leaf[0] for leaf in leaves)
+            ne.append(current_ne)
             # note: this isn't foolproof, but should work for now. I can't figure out how to get
             # the indices of the NE terms in the surface string
-            non_ne.remove(leaf[0] for leaf in leaves)
+            for leaf in leaves:
+                sys.stderr.write("trying to remove "+leaf[0]+" from "+str(non_ne)+"\n")
+                non_ne.remove(leaf[0])
 
 
         return non_ne, ne
