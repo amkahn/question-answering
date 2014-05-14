@@ -7,6 +7,7 @@ from operator import itemgetter, attrgetter
 from collections import Counter, defaultdict
 import nltk
 import sys
+import re
 
 class AnswerProcessor:
     def __init__(self,passages,answer_template,stopword_list=[]):
@@ -62,7 +63,8 @@ class AnswerProcessor:
         number_passages = Counter()
         self.unigram_answers = []
         for passage in self.passages:
-            passage_list = [nltk.word_tokenize(t) for t in nltk.sent_tokenize(passage.passage)]
+            sentences = [nltk.sent_tokenize(x) for x in passage.passage.split("...")]
+            passage_list = [nltk.word_tokenize(t) for t in sentences]
             #sys.stderr.write("Tokenized passage is"+str(passage_list)+"\n")
             for sentence in passage_list:
                 for i in range(len(sentence)):
@@ -109,13 +111,17 @@ class AnswerProcessor:
 
     # remove answers with words from original query or "..." starting/ending with punctuation or stop word
     def filter_answers(self):
-        query_terms = [x.lower() for x in self.answer_template.query_terms]
+        # some regexes for comparisons
+        stopword_re = re.compile("|".join(["^"+re.escape(x) for x in self.stopword_list]+[re.escape(x)+"$" for x in self.stopword_list]),re.IGNORECASE)
+        punctuation_re = re.compile("|".join(["^"+re.escape(x) for x in self.punctuation]+[re.escape(x)+"$" for x in self.punctuation]),re.IGNORECASE)
+        query_terms_re = re.compile("|".join(re.escape(x) for x in self.answer_template.query_terms),re.IGNORECASE)
+
         # go through answers
         for i in xrange(len(self.ranked_answers)-1,-1,-1):
             answer = self.ranked_answers[i]
             answer_words = answer.answer.split()
 
-            # remove answers if not in at least two documents
+            # remove answers if not in at least one document
             # try different number of documents to see
             if len(answer.doc_ids) < 1:
                 #sys.stderr.write("Deleting - doesn't occur in any AQUAINT doc.\n")
@@ -123,24 +129,11 @@ class AnswerProcessor:
             elif answer.number_passages < 10:
                 #sys.stderr.write("Deleting - doesn't occur in at least 10 passages.\n")
                 del self.ranked_answers[i]
-            else:
-                for j in range(len(answer_words)):
-                    # if the first or last word is in the stop word list or punctuation list
-                    if j==0 or j==len(answer_words)-1:
-                        if answer_words[j].lower() in self.stopword_list or answer_words[j].lower() in self.punctuation:
-                            #sys.stderr.write("Deleting - starts or ends with stopword or punctuation.\n")
-                            del self.ranked_answers[i]
-                            break
 
-                    # or if any word in the answer is in the list of query terms
-                    if answer_words[j].lower() in query_terms or answer_words[j] == "...":
-                        # remove that answer
-                        #sys.stderr.write("Deleting - includes query terms or ...\n")
-                        del self.ranked_answers[i]
-                        break
-
-                else:
-                    continue
+            # remove answer if starts or ends with stopword or punctuation
+            # or if it contains any of query terms
+            elif stopword_re.search(answer) or punctuation_re.search(answer) or query_terms_re.search(answer):
+                del self.ranked_answers[i]
 
 
     # combine answer candidates so that unigrams aren't highest
@@ -163,8 +156,9 @@ class AnswerProcessor:
                 # if this NE type is in the answer_candidate
                 # set the score to the previous score times the type's weight
                 # for now, assume all NE types in all answer candidates
-                new_score = answer_candidate.score*weight
-                answer_candidate.set_score(new_score)
+                #new_score = answer_candidate.score*weight
+                #answer_candidate.set_score(new_score)
+                pass
 
     def rank_answers(self):
         self.ranked_answers.sort(reverse=True,key=attrgetter('score'))
