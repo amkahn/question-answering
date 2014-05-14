@@ -25,11 +25,18 @@ class QueryProcessor(object):
         self.stoplist = stoplist
         self.query_voc = self.generate_voc()
 
+
+
     # This method returns a dictionary of unigrams appearing in the original question and
     # target mapped to their counts.
     
     def generate_voc(self):
         tokenized_q = nltk.word_tokenize(self.question.q)
+
+        # TODO: I added in the NE extraction here. NEs are removed from query_terms and added to self.ne
+        # TODO: Note: had to strip punctuation from self.ne too, to avoid Indri freakout
+        tokenized_q, self.ne = self.extract_ne(tokenized_q)
+
         tokenized_target = nltk.word_tokenize(self.question.target)
         query_terms = tokenized_q + tokenized_target
 
@@ -40,7 +47,7 @@ class QueryProcessor(object):
         for i in range(len(query_terms)):
         	query_terms[i] = re.sub(r'\W', '', query_terms[i])
         query_terms = filter(lambda x: x != '', query_terms)
-       
+        
 #       sys.stderr.write("DEBUG  Here are the query terms after punctuation stripping: %s\n" % query_terms)
         query_dict = {}
 
@@ -64,6 +71,8 @@ class QueryProcessor(object):
         # counts of the term in the question plus the target.
         # For now, just assign this query weight 1 (we can experiment with different weighting
         # schemes).
+
+
         initial_query = SearchQuery(self.query_voc, 1)
 #       sys.stderr.write("DEBUG  Here is the initial query: %s\n" % initial_query)
         
@@ -96,7 +105,14 @@ class QueryProcessor(object):
                 # weight = weight of original term * similarity measure of synonym
                 expanded_voc[syn] = expanded_voc[term] * sim_measure
         expanded_query = SearchQuery(expanded_voc, 0)
-        
+
+        # TODO: NEs back in to both expanded and initial query objects -clara
+        # TODO: note - do we want to upweight the NEs?
+
+        for term in self.ne:
+            initial_query.query_voc[term] = 1
+            expanded_query.query_voc[term] = 1
+
 #       sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % [str(initial_query), str(expanded_query)])
         return [initial_query, expanded_query]
 
@@ -156,30 +172,30 @@ class QueryProcessor(object):
             time_match = re.compile(r'\b[Ww]hen\b|\b(?:[Ww]hat|[Ww]hich) (?:(?:is|was) the )?(?:date|day|month|year|decade|century)\b').search(self.question.q)
             num_match = re.compile(r'\b[Hh]ow (?:much|many)\b').search(self.question.q)
 
-            match_found = false
+            match_found = False
 
             if person_match:
 #               sys.stderr.write("DEBUG  Query contains %s; setting person weight\n" % person_match.group(0))
                 ans_types['person'] = 0.9
-                match_found = true
+                match_found = True
             if name_match:
 #               sys.stderr.write("DEBUG  Query contains %s; setting person and organization weight\n" % name_match.group(0))
                 ans_types['person'] = 0.9
                 ans_types['organization'] = 0.9
-                ans_type['object'] = 0.9
-                match_found = true
+                ans_types['object'] = 0.9
+                match_found = True
             if loc_match:
 #               sys.stderr.write("DEBUG  Query contains %s; setting location weight\n" % loc_match.group(0))
                 ans_types['location'] = 0.9
-                match_found = true
+                match_found = True
             if time_match:
 #               sys.stderr.write("DEBUG  Query contains %s; setting time_ex weight\n" % time_match.group(0))
                 ans_types['time_ex'] = 0.9
-                match_found = true
+                match_found = True
             if num_match:
 #               sys.stderr.write("DEBUG  Query contains %s; setting number weight\n" % num_match.group(0))
                 ans_types['number'] = 0.9
-                match_found = true
+                match_found = True
                 
             if not match_found:
                 ans_types['other'] = 0.5               
@@ -192,3 +208,28 @@ class QueryProcessor(object):
 
         else:
             sys.stderr.write("Warning: System can only handle \"factoid\" questions\n")
+
+
+    ## I added this. -clara
+
+    def extract_ne(self, tokenized_q):
+
+        ne = []
+        non_ne = []
+
+        pos_tags = nltk.pos_tag(tokenized_q)
+        extracted = nltk.ne_chunk(pos_tags, binary=True)
+        # find NE-headed subtrees
+        for subtree in extracted.subtrees(lambda t: t.node == "NE"):
+            leaves = subtree.leaves()
+            # add space-delimited NE phrases to ne list
+            ne.append(' '.join(leaf[0] for leaf in leaves))
+            # note: this isn't foolproof, but should work for now. I can't figure out how to get
+            # the indices of the NE terms in the surface string
+            non_ne.remove(leaf[0] for leaf in leaves)
+
+
+        return non_ne, ne
+
+
+

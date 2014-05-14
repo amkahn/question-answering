@@ -170,6 +170,9 @@ class AnswerProcessor:
         self.ranked_answers.sort(reverse=True,key=attrgetter('score'))
 
 
+
+
+
 class AnswerCandidate:
     def __init__(self,question_id,answer,doc_ids):
         self.question_id = question_id

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fb95caa-54c7-49ba-bcb6-b0fae7436527" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/answer_processing/answer_processing.py" afterPath="$PROJECT_DIR$/src/answer_processing/answer_processing.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/query_processing/query_processing.py" afterPath="$PROJECT_DIR$/src/query_processing/query_processing.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="question-answering.iws" />
@@ -25,11 +27,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="info_retrieval.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="info_retrieval.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info_retrieval/info_retrieval.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
-              <folding />
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="1380">
+              <folding>
+                <marker date="1400049067000" expanded="true" signature="302:2929" placeholder="..." />
+                <marker date="1400049067000" expanded="true" signature="830:1056" placeholder="..." />
+                <marker date="1400049067000" expanded="true" signature="1094:2224" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="answer_processing.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/answer_processing/answer_processing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="172" column="0" selection-start="8426" selection-end="8426" vertical-scroll-proportion="0.0" vertical-offset="2184" max-vertical-offset="2910">
+              <folding>
+                <element signature="e#159#210#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="query_processing.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/query_processing/query_processing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="8" selection-start="1772" selection-end="1772" vertical-scroll-proportion="0.35764375" vertical-offset="480" max-vertical-offset="3615">
+              <folding>
+                <element signature="e#159#169#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,7 +65,7 @@
       <file leaf-file-name="general_classes.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/general_classes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="28" selection-start="3807" selection-end="3807" vertical-scroll-proportion="0.0" vertical-offset="970" max-vertical-offset="1560">
+            <state line="86" column="28" selection-start="3639" selection-end="3639" vertical-scroll-proportion="0.0" vertical-offset="925" max-vertical-offset="1515">
               <folding />
             </state>
           </provider>
@@ -72,12 +100,13 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/general_classes.py" />
-        <option value="$PROJECT_DIR$/src/query_processing/query_processing.py" />
         <option value="$PROJECT_DIR$/src/info_retrieval/info_retrieval2.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/info_retrieval/info_retrieval_old.py" />
         <option value="$PROJECT_DIR$/src/info_retrieval/info_retrieval_web.py" />
         <option value="$PROJECT_DIR$/src/info_retrieval/info_retrieval.py" />
+        <option value="$PROJECT_DIR$/src/answer_processing/answer_processing.py" />
+        <option value="$PROJECT_DIR$/src/query_processing/query_processing.py" />
       </list>
     </option>
   </component>
@@ -181,6 +210,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="query_processing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="question-answering" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="question-answering" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="info_retrieval" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -223,12 +270,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="Errors" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/desktop_stuff/sentiment_local" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -473,7 +520,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27593508" sideWeight="0.7974522" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27593508" sideWeight="0.7974522" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -551,11 +598,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/answer_processing/answer_processing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="0" selection-end="59" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="2355" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/info_retrieval/test.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4125" />
@@ -571,21 +613,9 @@
         <state line="55" column="4" selection-start="1543" selection-end="1543" vertical-scroll-proportion="-0.31304348" vertical-offset="885" max-vertical-offset="2265" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/query_processing/query_processing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="8" selection-start="1530" selection-end="1530" vertical-scroll-proportion="-0.07826087" vertical-offset="660" max-vertical-offset="1245" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/info_retrieval/info_retrieval.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/general_classes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="28" selection-start="3807" selection-end="3807" vertical-scroll-proportion="0.0" vertical-offset="970" max-vertical-offset="1560">
+        <state line="86" column="28" selection-start="3639" selection-end="3639" vertical-scroll-proportion="0.0" vertical-offset="925" max-vertical-offset="1515">
           <folding />
         </state>
       </provider>
@@ -594,6 +624,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info_retrieval/info_retrieval.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
+          <folding>
+            <marker date="1400049067000" expanded="true" signature="302:2929" placeholder="..." />
+            <marker date="1400049067000" expanded="true" signature="830:1056" placeholder="..." />
+            <marker date="1400049067000" expanded="true" signature="1094:2224" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/answer_processing/answer_processing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="172" column="0" selection-start="8426" selection-end="8426" vertical-scroll-proportion="0.0" vertical-offset="2184" max-vertical-offset="2910">
+          <folding>
+            <element signature="e#159#210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/query_processing/query_processing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="8" selection-start="1772" selection-end="1772" vertical-scroll-proportion="0.35764375" vertical-offset="480" max-vertical-offset="3615">
+          <folding>
+            <element signature="e#159#169#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
