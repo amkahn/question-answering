@@ -72,10 +72,29 @@ class QueryProcessor(object):
         # For now, just assign this query weight 1 (we can experiment with different weighting
         # schemes).
 
+        queries = []
 
         initial_query = SearchQuery(self.query_voc, 1)
 #       sys.stderr.write("DEBUG  Here is the initial query: %s\n" % initial_query)
+        queries.append(initial_query)
         
+        #expanded_query = self.expand_query()
+        #queries.append(expanded_query)
+
+        # TODO: put NEs back in to both expanded and initial query objects -clara
+        # TODO: note - do we want to upweight the NEs?
+
+        for term in self.ne:
+            for query in queries:
+                if query.search_terms.get(term) == None:
+                    query.search_terms[term] = 1
+                else:
+                    query.search_terms[term] += 1
+
+#       sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % [str(initial_query), str(expanded_query)])
+        return queries
+
+    def expand_query(self):
         # Using WordNet, expand the initial query to form a second query containing the
         # initial query terms and their top n synonyms (for now, n=3; we can experiment
         # with different n to figure out what's optimal--and maybe we want a different
@@ -97,7 +116,7 @@ class QueryProcessor(object):
             # copy the term and its weight to the dictionary for the expanded query
             expanded_voc[term] = self.query_voc[term]
             # get the top 3 synonyms of the term and their similarity measures
-            term_syns = self.expand_query(term, 3)
+            term_syns = self.expand_term(term, 3)
             for item in term_syns:
                 # unpack the 2-tuple of synonym and similarity measure
                 syn, sim_measure = item
@@ -105,24 +124,8 @@ class QueryProcessor(object):
                 # weight = weight of original term * similarity measure of synonym
                 expanded_voc[syn] = expanded_voc[term] * sim_measure
         expanded_query = SearchQuery(expanded_voc, 0)
+        return expanded_query
 
-        # TODO: put NEs back in to both expanded and initial query objects -clara
-        # TODO: note - do we want to upweight the NEs?
-
-        for term in self.ne:
-
-            if initial_query.search_terms.get(term) == None:
-                initial_query.search_terms[term] = 1
-            else:
-                initial_query.search_terms[term] += 1
-
-            if expanded_query.search_terms.get(term) == None:
-                expanded_query.search_terms[term] = 1
-            else:
-                expanded_query.search_terms[term] += 1
-
-#       sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % [str(initial_query), str(expanded_query)])
-        return [initial_query, expanded_query]
 
     
     # This method takes a query term (string) and a maximum number of synonyms to return (int)
@@ -135,7 +138,7 @@ class QueryProcessor(object):
     # under the categories of adj, verb, and noun (this would have the added bonus of removing
     # a lot of stopwords automatically).
     
-    def expand_query(self, term, num_syns):
+    def expand_term(self, term, num_syns):
 #       sys.stderr.write("DEBUG  Getting scored synonyms of %s\n" % term)
         syns = thes.scored_synonyms(term)
 #       sys.stderr.write("DEBUG  Here are the synsets returned from the Lin thesaurus: %s\n" % syns)

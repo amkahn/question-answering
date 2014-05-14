@@ -1,8 +1,8 @@
 question_file = /dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml
 doc_index = /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.porter.stoplist
 web_cache = src/cached_web_results/TREC-2006.web_cache
-run_tag = index.porter.stoplist
-output_file = outputs/index.porter.stoplist.out
+run_tag = 6
+output_file = outputs/$(run_tag).out
 results_file = $(run_tag)
 
 executable = src/question_answering.sh
@@ -17,19 +17,14 @@ request_memory = 1024
 Queue
 
 doc_index = /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.krovetz.stoplist
-run_tag = index.krovetz.stoplist
-output_file = outputs/index.krovetz.stoplist.out
+run_tag = 5
+output_file = outputs/$(run_tag).out
 results_file = $(run_tag)
 Queue
 
 doc_index = /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.none.stoplist
-run_tag = index.none.stoplist
-output_file = outputs/index.none.stoplist.out
+run_tag = 7
+output_file = outputs/$(run_tag).out
 results_file = $(run_tag)
 Queue
 
-doc_index = /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.none.none
-run_tag = index.none.none
-output_file = outputs/index.none.none.out
-results_file = $(run_tag)
-Queue

@@ -1,0 +1,27 @@
+
+        queries = []
+
+        initial_query = SearchQuery(self.query_voc, 1)
+#       sys.stderr.write("DEBUG  Here is the initial query: %s\n" % initial_query)
+        queries.append(initial_query)
+
+        expanded_query = self.expand_query()
+        queries.append(expanded_query)
+
+        # TODO: put NEs back in to both expanded and initial query objects -clara
+        # TODO: note - do we want to upweight the NEs?
+
+        for term in self.ne:
+            for query in queries:
+                if query.search_terms.get(term) == None:
+                    query.search_terms[term] = 1
+                else:
+                    query.search_terms[term] += 1
+
+#       sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % [str(initial_query), str(expanded_query)])
+        return queries
+
+    def expand_query(self):
+        # Using WordNet, expand the initial query to form a second query containing the
+cjaja@patas:~/classwork/spring-2014/ling573/question-answering/src$
+
