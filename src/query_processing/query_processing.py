@@ -47,7 +47,7 @@ class QueryProcessor(object):
         for i in range(len(query_terms)):
         	query_terms[i] = re.sub(r'\W', '', query_terms[i])
         query_terms = filter(lambda x: x != '', query_terms)
-        
+
 #       sys.stderr.write("DEBUG  Here are the query terms after punctuation stripping: %s\n" % query_terms)
         query_dict = {}
 
@@ -106,12 +106,20 @@ class QueryProcessor(object):
                 expanded_voc[syn] = expanded_voc[term] * sim_measure
         expanded_query = SearchQuery(expanded_voc, 0)
 
-        # TODO: NEs back in to both expanded and initial query objects -clara
+        # TODO: put NEs back in to both expanded and initial query objects -clara
         # TODO: note - do we want to upweight the NEs?
 
         for term in self.ne:
-            initial_query.query_voc[term] = 1
-            expanded_query.query_voc[term] = 1
+
+            if initial_query.query_voc.get(term) == None:
+                initial_query.query_voc[term] = 1
+            else:
+                initial_query.query_voc[term] += 1
+
+            if expanded_query.query_voc.get(term) == None:
+                expanded_query.query_voc[term] = 1
+            else:
+                expanded_query.query_voc[term] += 1
 
 #       sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % [str(initial_query), str(expanded_query)])
         return [initial_query, expanded_query]
