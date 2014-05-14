@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fb95caa-54c7-49ba-bcb6-b0fae7436527" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/answer_processing/answer_processing.py" afterPath="$PROJECT_DIR$/src/answer_processing/answer_processing.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/query_processing/query_processing.py" afterPath="$PROJECT_DIR$/src/query_processing/query_processing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="question-answering.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,7 +52,7 @@
       <file leaf-file-name="query_processing.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/query_processing/query_processing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="8" selection-start="1772" selection-end="1772" vertical-scroll-proportion="0.35764375" vertical-offset="480" max-vertical-offset="3615">
+            <state line="115" column="17" selection-start="4924" selection-end="4924" vertical-scroll-proportion="0.67180926" vertical-offset="1246" max-vertical-offset="3735">
               <folding>
                 <element signature="e#159#169#0" expanded="true" />
               </folding>
@@ -649,7 +647,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/query_processing/query_processing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="8" selection-start="1772" selection-end="1772" vertical-scroll-proportion="0.35764375" vertical-offset="480" max-vertical-offset="3615">
+        <state line="115" column="17" selection-start="4924" selection-end="4924" vertical-scroll-proportion="0.67180926" vertical-offset="1246" max-vertical-offset="3735">
           <folding>
             <element signature="e#159#169#0" expanded="true" />
           </folding>
