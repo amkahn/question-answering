@@ -63,7 +63,10 @@ class AnswerProcessor:
         number_passages = Counter()
         self.unigram_answers = []
         for passage in self.passages:
-            sentences = [nltk.sent_tokenize(x) for x in passage.passage.split("...")]
+            sentences = []
+            split_passage = passage.passage.split("...")
+            for x in split_passage:
+                sentences.extend(nltk.sent_tokenize(x))
             passage_list = [nltk.word_tokenize(t) for t in sentences]
             #sys.stderr.write("Tokenized passage is"+str(passage_list)+"\n")
             for sentence in passage_list:
@@ -132,7 +135,7 @@ class AnswerProcessor:
 
             # remove answer if starts or ends with stopword or punctuation
             # or if it contains any of query terms
-            elif stopword_re.search(answer) or punctuation_re.search(answer) or query_terms_re.search(answer):
+            elif stopword_re.search(answer.answer) or punctuation_re.search(answer.answer) or query_terms_re.search(answer.answer):
                 del self.ranked_answers[i]
 
 
@@ -174,7 +177,7 @@ class AnswerProcessor:
             # if person, organization, or location
             # find which category has highest weight in answer template
             # and upweight accordingly
-            if pers_org_loc_re.search(answer_candidate):
+            if pers_org_loc_re.search(answer_candidate.answer):
                 weights = []
                 weights.append(self.answer_template.type_weights['person'])
                 weights.append(self.answer_template.type_weights['organization'])
@@ -182,10 +185,10 @@ class AnswerProcessor:
                 weights.sort(reverse=True)
                 new_score = answer_candidate.score*weights[0]
             # if time expression, upweight by that
-            elif time_ex_re.search(answer_candidate):
-                new_score = anwer_candidate.score*self.answer_template.type_weights['time_ex']
+            elif time_ex_re.search(answer_candidate.answer):
+                new_score = answer_candidate.score*self.answer_template.type_weights['time_ex']
             # if number, upweight by that
-            elif number_re.search(answer_candidate):
+            elif number_re.search(answer_candidate.answer):
                 new_score = answer_candidate.score*self.answer_template.type_weights['number']
             # else, upweight by other
             else:

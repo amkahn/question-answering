@@ -111,15 +111,15 @@ class QueryProcessor(object):
 
         for term in self.ne:
 
-            if initial_query.query_voc.get(term) == None:
-                initial_query.query_voc[term] = 1
+            if initial_query.search_terms.get(term) == None:
+                initial_query.search_terms[term] = 1
             else:
-                initial_query.query_voc[term] += 1
+                initial_query.search_terms[term] += 1
 
-            if expanded_query.query_voc.get(term) == None:
-                expanded_query.query_voc[term] = 1
+            if expanded_query.search_terms.get(term) == None:
+                expanded_query.search_terms[term] = 1
             else:
-                expanded_query.query_voc[term] += 1
+                expanded_query.search_terms[term] += 1
 
 #       sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % [str(initial_query), str(expanded_query)])
         return [initial_query, expanded_query]
@@ -236,7 +236,7 @@ class QueryProcessor(object):
             # note: this isn't foolproof, but should work for now. I can't figure out how to get
             # the indices of the NE terms in the surface string
             for leaf in leaves:
-                sys.stderr.write("trying to remove "+leaf[0]+" from "+str(non_ne)+"\n")
+                #sys.stderr.write("trying to remove "+leaf[0]+" from "+str(non_ne)+"\n")
                 non_ne.remove(leaf[0])
 
 
