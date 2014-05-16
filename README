@@ -1,3 +1,4 @@
+LING 573: D3
 Claire Jaja, Andrea Kahn, Clara Gordon
 5/16/2014
 
@@ -25,7 +26,7 @@ We created several different versions of the index for D3, using both Porter and
 We stored the various indexes under /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/
 
 
-2. cache_web_results.py : This script will cache we results for all the questions in a given question file.  It takes two arguments:
+2. cache_web_results.py : This script will cache web results for all the questions in a given question file.  It takes two arguments:
 1) path of TREC-format question file
 2) path of output file for the web cached results
 
