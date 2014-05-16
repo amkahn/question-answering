@@ -5,24 +5,28 @@ This repository holds our question answering system for LING 573: Systems and Ap
 
 
 SRC
-Our main code is in three scripts within the src directory.
+Our main code is in four scripts within the src directory.
 
 1. index_documents.py : This script indexes a given document collection for later use in information retrieval. It takes two arguments.  The first argument is the path to the document collection (for the AQUAINT corpus, this is "/corpora/LDC/LDC02T31").  The second argument is the directory to put the index in. - WARNING: All contents of this directory will be deleted when this script is run.  Indexing of the AQUAINT corpus takes approximately 6 hours.
 We created several different versions of the index for D3, using both Porter and Krovetz stemmer, both including and excluding a list of stopwords. 
 
 We stored the various indexes under /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/
-##NOTE: Push these to repository?
+##NOTE: Push these to repository? No, too big
+
+2. cache_web_results.py : This script will cache we results for all the questions in a given question file.  It takes two arguments: <question file in TREC format> <output file for the web cached results> 
 
 
-2. question_answering.py : This script runs our question answering system on a given question file.  It takes four arguments:
+3. question_answering.py : This script runs our question answering system on a given question file.  It takes five arguments:
 
 <path of TREC-format question file> <path of document index> <path of cached web results> <run tag> <path of output file>
+
+This script implements parallelization to process multiple questions at once.
 
 The command we ran to get answers for the TREC questions is as follows:
 ## ADD THIS IN
 
 
-3. question_answering.sh : This script runs our question answering system and then evaluates the output.  It takes the same arguments as question_answering.py, parallelizes the queries, and runs the evaluation script in both strict and lenient mode on the output.  Note that this script is currently hard-coded to use the pattern file for the devtest set.
+4. question_answering.sh : This script runs our question answering system and then evaluates the output.  It takes six arguments - the same five argument as question_answering.py and an additional argument with the name for the results files.  Itruns the evaluation script in both strict and lenient mode on the output.  Note that this script is currently hard-coded to use the pattern file for the devtest set.
 
 Our code is divided into three main modules, which live within the query_processing, info_retrieval, and answer_processing directories.  Some additional classes are defined with the general_classes module.  Our script uses a stopword list (taken from the Indri/Lemur documentation) in Indri/Lemur parameter XML format which sits in the src directory, named "stoplist.dft".
 
