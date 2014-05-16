@@ -40,7 +40,7 @@ def main():
     for question in questions:
         web_snippets[question.id] = []
         query = "+".join(question.target.split()) + "+" + "+".join(question.q.split())
-        for i in range(1,2):
+        for i in range(1,11):
             r = requests.get("http://www.search.ask.com/web?q="+query+"&page="+str(i))
             sys.stderr.write("Getting search results for query: '"+query+"' from page: "+str(i)+"\n")
             data = r.text
