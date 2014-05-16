@@ -1,7 +1,7 @@
 question_file = /dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml
 doc_index = /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.porter.stoplist
-web_cache = src/cached_web_results/TREC-2006.web_cache
-run_tag = 6
+web_cache = src/cached_web_results/TREC-2006.3pg.web_cache
+run_tag = 15
 output_file = outputs/$(run_tag).out
 results_file = $(run_tag)
 
@@ -16,15 +16,10 @@ transfer_executable = false
 request_memory = 1024
 Queue
 
-doc_index = /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.krovetz.stoplist
-run_tag = 5
-output_file = outputs/$(run_tag).out
-results_file = $(run_tag)
+web_cache = src/cached_web_results/TREC-2006.5pg.web_cache
+run_tag = 16
 Queue
 
-doc_index = /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.none.stoplist
-run_tag = 7
-output_file = outputs/$(run_tag).out
-results_file = $(run_tag)
+web_cache = src/cached_web_results/TREC-2006.6pg.web_cache
+run_tag = 17
 Queue
-
