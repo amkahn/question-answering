@@ -5,14 +5,15 @@ This repository holds our question answering system for LING 573: Systems and Ap
 
 
 D3.CMD
-The condor script D3.cmd runs question_answering.sh with the following six arguments. This code runs in about 5 minutes on the Condor cluster.
-
+The condor script D3.cmd runs question_answering.sh with the following six arguments:
 1) path of TREC-format question file
 2) path of document index
 3) path of cached web results
 4) run tag
 5) path of output file
 6) first portion of the results filename
+
+This code runs in about 5 minutes on the Condor cluster.
 
 
 SRC
@@ -24,16 +25,17 @@ We created several different versions of the index for D3, using both Porter and
 We stored the various indexes under /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/
 
 
-2. cache_web_results.py : This script will cache we results for all the questions in a given question file.  It takes two arguments: <question file in TREC format> <output file for the web cached results> 
+2. cache_web_results.py : This script will cache we results for all the questions in a given question file.  It takes two arguments:
+1) path of TREC-format question file
+2) path of output file for the web cached results
 
 
 3. cache_web_results.cmd : This script runs cache_web_results.py on the condor cluster with the following arguments:
 1) path of TREC-format question file
-2) path for outputted web results
+2) path of output file for the web cached results
 
 
 4. question_answering.py : This script runs our question answering system on a given question file.  It takes five arguments:
-
 1) path of TREC-format question file
 2) path of document index
 3) path of cached web results
@@ -44,6 +46,7 @@ This script implements parallelization to process multiple questions at once.
 
 
 5. question_answering.sh : This script runs our question answering system and then evaluates the output.  It takes six arguments - the same five argument as question_answering.py and an additional argument with the name for the results files.  It runs the evaluation script in both strict and lenient mode on the output.  Note that this script is currently hard-coded to use the pattern file for the devtest set.
+
 
 Our code is divided into three main modules, which live within the query_processing, info_retrieval, and answer_processing directories.  Some additional classes are defined with the general_classes module.  Our script uses a stopword list (taken from the Indri/Lemur documentation) in Indri/Lemur parameter XML format which sits in the src directory, named "stoplist.dft".
 
