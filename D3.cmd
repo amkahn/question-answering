@@ -9,9 +9,9 @@ executable = src/question_answering.sh
 arguments = $(question_file) $(doc_index) $(web_cache) $(run_tag) $(output_file) $(results_file)
 Universe = vanilla
 getenv = true
-output = run_QuAILS.$(run_tag).out
-log = run_QuAILS.$(run_tag).log
-error = run_QuAILS.$(run_tag).err
+output = $(run_tag).out
+log = $(run_tag).log
+error = $(run_tag).err
 transfer_executable = false
 request_memory = 1024
 Queue
