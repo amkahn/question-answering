@@ -1,32 +1,42 @@
 Claire Jaja, Andrea Kahn, Clara Gordon
-4/25/2014
+5/16/2014
 
 This repository holds our question answering system for LING 573: Systems and Applications.
 
+
 SRC
-Our main code is in three scripts within the src directory.
+Our main code is in four scripts within the src directory.
 
-1. index_documents.py : This script indexes a given document collection for later use in information retrieval. It takes two arguments.  The first argument is the path to the document collection (for the AQUAINT corpus, this is "/corpora/LDC/LDC02T31").  The second argument is the directory to put the index in. - WARNING: All contents of this directory will be deleted when this script is run.  Indexing of the AQUAINT corpus takes approximately 6 hours.
-We created two versions of the index for D2, one using the Porter stemmer (called "index") and one using the Krovetz stemmer (called "index_krovetz").  The commands we ran to index the document collection are as follows:
-./index_documents.py /corpora/LDC/LDC02T31 /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/index
-./index_documents.py /corpora/LDC/LDC02T31 /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/index_krovetz
+1. index.cmd : This Condor script runs Indri's IndriBuildIndex code to build an index.  It has a parameter file specified as an argument which gives the path to the document collection, the path to the output index, and other parameters.  Indexing of the AQUAINT corpus takes approximately 15 minutes.
+We created several different versions of the index for D3, using both Porter and Krovetz stemmer, both including and excluding a list of stopwords. 
 
-2. question_answering.py : This script runs our question answering system on a given question file.  It takes four arguments.  The first argument is the TREC-format question file.  The second argument is the path to the index.  The third argument is the run tag.  The fourth argument is the output file.
-For the D2 run, we encountered issues with indri/lemur using the Krovetz-stemmed index, so we ran the system with the Porter-stemmed index.  The command we ran to get answers for the TREC questions is as follows:
-./question_answering.py /dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/index D2 outputs/D2.outputs
+We stored the various indexes under /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/
+##NOTE: Push these to repository? No, too big
 
-3. question_answering.sh : This script runs our question answering system and then evaluates the output.  It takes the same arguments as question_answering.py and will run the evaluation script in both strict and lenient mode on the output.  Note that this script is currently hard-coded to use the pattern file for the devtest set.
+2. cache_web_results.py : This script will cache we results for all the questions in a given question file.  It takes two arguments: <question file in TREC format> <output file for the web cached results> 
+
+
+3. question_answering.py : This script runs our question answering system on a given question file.  It takes five arguments:
+
+<path of TREC-format question file> <path of document index> <path of cached web results> <run tag> <path of output file>
+
+This script implements parallelization to process multiple questions at once.
+
+The command we ran to get answers for the TREC questions is as follows:
+## ADD THIS IN
+
+
+4. question_answering.sh : This script runs our question answering system and then evaluates the output.  It takes six arguments - the same five argument as question_answering.py and an additional argument with the name for the results files.  It runs the evaluation script in both strict and lenient mode on the output.  Note that this script is currently hard-coded to use the pattern file for the devtest set.
 
 Our code is divided into three main modules, which live within the query_processing, info_retrieval, and answer_processing directories.  Some additional classes are defined with the general_classes module.  Our script uses a stopword list (taken from the Indri/Lemur documentation) in Indri/Lemur parameter XML format which sits in the src directory, named "stoplist.dft".
 
 Third-party modules that we use include: BeautifulSoup, NLTK, and pymur (Python wrapper for Indri/Lemur).
 
 
-D2.CMD
-The condor script D2.cmd runs question_answering.sh with the four arguments specified above. This code runs in about 45 minutes on the condor cluster.
+D3.CMD
+The condor script D3.cmd runs question_answering.sh with the six arguments specified above. This code runs in about 5 minutes on the Condor cluster.
 
 
 RESULTS
 The evaluation script gives us the following accuracies:
-Strict: 0.00511461767938
-Lenient: 0.0289376413439
+## ADD THIS IN

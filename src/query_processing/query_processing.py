@@ -64,6 +64,7 @@ class QueryProcessor(object):
         return query_dict
 
 
+
 	# This method returns a list of SearchQuery objects.
 	
     def generate_queries(self):
@@ -81,7 +82,7 @@ class QueryProcessor(object):
         #expanded_query = self.expand_query()
         #queries.append(expanded_query)
 
-        # TODO: put NEs back in to both expanded and initial query objects -clara
+        # TODO: put NEs back into both expanded and initial query objects -clara
         # TODO: note - do we want to upweight the NEs?
 
         for term in self.ne:
@@ -94,22 +95,22 @@ class QueryProcessor(object):
 #       sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % [str(initial_query), str(expanded_query)])
         return queries
 
+
+
+    # This method uses WordNet to expand the initial query to form a second query containing
+    # the initial query terms and their top n synonyms (for now, n=3; we can experiment
+    # with different n to figure out what's optimal--and maybe we want a different
+    # n for different POSs), then returns the expanded query.
+    #
+    # TODO: Consider POS-tagging the query terms first and passing the expected POS (perhaps
+    # just categorized as noun, verb, or adj, ignoring queries that do not fall into
+    # these categories) to the expand_query method, which will filter synonyms accordingly.
+    #
+    # For now, since we still have a lot of work to do to prevent query expansion from
+    # introducing crazy errors, just assign this query weight 0 (we can experiment with
+    # different weighting schemes).
+
     def expand_query(self):
-        # Using WordNet, expand the initial query to form a second query containing the
-        # initial query terms and their top n synonyms (for now, n=3; we can experiment
-        # with different n to figure out what's optimal--and maybe we want a different
-        # n for different POSs).
-        #
-        # TODO: Consider POS-tagging the query terms first and passing the expected POS (perhaps
-        # just categorized as noun, verb, or adj, ignoring queries that do not fall into
-        # these categories) to the expand_query method, which will filter synonyms accordingly.
-        #
-        # TODO: Also consider filtering our named entities so these query terms are not expanded.
-        # Getting the synonyms of proper names leads to all kinds of problems!
-        #
-        # For now, since we still have a lot of work to do to prevent query expansion from
-        # introducing crazy errors, just assign this query weight 0 (we can experiment with
-        # different weighting schemes).
 
         expanded_voc = {}
         for term in self.query_voc:
@@ -159,6 +160,7 @@ class QueryProcessor(object):
             top = all_syns
 #       sys.stderr.write("DEBUG  Here are the top %s synonyms: %s\n" % (num_syns, top))
         return top
+
 
 
 	# This method performs question classification using regular expressions, then generates
@@ -221,7 +223,10 @@ class QueryProcessor(object):
             sys.stderr.write("Warning: System can only handle \"factoid\" questions\n")
 
 
-    ## I added this. -clara
+
+    # This method takes a list of query tokens (strings) as input and returns a 2-tuple in
+    # which the first element is a list of the query tokens that are not named entities and
+    # the second element is a list of the named entities (strings).
 
     def extract_ne(self, tokenized_q):
 
@@ -242,8 +247,4 @@ class QueryProcessor(object):
                 #sys.stderr.write("trying to remove "+leaf[0]+" from "+str(non_ne)+"\n")
                 non_ne.remove(leaf[0])
 
-
         return non_ne, ne
-
-
-

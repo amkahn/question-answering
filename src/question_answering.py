@@ -60,6 +60,7 @@ def main():
 
 
 # This method takes an XML file of stopwords as input and returns a list of the stopwords.
+
 def extract_stopwords(stopword_file):
     stopword_list = set()
     parsed_stopword_file = BeautifulSoup(stopword_file)
@@ -69,8 +70,9 @@ def extract_stopwords(stopword_file):
     return stopword_list
 
 
-# This method takes a question and a question-answering object
-# and runs the question through the question-answering pipeline.
+# This method takes a question and a question-answering object and runs the question through
+# the question-answering pipeline.
+
 def process_question(question,object):
     ranked_answers = object.process_question(question)
     return ranked_answers
@@ -145,6 +147,7 @@ class Quail:
 
     # This method runs the question answering pipeline on a single question.
     # It returns a ranked list of AnswerCandidate objects.
+    
     def process_question(self,question):
         #sys.stderr.write("\nDEBUG  Here is the question: %s\n" % question)
 
@@ -165,7 +168,7 @@ class Quail:
         #for passage in passages:
         #    sys.stderr.write(passage+"\n")
 
-        # add web cached results to passages
+        # add web cached results to passages -- score inside log can be adjusted accordingly
         #sys.stderr.write("Adding "+str(len(self.cached_results[question.id]))+" web result passages for "+str(question.id)+"\n")
         for cached_result in self.cached_results[question.id]:
             passages.append(Passage(cached_result, -math.log(0.9)**-1, None))
