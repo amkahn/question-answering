@@ -2,7 +2,7 @@ question_file = /dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml
 doc_index = /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.porter.stoplist
 web_cache = src/cached_web_results/TREC-2006.3pg.web_cache
 run_tag = D3
-output_file = outputs/$(run_tag).out
+output_file = outputs/$(run_tag).outputs
 results_file = $(run_tag)
 
 executable = src/question_answering.sh

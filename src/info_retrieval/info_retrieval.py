@@ -17,8 +17,6 @@ class InfoRetriever:
     # This method builds a QueryEnvironment associated with the indexed document collection.
     
     def __init__(self, index_path):
-        # how to get this to link up to the doc collection?
-
         self.path_to_idx = index_path
         self.index = pymur.Index(self.path_to_idx)
         self.query_env = pymur.QueryEnvironment()

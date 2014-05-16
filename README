@@ -4,39 +4,54 @@ Claire Jaja, Andrea Kahn, Clara Gordon
 This repository holds our question answering system for LING 573: Systems and Applications.
 
 
+D3.CMD
+The condor script D3.cmd runs question_answering.sh with the following six arguments. This code runs in about 5 minutes on the Condor cluster.
+
+1) path of TREC-format question file
+2) path of document index
+3) path of cached web results
+4) run tag
+5) path of output file
+6) first portion of the results filename
+
+
 SRC
-Our main code is in four scripts within the src directory.
+Our main code is in five scripts within the src directory.
 
 1. index.cmd : This Condor script runs Indri's IndriBuildIndex code to build an index.  It has a parameter file specified as an argument which gives the path to the document collection, the path to the output index, and other parameters.  Indexing of the AQUAINT corpus takes approximately 15 minutes.
 We created several different versions of the index for D3, using both Porter and Krovetz stemmer, both including and excluding a list of stopwords. 
 
 We stored the various indexes under /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/
-##NOTE: Push these to repository? No, too big
+
 
 2. cache_web_results.py : This script will cache we results for all the questions in a given question file.  It takes two arguments: <question file in TREC format> <output file for the web cached results> 
 
 
-3. question_answering.py : This script runs our question answering system on a given question file.  It takes five arguments:
+3. cache_web_results.cmd : This script runs cache_web_results.py on the condor cluster with the following arguments:
+1) path of TREC-format question file
+2) path for outputted web results
 
-<path of TREC-format question file> <path of document index> <path of cached web results> <run tag> <path of output file>
+
+4. question_answering.py : This script runs our question answering system on a given question file.  It takes five arguments:
+
+1) path of TREC-format question file
+2) path of document index
+3) path of cached web results
+4) run tag
+5) path of output file
 
 This script implements parallelization to process multiple questions at once.
 
-The command we ran to get answers for the TREC questions is as follows:
-## ADD THIS IN
 
-
-4. question_answering.sh : This script runs our question answering system and then evaluates the output.  It takes six arguments - the same five argument as question_answering.py and an additional argument with the name for the results files.  It runs the evaluation script in both strict and lenient mode on the output.  Note that this script is currently hard-coded to use the pattern file for the devtest set.
+5. question_answering.sh : This script runs our question answering system and then evaluates the output.  It takes six arguments - the same five argument as question_answering.py and an additional argument with the name for the results files.  It runs the evaluation script in both strict and lenient mode on the output.  Note that this script is currently hard-coded to use the pattern file for the devtest set.
 
 Our code is divided into three main modules, which live within the query_processing, info_retrieval, and answer_processing directories.  Some additional classes are defined with the general_classes module.  Our script uses a stopword list (taken from the Indri/Lemur documentation) in Indri/Lemur parameter XML format which sits in the src directory, named "stoplist.dft".
 
 Third-party modules that we use include: BeautifulSoup, NLTK, and pymur (Python wrapper for Indri/Lemur).
 
 
-D3.CMD
-The condor script D3.cmd runs question_answering.sh with the six arguments specified above. This code runs in about 5 minutes on the Condor cluster.
-
-
 RESULTS
 The evaluation script gives us the following accuracies:
-## ADD THIS IN
+Strict: 0.0709069091228
+Lenient: 0.134471572007
+

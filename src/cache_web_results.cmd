@@ -3,7 +3,7 @@
 # LING 573 Question Answering
 # cache web results
 
-q_name = TREC-2006.6pg
+q_name = TREC-2006.3pg
 q_file = /dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml
 
 Executable = cache_web_results.py

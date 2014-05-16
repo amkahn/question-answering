@@ -1,0 +1,47 @@
+000 (127802.000.000) 05/16 13:51:43 Job submitted from host: <192.168.100.50:50435>
+...
+009 (127802.000.000) 05/16 13:52:41 Job was aborted by the user.
+	via condor_rm (by user amkahn)
+...
+000 (127805.000.000) 05/16 13:52:45 Job submitted from host: <192.168.100.50:50435>
+...
+009 (127805.000.000) 05/16 13:53:55 Job was aborted by the user.
+	via condor_rm (by user amkahn)
+...
+000 (127807.000.000) 05/16 13:53:58 Job submitted from host: <192.168.100.50:50435>
+...
+009 (127807.000.000) 05/16 13:54:35 Job was aborted by the user.
+	via condor_rm (by user amkahn)
+...
+000 (127808.000.000) 05/16 13:54:38 Job submitted from host: <192.168.100.50:50435>
+...
+009 (127808.000.000) 05/16 13:57:43 Job was aborted by the user.
+	via condor_rm (by user amkahn)
+...
+000 (127809.000.000) 05/16 13:57:46 Job submitted from host: <192.168.100.50:50435>
+...
+001 (127809.000.000) 05/16 13:58:49 Job executing on host: <192.168.100.69:43998>
+...
+006 (127809.000.000) 05/16 13:58:57 Image size of job updated: 2
+	3  -  MemoryUsage of job (MB)
+	2112  -  ResidentSetSize of job (KB)
+...
+006 (127809.000.000) 05/16 14:02:29 Image size of job updated: 5480752
+	3  -  MemoryUsage of job (MB)
+	2112  -  ResidentSetSize of job (KB)
+...
+005 (127809.000.000) 05/16 14:02:29 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:18:16, Sys 0 00:00:31  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:18:16, Sys 0 00:00:31  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request          
+	   Cpus                 :                 1          
+	   Disk (KB)            :        2        2          
+	   Memory (MB)          :        3     1024          
+...
