@@ -26,7 +26,7 @@ The command we ran to get answers for the TREC questions is as follows:
 ## ADD THIS IN
 
 
-4. question_answering.sh : This script runs our question answering system and then evaluates the output.  It takes six arguments - the same five argument as question_answering.py and an additional argument with the name for the results files.  Itruns the evaluation script in both strict and lenient mode on the output.  Note that this script is currently hard-coded to use the pattern file for the devtest set.
+4. question_answering.sh : This script runs our question answering system and then evaluates the output.  It takes six arguments - the same five argument as question_answering.py and an additional argument with the name for the results files.  It runs the evaluation script in both strict and lenient mode on the output.  Note that this script is currently hard-coded to use the pattern file for the devtest set.
 
 Our code is divided into three main modules, which live within the query_processing, info_retrieval, and answer_processing directories.  Some additional classes are defined with the general_classes module.  Our script uses a stopword list (taken from the Indri/Lemur documentation) in Indri/Lemur parameter XML format which sits in the src directory, named "stoplist.dft".
 
