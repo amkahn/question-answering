@@ -10,6 +10,7 @@ import nltk
 from bs4 import BeautifulSoup
 import requests
 import math
+import base64
 
 class InfoRetriever:
 
@@ -39,7 +40,7 @@ class InfoRetriever:
         # generate string of weights followed by terms
         query_str = ""
         for term in query.search_terms.keys():
-            query_str += str(query.search_terms[term]) + ' #1(' + term + ') ' 	
+            query_str += str(query.search_terms[term]) + ' #1(#base64(' + base64.b64encode(term) + ')) ' 	
        
         passages = []
         #sys.stderr.write(query_str + '\n')
@@ -59,7 +60,8 @@ class InfoRetriever:
 
             orig_text = " ".join([x for x in orig_doc.text.split("<TEXT>")[1].split() if "<" not in x])
             passage_text = ' '.join(nltk.word_tokenize(orig_text)[begin:end])
-           # print "passage text", passage_text
+            # print "passage text", passage_text
+	    # passage weight transformation happens here
             passage = Passage(passage_text, query.weight*(-doc.score**-1), doc_id)
             passages.append(passage)
         return passages
