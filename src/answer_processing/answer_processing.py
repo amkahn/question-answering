@@ -16,6 +16,9 @@ class AnswerProcessor:
         self.stopword_list = stopword_list
         self.stopword_list.add("'s")
         self.punctuation = {':',"'","''",'(',')','&',';','_','.','!','?',',','-','--'}
+        for passage in passages:
+            sys.stderr.write("Passage: "+passage.passage+"\n")
+
 
 #    def generate_and_rank_answers_old(self):
 #        # get answers from the passages
