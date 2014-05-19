@@ -7,6 +7,7 @@ from operator import itemgetter, attrgetter
 from collections import Counter, defaultdict
 import nltk
 import sys
+import re
 
 class AnswerProcessor:
     def __init__(self,passages,answer_template,stopword_list=[]):
@@ -14,10 +15,10 @@ class AnswerProcessor:
         self.answer_template = answer_template
         self.ranked_answers = []
         self.stopword_list = stopword_list
-        self.stopword_list.add("'s")
-        self.punctuation = {':',"'","''",'(',')','&',';','_','.','!','?',',','-','--'}
-        for passage in passages:
-            sys.stderr.write("Passage: "+passage.passage+"\n")
+        self.stopword_list |= {"'m","'s","n't","ca","wo","did"}
+        self.punctuation = {':',"'","''",'(',')','&',';','_','.','!','?',',','-','--','...','`','``'}
+        #for passage in self.passages:
+        #    sys.stderr.write("PASSAGE: "+passage.passage+"\n")
 
 
 #    def generate_and_rank_answers_old(self):
@@ -59,55 +60,84 @@ class AnswerProcessor:
         # here's a possible clever answer extractor
         answer_docs = defaultdict(set)
         answer_score = defaultdict(lambda:0)
+        number_passages = Counter()
         self.unigram_answers = []
         for passage in self.passages:
-            passage_list = nltk.word_tokenize(passage.passage)
+            sentences = []
+            split_passage = passage.passage.split("...")
+            for x in split_passage:
+                sentences.extend(nltk.sent_tokenize(x))
+            passage_list = [nltk.word_tokenize(t) for t in sentences]
             #sys.stderr.write("Tokenized passage is"+str(passage_list)+"\n")
-            for i in range(len(passage_list)):
-                answers = []
-                # unigram
-                answers.append(passage_list[i])
-                if i < len(passage_list) - 1: # can do bigrams
-                    answers.append(" ".join(passage_list[i:i+2]))
-                    if i < len(passage_list) - 2: # can do trigrams
-                        answers.append(" ".join(passage_list[i:i+3]))
-                        if i < len(passage_list) - 3: # can do 4-grams
-                            answers.append(" ".join(passage_list[i:i+4]))
-                for answer in answers:
-                    answer_docs[answer].add(passage.doc_id)
+            for sentence in passage_list:
+                for i in range(len(sentence)):
+                    # unigram
                     # passage weight is negative - closer to 0 is better
                     # change to positive, then take inverse
                     # higher score is still better, but now will be all positive
-                    answer_score[answer] += (-passage.weight)**-1
+                    answer_score[sentence[i]] += passage.weight
+                    if passage.doc_id:
+                        number_passages[sentence[i]] += 1
+                        answer_docs[sentence[i]].add(passage.doc_id)
+                    else:
+                        number_passages[sentence[i]] += 10
+                    if i < len(sentence) - 1: # can do bigrams
+                        answer_score[" ".join(sentence[i:i+2])] += passage.weight
+                        if passage.doc_id:
+                            number_passages[" ".join(sentence[i:i+2])] += 1
+                            answer_docs[" ".join(sentence[i:i+2])].add(passage.doc_id)
+                        else:
+                            number_passages[" ".join(sentence[i:i+2])] += 10
+                        if i < len(sentence) - 2: # can do trigrams
+                            answer_score[" ".join(sentence[i:i+3])] += passage.weight
+                            if passage.doc_id:
+                                number_passages[" ".join(sentence[i:i+3])] += 1
+                                answer_docs[" ".join(sentence[i:i+3])].add(passage.doc_id)
+                            else:
+                                number_passages[" ".join(sentence[i:i+3])] += 10
+                            if i < len(sentence) - 3: # can do 4-grams
+                                answer_score[" ".join(sentence[i:i+4])] += passage.weight
+                                if passage.doc_id:
+                                    number_passages[" ".join(sentence[i:i+4])] += 1
+                                    answer_docs[" ".join(sentence[i:i+4])].add(passage.doc_id)
+                                else:
+                                    number_passages[" ".join(sentence[i:i+4])] += 10
        # then find answers with highest score?
         for answer,score in answer_score.iteritems():
-            if len(answer.split()) == 1:
+            if len(answer.split()) == 1 and answer not in self.punctuation:
                 self.unigram_answers.append((answer,score))
             # initialize answer candidate with answer and the doc IDs where it occured in
-            ac = AnswerCandidate(answer,answer_docs[answer])
+            ac = AnswerCandidate(self.answer_template.question_id,answer,answer_docs[answer])
+            ac.number_passages = number_passages[answer]
             ac.set_score(score)
             self.ranked_answers.append(ac)
 
-    # remove answers with words from original query, punctuation, or starting/ending with stop word
+    # remove answers with words from original query or "..." starting/ending with punctuation or stop word
     def filter_answers(self):
+        # some regexes for comparisons
+        stopword_re = re.compile("|".join(["^"+re.escape(x) for x in self.stopword_list]+[re.escape(x)+"$" for x in self.stopword_list]),re.IGNORECASE)
+        punctuation_re = re.compile("|".join(["^"+re.escape(x) for x in self.punctuation]+[re.escape(x)+"$" for x in self.punctuation]),re.IGNORECASE)
+        query_terms_re = re.compile("|".join(re.escape(x) for x in self.answer_template.query_terms),re.IGNORECASE)
+
         # go through answers
         for i in xrange(len(self.ranked_answers)-1,-1,-1):
             answer = self.ranked_answers[i]
             answer_words = answer.answer.split()
-            for j in range(len(answer_words)):
-                # if the first or last word is in the stop word list
-                if j==0 or j==len(answer_words)-1:
-                    if answer_words[j].lower() in self.stopword_list:
-                        del self.ranked_answers[i]
-                        break
 
-                # or if any word in the answer is in the list of query terms or the punctuation list
-                if answer_words[j].lower() in self.answer_template.query_terms or answer_words[j] in self.punctuation:
-                    # remove that answer
-                    del self.ranked_answers[i]
-                    break
-            else:
-                continue
+            # remove answers if not in at least one document
+            # try different number of documents to see
+            if len(answer.doc_ids) < 1:
+                #sys.stderr.write("Deleting - doesn't occur in any AQUAINT doc.\n")
+                del self.ranked_answers[i]
+            elif answer.number_passages < 10:
+                #sys.stderr.write("Deleting - doesn't occur in at least 10 passages.\n")
+                del self.ranked_answers[i]
+
+            # remove answer if starts or ends with stopword or punctuation
+            # or if it contains any of query terms
+            elif stopword_re.search(answer.answer) or punctuation_re.search(answer.answer) or query_terms_re.search(answer.answer):
+                del self.ranked_answers[i]
+
 
     # combine answer candidates so that unigrams aren't highest
     def combine_answers(self):
@@ -123,29 +153,64 @@ class AnswerProcessor:
 
     # a method to check candidate answers against the answer template
     def reweight_answers(self):
-        # remove answers if not in more than one snippet 
-        for i in xrange(len(self.ranked_answers)-1,-1,-1):
-            answer = self.ranked_answers[i]
-            if len(answer.doc_ids) < 2:
-                del self.ranked_answers[i]
+        # find NEs and types
+        # person, organization, object, location, time_ex, number, other
+
+        # for now, person, organization, and location share one regex
+        # just checking if it starts with capital letter
+        pers_org_loc_re = re.compile(r'^[A-Z]')
+
+        # time expressions
+        months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"]
+        date = [r"^([0-9]{1,2} ?(-|/) ?)?([0-9]{1,2} ?(-|/) ?)?[0-9]{2,4}$"]
+        time_ex_re = re.compile("|".join(months+date))
+
+        # numbers
+        number_words = ["one","two","three","four","five","six","seven","eight","nine","ten",
+"eleven","twelve","thirteen","fifteen","twenty","thirty","forty","fifty","hundred","thousand","million","billion"]
+        number_re = re.compile("|".join(number_words+["[0-9]"]))
+
+        # for now, don't capture objects (think about how to do this...)
+        # so everything else will be considered other
+
         for answer_candidate in self.ranked_answers:
-            # find NEs and types
-            for NE_type,weight in self.answer_template.type_weights.iteritems():
-                # if this NE type is in the answer_candidate
-                # set the score to the previous score times the type's weight
-                # for now, assume all NE types in all answer candidates
-                new_score = answer_candidate.score*weight
-                answer_candidate.set_score(new_score)
+            # if person, organization, or location
+            # find which category has highest weight in answer template
+            # and upweight accordingly
+            if pers_org_loc_re.search(answer_candidate.answer):
+                weights = []
+                weights.append(self.answer_template.type_weights['person'])
+                weights.append(self.answer_template.type_weights['organization'])
+                weights.append(self.answer_template.type_weights['location'])
+                weights.sort(reverse=True)
+                new_score = answer_candidate.score*weights[0]
+            # if time expression, upweight by that
+            elif time_ex_re.search(answer_candidate.answer):
+                new_score = answer_candidate.score*self.answer_template.type_weights['time_ex']
+            # if number, upweight by that
+            elif number_re.search(answer_candidate.answer):
+                new_score = answer_candidate.score*self.answer_template.type_weights['number']
+            # else, upweight by other
+            else:
+                new_score = answer_candidate.score*self.answer_template.type_weights['other']
+
+            answer_candidate.set_score(new_score)
+
 
     def rank_answers(self):
         self.ranked_answers.sort(reverse=True,key=attrgetter('score'))
 
 
+
+
+
 class AnswerCandidate:
-    def __init__(self,answer,doc_ids):
+    def __init__(self,question_id,answer,doc_ids):
+        self.question_id = question_id
         self.answer = answer
         self.doc_ids = doc_ids
         self.score = 0
+        self.number_passages = 0
 
     def set_score(self,score):
         self.score = score

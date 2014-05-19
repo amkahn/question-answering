@@ -24,7 +24,7 @@ class Question(object):
 		self.target = target
 	
 	# This method returns a string representing the Question instance (used for debugging).
-	def to_string(self):
+	def __str__(self):
 		to_return = "id: %s; type: %s; q: %s; target: %s" % (self.id, self.type, self.q, self.target)
 		return to_return	
 
@@ -43,7 +43,7 @@ class SearchQuery(object):
 		self.weight = weight
 	
 	# This method returns a string representing the SearchQuery instance (used for debugging).
-	def to_string(self):
+	def __str__(self):
 		to_return = "search_terms: %s; weight: %s" % (self.search_terms, self.weight)
 		return to_return
 
@@ -53,21 +53,17 @@ class SearchQuery(object):
 # where the weights will be used to reweight AnswerCandidate objects).
 
 class AnswerTemplate:
-    def __init__(self,query_terms):
-        # should the AnswerTemplate get the question and then generate the template from that?
-        # or should the QueryProcessor generate the pieces and then pass them to the AnswerTemplate
-        self.query_terms = set()
-        for query_term in query_terms:
-            self.query_terms.add(query_term.lower())
-        # should the default weight of a type be 0 or some small number?
-        self.type_weights = defaultdict(lambda:0)
-        # by default, set weights for person, organization, and location to 1
-        for x in ["person","organization","location"]:
-            self.type_weights[x] = 1
+    def __init__(self,question_id,query_terms,type_weights):
+        self.question_id = question_id
+        self.query_terms = query_terms
+#        self.query_terms = set()
+#        for query_term in query_terms:
+#            self.query_terms.add(query_term.lower())
+        self.type_weights = type_weights
 
     # This method returns a string representing the AnswerTemplate instance (used for debugging).
-    def to_string(self):
-        to_return = "query_terms: %s; type_weights: %s" % (self.query_terms, self.type_weights)
+    def __str__(self):
+        to_return = "question_id: %s; query_terms: %s; type_weights: %s" % (self.question_id, self.query_terms, self.type_weights)
         return to_return
 
     # This method changes the weight of the given type to the given weight.
@@ -94,6 +90,6 @@ class Passage:
         self.doc_id = doc_id
 
     # This method returns a string representing the Question instance (used for debugging).
-    def to_string(self):
+    def __str__(self):
         to_return = "passage: %s; weight: %s" % (self.passage, self.weight)
         return to_return
