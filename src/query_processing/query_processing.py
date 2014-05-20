@@ -82,7 +82,7 @@ class QueryProcessor(object):
         #expanded_query = self.expand_query()
         #queries.append(expanded_query)
 
-        # put NEs back into both expanded and initial query objects -clara
+        # put NEs back into both expanded and initial query objects
         # TODO: note - do we want to upweight the NEs?
 
         for term in self.ne:
@@ -97,7 +97,7 @@ class QueryProcessor(object):
 
 
 
-    # This method uses WordNet to expand the initial query to form a second query containing
+    # This method uses NLTK's Lin thesaurus corpus to expand the initial query to form a second query containing
     # the initial query terms and their top n synonyms (for now, n=3; we can experiment
     # with different n to figure out what's optimal--and maybe we want a different
     # n for different POSs), then returns the expanded query.
