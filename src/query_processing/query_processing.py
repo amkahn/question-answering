@@ -1,5 +1,5 @@
 # LING 573 Question Answering System
-# Code last updated 4/22/14 by Andrea Kahn
+# Code last updated 5/19/14 by Andrea Kahn
 #
 # This code implements a QueryProcessor for the question answering system.
 
@@ -33,8 +33,8 @@ class QueryProcessor(object):
     def generate_voc(self):
         tokenized_q = nltk.word_tokenize(self.question.q)
 
-        # TODO: I added in the NE extraction here. NEs are removed from query_terms and added to self.ne
-        # TODO: Note: had to strip punctuation from self.ne too, to avoid Indri freakout
+        # NEs are removed from query_terms and added to self.ne
+        # Note: had to strip punctuation from self.ne too, to avoid Indri freakout
         tokenized_q, self.ne = self.extract_ne(tokenized_q)
 
         tokenized_target = nltk.word_tokenize(self.question.target)
@@ -82,7 +82,7 @@ class QueryProcessor(object):
         #expanded_query = self.expand_query()
         #queries.append(expanded_query)
 
-        # TODO: put NEs back into both expanded and initial query objects -clara
+        # put NEs back into both expanded and initial query objects -clara
         # TODO: note - do we want to upweight the NEs?
 
         for term in self.ne:
