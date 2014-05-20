@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.9.27)  19 MAY 2014 18:25
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.9.27)  19 MAY 2014 20:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -413,12 +413,13 @@ Underfull \hbox (badness 1253) in paragraph at lines 91--92
 
 
 Underfull \hbox (badness 1681) in paragraph at lines 91--92
-\OT1/ptm/m/n/10.95 cor-re-spond-ing weights, as well as the top n
+\OT1/ptm/m/n/10.95 cor-re-spond-ing weights, as well as the top \OT1/ptm/m/it/1
+0.95 n
  []
 
 
-Underfull \hbox (badness 1502) in paragraph at lines 91--92
-\OT1/ptm/m/n/10.95 Verb, Ad-jec-tive, or Other cat-e-gories; ex-pand
+Underfull \hbox (badness 2744) in paragraph at lines 91--92
+\OT1/ptm/m/n/10.95 syn-onyms for each, their weights be-ing the
  []
 
 
@@ -434,9 +435,15 @@ Underfull \hbox (badness 2941) in paragraph at lines 99--100
 \OT1/ptm/m/n/10.95 src/cache[]web[]results.py, sub-mits each un-pro-
  []
 
+
+Underfull \hbox (badness 1622) in paragraph at lines 99--100
+\OT1/ptm/m/n/10.95 cessed fac-toid query to Ask.com. We omit
+ []
+
+[3]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 114.
-[3] [4] [5] (./D3.bbl) [6
+ [4] [5] (./D3.bbl) [6
 
 ] (./D3.aux) ) 
 Here is how much of TeX's memory you used:
@@ -453,7 +460,7 @@ texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on D3.pdf (6 pages, 136498 bytes).
+Output written on D3.pdf (6 pages, 137151 bytes).
 PDF statistics:
  45 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream
