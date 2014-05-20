@@ -4,11 +4,19 @@
 \usepackage{url}
 \usepackage{latexsym}
 \usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}% http://ctan.org/pkg/multicols
+\usepackage{tabularx, booktabs}
+\usepackage{framed}
+\usepackage{setspace} 
 
 % Change this if needed to set titlebox size.
 %\setlength\titlebox{5cm}
 
-\title{LING 573: Initial Project Report}
+\title{LING 573: Deliverable 3 Project Report}
 
 \author{Clara Gordon \\
   University of Washington \\
@@ -43,7 +51,7 @@ We implemented a question answering system to handle factoid questions from the 
 
 Our system is coded in Python. Third-party modules that we use include Indri/Lemur (for IR), pymur (a Python wrapper for Indri/Lemur), Beautiful Soup (for XML parsing), and NLTK (for tokenization). We chose Indri/Lemur for IR because of its specific handling of TREC-formatted question files. We currently use a stopword list taken from the Indri/Lemur documentation.
 
-We used pymur to index the document collection. We created two indexes using two different stemming methods: Porter stemming, which is more aggressive, and Krovetz stemming. To obtain baseline results, we used the Porter-stemmed index as input to our system.
+We use Indri's IndriBuildIndex code to build an index.  It has a parameter file specified as an argument which gives the path to the document collection, the path to the output index, and other parameters.  Indexing of the AQUAINT corpus takes approximately 15 minutes.  We created several different versions of the index for D3, using both Porter and Krovetz stemmer, both including and excluding a list of stopwords.
 
 The core of our system is a three-part pipeline, consisting of modules for question processing, IR, and answer processing, respectively. The system architecture is shown in Figure 1.
 
@@ -55,15 +63,15 @@ The core of our system is a three-part pipeline, consisting of modules for quest
 
 \section{Approach}
 
-The question answering system is called by a wrapper script, question\_answering.py, which takes as arguments a file containing questions in TREC QA format, a path to the document index, a run tag, and a path to the desired output file. It uses the third-party module Beautiful Soup to parse the XML in the TREC document and generate a list of questions. It then passes the questions one-by-one to the pipeline described below. For each in the group of answers returned for each question, it prints the question, the run tag, the document ID associated with the answer, and the answer to the output file.
+The question answering system is called by a wrapper script, question\_answering.py, which takes as arguments a file containing questions in TREC QA format, a path to the document index, a path to cached web results, a run tag, and a path to the desired output file. It uses the third-party module Beautiful Soup to parse the XML in the TREC document and generate a list of questions. Currently, Python's multiprocessing module is used to parallelize the questions in the question file, so that multiple questions may be going through the pipeline (described in detail below) at once. For each in the group of answers returned for each question, it prints the question ID, the run tag, the document ID associated with the answer, and the answer to the output file.
 
 Classes that are used by multiple modules in the pipeline are defined in the module general\_classes.py. These include:
 
 \begin{itemize}
 \item Question class: A Question object stores as attributes the TREC question ID, the question type, the TREC natural-language question stored as a string, and the "target" (the context given for a set of questions in TREC 2004-2006; defaults to None).
 \item SearchQuery class: A SearchQuery object stores as attributes a dictionary of search terms, each of which can be one or more words, mapped to weights indicating how important those terms are perceived as being, and an overall weight for the query, which will be used to calculate the probability of the corresponding AnswerCandidate.
-\item AnswerTemplate class: An AnswerTemplate object stores as attributes a set of basic search query terms from the original question and a dictionary for the weights of each NE type, where the weights will be used to reweight AnswerCandidate objects during answer processing.
-\item Passage class: A Passage object stores as attributes the text of a snippet returned by Indri/Lemur, the Indri-assigned weight of the corresponding document, and the document ID.
+\item AnswerTemplate class: An AnswerTemplate object stores as attributes the question ID, a set of basic search query terms from the original question, and a dictionary for the weights of each answer type, where the weights will be used to reweight AnswerCandidate objects during answer processing.
+\item Passage class: A Passage object stores as attributes the text of a snippet, its weight, and the document ID.
 \end{itemize}
 
 \subsection{System architecture}
@@ -72,57 +80,139 @@ Our pipeline for processing a single question consists of three components found
 
 \subsubsection{Query processing}
 
-The query processing module is responsible for creating one or more weighted search queries (which are passed to the information retrieval module to be used for passage retrieval) and instantiating an answer template (which is passed to the answer processing module to be used during answer ranking). A QueryProcessor object is initialized with a Question object and generates a vocabulary, or a list of words (i.e., whitespace-tokenized strings) occurring in the question/target and their counts. This vocabulary is used to initialize an AnswerTemplate object. (In subsequent versions of the system, we plan to implement a more sophisticated approach toward answer template creation, including question classification.)
+The query processing module is responsible for creating one or more weighted search queries (which are passed to the information retrieval module to be used for passage retrieval) and instantiating an answer template (which is passed to the answer processing module to be used during answer ranking).
 
-The QueryProcessor is then used to generate a list of weighted search queries, each of which is in turn a set of weighted search terms. In the current version of the system, the QueryProcessor generates just one search query, which is the set of words occurring in the question and the question target, with the word counts as weights. In subsequent versions of the system, we plan to explore more sophisticated methods of query generation, including query expansion, as well as to test generating multiple weighted search queries for one question.
+A QueryProcessor object is initialized with a Question object and generates a vocabulary, or a list of words (i.e., whitespace-tokenized strings) occurring in the question/target and their counts. We use NLTK's named-entity chunker to remove named entities before tokenizing to prevent the named entities themselves from being tokenized. The named entities are later added back into the query terms when the search queries are generated.
+
+After instantiating a QueryProcessor object, the wrapper script then calls a method in the query-processing module that initializes an AnswerTemplate object that will subsequently be passed to the answer-processing module. The answer template contains the query processor's vocabulary so that the answer-processing module can downweight answer candidates that contain query terms. In addition, this method employs regular-expression matching on the original natural-language question to identify questions as requiring an answer that is the name of a person (i.e., proper noun), the name of an organization (i.e., proper noun), the name of an object (i.e., common noun), the name of a location (i.e., proper noun), a time expression, a number expression, or some expression that does not fall into one of these categories. Some regular expressions correspond with one of these answer types; others correspond with multiple answer types. A regular expression match causes the corresponding answer types to be given a higher weight in the AnswerTemplate dictionary of answer type weights. Currently, we set the weights of answer types corresponding with a regular expression that matches to 0.9; weights of all other answer types to 0.1; and the weight of "other" to 0.5 if no regular expression matches. In subsequent versions, we plan to experiment with different weighting schemes.
+
+The query processor is then used to generate a list of weighted search queries, each of which is in turn a set of weighted search terms. In the current version, the query processor generates a single search query that contains the set of words occurring in the question and the question target, with the word counts as weights.
+
+We also implemented query expansion using NLTK's Lin thesaurus corpus and scored\_synonyms method. The expand\_query method returns a SearchQuery object containing all of the original query terms and their corresponding weights, as well as the top n synonyms for each, their weights being the product of the weight of the original term of which they are synonyms and the weight returned by scored\_synonyms. However, we currently do not pass the expanded search query to IR, as doing this drastically decreased our strict and lenient scores. In subsequent versions of the system, we plan to implement part-of-speech tagging on the query terms; group query terms in Noun, Verb, Adjective, or Other categories; expand terms in the first three categories; and only return synonyms that are in a matching category (since the synonyms returned by NLTK are classified in these three categories).
 
 \subsubsection{Information retrieval}
 
-The infomation retrieval module uses the Indri/Lemur IR system to retrieve a series of 100 snippets and associated documents for each set of query terms passed to it by the query processing module. Although pymur is used to index the document collection, this portion of the system instead uses Python's subprocess module to directly query Indri using the IndriRunQuery command and various command line arguments. This is necessary because certain Indri functions, such as snippet retrieval, are not available from pymur. A stopword list, stoplist.drf, is used to improve search results by prompting Indri to ignore these words when performing document retrieval. 
+The information retrieval module uses the Indri/Lemur IR system to retrieve a series of 100 passages for each set of query terms passed to it by the query processing module. Although we use Indri directly to index the document collection, this portion of the system uses the pymur wrapper to run the query and retrieve snippet results. Because pymur does not have a method to retrieve unstemmed snippet information from query results, we use offset indices to retrieve the passage from the original text. Because these indices refer to the stemmed text, however, the passages may be slightly different from the s selected by Indri. In future work, we plan to expand these offsets, and perhaps use sentence tokenization to extract all sentences overlapping with the passage range, in order ensure that our IR does not miss any important components of the passage. We use Base64 conversion for our queries in order to avoid encoding errors with punctuation.
 
-Once the snippets and associated document metadata are retrieved from standard out, a series of character-based split commands is used to segment the string into the relevant fields: document ID number, document weight, and snippet text. These fields are used to construct a Passage object for each snippet. A list of these objects is then passed to the answer processing module, which uses the snippets and associated metadata to derive answer candidates.   
+The pymur commands provide the document ID number and document weight. Together with the reconstructed passage text, these are used to construct a Passage object for each passage. 
+
+In addition to document retrieval, we implement web boosting by using cached web results stored before runtime. A separate script, src/cache\_web\_results.py, submits each unprocessed factoid query to Ask.com. Our rationale behind omitting any query processing in this portion of the system is that Ask.com has its own query processing algorithms, so we thought it best to submit just the raw query. The script uses BeautifulSoup to scrape the text snippets associated with each results, and stores them in a text document in the src/cached\_web\_results directory. After comparing results, we found that three pages of results is optimal. 
+
+During the IR phase of our system, these cached results are retrieved and stored as Passage objects, similarly to the AQUAINT snippets. Because these web snippets tend to be relatively high-quality, we weight them similarly to a very high scoring AQUAINT document in our IR framework: log(0.9).  The document ID for these Passage objects is set to None to indicate that these are web snippets, not passages coming from AQUAINT documents.  Together, the AQUAINT and web-based Passage objects are passed on to the answer extraction module. 
+
+\begin{table*} 
+    \begin{center}
+      \resizebox{\linewidth}{!}{
+\begin{tabular}{|*{6}{c|}}
+\hline
+\textbf{System} & \textbf{stemmer} & \textbf{stoplist with indexing} & \textbf{\# web results pages} & \textbf{Strict} & \textbf{Lenient} \\ \hline
+Baseline & Porter & yes & -- & 0.0051 & 0.0289 \\ \hline
+1 & Porter & yes & 4 & \textbf{0.0742} & \textbf{0.1257} \\ \hline % experimenting with different stemmers
+2 & Krovetz & yes & 4 & 0.0683 & 0.1279 \\ \hline
+3 & none & yes & 4 & 0.0610 & 0.1198 \\ \hline
+4 & none & no & 4 & 0.0688 & 0.1278 \\ \hline
+\end{tabular}}
+\vspace{1mm}
+\emph{Table 1: Adding web boosting over baseline, with different index parameters.}
+\end{center}
+\end{table*}
+
+\begin{table*}
+\begin{center}
+\resizebox{\linewidth}{!}{
+\begin{tabular}{|*{6}{c|}}
+\hline
+\textbf{System} & \textbf{stemmer} & \textbf{\# web results pages} & \textbf{Question Classification} & \textbf{Strict} & \textbf{Lenient} \\ \hline
+1 & Porter & 4 & no & \textbf{0.0742} & \textbf{0.1257} \\ \hline % experimenting with different stemmers
+6 & Porter & 4 & yes & 0.0614 & 0.1330 \\ \hline % adding question classification
+\end{tabular}}
+\vspace{1mm}
+\emph{Table 2: Adding question classification.}
+\end{center}
+\end{table*}
+
+\begin{table*}
+\begin{center}
+\resizebox{\linewidth}{!}{
+\begin{tabular}{|*{7}{c|}}
+\hline
+\textbf{System} & \textbf{stemmer} & \textbf{\# web results pages} & \textbf{expanded query weight} & \textbf{\# of synonyms} & \textbf{Strict} & \textbf{Lenient} \\ \hline
+6 & Porter & 4 & -- & -- & \textbf{0.0614} & \textbf{0.1330} \\ \hline % adding question classification
+8 & Porter & 4 & 1 & 3 & 0.0331 & 0.0943 \\ \hline % adding question expansion
+9 & Porter & 4 & 2 & 3 & 0.0311 & 0.9010 \\ \hline
+10 & Porter & 4 & 1 & 1 & 0.0334 & 0.0927 \\ \hline
+11 & Porter & 4 & 0.5 & 1 & 0.0340 & 0.0933 \\ \hline
+\end{tabular}}
+
+\vspace{1mm}
+\emph{Table 3: Adding query expansion.}
+\end{center}
+\end{table*}
+
+\begin{table*}
+\begin{center}
+\resizebox{\linewidth}{!}{
+\begin{tabular}{|*{5}{c|}}
+\hline
+\textbf{System} & \textbf{stemmer} & \textbf{\# web results pages} & \textbf{Strict} & \textbf{Lenient} \\ \hline
+12 & Porter & 1 & 0.0659 & 0.1215 \\ \hline
+14 & Porter & 2 & 0.0641 & 0.1336 \\ \hline
+24 & Porter & 3 & \textbf{0.0709} & \textbf{0.1344} \\ \hline % best final results
+6 & Porter & 4 & 0.0614 & 0.1330 \\ \hline
+16 & Porter & 5 & 0.0620 & 0.1311 \\ \hline
+17 & Porter & 6 & 0.0565 & 0.1222 \\ \hline
+13 & Porter & 10 & 0.0634 & 0.1152 \\ \hline
+\end{tabular}}
+
+\vspace{1mm}
+\emph{Table 4: Testing different number of web pages for web caching.}
+\end{center}
+\end{table*}
+
+\begin{table*}
+\begin{center}
+\resizebox{\linewidth}{!}{
+\begin{tabular}{|*{5}{c|}}
+\hline
+\textbf{System} & \textbf{stemmer} & \textbf{\# passages} & \textbf{Strict} & \textbf{Lenient} \\ \hline
+26 & Porter & 20 & 0.0782 & 0.1320 \\ \hline
+27 & Porter & 30 & 0.0844 & 0.1416 \\ \hline
+28 & Porter & 40 & \textbf{0.0868} & \textbf{0.1499} \\ \hline % best final results
+29 & Porter & 50 & 0.0839 & 0.1428 \\ \hline
+24 & Porter & 100 & 0.0709 & 0.1344 \\ \hline
+\end{tabular}}
+
+\vspace{1mm}
+\emph{Table 5: Testing different number of passages returned by Indri.}
+\end{center}
+\end{table*}
 
 \subsubsection{Answer candidate extraction and ranking}
 
 The answer processing module is used to extract and rank answers.  An object of this class is initialized with a list of Passage objects, an AnswerTemplate object, and an optional stopword list.  This object can then generate and rank answers.  This is done in a series of steps.
 
-First, possible answers are extracted from the Passages by generating all unigrams, bigrams, trigrams, and 4-grams from the text of each passage; the score of each of these possible answers is the sum of the negated inverse of the retrieval score of the passage it is found in.  If an n-gram appears multiple times in a passage, the n-gram's score is updated each time the n-gram appears, so a possible answer that appears frequently in a passage is scored higher than one that appears just once in the passage.  The negated inverse of the retrieval score is used because Indri/Lemur returns a negative score where higher (i.e. closer to zero) is better; we wanted a positive score where higher (i.e. further from zero) is better for our own readability and troubleshooting.  While these scores are being calculated, the ID numbers of documents containing the n-grams are also tracked for later use.  At the end, a list of AnswerCandidate objects is generated which contains a possible answer, its score, and the documents it is found in.
+First, possible answers are extracted from the Passages by generating all unigrams, bigrams, trigrams, and 4-grams from the text of each passage; the score of each of these possible answers is the sum of the inverse of the retrieval score of the passage it is found in.  If an n-gram appears multiple times in a passage, the n-gram's score is updated each time the n-gram appears, so a possible answer that appears frequently in a passage is scored higher than one that appears just once in the passage. At the end, a list of AnswerCandidate objects is generated which contains the question ID, a possible answer, its score, the document collection documents it is found in, and the total number of passages it is found in.  Since we think that the web snippets are more likely to have the correct answer than the documents from the document collection, each web snippet passage is counted as ten passages; so if a possible answer occurs in two web snippet passages and one document collection passage, it is counted as having been found in twenty-one (2x10 + 1) passages.
 
-After this, the AnswerCandidates go through a filtering step.  At this step, any answers that start or end with a stopword or contain any words from the original query (retrieved from the AnswerTemplate) or any standalone punctuation tokens are discarded.  Then, a combining step updates the score of each answer to be the current score plus the sum of the scores of the unigram answers contained within it. This prevents unigrams from being the highest ranked answers and instead favors longer answers.
+After this, the answer candidates go through a filtering step.  At this step, any answers that start or end with a stopword or standalone punctuation token, or contain any words from the original query (retrieved from the AnswerTemplate) are discarded.  Additionally, any answers that did not appear in at least \emph{n} document collection documents are discarded, and any answers that did not appear in at least \emph{m} total passages are discarded.  We tested a few different thresholds for these values and found the best results with \emph{n} = 1 and \emph{m} = 10 but hope to do more thorough experimentation on this in the future.
 
-Next, the answers are reweighted.  At this point, any answers that did not appear in more than one passage are discarded.  Additionally, this is the place where constraints on named entity type from the AnswerTemplate can be applied to increase or decrease AnswerCandidate scores; currently, since no constraints are being generated at the query processing stage, there is nothing to apply.
+Then, a combining step updates the score of each answer to be the current score plus the sum of the scores of the unigram answers contained within it. This prevents unigrams from being the highest ranked answers and instead favors longer answers.
+
+Next, the answers are reweighted.  Regular expressions are used to guess the type of each answer.  Currently, three different categories are captured; 1) person, organization, or location (identified by an answer beginning with a capital letter), 2) time expression (identified by an answer containing month words or a pattern resembling a date), and 3) numbers (identified by digits as well as number words).  Then, the weights from the AnswerTemplate are applied accordingly.  Since person, organization, and location are not distinguished in the answers, the highest weight among these three in the AnswerTemplate is used for any answer identified as being in that category.
 
 Lastly, the answers are ranked by score, and the top 20 are returned.  For each answer generated, one of the document IDs where the n-gram occurred is randomly selected as the source of the answer.  In future development, a more clever method for selecting which document ID to use as the answer source will be employed.
 
 \section{Results}
 
-We evaluated our results using the mean reciprocal rank (MRR) measure with strict and lenient evaluation. At this point, we are reporting only baseline results, shown in Table 1 below.
+We evaluated our results using the mean reciprocal rank (MRR) measure with strict and lenient evaluation. We experimented with adding web boosting, using different index parameters, adding question classification, adding query expansion, and changing the number of web pages used for web caching.  The results are shown in Tables 1 - 4 below, based on automatic pattern scoring.  All scores are rounded to four significant digits.  The best results in each table are bolded.
 
-\vspace{5mm}
-{\centering
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{System} & \textbf{Strict} & \textbf{Lenient} \\ \hline
-Baseline & 0.00511 & 0.02894 \\ \hline
-\end{tabular}
-
-\vspace{1mm}
-\emph{Table 1: Baseline results based on automatic pattern scoring. All scores rounded to five significant digits.}
-\par}
 
 \section{Discussion}
 
-Our baseline results are very low.  Error analysis indicates that this is most likely the result of the low quality of the snippets returned at retrieval time.  Additionally, there are some duplicate documents, so an answer may be retained as being from more than one document when in reality, it is from two identical documents and should be treated as being from one document and thus discarded.
-
-In subsequent versions of the system, we hope to address the first issue by augmenting the query processing module to include query expansion. Better search queries (and more of them) will hopefully improve the quality of the snippets returned in the information retrieval module.
-
-In addition, we plan to encode more information in the answer template by implementing question classification in the query processing module. This will hopefully facilitate better answer generation and ranking in the answer processing module.
-
-As mentioned above, we created two document indexes: one using Porter stemming and one using Krovetz stemming, which is less aggressive. Initial testing on a small question set demonstrated better results using the Krovetz-stemmed index. Due to issues we encountered with Indri/Lemur when using the Krovetz-stemmed index with the full question set, we used the Porter-stemmed index instead in the baseline system. In subsequent versions of our system, we plan to explore using the Krovetz-stemmed index to see if we achieve better results.
+As shown in our results tables, web boosting provides a significant improvement to our system scores.  The index parameters that give us the best results are using the Porter stemmer and a stoplist.  Adding question classification helps our lenient score but actually results in a decrease in the strict score.  Query expansion has a negative impact on the results, across all the query weights and number of synonyms tested.  It appears that using three pages of web results gives the best results.  Using 40 passages from Indri boosts the results, over using fewer or more.
 
 \section{Conclusion}
 
-We implemented a baseline question answering system to handle factoid questions from the TREC QA shared task using the AQUAINT Corpus as a document collection. Our baseline results were very low, most likely due to the poor quality of the snippets returned by the IR component of the system, duplicate documents in the document collection, and the primitive methods we used for query processing. In future development, we plan to extend the query processing component of our system to implement query expansion and question classification, as well as to explore using a document index created with a different stemmer, in the hope of achieving improved results.
+We implemented a baseline question answering system to handle factoid questions from the TREC QA shared task using the AQUAINT Corpus as a document collection. Thus far, web boosting has provided the biggest improvement in our system. In future development, we plan to experiment with different methods of using the web snippets, try weighting named entity query terms higher, and implement new and improved methods for question classification and query expansion, in the hope of improving our results further.
 
 \nocite{*}
 \bibliographystyle{acl}
@@ -133,3 +223,4 @@ We implemented a baseline question answering system to handle factoid questions 
 %\end{thebibliography}
 
 \end{document}
+
