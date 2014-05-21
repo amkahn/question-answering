@@ -58,7 +58,7 @@ class AnswerProcessor:
 
     def extract_answers(self):
         # here's a possible clever answer extractor
-        answer_docs = defaultdict(set)
+        answer_docs = defaultdict(lambda:defaultdict(list))
         answer_score = defaultdict(lambda:0)
         number_passages = Counter()
         self.unigram_answers = []
@@ -71,37 +71,16 @@ class AnswerProcessor:
             #sys.stderr.write("Tokenized passage is"+str(passage_list)+"\n")
             for sentence in passage_list:
                 for i in range(len(sentence)):
-                    # unigram
-                    # passage weight is negative - closer to 0 is better
-                    # change to positive, then take inverse
-                    # higher score is still better, but now will be all positive
-                    answer_score[sentence[i]] += passage.weight
-                    if passage.doc_id:
-                        number_passages[sentence[i]] += 1
-                        answer_docs[sentence[i]].add(passage.doc_id)
-                    else:
-                        number_passages[sentence[i]] += 10
-                    if i < len(sentence) - 1: # can do bigrams
-                        answer_score[" ".join(sentence[i:i+2])] += passage.weight
-                        if passage.doc_id:
-                            number_passages[" ".join(sentence[i:i+2])] += 1
-                            answer_docs[" ".join(sentence[i:i+2])].add(passage.doc_id)
-                        else:
-                            number_passages[" ".join(sentence[i:i+2])] += 10
-                        if i < len(sentence) - 2: # can do trigrams
-                            answer_score[" ".join(sentence[i:i+3])] += passage.weight
+                    # up to 4-grams
+                    for j in range(4):
+                        if i < len(sentence) - j:
+                            answer_score[" ".join(sentence[i:i+j+1])] += passage.weight
                             if passage.doc_id:
-                                number_passages[" ".join(sentence[i:i+3])] += 1
-                                answer_docs[" ".join(sentence[i:i+3])].add(passage.doc_id)
+                                number_passages[" ".join(sentence[i:i+j+1])] += 1
+                                answer_docs[" ".join(sentence[i:i+j+1])][passage.doc_id].append(" ".join(sentence))
                             else:
-                                number_passages[" ".join(sentence[i:i+3])] += 10
-                            if i < len(sentence) - 3: # can do 4-grams
-                                answer_score[" ".join(sentence[i:i+4])] += passage.weight
-                                if passage.doc_id:
-                                    number_passages[" ".join(sentence[i:i+4])] += 1
-                                    answer_docs[" ".join(sentence[i:i+4])].add(passage.doc_id)
-                                else:
-                                    number_passages[" ".join(sentence[i:i+4])] += 10
+                                number_passages[" ".join(sentence[i:i+j+1])] += 10
+
        # then find answers with highest score?
         for answer,score in answer_score.iteritems():
             if len(answer.split()) == 1 and answer not in self.punctuation:
