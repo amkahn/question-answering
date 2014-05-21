@@ -48,7 +48,7 @@ class InfoRetriever:
         #sys.stderr.write(query_str + '\n')
        
         try:
-            docs = self.query_env.runQuery("#weight[passage100:50](" + query_str + ")", 100)
+            docs = self.query_env.runQuery("#weight[passage100:75](" + query_str + ")", 100)
         except:
             docs = []
             sys.stderr.write("Couldn't run query: " + query_str + '\n')
