@@ -1,5 +1,5 @@
 # LING 573 Question Answering System
-# Code last updated 5/19/14 by Andrea Kahn
+# Code last updated 5/23/14 by Andrea Kahn
 #
 # This code implements a QueryProcessor for the question answering system.
 
@@ -9,22 +9,26 @@ import nltk
 import re
 from general_classes import *
 from collections import defaultdict
-from nltk.corpus import wordnet as wn
-from nltk.corpus import wordnet_ic
-semcor_ic = wordnet_ic.ic('ic-semcor.dat')
+#from nltk.corpus import wordnet as wn
+#from nltk.corpus import wordnet_ic
+#semcor_ic = wordnet_ic.ic('ic-semcor.dat')
 from nltk.corpus import lin_thesaurus as thes
 import heapq
+from copy import deepcopy
 
 
-# A QueryProcessor object has the attribute "question", a Question object.
+# A QueryProcessor object has the attribute "question", a Question object; "stoplist", a
+# list of stopwords (strings); non_ne_voc, a list of non-named entities appearing in the
+# question and target mapped to counts; ne_voc, a list of named-entity terms appearing in
+# the question and target mapped to counts; and query_voc, a list of all query terms
+# (including named entities).
 
 class QueryProcessor(object):
 
     def __init__(self, question, stoplist=None):
         self.question = question
         self.stoplist = stoplist
-        self.query_voc = self.generate_voc()
-
+        self.non_ne_voc, self.ne_voc, self.query_voc = self.generate_voc()
 
 
     # This method returns a dictionary of unigrams appearing in the original question and
@@ -32,36 +36,65 @@ class QueryProcessor(object):
     
     def generate_voc(self):
         tokenized_q = nltk.word_tokenize(self.question.q)
-
-        # NEs are removed from query_terms and added to self.ne
-        # Note: had to strip punctuation from self.ne too, to avoid Indri freakout
-        tokenized_q, self.ne = self.extract_ne(tokenized_q)
-
         tokenized_target = nltk.word_tokenize(self.question.target)
-        query_terms = tokenized_q + tokenized_target
 
+        # separate named entities from non-named entities in question and target, respectively
+        # Note: had to strip punctuation from named entities, to avoid Indri freakout
+        q_non_ne, q_ne = self.extract_ne(tokenized_q)
+        target_non_ne, target_ne = self.extract_ne(tokenized_target)
+
+        non_ne = q_non_ne + target_non_ne
+        ne = q_ne + target_ne
+        
+        sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the non-named entities in the question and target: %s\n" % non_ne)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the named entities in the question and target: %s\n" % ne)
+        
         # TODO: Decide how to handle punctuation within tokens. For now, just delete it.
         # Consider replacing hyphens with spaces (would want to do this before tokenizing).
 
-#       sys.stderr.write("DEBUG  Here are the query terms before stripping interior punctuation: %s\n" % query_terms)
-        for i in range(len(query_terms)):
-        	query_terms[i] = re.sub(r'\W', '', query_terms[i])
-        query_terms = filter(lambda x: x != '', query_terms)
+        sys.stderr.write("DEBUG  Here are the non-named entity query terms before punctuation stripping: %s\n" % non_ne)
+        for i in range(len(non_ne)):
+        	non_ne[i] = re.sub(r'\W', '', non_ne[i])
+        non_ne = filter(lambda x: x != '', non_ne)
 
-#       sys.stderr.write("DEBUG  Here are the query terms after punctuation stripping: %s\n" % query_terms)
-        query_dict = {}
+        sys.stderr.write("DEBUG  Here are the non-named entity query terms after punctuation stripping: %s\n" % non_ne)
+        non_ne_dict = {}
 
-        for term in query_terms:
+        # Create a dictionary of all non-named entity terms mapped to counts in the question/target
+        for term in non_ne:
             if term.lower() not in self.stoplist:
-                if query_dict.get(term) == None:
-                    query_dict[term] = 1
+                if non_ne_dict.get(term) == None:
+                    non_ne_dict[term] = 1
                 else:
-                    query_dict[term] += 1
+                    non_ne_dict[term] += 1
 #           else:
 #               sys.stderr.write("DEBUG  Removing stopword %s from query\n" % term)
+        
+        ne_dict = {}
+        
+        # Create a dictionary of all named entities mapped to counts in the question/target
+        for term in ne:
+            if term.lower() not in self.stoplist:
+                if ne_dict.get(term) == None:
+                    ne_dict[term] = 1
+                else:
+                    ne_dict[term] += 1
+        
+        # Create a dictionary of all terms (named entities and non-named entities) mapped to counts in the question/target
+        query_dict = deepcopy(non_ne_dict)
+        
+        for ne, count in ne_dict.items():
+            if ne.lower() not in self.stoplist:
+                if query_dict.get(ne) == None:
+                    query_dict[ne] = count
+                else:
+                    query_dict[ne] += count
+                    
+        sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of non-named entities in the question and target: %s\n" % non_ne_dict)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of named-entity terms in the question and target: %s\n" % ne_dict)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of all terms in the question and target: %s\n" % query_dict)
 
-#       sys.stderr.write("DEBUG  Here is the query vocabulary: %s\n" % query_dict)
-        return query_dict
+        return non_ne_dict, ne_dict, query_dict
 
 
 
@@ -82,17 +115,17 @@ class QueryProcessor(object):
         #expanded_query = self.expand_query()
         #queries.append(expanded_query)
 
-        # put NEs back into both expanded and initial query objects
+        # TODO: put NEs back into expanded query objects
         # TODO: note - do we want to upweight the NEs?
 
-        for term in self.ne:
-            for query in queries:
-                if query.search_terms.get(term) == None:
-                    query.search_terms[term] = 1
-                else:
-                    query.search_terms[term] += 1
+#         for term in self.ne:
+#             for query in queries:
+#                 if query.search_terms.get(term) == None:
+#                     query.search_terms[term] = 1
+#                 else:
+#                     query.search_terms[term] += 1
 
-#       sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % [str(initial_query), str(expanded_query)])
+        sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % queries)
         return queries
 
 
@@ -113,9 +146,9 @@ class QueryProcessor(object):
     def expand_query(self):
 
         expanded_voc = {}
-        for term in self.query_voc:
+        for term in self.non_ne_voc:
             # copy the term and its weight to the dictionary for the expanded query
-            expanded_voc[term] = self.query_voc[term]
+            expanded_voc[term] = self.non_ne_voc[term]
             # get the top 3 synonyms of the term and their similarity measures
             term_syns = self.expand_term(term, 3)
             for item in term_syns:
@@ -215,7 +248,7 @@ class QueryProcessor(object):
 
             # generate a corresponding AnswerTemplate object
             ans_template = AnswerTemplate(self.question.id,set(self.query_voc.keys()),ans_types)
-#           sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template.type_weights)
+            sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template)
             
             return ans_template
 
@@ -224,16 +257,17 @@ class QueryProcessor(object):
 
 
 
-    # This method takes a list of query tokens (strings) as input and returns a 2-tuple in
-    # which the first element is a list of the query tokens that are not named entities and
+    # This method takes a list of tokens (strings) as input and returns a 2-tuple in which
+    # the first element is a list of the tokens that are not named entities (strings) and
     # the second element is a list of the named entities (strings).
 
-    def extract_ne(self, tokenized_q):
-
+    def extract_ne(self, input):
+        sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: %s\n" % input)
+        
         ne = []
-        non_ne = tokenized_q
+        non_ne = input
 
-        pos_tags = nltk.pos_tag(tokenized_q)
+        pos_tags = nltk.pos_tag(input)
         extracted = nltk.ne_chunk(pos_tags, binary=True)
         # find NE-headed subtrees
         for subtree in extracted.subtrees(lambda t: t.node == "NE"):
@@ -246,5 +280,9 @@ class QueryProcessor(object):
             for leaf in leaves:
                 #sys.stderr.write("trying to remove "+leaf[0]+" from "+str(non_ne)+"\n")
                 non_ne.remove(leaf[0])
+        
+        sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: %s\n" % non_ne)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: %s\n" % ne)
 
         return non_ne, ne
+        

@@ -1,0 +1,75 @@
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: ['What', 'position', 'did', 'Moon', 'play', 'in', 'professional', 'football', '?']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: ['Where', 'did', 'Moon', 'play', 'in', 'college', '?']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: ['In', 'what', 'year', 'was', 'Moon', 'born', '?']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: ['How', 'many', 'times', 'was', 'Moon', 'a', 'Pro', 'Bowler', '?']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: ['Who', 'is', 'Warren', 'Moon', "'s", 'agent', '?']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: ['How', 'many', 'times', 'was', 'Moon', 'a', 'Pro', 'Bowler', '?']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: []
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: ['Warren', 'Moon']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: ['In', 'what', 'year', 'was', 'born', '?']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: ['Moon']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: ['Warren', 'Moon']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: []
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: ['Warren Moon']
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the non-named entities in the question and target: ['How', 'many', 'times', 'was', 'Moon', 'a', 'Pro', 'Bowler', '?']
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the named entities in the question and target: ['Warren Moon']
+DEBUG  Here are the non-named entity query terms before punctuation stripping: ['How', 'many', 'times', 'was', 'Moon', 'a', 'Pro', 'Bowler', '?']
+DEBUG  Here are the non-named entity query terms after punctuation stripping: ['How', 'many', 'times', 'was', 'Moon', 'a', 'Pro', 'Bowler']
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of non-named entities in the question and target: {'Pro': 1, 'Moon': 1, 'Bowler': 1, 'times': 1}
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of named-entity terms in the question and target: {'Warren Moon': 1}
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of all terms in the question and target: {'Warren Moon': 1, 'Pro': 1, 'Bowler': 1, 'times': 1, 'Moon': 1}
+DEBUG  Here are the queries generated: [<general_classes.SearchQuery object at 0x21f66950>]
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: []
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: ['Warren Moon']
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the non-named entities in the question and target: ['In', 'what', 'year', 'was', 'born', '?']
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the named entities in the question and target: ['Moon', 'Warren Moon']
+DEBUG  Here are the non-named entity query terms before punctuation stripping: ['In', 'what', 'year', 'was', 'born', '?']
+DEBUG  Here are the non-named entity query terms after punctuation stripping: ['In', 'what', 'year', 'was', 'born']
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of non-named entities in the question and target: {'born': 1}
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of named-entity terms in the question and target: {'Warren Moon': 1, 'Moon': 1}
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of all terms in the question and target: {'born': 1, 'Moon': 1, 'Warren Moon': 1}
+DEBUG  Here are the queries generated: [<general_classes.SearchQuery object at 0x21f758d0>]
+DEBUG  Here is the answer template: question_id: 141.4; query_terms: set(['Moon', 'Pro', 'Bowler', 'times', 'Warren Moon']); type_weights: defaultdict(<function <lambda> at 0x1d5782a8>, {'number': 0.9})
+DEBUG  Here is the answer template: question_id: 141.3; query_terms: set(['born', 'Warren Moon', 'Moon']); type_weights: defaultdict(<function <lambda> at 0x1d5782a8>, {'time_ex': 0.9})
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: ['Who', 'is', "'s", 'agent', '?']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: ['Warren Moon']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: ['Warren', 'Moon']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: ['Where', 'did', 'play', 'in', 'college', '?']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: ['Moon']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: ['Warren', 'Moon']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: []
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: ['Warren Moon']
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the non-named entities in the question and target: ['Who', 'is', "'s", 'agent', '?']
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the named entities in the question and target: ['Warren Moon', 'Warren Moon']
+DEBUG  Here are the non-named entity query terms before punctuation stripping: ['Who', 'is', "'s", 'agent', '?']
+DEBUG  Here are the non-named entity query terms after punctuation stripping: ['Who', 'is', 's', 'agent']
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of non-named entities in the question and target: {'s': 1, 'agent': 1}
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of named-entity terms in the question and target: {'Warren Moon': 2}
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of all terms in the question and target: {'s': 1, 'agent': 1, 'Warren Moon': 2}
+DEBUG  Here are the queries generated: [<general_classes.SearchQuery object at 0x21f3aa50>]
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: []
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: ['Warren Moon']
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the non-named entities in the question and target: ['Where', 'did', 'play', 'in', 'college', '?']
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the named entities in the question and target: ['Moon', 'Warren Moon']
+DEBUG  Here are the non-named entity query terms before punctuation stripping: ['Where', 'did', 'play', 'in', 'college', '?']
+DEBUG  Here are the non-named entity query terms after punctuation stripping: ['Where', 'did', 'play', 'in', 'college']
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of non-named entities in the question and target: {'did': 1, 'play': 1, 'college': 1}
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of named-entity terms in the question and target: {'Warren Moon': 1, 'Moon': 1}
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of all terms in the question and target: {'did': 1, 'play': 1, 'Moon': 1, 'college': 1, 'Warren Moon': 1}
+DEBUG  Here are the queries generated: [<general_classes.SearchQuery object at 0x21f957d0>]
+DEBUG  Here is the answer template: question_id: 141.5; query_terms: set(['s', 'agent', 'Warren Moon']); type_weights: defaultdict(<function <lambda> at 0x1d5782a8>, {'person': 0.9})
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: ['What', 'position', 'did', 'play', 'in', 'professional', 'football', '?']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: ['Moon']
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: ['Warren', 'Moon']
+DEBUG  Here is the answer template: question_id: 141.2; query_terms: set(['did', 'play', 'Warren Moon', 'college', 'Moon']); type_weights: defaultdict(<function <lambda> at 0x1d5782a8>, {'location': 0.9})
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: []
+DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: ['Warren Moon']
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the non-named entities in the question and target: ['What', 'position', 'did', 'play', 'in', 'professional', 'football', '?']
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the named entities in the question and target: ['Moon', 'Warren Moon']
+DEBUG  Here are the non-named entity query terms before punctuation stripping: ['What', 'position', 'did', 'play', 'in', 'professional', 'football', '?']
+DEBUG  Here are the non-named entity query terms after punctuation stripping: ['What', 'position', 'did', 'play', 'in', 'professional', 'football']
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of non-named entities in the question and target: {'did': 1, 'position': 1, 'play': 1, 'football': 1, 'professional': 1}
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of named-entity terms in the question and target: {'Warren Moon': 1, 'Moon': 1}
+DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of all terms in the question and target: {'play': 1, 'did': 1, 'football': 1, 'Warren Moon': 1, 'professional': 1, 'position': 1, 'Moon': 1}
+DEBUG  Here are the queries generated: [<general_classes.SearchQuery object at 0x21ff3710>]
+DEBUG  Here is the answer template: question_id: 141.1; query_terms: set(['play', 'did', 'football', 'Warren Moon', 'position', 'professional', 'Moon']); type_weights: defaultdict(<function <lambda> at 0x1d5782a8>, {'other': 0.5})
