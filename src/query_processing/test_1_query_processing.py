@@ -46,18 +46,18 @@ class QueryProcessor(object):
         non_ne = q_non_ne + tokenized_target
         ne = q_ne
         
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the non-named entities in the question and target: %s\n" % non_ne)
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the named entities in the question and target: %s\n" % ne)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the non-named entities in the question and target: %s\n" % non_ne)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the named entities in the question and target: %s\n" % ne)
         
         # TODO: Decide how to handle punctuation within tokens. For now, just delete it.
         # Consider replacing hyphens with spaces (would want to do this before tokenizing).
 
-#       sys.stderr.write("DEBUG  Here are the non-named entity query terms before punctuation stripping: %s\n" % non_ne)
+        sys.stderr.write("DEBUG  Here are the non-named entity query terms before punctuation stripping: %s\n" % non_ne)
         for i in range(len(non_ne)):
         	non_ne[i] = re.sub(r'\W', '', non_ne[i])
         non_ne = filter(lambda x: x != '', non_ne)
 
-#       sys.stderr.write("DEBUG  Here are the non-named entity query terms after punctuation stripping: %s\n" % non_ne)
+        sys.stderr.write("DEBUG  Here are the non-named entity query terms after punctuation stripping: %s\n" % non_ne)
         non_ne_dict = {}
 
         # Create a dictionary of all non-named entity terms mapped to counts in the question/target
@@ -88,9 +88,9 @@ class QueryProcessor(object):
             else:
                 query_dict[ne] += count
                     
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of non-named entities in the question and target: %s\n" % non_ne_dict)
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of named-entity terms in the question and target: %s\n" % ne_dict)
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of all terms in the question and target: %s\n" % query_dict)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of non-named entities in the question and target: %s\n" % non_ne_dict)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of named-entity terms in the question and target: %s\n" % ne_dict)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of all terms in the question and target: %s\n" % query_dict)
 
         return non_ne_dict, ne_dict, query_dict
 
@@ -123,7 +123,7 @@ class QueryProcessor(object):
 #                 else:
 #                     query.search_terms[term] += 1
 
-#       sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % queries)
+        sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % queries)
         return queries
 
 
@@ -245,8 +245,8 @@ class QueryProcessor(object):
                 ans_types['other'] = 0.5               
 
             # generate a corresponding AnswerTemplate object
-            ans_template = AnswerTemplate(self.question.id,set(self.query_voc.keys()),ans_types)
-#           sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template)
+            ans_template = AnswerTemplate(self.question.id,set(self.non_ne_voc.keys()),ans_types)
+            sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template)
             
             return ans_template
 
@@ -260,7 +260,7 @@ class QueryProcessor(object):
     # the second element is a list of the named entities (strings).
 
     def extract_ne(self, input):
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: %s\n" % input)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: %s\n" % input)
         
         ne = []
         non_ne = input
@@ -279,8 +279,8 @@ class QueryProcessor(object):
                 #sys.stderr.write("trying to remove "+leaf[0]+" from "+str(non_ne)+"\n")
                 non_ne.remove(leaf[0])
         
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: %s\n" % non_ne)
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: %s\n" % ne)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: %s\n" % non_ne)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: %s\n" % ne)
 
         return non_ne, ne
         
