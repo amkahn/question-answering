@@ -43,7 +43,6 @@ class QueryProcessor(object):
         # NB: The following three lines of code, which perform NE extraction on the target
         # and add the named-entity and non-named entity output to the appropriate lists of
         # question/target terms, caused our accuracy to drop significantly.
-        
 #       target_non_ne, target_ne = self.extract_ne(tokenized_target)
 #       non_ne = q_non_ne + target_non_ne
 #       ne = q_ne + target_ne
