@@ -7,3 +7,5 @@ src/status.txt
 *.pyc
 # ignore swap files
 *.swp
+# ignore converted AQUAINT2 corpus
+src/converted_AQUAINT2/
