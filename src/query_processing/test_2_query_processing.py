@@ -36,45 +36,31 @@ class QueryProcessor(object):
         tokenized_target = nltk.word_tokenize(self.question.target)
 
         # separate named entities from non-named entities in question and target, respectively
-        # Note: had to strip punctuation from named entities, to avoid Indri freakout -Clara
-        # I'm not sure if punctuation-stripping on NEs is actually happening -Andrea
+        # Note: had to strip punctuation from named entities, to avoid Indri freakout
         q_non_ne, q_ne = self.extract_ne(tokenized_q)
-        
-        # NB: The following three lines of code, which perform NE extraction on the target
-        # and add the named-entity and non-named entity output to the appropriate lists of
-        # question/target terms, caused our accuracy to drop significantly.
-        
-#       target_non_ne, target_ne = self.extract_ne(tokenized_target)
-#       non_ne = q_non_ne + target_non_ne
-#       ne = q_ne + target_ne
+        target_non_ne, target_ne = self.extract_ne(tokenized_target)
 
-        # Instead, add the tokenized target to the list of non-named entity terms.
-#       non_ne = q_non_ne + tokenized_target
-#       ne = q_ne
+        non_ne = q_non_ne + target_non_ne
+        ne = q_ne + target_ne
 
-        # Or, for slightly better results, add the tokenized target to the list of named-entity
-        # terms. (Currently, the only difference between this and the previous code block
-        # is that punctuation doesn't get filtered from the target -- which actually causes
-        # a drop in accuracy -- and that stopwords don't get filtered from the target -- which
-        # causes an increase in accuracy.)
-        non_ne = q_non_ne
-        ne = q_ne + tokenized_target
-            
+#        non_ne = q_non_ne + tokenized_target
+#        ne = q_ne
+        
         sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the non-named entities in the question and target: %s\n" % non_ne)
         sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the named entities in the question and target: %s\n" % ne)
         
         # TODO: Decide how to handle punctuation within tokens. For now, just delete it.
         # Consider replacing hyphens with spaces (would want to do this before tokenizing).
 
-#       sys.stderr.write("DEBUG  Here are the non-named entity query terms before punctuation stripping: %s\n" % non_ne)
+        sys.stderr.write("DEBUG  Here are the non-named entity query terms before punctuation stripping: %s\n" % non_ne)
         for i in range(len(non_ne)):
         	non_ne[i] = re.sub(r'\W', '', non_ne[i])
         non_ne = filter(lambda x: x != '', non_ne)
 
-#       sys.stderr.write("DEBUG  Here are the non-named entity query terms after punctuation stripping: %s\n" % non_ne)
+        sys.stderr.write("DEBUG  Here are the non-named entity query terms after punctuation stripping: %s\n" % non_ne)
         non_ne_dict = {}
 
-        # Create a dictionary of all non-named entity terms, excluding stopwords, mapped to counts in the question/target
+        # Create a dictionary of all non-named entity terms mapped to counts in the question/target
         for term in non_ne:
             if term.lower() not in self.stoplist:
                 if non_ne_dict.get(term) == None:
@@ -102,9 +88,9 @@ class QueryProcessor(object):
             else:
                 query_dict[ne] += count
                     
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of non-named entities in the question and target: %s\n" % non_ne_dict)
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of named-entity terms in the question and target: %s\n" % ne_dict)
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of all terms in the question and target: %s\n" % query_dict)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of non-named entities in the question and target: %s\n" % non_ne_dict)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of named-entity terms in the question and target: %s\n" % ne_dict)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of all terms in the question and target: %s\n" % query_dict)
 
         return non_ne_dict, ne_dict, query_dict
 
@@ -137,7 +123,7 @@ class QueryProcessor(object):
 #                 else:
 #                     query.search_terms[term] += 1
 
-#       sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % queries)
+        sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % queries)
         return queries
 
 
@@ -260,7 +246,7 @@ class QueryProcessor(object):
 
             # generate a corresponding AnswerTemplate object
             ans_template = AnswerTemplate(self.question.id,set(self.query_voc.keys()),ans_types)
-#           sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template)
+            sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template)
             
             return ans_template
 
@@ -274,7 +260,7 @@ class QueryProcessor(object):
     # the second element is a list of the named entities (strings).
 
     def extract_ne(self, input):
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: %s\n" % input)
+        sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: %s\n" % input)
         
         ne = []
         non_ne = input

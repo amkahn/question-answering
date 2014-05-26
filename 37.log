@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 000 (128004.000.000) 05/21 13:00:30 Job submitted from host: <192.168.100.50:50435>
 ...
 001 (128004.000.000) 05/21 13:05:33 Job executing on host: <192.168.100.69:43998>
@@ -111,6 +112,25 @@
 		Usr 0 00:18:30, Sys 0 00:00:27  -  Run Remote Usage
 		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
 		Usr 0 00:18:30, Sys 0 00:00:27  -  Total Remote Usage
+=======
+000 (128385.000.000) 05/23 16:51:56 Job submitted from host: <192.168.100.50:50435>
+...
+001 (128385.000.000) 05/23 16:51:58 Job executing on host: <192.168.100.59:51381>
+...
+006 (128385.000.000) 05/23 16:52:07 Image size of job updated: 2
+	3  -  MemoryUsage of job (MB)
+	2100  -  ResidentSetSize of job (KB)
+...
+006 (128385.000.000) 05/23 16:55:50 Image size of job updated: 5642992
+	3  -  MemoryUsage of job (MB)
+	2100  -  ResidentSetSize of job (KB)
+...
+005 (128385.000.000) 05/23 16:55:50 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:17:25, Sys 0 00:00:15  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:17:25, Sys 0 00:00:15  -  Total Remote Usage
+>>>>>>> 74f4879a2585750c70f520975c575c9822fafb4d
 		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
 	0  -  Run Bytes Sent By Job
 	0  -  Run Bytes Received By Job
