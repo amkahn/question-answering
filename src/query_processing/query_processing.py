@@ -49,8 +49,8 @@ class QueryProcessor(object):
 #       ne = q_ne + target_ne
 
         # Instead, add the tokenized target to the list of non-named entity terms.
-#        non_ne = q_non_ne + tokenized_target
-#        ne = q_ne
+#       non_ne = q_non_ne + tokenized_target
+#       ne = q_ne
 
         # Or, for slightly better results, add the tokenized target to the list of named-entity
         # terms. (Currently, the only difference between this and the previous code block
