@@ -9,6 +9,7 @@ import nltk
 import sys
 import re
 
+
 class AnswerProcessor:
     def __init__(self,passages,answer_template,stopword_list=[]):
         self.passages = passages
@@ -178,9 +179,17 @@ class AnswerProcessor:
 
     def rank_answers(self):
         self.ranked_answers.sort(reverse=True,key=attrgetter('score'))
-
-
-
+        # final step, remove answers that are substring of any other answer
+        to_remove = set()
+        for i in range(len(self.ranked_answers)-1,-1,-1):
+            answer = self.ranked_answers[i]
+            for j in range(i-1,-1,-1):
+                other_answer = self.ranked_answers[j]
+                if answer.answer in other_answer.answer:
+                    to_remove.add(i)
+        to_remove = sorted(list(to_remove),reverse=True)
+        for i in to_remove:
+            del self.ranked_answers[i]
 
 
 class AnswerCandidate:
