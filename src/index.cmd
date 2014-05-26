@@ -7,6 +7,6 @@ Executable = /NLP_TOOLS/info_retrieval/indri/latest/bin/IndriBuildIndex
 Output = index.out
 Error = index.err
 Log = index.log
-Arguments = "indexes/index.none.none.parameters.xml"
+Arguments = "indexes/AQUAINT-2/index.porter.stoplist.parameters.xml"
 transfer_executable = false
 Queue
