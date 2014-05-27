@@ -3,8 +3,8 @@
 # LING 573 Question Answering
 # cache web results
 
-q_name = TREC-2006.3pg
-q_file = /dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml
+q_name = QA2007_testset.3pg
+q_file = /dropbox/13-14/573/Data/Questions/evaltest/QA2007_testset.xml
 
 Executable = cache_web_results.py
 Output = cached_web_results/cache_web_results.$(q_name).out
