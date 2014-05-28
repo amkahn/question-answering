@@ -11,26 +11,16 @@ import re
 
 
 class AnswerProcessor:
-    def __init__(self,passages,answer_template,stopword_list=[]):
+    def __init__(self,passages,answer_template,stopword_list,parameters):
+        self.parameters = parameters
         self.passages = passages
         self.answer_template = answer_template
         self.ranked_answers = []
         self.stopword_list = stopword_list
         self.stopword_list |= {"'m","'s","n't","ca","wo","did"}
-        self.punctuation = {':',"'","''",'(',')','&',';','_','.','!','?',',','-','--','...','`','``'}
+        #self.punctuation = {':',"'","''",'(',')','&',';','_','.','!','?',',','-','--','...','`','``'}
         #for passage in self.passages:
         #    sys.stderr.write("PASSAGE: "+passage.passage+"\n")
-
-
-#    def generate_and_rank_answers_old(self):
-#        # get answers from the passages
-#        self.extract_answers()
-#        # reweight answers based on answer template
-#        self.reweight_answers()           
-#        # sort answers by score
-#        self.rank_answers()
-#        # return top 20 highest ranked answers
-#        return self.ranked_answers[:20]
 
     def generate_and_rank_answers(self):
         # get answers from the passages
@@ -48,14 +38,6 @@ class AnswerProcessor:
             return self.ranked_answers[:20]
         else:
             return self.ranked_answers
-
-    # a method to extract possible answers from the passages and rank them
-#    def extract_answers_old(self):
-#        # for now, just take the first 250 characters of the passage as the answer
-#        for passage in self.passages:
-#            answer_candidate = AnswerCandidate(passage.passage[:250],passage.doc_id)
-#            answer_candidate.set_score(passage.weight)
-#            self.ranked_answers.append(answer_candidate)
 
     def extract_answers(self):
         # here's a possible clever answer extractor
@@ -78,13 +60,13 @@ class AnswerProcessor:
                             answer_score[" ".join(sentence[i:i+j+1])] += passage.weight
                             if passage.doc_id:
                                 number_passages[" ".join(sentence[i:i+j+1])] += 1
-                                answer_docs[" ".join(sentence[i:i+j+1])][passage.doc_id].append(" ".join(sentence))
+                                answer_docs[" ".join(sentence[i:i+j+1])][passage.doc_id].append(passage.passage)
                             else:
-                                number_passages[" ".join(sentence[i:i+j+1])] += 10
+                                number_passages[" ".join(sentence[i:i+j+1])] += int(self.parameters['snippet_passage_count'])
 
        # then find answers with highest score?
         for answer,score in answer_score.iteritems():
-            if len(answer.split()) == 1 and answer not in self.punctuation:
+            if len(answer.split()) == 1 and not re.search(r'^\W$',answer):
                 self.unigram_answers.append((answer,score))
             # initialize answer candidate with answer and the doc IDs where it occured in
             ac = AnswerCandidate(self.answer_template.question_id,answer,answer_docs[answer])
@@ -96,7 +78,7 @@ class AnswerProcessor:
     def filter_answers(self):
         # some regexes for comparisons
         stopword_re = re.compile("|".join(["^"+re.escape(x) for x in self.stopword_list]+[re.escape(x)+"$" for x in self.stopword_list]),re.IGNORECASE)
-        punctuation_re = re.compile("|".join(["^"+re.escape(x) for x in self.punctuation]+[re.escape(x)+"$" for x in self.punctuation]),re.IGNORECASE)
+        punctuation_re = re.compile(r'^\W|\W$')
         query_terms_re = re.compile("|".join(re.escape(x) for x in self.answer_template.query_terms),re.IGNORECASE)
 
         # go through answers
@@ -106,11 +88,11 @@ class AnswerProcessor:
 
             # remove answers if not in at least one document
             # try different number of documents to see
-            if len(answer.doc_ids) < 1:
+            if len(answer.doc_ids) < int(self.parameters['num_docs']):
                 #sys.stderr.write("Deleting - doesn't occur in any AQUAINT doc.\n")
                 del self.ranked_answers[i]
-            elif answer.number_passages < 10:
-                #sys.stderr.write("Deleting - doesn't occur in at least 10 passages.\n")
+            elif answer.number_passages < int(self.parameters['num_passages']):
+                #sys.stderr.write("Deleting - doesn't occur in at least "+self.parameters['num_passages']+" passages.\n")
                 del self.ranked_answers[i]
 
             # remove answer if starts or ends with stopword or punctuation

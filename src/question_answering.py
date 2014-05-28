@@ -72,6 +72,15 @@ def get_parameters(args, script_dir):
     if 'indri_window_size' not in keys:
         parameters['indri_window_size'] = '50'
 
+    if 'num_docs' not in keys:
+        parameters['num_docs'] = '1'
+
+    if 'num_passages' not in keys:
+        parameters['num_passages'] = '10'
+
+    if 'snippet_passage_count' not in keys:
+        parameters['snippet_passage_count'] = '10'
+
     return parameters
 
 def main():
@@ -124,11 +133,6 @@ def main():
 
             output.write("%s %s %s %s\n" % (answer.question_id, run_tag, best_doc_id, best_passage))
     output.close()
-
-
-
-
-
 
 
 # This method takes an XML file of stopwords as input and returns a list of the stopwords.
@@ -258,7 +262,7 @@ class Quail:
             passages.append(Passage(cached_result, -math.log(self.snippet_weight)**-1, None))
 
         # instantiate an AnswerProcessor that takes set of passages and the AnswerTemplate object
-        ap = AnswerProcessor(passages,ans_template,self.stopword_list)
+        ap = AnswerProcessor(passages,ans_template,self.stopword_list,self.parameters)
 
         # get a ranked list of answers
         ranked_answers = ap.generate_and_rank_answers()
