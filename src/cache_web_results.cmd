@@ -3,7 +3,7 @@
 # LING 573 Question Answering
 # cache web results
 
-num_pages = 5
+num_pages = 6
 q_file = /dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml
 q_name = TREC-2006.$(num_pages)pg
 
