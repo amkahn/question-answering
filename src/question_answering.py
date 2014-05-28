@@ -23,23 +23,72 @@ from functools import partial
 from collections import defaultdict
 
 
-def main():
-	# first argument is the path to the TREC question file
-    q_file = open(sys.argv[1],'r')
+# This method reads in command line arguments and stores them in a dict. It 
+# assigns default values if none are specified. 
+
+def get_parameters(args, script_dir):
 	
-	# second argument is the path to the document index
-    index_path = sys.argv[2]
+	
+	if len(args) == 0:
+		raise Exception('Must include runtag as first argument.')
 
-    # third argument is web cached results for the questions
-    web_cache = open(sys.argv[3],'r')
+	if '=' in args[0]:
+		raise Exception('First argument must be run tag only.')
 
-    # fourth argument is the run tag
-    run_tag = sys.argv[4]
+	parameters = {'run_tag':args[0]}
 
-    # fifth argument is the path to the output file
-    output = open(sys.argv[5],'w')
+	for arg in args[1:]:
+		split = arg.split('=')
+		if len(split) == 2:
+			parameters[split[0]] = split[1]
+		else:
+			sys.stderr.write('Ill-formed parameter: ' + arg)
+		
+	# CODE FOR DEFAULT VALUES HERE
+	
+	keys = parameters.keys()
+	
+	if 'q_file' not in keys:
+		parameters['q_file'] = '/dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml'	
+			
+	if 'stoplist' not in keys:
+		parameters['stoplist'] = script_dir + '/stoplist.dft'
+		
+	if 'web_cache' not in keys:
+		parameters['web_cache'] = script_dir + '/cached_web_results/TREC-2006.3pg.web_cache'
+	
+	if 'index' not in keys:
+		parameters['index'] = '/home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.porter.stoplist'
 
-    quail = Quail(q_file, index_path, web_cache)
+	if 'indri_passages' not in keys:
+		parameters['indri_passages'] = '40'
+	
+	if 'passage_length' not in keys:
+		parameters['passage_length'] = '100'
+		
+	if 'snippet_weight' not in keys:
+		parameters ['snippet_weight'] = '0.9'
+		
+	if 'indri_window_size' not in keys:
+		parameters['indri_window_size'] = '50'
+	
+	return parameters
+
+def main():
+
+    script_dir = path.dirname(path.realpath(__file__))
+   
+	
+    # pass arguments to get_parameters method 
+    sys.stderr.write('Getting parameters...\n')
+    parameters = get_parameters(sys.argv[1:], script_dir)
+    sys.stderr.write('Parameters: ' + str(parameters) + '\n')
+
+    # read run tag and output from parameters dict
+    run_tag = parameters['run_tag']
+    output = open(script_dir + '/../outputs/' + run_tag + '.outputs','w')
+          
+    quail = Quail(parameters)
 
     questions = quail.generate_q_list()
 	# filter for only factoid questions
@@ -77,6 +126,11 @@ def main():
     output.close()
 
 
+
+
+
+
+
 # This method takes an XML file of stopwords as input and returns a list of the stopwords.
 
 def extract_stopwords(stopword_file):
@@ -103,10 +157,18 @@ def process_question(question,object):
 # the web cache, and processing individual questions.
 
 class Quail:
-    def __init__(self,q_file,index_path, web_cache):
-        self.q_file = q_file
-        self.index_path = index_path
-        self.cached_results = self.process_web_cache(web_cache)
+    def __init__(self, parameters):
+    
+    	self.parameters = parameters
+
+    	# path to the TREC question file
+        self.q_file = open(self.parameters['q_file'],'r')
+		
+	# path to the document index
+        self.index_path = self.parameters['index']
+        
+    	# web cached results for the questions
+        self.cached_results = self.process_web_cache(open(self.parameters['web_cache'],'r'))
 
         # path to the directory containing this script, so it can be run by scripts in other directories
         self.dir = path.dirname(__file__)
@@ -117,6 +179,10 @@ class Quail:
         self.stopword_list = extract_stopwords(stopword_file)
         #sys.stderr.write("Stop words are: "+str(stopword_list))
 
+	# snippet weight
+	self.snippet_weight = float(self.parameters['snippet_weight'])
+
+		
     	# NB: indexing of document collection happens in separate script
 
 
@@ -179,7 +245,7 @@ class Quail:
         #sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template)
 
         # use the InfoRetriever, the document index, and the search queries to generate a set of passages
-        ir = InfoRetriever(self.index_path)
+        ir = InfoRetriever(self.parameters)
         
         passages = ir.retrieve_passages(search_queries)
         #sys.stderr.write("DEBUG  Here are the passages: \n")
@@ -189,7 +255,7 @@ class Quail:
         # add web cached results to passages -- score inside log can be adjusted accordingly
         #sys.stderr.write("Adding "+str(len(self.cached_results[question.id]))+" web result passages for "+str(question.id)+"\n")
         for cached_result in self.cached_results[question.id]:
-            passages.append(Passage(cached_result, -math.log(0.9)**-1, None))
+            passages.append(Passage(cached_result, -math.log(self.snippet_weight)**-1, None))
 
        	# instantiate an AnswerProcessor that takes set of passages and the AnswerTemplate object
         ap = AnswerProcessor(passages,ans_template,self.stopword_list)

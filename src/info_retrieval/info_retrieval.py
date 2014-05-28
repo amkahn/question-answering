@@ -53,11 +53,14 @@ class InfoRetriever:
         #sys.stderr.write(query_str + '\n')
       	sys.stderr.write('Running query: ' + str(query.search_terms.keys()) + '\n')
 
-        try:
-		docs = self.query_env.runQuery("#weight[passage" + self.passage_length + ":" + self.indri_window_size + "](" + query_str + ")", self.indri_passages)
+	
+	indri_query = "#weight[passage" + self.passage_length + ":" + self.indri_window_size + "](" + query_str + ")"
+        
+	try:
+	    docs = self.query_env.runQuery(indri_query, self.indri_passages)
         except:
             docs = []
-            sys.stderr.write("Couldn't run query: " + query_str + '\n')
+            sys.stderr.write("Couldn't run query: " + indri_query + '\n')
         for doc in docs:
             doc_num = doc.document
             begin = doc.begin
