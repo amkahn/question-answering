@@ -27,59 +27,58 @@ from collections import defaultdict
 # assigns default values if none are specified. 
 
 def get_parameters(args, script_dir):
-	
-	
-	if len(args) == 0:
-		raise Exception('Must include runtag as first argument.')
+    
+    
+    if len(args) == 0:
+        raise Exception('Must include runtag as first argument.')
 
-	if '=' in args[0]:
-		raise Exception('First argument must be run tag only.')
+    if '=' in args[0]:
+        raise Exception('First argument must be run tag only.')
 
-	parameters = {'run_tag':args[0]}
+    parameters = {'run_tag':args[0]}
 
-	for arg in args[1:]:
-		split = arg.split('=')
-		if len(split) == 2:
-			parameters[split[0]] = split[1]
-		else:
-			sys.stderr.write('Ill-formed parameter: ' + arg)
-		
-	# CODE FOR DEFAULT VALUES HERE
-	
-	keys = parameters.keys()
-	
-	if 'q_file' not in keys:
-		parameters['q_file'] = '/dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml'	
-			
-	if 'stoplist' not in keys:
-		parameters['stoplist'] = script_dir + '/stoplist.dft'
-		
-	if 'web_cache' not in keys:
-		parameters['web_cache'] = script_dir + '/cached_web_results/TREC-2006.3pg.web_cache'
-	
-	if 'index' not in keys:
-		parameters['index'] = '/home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.porter.stoplist'
+    for arg in args[1:]:
+        split = arg.split('=')
+        if len(split) == 2:
+            parameters[split[0]] = split[1]
+        else:
+            sys.stderr.write('Ill-formed parameter: ' + arg)
+        
+    # CODE FOR DEFAULT VALUES HERE
+    
+    keys = parameters.keys()
+    
+    if 'q_file' not in keys:
+        parameters['q_file'] = '/dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml'    
+            
+    if 'stoplist' not in keys:
+        parameters['stoplist'] = script_dir + '/stoplist.dft'
+        
+    if 'web_cache' not in keys:
+        parameters['web_cache'] = script_dir + '/cached_web_results/TREC-2006.3pg.web_cache'
+    
+    if 'index' not in keys:
+        parameters['index'] = '/home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.porter.stoplist'
 
-	if 'indri_passages' not in keys:
-		parameters['indri_passages'] = '40'
-	
-	if 'passage_length' not in keys:
-		parameters['passage_length'] = '100'
-		
-	if 'snippet_weight' not in keys:
-		parameters ['snippet_weight'] = '0.9'
-		
-	if 'indri_window_size' not in keys:
-		parameters['indri_window_size'] = '50'
+    if 'indri_passages' not in keys:
+        parameters['indri_passages'] = '40'
+    
+    if 'passage_length' not in keys:
+        parameters['passage_length'] = '100'
+        
+    if 'snippet_weight' not in keys:
+        parameters ['snippet_weight'] = '0.9'
+        
+    if 'indri_window_size' not in keys:
+        parameters['indri_window_size'] = '50'
 
-    sys.stderr.write("The parameters are: "+str(parameters)+"\n")	
-	return parameters
+    return parameters
 
 def main():
 
     script_dir = path.dirname(path.realpath(__file__))
    
-	
+    
     # pass arguments to get_parameters method 
     sys.stderr.write('Getting parameters...\n')
     parameters = get_parameters(sys.argv[1:], script_dir)
@@ -92,7 +91,7 @@ def main():
     quail = Quail(parameters)
 
     questions = quail.generate_q_list()
-	# filter for only factoid questions
+    # filter for only factoid questions
     questions = filter(lambda x: x.type=='FACTOID', questions)
 
     partial_process_question = partial(process_question, object=quail)
@@ -160,15 +159,15 @@ def process_question(question,object):
 class Quail:
     def __init__(self, parameters):
     
-    	self.parameters = parameters
+        self.parameters = parameters
 
-    	# path to the TREC question file
+        # path to the TREC question file
         self.q_file = open(self.parameters['q_file'],'r')
-		
-	# path to the document index
+        
+        # path to the document index
         self.index_path = self.parameters['index']
         
-    	# web cached results for the questions
+        # web cached results for the questions
         self.cached_results = self.process_web_cache(open(self.parameters['web_cache'],'r'))
 
         # path to the directory containing this script, so it can be run by scripts in other directories
@@ -180,20 +179,20 @@ class Quail:
         self.stopword_list = extract_stopwords(stopword_file)
         #sys.stderr.write("Stop words are: "+str(stopword_list))
 
-	# snippet weight
-	self.snippet_weight = float(self.parameters['snippet_weight'])
+        # snippet weight
+        self.snippet_weight = float(self.parameters['snippet_weight'])
 
-		
-    	# NB: indexing of document collection happens in separate script
+        
+        # NB: indexing of document collection happens in separate script
 
 
     # This method takes an XML file of questions as input, creates relevant Question objects,
     # and returns them in a list.
     
     def generate_q_list(self):
-	    # parse the xml file using BeautifulSoup
-    	# create relevant Question objects from the parse tree
-	    # return the Question objects in a sequential list
+        # parse the xml file using BeautifulSoup
+        # create relevant Question objects from the parse tree
+        # return the Question objects in a sequential list
 
         soup = BeautifulSoup(self.q_file)
 
@@ -236,9 +235,9 @@ class Quail:
     def process_question(self,question):
         #sys.stderr.write("\nDEBUG  Here is the question: %s\n" % question)
 
-	    # instantiate a QueryProcessor and use it to generate a set of searches and an AnswerTemplate object
+        # instantiate a QueryProcessor and use it to generate a set of searches and an AnswerTemplate object
         qp = QueryProcessor(question, self.stopword_list, self.cached_results[question.id])
-		
+        
         search_queries = qp.generate_queries()
         #sys.stderr.write("DEBUG  Here are the search queries: %s\n" % search_queries)
 
@@ -258,7 +257,7 @@ class Quail:
         for cached_result in self.cached_results[question.id]:
             passages.append(Passage(cached_result, -math.log(self.snippet_weight)**-1, None))
 
-       	# instantiate an AnswerProcessor that takes set of passages and the AnswerTemplate object
+        # instantiate an AnswerProcessor that takes set of passages and the AnswerTemplate object
         ap = AnswerProcessor(passages,ans_template,self.stopword_list)
 
         # get a ranked list of answers
@@ -269,4 +268,4 @@ class Quail:
 
 
 if __name__ == '__main__':
-	main()
+    main()
