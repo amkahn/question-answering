@@ -15,16 +15,17 @@ from copy import deepcopy
 
 
 # A QueryProcessor object has the attribute "question", a Question object; "stoplist", a
-# list of stopwords (strings); non_ne_voc, a list of non-named entities appearing in the
-# question and target mapped to counts; ne_voc, a list of named-entity terms appearing in
-# the question and target mapped to counts; and query_voc, a list of all query terms
-# (including named entities).
+# list of stopwords (strings); "web_snippets", a list of web snippets (strings);
+# "non_ne_voc", a list of non-named entities appearing in the question and target mapped
+# to counts; "ne_voc", a list of named-entity terms appearing in the question and target
+# mapped to counts; and query_voc, a list of all query terms (including named entities).
 
 class QueryProcessor(object):
 
-    def __init__(self, question, stoplist=None):
+    def __init__(self, question, stoplist=None, web_snippets=None):
         self.question = question
         self.stoplist = stoplist
+        self.web_snippets = web_snippets
         self.non_ne_voc, self.ne_voc, self.query_voc = self.generate_voc()
 
 
@@ -59,15 +60,15 @@ class QueryProcessor(object):
         non_ne = q_non_ne
         ne = q_ne + tokenized_target
             
-        sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the non-named entities in the question and target: %s\n" % non_ne)
-        sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the named entities in the question and target: %s\n" % ne)
+#       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the non-named entities in the question and target: %s\n" % non_ne)
+#       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the named entities in the question and target: %s\n" % ne)
         
         # TODO: Decide how to handle punctuation within tokens. For now, just delete it.
         # Consider replacing hyphens with spaces (would want to do this before tokenizing).
 
 #       sys.stderr.write("DEBUG  Here are the non-named entity query terms before punctuation stripping: %s\n" % non_ne)
         for i in range(len(non_ne)):
-        	non_ne[i] = re.sub(r'\W', '', non_ne[i])
+            non_ne[i] = re.sub(r'\W', '', non_ne[i])
         non_ne = filter(lambda x: x != '', non_ne)
 
 #       sys.stderr.write("DEBUG  Here are the non-named entity query terms after punctuation stripping: %s\n" % non_ne)
@@ -109,8 +110,8 @@ class QueryProcessor(object):
 
 
 
-	# This method returns a list of SearchQuery objects.
-	
+    # This method returns a list of SearchQuery objects.
+    
     def generate_queries(self):
         # For now, the weights of the search terms in the SearchQuery are equal to the
         # counts of the term in the question plus the target.
@@ -120,14 +121,20 @@ class QueryProcessor(object):
         queries = []
 
         initial_query = SearchQuery(self.query_voc, 1)
-#       sys.stderr.write("DEBUG  Here is the initial query: %s\n" % initial_query)
-        queries.append(initial_query)
+        sys.stderr.write("DEBUG  Here is the initial query for question %s: %s\n" % (self.question.id, initial_query))
+#       queries.append(initial_query)
         
-        #expanded_query = self.expand_query()
-        #queries.append(expanded_query)
+        # Create another query using web redundancy expansion with the top 5 unigrams, weights
+        # of 0.5 for the query terms, and a weight of 1 for the query.
+        web_expanded_query = self.web_expand_query(5, 0.5, 1)
+        sys.stderr.write("DEBUG  Here is the web redundancy-expanded query for question %s: %s\n" % (self.question.id, web_expanded_query))
+        queries.append(web_expanded_query)
+        
+        #lin_expanded_query = self.lin_expand_query()
+        #queries.append(lin_expanded_query)
 
         # TODO: put NEs back into expanded query objects
-        # TODO: note - do we want to upweight the NEs?
+        # TODO: note - do we want to upweight the NEs? (here and elsewhere)
 
 #         for term in self.ne:
 #             for query in queries:
@@ -141,27 +148,27 @@ class QueryProcessor(object):
 
 
 
-    # This method uses NLTK's Lin thesaurus corpus to expand the initial query to form a second query containing
-    # the initial query terms and their top n synonyms (for now, n=3; we can experiment
-    # with different n to figure out what's optimal--and maybe we want a different
-    # n for different POSs), then returns the expanded query.
+    # This method uses NLTK's Lin thesaurus corpus to expand the initial query to form a
+    # second query containing the initial query terms and their top n synonyms (for now,
+    # n=3; we can experiment with different n to figure out what's optimal--and maybe we
+    # want a different n for different POSs), then returns the expanded query.
     #
     # TODO: Consider POS-tagging the query terms first and passing the expected POS (perhaps
     # just categorized as noun, verb, or adj, ignoring queries that do not fall into
-    # these categories) to the expand_query method, which will filter synonyms accordingly.
+    # these categories) to the lin_expand_query method, which will filter synonyms accordingly.
     #
     # For now, since we still have a lot of work to do to prevent query expansion from
     # introducing crazy errors, just assign this query weight 0 (we can experiment with
     # different weighting schemes).
 
-    def expand_query(self):
+    def lin_expand_query(self):
 
         expanded_voc = {}
         for term in self.query_voc:
             # copy the term and its weight to the dictionary for the expanded query
             expanded_voc[term] = self.non_ne_voc[term]
             # get the top 3 synonyms of the term and their similarity measures
-            term_syns = self.expand_term(term, 3)
+            term_syns = self.get_lin_terms(term, 3)
             for item in term_syns:
                 # unpack the 2-tuple of synonym and similarity measure
                 syn, sim_measure = item
@@ -183,7 +190,7 @@ class QueryProcessor(object):
     # under the categories of adj, verb, and noun (this would have the added bonus of removing
     # a lot of stopwords automatically).
     
-    def expand_term(self, term, num_syns):
+    def get_lin_terms(self, term, num_syns):
 #       sys.stderr.write("DEBUG  Getting scored synonyms of %s\n" % term)
         syns = thes.scored_synonyms(term)
 #       sys.stderr.write("DEBUG  Here are the synsets returned from the Lin thesaurus: %s\n" % syns)
@@ -207,15 +214,68 @@ class QueryProcessor(object):
 
 
 
-	# This method performs question classification using regular expressions, then generates
-	# and returns an AnswerTemplate object.
-	
+    # This method takes as input the number of top unigrams to return (an int), a weight
+    # for the unigrams, and a weight for the expanded query; generates a SearchQuery object
+    # incorporating both the initial query vocabulary and the top n query terms; and then
+    # returns the expanded query.
+    
+    def web_expand_query(self, num_unigrams, unigram_weight, query_weight):
+        expanded_voc = deepcopy(self.query_voc)
+        top_web_unigrams = self.get_web_unigrams(num_unigrams)
+        for unigram in top_web_unigrams:
+            expanded_voc[unigram] = unigram_weight
+        expanded_query = SearchQuery(expanded_voc, query_weight)
+        return expanded_query
+    
+    
+    
+    # This method takes as input the number of top unigrams to return (an int) and returns
+    # a list of most frequent unigrams (strings) appearing in the web snippets.
+    
+    def get_web_unigrams(self, n):
+        unigrams = defaultdict(int)
+        
+        for snippet in self.web_snippets:
+            # Tokenize the snippets
+            # TODO: UTF-8 encoding
+            sentences = []
+            snippet_chunks = snippet.lower().split('...')
+            for chunk in snippet_chunks:
+                sentences.extend(nltk.sent_tokenize(chunk))
+#           sys.stderr.write("DEBUG  Here is the list of sentences from the web snippet: %s\n" % sentences)
+            tokens = []
+            for sentence in sentences:
+                tokens.extend(nltk.word_tokenize(sentence))
+            sys.stderr.write("DEBUG  Here is the list of tokens from the web snippet: %s\n" % tokens)
+
+            # Strip punctuation from tokens, which are strings but I'm not sure of the encoding
+            # TODO: how to deal with hyphens?
+            for i in range(len(tokens)):
+                tokens[i] = re.sub(r'\W', '', tokens[i])
+            tokens = filter(lambda x: x != '', tokens)
+            
+            # Add the unigrams to frequency dictionary if they are not stopwords and not
+            # terms in the initial query
+            for i in range(len(tokens)):
+                lc_query_terms = [term.lower() for term in deepcopy(self.query_voc.keys())]
+#               sys.stderr.write("DEBUG  Here are the initial query terms: %s\n" % self.query_voc.keys())
+#               sys.stderr.write("DEBUG  Here are the lower-cased initial query terms: %s\n" % lc_query_terms)
+                if not tokens[i] in self.stoplist and not tokens[i] in lc_query_terms:
+                    unigrams[tokens[i]] += 1
+
+        return heapq.nlargest(n, unigrams, key=lambda k: unigrams[k])
+
+
+
+    # This method performs question classification using regular expressions, then generates
+    # and returns an AnswerTemplate object.
+    
     def generate_ans_template(self):
-	
-		# NB: The following if statement should always evaluate as True in our system, but
-		# its inclusion enables the system to more easily be extended to handle other types
-		# of questions, for which the text-processing and AnswerTemplate-generation steps
-		# might be slightlydifferent.
+    
+        # NB: The following if statement should always evaluate as True in our system, but
+        # its inclusion enables the system to more easily be extended to handle other types
+        # of questions, for which the text-processing and AnswerTemplate-generation steps
+        # might be slightlydifferent.
 
         if self.question.type=="FACTOID":
             # by default, assign all answer types some small weight
@@ -287,13 +347,12 @@ class QueryProcessor(object):
             current_ne = ' '.join(leaf[0] for leaf in leaves)
             ne.append(current_ne)
             # note: this isn't foolproof, but should work for now. I can't figure out how to get
-            # the indices of the NE terms in the surface string
+            # the indices of the NE terms in the surface string -Clara
             for leaf in leaves:
                 #sys.stderr.write("trying to remove "+leaf[0]+" from "+str(non_ne)+"\n")
                 non_ne.remove(leaf[0])
         
-        sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: %s\n" % non_ne)
-        sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: %s\n" % ne)
+#       sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: %s\n" % non_ne)
+#       sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: %s\n" % ne)
 
-        return non_ne, ne
-        
+        return non_ne, ne      

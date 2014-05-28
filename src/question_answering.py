@@ -170,7 +170,7 @@ class Quail:
         #sys.stderr.write("\nDEBUG  Here is the question: %s\n" % question)
 
 	    # instantiate a QueryProcessor and use it to generate a set of searches and an AnswerTemplate object
-        qp = QueryProcessor(question, self.stopword_list)
+        qp = QueryProcessor(question, self.stopword_list, self.cached_results[question.id])
 		
         search_queries = qp.generate_queries()
         #sys.stderr.write("DEBUG  Here are the search queries: %s\n" % search_queries)
