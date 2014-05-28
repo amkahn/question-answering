@@ -1,0 +1,96 @@
+000 (130849.000.000) 05/27 22:09:29 Job submitted from host: <192.168.100.50:50435>
+...
+001 (130849.000.000) 05/27 22:09:29 Job executing on host: <192.168.100.51:39141>
+...
+006 (130849.000.000) 05/27 22:09:38 Image size of job updated: 135724
+	22  -  MemoryUsage of job (MB)
+	21732  -  ResidentSetSize of job (KB)
+...
+010 (130849.000.000) 05/27 22:14:36 Job was suspended.
+	Number of processes actually suspended: 1
+...
+006 (130849.000.000) 05/27 22:14:36 Image size of job updated: 161820
+	47  -  MemoryUsage of job (MB)
+	47804  -  ResidentSetSize of job (KB)
+...
+011 (130849.000.000) 05/27 22:20:32 Job was unsuspended.
+...
+006 (130849.000.000) 05/27 22:24:40 Image size of job updated: 162400
+	48  -  MemoryUsage of job (MB)
+	48408  -  ResidentSetSize of job (KB)
+...
+006 (130849.000.000) 05/27 22:29:41 Image size of job updated: 162664
+	48  -  MemoryUsage of job (MB)
+	48916  -  ResidentSetSize of job (KB)
+...
+010 (130849.000.000) 05/27 22:33:43 Job was suspended.
+	Number of processes actually suspended: 1
+...
+011 (130849.000.000) 05/27 22:37:13 Job was unsuspended.
+...
+006 (130849.000.000) 05/27 22:39:42 Image size of job updated: 163156
+	49  -  MemoryUsage of job (MB)
+	49400  -  ResidentSetSize of job (KB)
+...
+006 (130849.000.000) 05/27 22:44:43 Image size of job updated: 163720
+	49  -  MemoryUsage of job (MB)
+	49924  -  ResidentSetSize of job (KB)
+...
+006 (130849.000.000) 05/27 22:49:43 Image size of job updated: 164416
+	50  -  MemoryUsage of job (MB)
+	50660  -  ResidentSetSize of job (KB)
+...
+010 (130849.000.000) 05/27 22:50:19 Job was suspended.
+	Number of processes actually suspended: 1
+...
+006 (130849.000.000) 05/27 22:50:19 Image size of job updated: 164416
+	50  -  MemoryUsage of job (MB)
+	50664  -  ResidentSetSize of job (KB)
+...
+011 (130849.000.000) 05/27 22:53:25 Job was unsuspended.
+...
+006 (130849.000.000) 05/27 22:54:44 Image size of job updated: 164652
+	50  -  MemoryUsage of job (MB)
+	50768  -  ResidentSetSize of job (KB)
+...
+006 (130849.000.000) 05/27 22:59:44 Image size of job updated: 165244
+	50  -  MemoryUsage of job (MB)
+	50816  -  ResidentSetSize of job (KB)
+...
+010 (130849.000.000) 05/27 23:00:42 Job was suspended.
+	Number of processes actually suspended: 1
+...
+006 (130849.000.000) 05/27 23:00:42 Image size of job updated: 165332
+	51  -  MemoryUsage of job (MB)
+	51332  -  ResidentSetSize of job (KB)
+...
+011 (130849.000.000) 05/27 23:00:58 Job was unsuspended.
+...
+006 (130849.000.000) 05/27 23:04:45 Image size of job updated: 165872
+	51  -  MemoryUsage of job (MB)
+	51892  -  ResidentSetSize of job (KB)
+...
+010 (130849.000.000) 05/27 23:07:32 Job was suspended.
+	Number of processes actually suspended: 1
+...
+006 (130849.000.000) 05/27 23:07:32 Image size of job updated: 165872
+	51  -  MemoryUsage of job (MB)
+	51896  -  ResidentSetSize of job (KB)
+...
+011 (130849.000.000) 05/27 23:09:27 Job was unsuspended.
+...
+005 (130849.000.000) 05/27 23:10:09 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:02:02, Sys 0 00:00:01  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:02:02, Sys 0 00:00:01  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request          
+	   Cpus                 :                 1          
+	   Disk (KB)            :        3        3          
+	   Memory (MB)          :       51     2048          
+...
