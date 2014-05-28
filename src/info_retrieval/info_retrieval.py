@@ -16,11 +16,16 @@ class InfoRetriever:
 
     # This method builds a QueryEnvironment associated with the indexed document collection.
     
-    def __init__(self, index_path):
-        self.path_to_idx = index_path
+    def __init__(self, parameters):
+        self.path_to_idx = parameters['index']
         self.index = pymur.Index(self.path_to_idx)
         self.query_env = pymur.QueryEnvironment()
         self.query_env.addIndex(self.path_to_idx)
+        self.indri_passages = int(parameters['indri_passages'])
+        self.passage_length = parameters['passage_length']
+        self.indri_window_size = parameters['indri_window_size']
+        
+        
 
 
     # This method takes a collection of SearchQuery objects as input and returns a list
@@ -46,9 +51,10 @@ class InfoRetriever:
        
         passages = []
         #sys.stderr.write(query_str + '\n')
-       
+      	sys.stderr.write('Running query: ' + str(query.search_terms.keys()) + '\n')
+
         try:
-            docs = self.query_env.runQuery("#weight[passage100:75](" + query_str + ")", 100)
+		docs = self.query_env.runQuery("#weight[passage" + self.passage_length + ":" + self.indri_window_size + "](" + query_str + ")", self.indri_passages)
         except:
             docs = []
             sys.stderr.write("Couldn't run query: " + query_str + '\n')
@@ -62,7 +68,7 @@ class InfoRetriever:
 
             orig_text = " ".join([x for x in orig_doc.text.split("<TEXT>")[1].split() if "<" not in x])
             passage_text = ' '.join(nltk.word_tokenize(orig_text)[begin:end])
-            # print "passage text", passage_text
+            print "passage text", passage_text
 	    # passage weight transformation happens here
             passage = Passage(passage_text, query.weight*(-doc.score**-1), doc_id)
             passages.append(passage)

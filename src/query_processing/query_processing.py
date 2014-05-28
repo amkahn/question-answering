@@ -102,8 +102,6 @@ class QueryProcessor(object):
             else:
                 query_dict[ne] += count
                     
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of non-named entities in the question and target: %s\n" % non_ne_dict)
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of named-entity terms in the question and target: %s\n" % ne_dict)
 #       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of all terms in the question and target: %s\n" % query_dict)
 
         return non_ne_dict, ne_dict, query_dict
@@ -121,13 +119,13 @@ class QueryProcessor(object):
         queries = []
 
         initial_query = SearchQuery(self.query_voc, 1)
-        sys.stderr.write("DEBUG  Here is the initial query for question %s: %s\n" % (self.question.id, initial_query))
+        #sys.stderr.write("DEBUG  Here is the initial query for question %s: %s\n" % (self.question.id, initial_query))
 #       queries.append(initial_query)
         
         # Create another query using web redundancy expansion with the top 5 unigrams, weights
         # of 0.5 for the query terms, and a weight of 1 for the query.
         web_expanded_query = self.web_expand_query(5, 0.5, 1)
-        sys.stderr.write("DEBUG  Here is the web redundancy-expanded query for question %s: %s\n" % (self.question.id, web_expanded_query))
+        #sys.stderr.write("DEBUG  Here is the web redundancy-expanded query for question %s: %s\n" % (self.question.id, web_expanded_query))
         queries.append(web_expanded_query)
         
         #lin_expanded_query = self.lin_expand_query()
@@ -246,7 +244,7 @@ class QueryProcessor(object):
             tokens = []
             for sentence in sentences:
                 tokens.extend(nltk.word_tokenize(sentence))
-            sys.stderr.write("DEBUG  Here is the list of tokens from the web snippet: %s\n" % tokens)
+            #sys.stderr.write("DEBUG  Here is the list of tokens from the web snippet: %s\n" % tokens)
 
             # Strip punctuation from tokens, which are strings but I'm not sure of the encoding
             # TODO: how to deal with hyphens?

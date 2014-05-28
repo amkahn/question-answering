@@ -1,0 +1,10 @@
+Getting parameters...
+Parameters: {'q_file': '/dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml', 'index': '/home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.porter.stoplist', 'snippet_weight': 0.9, 'indri_window_size': 50, 'indri_passages': 40, 'stoplist': '/home2/cgordon1/LING573/question-answering/src/stoplist.dft', 'passage_length': 100, 'web_cache': 'src/cached_web_results/TREC-2006.4pg.web_cache', 'run_tag': 'param_test'}
+Traceback (most recent call last):
+  File "/home2/cgordon1/LING573/question-answering/src/question_answering_param.py", line 271, in <module>
+    main()
+  File "/home2/cgordon1/LING573/question-answering/src/question_answering_param.py", line 91, in main
+    quail = Quail(parameters)
+  File "/home2/cgordon1/LING573/question-answering/src/question_answering_param.py", line 171, in __init__
+    self.cached_results = self.process_web_cache(open(self.parameters['web_cache'],'r'))
+IOError: [Errno 2] No such file or directory: 'src/cached_web_results/TREC-2006.4pg.web_cache'
