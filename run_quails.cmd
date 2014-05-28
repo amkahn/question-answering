@@ -1,12 +1,8 @@
-question_file = /dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml
-doc_index = /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.porter.stoplist
-web_cache = src/cached_web_results/TREC-2006.3pg.web_cache
-run_tag = test
-output_file = outputs/$(run_tag).outputs
-results_file = $(run_tag)
+run_tag = param_test
+web_cache = src/cached_web_results/TREC-2006.4pg.web_cache
 
 executable = src/question_answering.sh
-arguments = $(question_file) $(doc_index) $(web_cache) $(run_tag) $(output_file) $(results_file)
+arguments = $(run_tag) web_cache=$(web_cache)
 Universe = vanilla
 getenv = true
 output = $(run_tag).out
@@ -15,3 +11,4 @@ error = $(run_tag).err
 transfer_executable = false
 request_memory = 1024
 Queue
+
