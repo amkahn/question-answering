@@ -24,6 +24,9 @@ def main():
 	# second argument is the output file to cache the results
     cached_results = open(sys.argv[2],'w')
 
+    # third argument is number of pages for web cache
+    num_pages = int(sys.argv[3])
+
 	# do XML stripping of TREC question file
     questions = generate_q_list(q_file)
     q_file.close()
@@ -40,14 +43,14 @@ def main():
     for question in questions:
         web_snippets[question.id] = []
         query = "+".join(question.target.split()) + "+" + "+".join(question.q.split())
-        for i in range(1,7):
+        for i in range(1,num_pages+1):
             r = requests.get("http://www.search.ask.com/web?q="+query+"&page="+str(i))
             sys.stderr.write("Getting search results for query: '"+query+"' from page: "+str(i)+"\n")
             data = r.text
             #full_text[question.id] = data.encode('utf-8')
             soup = BeautifulSoup(data)
             for element in soup.find_all('span',{'class':'nDesc'}):
-                web_snippets[question.id].append(element.get_text().encode('utf-8'))
+                web_snippets[question.id].append(element.get_text().encode('ascii','ignore'))
             time.sleep(1)
 
 
