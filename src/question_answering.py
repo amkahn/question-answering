@@ -71,7 +71,8 @@ def get_parameters(args, script_dir):
 		
 	if 'indri_window_size' not in keys:
 		parameters['indri_window_size'] = '50'
-	
+
+    sys.stderr.write("The parameters are: "+str(parameters)+"\n")	
 	return parameters
 
 def main():
