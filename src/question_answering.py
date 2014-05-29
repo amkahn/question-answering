@@ -107,6 +107,12 @@ def get_parameters(args, script_dir):
     if 'snippet_passage_count' not in keys:
         parameters['snippet_passage_count'] = '10'
 
+    if 'passages_per_doc_id' not in keys:
+        parameters['passages_per_doc_id'] = '1'
+
+    if 'passages_per_answer_candidate' not in keys:
+        parameters['passages_per_answer_candidate'] = '1'
+
     return parameters
 
 
