@@ -17,8 +17,8 @@ from copy import deepcopy
 # A QueryProcessor object has the attribute "question", a Question object; "stoplist", a
 # list of stopwords (strings); "web_snippets", a list of web snippets (strings);
 # "non_ne_voc", a list of non-named entities appearing in the question and target mapped
-# to counts; "ne_voc", a list of named-entity terms appearing in the question and target
-# mapped to counts; and query_voc, a list of all query terms (including named entities).
+# to counts (i.e., terms eligible for query expansion); and query_voc, a list of all query
+# terms (including named entities).
 
 class QueryProcessor(object):
 
@@ -26,7 +26,7 @@ class QueryProcessor(object):
         self.question = question
         self.stoplist = stoplist
         self.web_snippets = web_snippets
-        self.non_ne_voc, self.ne_voc, self.query_voc = self.generate_voc()
+        self.non_ne_voc, self.query_voc = self.generate_voc()
 
 
     # This method returns a dictionary of unigrams appearing in the original question and
@@ -56,8 +56,8 @@ class QueryProcessor(object):
         # terms. (Currently, the only difference between this and the previous code block
         # is that stopwords don't get filtered from the target -- filtering them causes an
         # increase in our strict score but a drop in our lenient score.)
-        non_ne = q_non_ne
-        ne = q_ne + tokenized_target
+#       non_ne = q_non_ne
+#       ne = q_ne + tokenized_target
             
 #       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the non-named entities in the question and target: %s\n" % non_ne)
 #       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the named entities in the question and target: %s\n" % ne)
@@ -68,12 +68,13 @@ class QueryProcessor(object):
 #       for i in range(len(non_ne)):
 #           non_ne[i] = re.sub(r'\W', '', non_ne[i])
 #       non_ne = filter(lambda x: x != '', non_ne)
-
 #       sys.stderr.write("DEBUG  Here are the non-named entity query terms after punctuation stripping: %s\n" % non_ne)
-        non_ne_dict = {}
 
-        # Create a dictionary of all non-named entity terms, excluding stopwords, mapped to counts in the question/target
-        for term in non_ne:
+
+        # Create a dictionary of all non-named entity terms, excluding stopwords, mapped
+        # to counts in the question/target.
+        non_ne_dict = {}
+        for term in q_non_ne:
             term = term.lower()
             if term not in self.stoplist:
                 if non_ne_dict.get(term) == None:
@@ -83,43 +84,46 @@ class QueryProcessor(object):
 #           else:
 #               sys.stderr.write("DEBUG  Removing stopword %s from query\n" % term)
         
-        ne_dict = {}
         
-        # Create a dictionary of all named entities mapped to counts in the question/target
-        for term in ne:
-            term = term.lower()
-            if ne_dict.get(term) == None:
-                ne_dict[term] = 1
-            else:
-                ne_dict[term] += 1
+        # Create a dictionary of all terms (non-named entities, named entities, and target
+        # tokens) mapped to counts in the question/target.
         
-        # Create a dictionary of all terms (named entities and non-named entities) mapped to counts in the question/target
+        # Start with existing dictionary of non-named entities.
         query_dict = deepcopy(non_ne_dict)
         
-        for ne, count in ne_dict.items():
-            if query_dict.get(ne) == None:
-                query_dict[ne] = count
+        # Add the named entities.
+        for term in q_ne:
+            term = term.lower()
+            if query_dict.get(term) == None:
+                query_dict[term] = 1
             else:
-                query_dict[ne] += count
-                    
+                query_dict[term] += 1
+
+        # Add the target tokens.
+        for term in tokenized_target:
+            term = term.lower()
+            if query_dict.get(term) == None:
+                query_dict[term] = 1
+            else:
+                query_dict[term] += 1
+                  
 #       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of all terms in the question and target: %s\n" % query_dict)
 
-        return non_ne_dict, ne_dict, query_dict
+        return non_ne_dict, query_dict
 
 
 
     # This method returns a list of SearchQuery objects.
     
     def generate_queries(self):
-        # For now, the weights of the search terms in the SearchQuery are equal to the
+        queries = []
+        
+        # Create an initial query in which the weights of the search terms are equal to the
         # counts of the term in the question plus the target.
         # For now, just assign this query weight 1 (we can experiment with different weighting
         # schemes).
-
-        queries = []
-
         initial_query = SearchQuery(self.query_voc, 1)
-        #sys.stderr.write("DEBUG  Here is the initial query for question %s: %s\n" % (self.question.id, initial_query))
+#       sys.stderr.write("DEBUG  Here is the initial query for question %s: %s\n" % (self.question.id, initial_query))
 #       queries.append(initial_query)
         
         # Create another query using web redundancy expansion with the top 5 unigrams, weights
@@ -128,11 +132,10 @@ class QueryProcessor(object):
         #sys.stderr.write("DEBUG  Here is the web redundancy-expanded query for question %s: %s\n" % (self.question.id, web_expanded_query))
         queries.append(web_expanded_query)
         
-        #lin_expanded_query = self.lin_expand_query()
-        #queries.append(lin_expanded_query)
+#       lin_expanded_query = self.lin_expand_query()
+#       queries.append(lin_expanded_query)
 
         # TODO: put NEs back into expanded query objects
-        # TODO: note - do we want to upweight the NEs? (here and elsewhere)
 
 #         for term in self.ne:
 #             for query in queries:
@@ -154,25 +157,21 @@ class QueryProcessor(object):
     # TODO: Consider POS-tagging the query terms first and passing the expected POS (perhaps
     # just categorized as noun, verb, or adj, ignoring queries that do not fall into
     # these categories) to the lin_expand_query method, which will filter synonyms accordingly.
-    #
-    # For now, since we still have a lot of work to do to prevent query expansion from
-    # introducing crazy errors, just assign this query weight 0 (we can experiment with
-    # different weighting schemes).
 
     def lin_expand_query(self):
-
-        expanded_voc = {}
-        for term in self.query_voc:
-            # copy the term and its weight to the dictionary for the expanded query
-            expanded_voc[term] = self.non_ne_voc[term]
-            # get the top 3 synonyms of the term and their similarity measures
+        # Copy the initial query dictionary.
+        expanded_voc = deepcopy(query_voc)
+        
+        # For each non-named entity:
+        for term in self.non_ne_voc:
+            # Get the top n synonyms of the term and their similarity measures.
             term_syns = self.get_lin_terms(term, 3)
             for item in term_syns:
-                # unpack the 2-tuple of synonym and similarity measure
+                # Unpack the 2-tuple of synonym and similarity measure.
                 syn, sim_measure = item
-                # add the synonym to the dictionary for the expanded query, assigning it
-                # weight = weight of original term * similarity measure of synonym
-                expanded_voc[syn] = expanded_voc[term] * sim_measure
+                # Add the synonym to the dictionary for the expanded query, assigning it
+                # weight = weight of original term * similarity measure of synonym.
+                expanded_voc[syn] = non_ne_voc[term] * sim_measure
         expanded_query = SearchQuery(expanded_voc, 0)
         return expanded_query
 
@@ -234,8 +233,7 @@ class QueryProcessor(object):
         unigrams = defaultdict(int)
         
         for snippet in self.web_snippets:
-            # Tokenize the snippets
-            # TODO: UTF-8 encoding
+            # Tokenize the snippets.
             sentences = []
             snippet_chunks = snippet.lower().split('...')
             for chunk in snippet_chunks:
@@ -246,18 +244,18 @@ class QueryProcessor(object):
                 tokens.extend(nltk.word_tokenize(sentence))
             #sys.stderr.write("DEBUG  Here is the list of tokens from the web snippet: %s\n" % tokens)
 
-            # Strip punctuation from tokens, which are strings but I'm not sure of the encoding
-            # TODO: how to deal with hyphens?
+            # Strip punctuation from tokens.
             for i in range(len(tokens)):
                 tokens[i] = re.sub(r'\W', '', tokens[i])
             tokens = filter(lambda x: x != '', tokens)
             
             # Add the unigrams to frequency dictionary if they are not stopwords and not
-            # terms in the initial query
+            # terms in the initial query.
             for i in range(len(tokens)):
                 if not tokens[i] in self.stoplist and not tokens[i] in self.query_voc.keys():
                     unigrams[tokens[i]] += 1
 
+        # Return n most frequent unigrams.
         return heapq.nlargest(n, unigrams, key=lambda k: unigrams[k])
 
 
@@ -273,11 +271,12 @@ class QueryProcessor(object):
         # might be slightlydifferent.
 
         if self.question.type=="FACTOID":
-            # by default, assign all answer types some small weight
+
+            # By default, assign all answer types some small weight.
             ans_types = defaultdict(lambda: 0.1)
 #           sys.stderr.write("\nDEBUG  Here is the question: %s\n" % self.question.q)
          
-            # attempt to predict certain answer type using rules and set relevant weights accordingly
+            # Attempt to predict certain answer type using rules and set relevant weights accordingly.
             person_match = re.compile(r'\b[Ww]+ho\b|\b[Ww]+hat (?:is|was) (?:his|her) name\b').search(self.question.q)
             name_match = re.compile(r'\b[Ww]+hat (?:is|was) (?:the|its|their) name\b').search(self.question.q)
             loc_match = re.compile(r'\b[Ww]here\b|\b(?:[Ww]hat|[Ww]hich) (?:(?:is|was) the )?(?:city|state|province|territory|country|continent)\b').search(self.question.q)
@@ -312,7 +311,7 @@ class QueryProcessor(object):
             if not match_found:
                 ans_types['other'] = 0.5               
 
-            # generate a corresponding AnswerTemplate object
+            # Generate a corresponding AnswerTemplate object.
             ans_template = AnswerTemplate(self.question.id,set(self.query_voc.keys()),ans_types)
 #           sys.stderr.write("DEBUG  Here is the answer template: %s\n" % ans_template)
             
