@@ -67,22 +67,22 @@ def get_parameters(args, script_dir):
         parameters['stopword_filter_target'] = False
     
     if 'target_upweighting' not in keys:
-        parameters['target_upweighting'] = 1
+        parameters['target_upweighting'] = '1'
 
     if 'ne_upweighting' not in keys:
-        parameters['ne_upweighting'] = 1
+        parameters['ne_upweighting'] = '1'
     
     if 'num_web_exp_terms' not in keys:
-        parameters['num_web_exp_terms'] = 5
+        parameters['num_web_exp_terms'] = '5'
 
     if 'weight_web_exp_terms' not in keys:
-        parameters['weight_web_exp_terms'] = 0.5
+        parameters['weight_web_exp_terms'] = '0.5'
 
     if 'num_lin_exp_terms' not in keys:
-        parameters['num_lin_exp_terms'] = 0
+        parameters['num_lin_exp_terms'] = '0'
             
     if 'weight_lin_exp_query' not in keys:
-        parameters['weight_lin_exp_query'] = 0
+        parameters['weight_lin_exp_query'] = '0'
     
     # IR parameters
     if 'indri_passages' not in keys:

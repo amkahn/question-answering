@@ -71,7 +71,7 @@ class InfoRetriever:
 
             orig_text = " ".join([x for x in orig_doc.text.split("<TEXT>")[1].split() if "<" not in x])
             passage_text = ' '.join(nltk.word_tokenize(orig_text)[begin:end])
-            print "passage text", passage_text
+#           stderr.write("DEBUG  passage text: %s\n" % passage_text)
 	    # passage weight transformation happens here
             passage = Passage(passage_text, query.weight*(-doc.score**-1), doc_id)
             passages.append(passage)

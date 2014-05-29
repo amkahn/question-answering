@@ -96,9 +96,9 @@ class QueryProcessor(object):
         for term in q_ne:
             term = term.lower()
             if query_dict.get(term) == None:
-                query_dict[term] = (1 * self.parameters['ne_upweighting'])
+                query_dict[term] = (1 * int(self.parameters['ne_upweighting']))
             else:
-                query_dict[term] += (1 * self.parameters['ne_upweighting'])
+                query_dict[term] += (1 * int(self.parameters['ne_upweighting']))
 
         # Add the target tokens.
         if self.parameters['stopword_filter_target']:
@@ -108,9 +108,9 @@ class QueryProcessor(object):
             term = term.lower()
             
             if query_dict.get(term) == None:
-                query_dict[term] = (1 * self.parameters['target_upweighting'])
+                query_dict[term] = (1 * int(self.parameters['target_upweighting']))
             else:
-                query_dict[term] += (1 * self.parameters['target_upweighting'])
+                query_dict[term] += (1 * int(self.parameters['target_upweighting']))
                   
 #       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here is the frequency dictionary of all terms in the question and target: %s\n" % query_dict)
 
@@ -132,11 +132,11 @@ class QueryProcessor(object):
 #       queries.append(initial_query)
         
         # Create another query using web redundancy expansion. For now, set weight to 1.
-        web_expanded_query = self.web_expand_query(initial_query, self.parameters['num_web_exp_terms'], self.parameters['weight_web_exp_terms'], 1)
+        web_expanded_query = self.web_expand_query(initial_query, int(self.parameters['num_web_exp_terms']), int(self.parameters['weight_web_exp_terms']), 1)
         #sys.stderr.write("DEBUG  Here is the web redundancy-expanded query for question %s: %s\n" % (self.question.id, web_expanded_query))
         queries.append(web_expanded_query)
         
-#       lin_expanded_query = self.lin_expand_query(initial_query, self.parameters['num_lin_exp_terms'], self.parameters['weight_lin_exp_query'])
+#       lin_expanded_query = self.lin_expand_query(initial_query, int(self.parameters['num_lin_exp_terms']), int(self.parameters['weight_lin_exp_query']))
 #       queries.append(lin_expanded_query)
 
         # TODO: put NEs back into expanded query objects
