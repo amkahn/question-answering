@@ -37,7 +37,7 @@ class QueryProcessor(object):
         tokenized_q = nltk.word_tokenize(self.question.q)
         tokenized_target = nltk.word_tokenize(self.question.target)
 
-        # separate named entities from non-named entities in question and target, respectively
+        # Separate named entities from non-named entities in question.
         # Note: had to strip punctuation from named entities, to avoid Indri freakout -Clara
         # I'm not sure if punctuation-stripping on NEs is actually happening -Andrea
         q_non_ne, q_ne = self.extract_ne(tokenized_q)
@@ -329,7 +329,7 @@ class QueryProcessor(object):
 
 
 
-    # This method takes a list of tokens (strings) as input and returns a 2-tuple in which
+    # This method takes as input a list of tokens (strings) and returns a 2-tuple in which
     # the first element is a list of the tokens that are not named entities (strings) and
     # the second element is a list of the named entities (strings).
 
@@ -339,8 +339,8 @@ class QueryProcessor(object):
         ne = []
         non_ne = input
 
-        pos_tags = nltk.pos_tag(input)
-        extracted = nltk.ne_chunk(pos_tags, binary=True)
+        pos_tagged = nltk.pos_tag(input)
+        extracted = nltk.ne_chunk(pos_tagged, binary=True)
         # find NE-headed subtrees
         for subtree in extracted.subtrees(lambda t: t.node == "NE"):
             leaves = subtree.leaves()
