@@ -1,5 +1,5 @@
-run_tag = test_mult_pass_per_doc_mult_pass_per_ans
-web_cache = src/cached_web_results/TREC-2006.3pg.web_cache
+run_tag = test15
+web_cache = src/cached_web_results/TREC-2006.4pg.web_cache
 
 executable = src/question_answering.sh
 arguments = $(run_tag) web_cache=$(web_cache)
