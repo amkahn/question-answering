@@ -41,8 +41,8 @@ class QueryProcessor(object):
         # I'm not sure if punctuation-stripping on NEs is actually happening -Andrea
         q_non_ne, q_ne = self.extract_ne(tokenized_q)
         
-        # NB: The following three lines of code, which perform NE extraction on the target
-        # and add the named-entity and non-named entity output to the appropriate lists of
+        # The following three lines of code, which perform NE extraction on the target and
+        # add the named-entity and non-named entity output to the appropriate lists of
         # question/target terms, caused our accuracy to drop significantly.
 #       target_non_ne, target_ne = self.extract_ne(tokenized_target)
 #       non_ne = q_non_ne + target_non_ne
@@ -54,29 +54,28 @@ class QueryProcessor(object):
 
         # Or, for slightly better results, add the tokenized target to the list of named-entity
         # terms. (Currently, the only difference between this and the previous code block
-        # is that punctuation doesn't get filtered from the target -- which actually causes
-        # a drop in accuracy -- and that stopwords don't get filtered from the target -- which
-        # causes an increase in accuracy.)
+        # is that stopwords don't get filtered from the target -- filtering them causes an
+        # increase in our strict score but a drop in our lenient score.)
         non_ne = q_non_ne
         ne = q_ne + tokenized_target
             
 #       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the non-named entities in the question and target: %s\n" % non_ne)
 #       sys.stderr.write("DEBUG QUERY_PROCESSING.GENERATE_VOC()  Here are the named entities in the question and target: %s\n" % ne)
         
-        # TODO: Decide how to handle punctuation within tokens. For now, just delete it.
-        # Consider replacing hyphens with spaces (would want to do this before tokenizing).
-
+        # Code for deleting punctuation (no longer used as we do base64 encoding in IR and
+        # doing punctuation-stripping here hurts our accuracy).
 #       sys.stderr.write("DEBUG  Here are the non-named entity query terms before punctuation stripping: %s\n" % non_ne)
-        for i in range(len(non_ne)):
-            non_ne[i] = re.sub(r'\W', '', non_ne[i])
-        non_ne = filter(lambda x: x != '', non_ne)
+#       for i in range(len(non_ne)):
+#           non_ne[i] = re.sub(r'\W', '', non_ne[i])
+#       non_ne = filter(lambda x: x != '', non_ne)
 
 #       sys.stderr.write("DEBUG  Here are the non-named entity query terms after punctuation stripping: %s\n" % non_ne)
         non_ne_dict = {}
 
         # Create a dictionary of all non-named entity terms, excluding stopwords, mapped to counts in the question/target
         for term in non_ne:
-            if term.lower() not in self.stoplist:
+            term = term.lower()
+            if term not in self.stoplist:
                 if non_ne_dict.get(term) == None:
                     non_ne_dict[term] = 1
                 else:
@@ -88,6 +87,7 @@ class QueryProcessor(object):
         
         # Create a dictionary of all named entities mapped to counts in the question/target
         for term in ne:
+            term = term.lower()
             if ne_dict.get(term) == None:
                 ne_dict[term] = 1
             else:
@@ -255,10 +255,7 @@ class QueryProcessor(object):
             # Add the unigrams to frequency dictionary if they are not stopwords and not
             # terms in the initial query
             for i in range(len(tokens)):
-                lc_query_terms = [term.lower() for term in deepcopy(self.query_voc.keys())]
-#               sys.stderr.write("DEBUG  Here are the initial query terms: %s\n" % self.query_voc.keys())
-#               sys.stderr.write("DEBUG  Here are the lower-cased initial query terms: %s\n" % lc_query_terms)
-                if not tokens[i] in self.stoplist and not tokens[i] in lc_query_terms:
+                if not tokens[i] in self.stoplist and not tokens[i] in self.query_voc.keys():
                     unigrams[tokens[i]] += 1
 
         return heapq.nlargest(n, unigrams, key=lambda k: unigrams[k])
