@@ -59,16 +59,18 @@ class AnswerProcessor:
                 if j < len(possible_passages):
                     # grab the document id and passage list
                     doc_id,passages = possible_passages[j]
+                    # sort passages by score
+                    passages.sort(reverse=True,key=attrgetter('weight'))
                     # check that I haven't already returned maximum number of passages for this doc ID
                     if doc_ids_to_return.count(doc_id) < int(self.parameters['passages_per_doc_id']):
                         # use the first passage in the list
                         passage = passages[0]
                         # truncate to 250 characters centered on answer
-                        answer_index = passage.find(answer.answer)
+                        answer_index = passage.passage.find(answer.answer)
                         passage_start = answer_index - (250-len(answer.answer))/2
                         if passage_start < 0:
                             passage_start = 0
-                        passage = passage[passage_start:passage_start+250]
+                        passage = passage.passage[passage_start:passage_start+250]
                         # check that I'm not already returning the same exact passage
                         if passage not in passages_to_return:
                             passages_to_return.append(passage)
@@ -106,7 +108,7 @@ class AnswerProcessor:
                             answer_score[" ".join(sentence[i:i+j+1])] += passage.weight
                             if passage.doc_id:
                                 number_passages[" ".join(sentence[i:i+j+1])] += 1
-                                answer_docs[" ".join(sentence[i:i+j+1])][passage.doc_id].append(passage.passage)
+                                answer_docs[" ".join(sentence[i:i+j+1])][passage.doc_id].append(passage)
                             else:
                                 number_passages[" ".join(sentence[i:i+j+1])] += int(self.parameters['snippet_passage_count'])
 

@@ -193,8 +193,7 @@ class Quail:
         self.dir = path.dirname(__file__)
 
         # stopword list
-        stopword_filename = path.join(self.dir, "stoplist.dft")
-        stopword_file = open(stopword_filename)
+        stopword_file = open(self.parameters['stoplist'])
         self.stopword_list = extract_stopwords(stopword_file)
         #sys.stderr.write("Stop words are: "+str(stopword_list))
 
