@@ -112,26 +112,9 @@ def main():
         for answer in ranked_answers:
             #sys.stderr.write("DEBUG: Answer %s with score %s\n" % (answer.answer, answer.score))
             #sys.stderr.write("DEBUG: Answer %s found in: %s\n" % (answer.answer, answer.doc_ids))
+            question_id, doc_id, passage = answer
 
-            # find longest list of passages
-            best_doc_id = None
-            best_passage = ''
-            most_passages = 0
-            for doc_id,passages in answer.doc_ids.items():
-                if len(passages) > most_passages:
-                    most_passages = len(passages)
-                    # use that doc ID and first passage from that list
-                    best_doc_id = doc_id
-                    best_passage = passages[0]
-
-            # truncate best passage to 250 characters, centered around answer
-            answer_index = best_passage.find(answer.answer)
-            passage_start = answer_index - (250-len(answer.answer))/2
-            if passage_start < 0:
-                passage_start = 0
-            best_passage = best_passage[passage_start:passage_start+250]
-
-            output.write("%s %s %s %s\n" % (answer.question_id, run_tag, best_doc_id, best_passage))
+            output.write("%s %s %s %s\n" % (question_id, run_tag, doc_id, passage))
     output.close()
 
 

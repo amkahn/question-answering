@@ -33,11 +33,56 @@ class AnswerProcessor:
         self.reweight_answers()
         # sort answers by score
         self.rank_answers()
-        # return top 20 highest ranked answers
-        if len(self.ranked_answers) >= 20:
-            return self.ranked_answers[:20]
+        # top 20 passages
+        # and their doc IDS
+        passages_to_return = []
+        doc_ids_to_return = []
+        i = 0
+        while len(passages_to_return) < 20 and i < len(self.ranked_answers):
+            answer = self.ranked_answers[i]
+
+            # do something to get best passage(s)
+
+            # could find longest list of passages
+            best_doc_id = None
+            most_passages = 0
+            for doc_id,passages in answer.doc_ids.items():
+               if len(passages) > most_passages:
+                   most_passages = len(passages)
+                   best_doc_id = doc_id
+            #if best_doc_id not in doc_ids_to_return:
+            #   passage = answer.doc_ids[best_doc_id][0]
+            #   answer_index = passage.find(answer.answer)
+            #   passage_start = answer_index - (250-len(answer.answer))/2
+            #   if passage_start < 0:
+            #       passage_start = 0
+            #   passage = passage[passage_start:passage_start+250]
+            #   doc_ids_to_return.append(best_doc_id)
+            #   passages_to_return.append(passage)
+
+            # or return one passage for each doc ID
+            for doc_id,passages in answer.doc_ids.items():
+            # append to list while checking passage wasn't added already
+            #    if doc_id not in doc_ids_to_return:
+                doc_ids_to_return.append(doc_id)
+                passage = passages[0]
+                answer_index = passage.find(answer.answer)
+                passage_start = answer_index - (250-len(answer.answer))/2
+                if passage_start < 0:
+                    passage_start = 0
+                passage = passage[passage_start:passage_start+250]
+                passages_to_return.append(passage)
+
+            i += 1
+
+        # combine doc_ids and passages in one list
+        to_return = zip(doc_ids_to_return,passages_to_return)
+        # add question id
+        to_return = [[self.answer_template.question_id]+list(x) for x in to_return]
+        if len(to_return) >= 20:
+            return to_return[:20]
         else:
-            return self.ranked_answers
+            return to_return
 
     def extract_answers(self):
         # here's a possible clever answer extractor
