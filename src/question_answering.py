@@ -69,11 +69,11 @@ def get_parameters(args, script_dir):
     if 'target_upweighting' not in keys:
         parameters['target_upweighting'] = 1
 
-    if 'NE_upweighting' not in keys:
-        parameters['NE_upweighting'] = 1
+    if 'ne_upweighting' not in keys:
+        parameters['ne_upweighting'] = 1
     
     if 'num_web_exp_terms' not in keys:
-        parameters['num_web_exp_terms'] = 0
+        parameters['num_web_exp_terms'] = 5
 
     if 'weight_web_exp_terms' not in keys:
         parameters['weight_web_exp_terms'] = 0.5
@@ -81,8 +81,8 @@ def get_parameters(args, script_dir):
     if 'num_lin_exp_terms' not in keys:
         parameters['num_lin_exp_terms'] = 0
             
-    if 'weight_lin_exp_terms' not in keys:
-        parameters['weight_lin_exp_terms'] = 0.5
+    if 'weight_lin_exp_query' not in keys:
+        parameters['weight_lin_exp_query'] = 0
     
     # IR parameters
     if 'indri_passages' not in keys:
@@ -266,7 +266,7 @@ class Quail:
         #sys.stderr.write("\nDEBUG  Here is the question: %s\n" % question)
 
         # instantiate a QueryProcessor and use it to generate a set of searches and an AnswerTemplate object
-        qp = QueryProcessor(question, self.stopword_list, self.cached_results[question.id])
+        qp = QueryProcessor(self.parameters, question, self.stopword_list, self.cached_results[question.id])
         
         search_queries = qp.generate_queries()
         #sys.stderr.write("DEBUG  Here are the search queries: %s\n" % search_queries)

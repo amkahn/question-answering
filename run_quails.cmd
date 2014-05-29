@@ -1,4 +1,4 @@
-run_tag = test10
+run_tag = test15
 web_cache = src/cached_web_results/TREC-2006.4pg.web_cache
 
 executable = src/question_answering.sh
