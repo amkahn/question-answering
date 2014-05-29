@@ -50,7 +50,7 @@ class AnswerProcessor:
             possible_passages.sort(key=lambda x:len(x[1]), reverse=True)
 
             # return up to the parameter for passages per answer candidate
-            for j in range(self.parameters['passages_per_answer_candidate']):
+            for j in range(int(self.parameters['passages_per_answer_candidate'])):
                 # question: return multiple passages per document ID within answer candidate?
                 # probably don't want to do that
                 # for now, within particular answer candidate, will return one passage per document ID
@@ -60,7 +60,7 @@ class AnswerProcessor:
                     # grab the document id and passage list
                     doc_id,passages = possible_passages[j]
                     # check that I haven't already returned maximum number of passages for this doc ID
-                    if doc_ids_to_return.count(doc_id) < self.parameters['passages_per_doc_id']:
+                    if doc_ids_to_return.count(doc_id) < int(self.parameters['passages_per_doc_id']):
                         # use the first passage in the list
                         passage = passages[0]
                         # truncate to 250 characters centered on answer
