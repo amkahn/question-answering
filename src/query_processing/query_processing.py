@@ -140,16 +140,7 @@ class QueryProcessor(object):
         lin_expanded_query = self.lin_expand_query(initial_query, int(self.parameters['num_lin_exp_terms']), float(self.parameters['weight_lin_exp_query']))
         queries.append(lin_expanded_query)
 
-        # TODO: put NEs back into expanded query objects
-
-#         for term in self.ne:
-#             for query in queries:
-#                 if query.search_terms.get(term) == None:
-#                     query.search_terms[term] = 1
-#                 else:
-#                     query.search_terms[term] += 1
-
-        sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % queries)
+#       sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % queries)
         return queries
 
 
@@ -171,11 +162,11 @@ class QueryProcessor(object):
         # Remove duplicates. (Note that this will only remove a duplicate token if both
         # occurrences have the same POS).
         to_expand = set(self.non_ne_pos_tagged)
-        sys.stderr.write("DEBUG  Here is the set of terms to Lin-expand: %s\n" % to_expand)
+#       sys.stderr.write("DEBUG  Here is the set of terms to Lin-expand: %s\n" % to_expand)
         
         # Filter out stopwords.
         to_expand = filter(lambda x: x[0] not in self.stoplist, to_expand)
-        sys.stderr.write("DEBUG  Here is the set of terms to Lin-expand after stopword filtering: %s\n" % to_expand)
+#       sys.stderr.write("DEBUG  Here is the set of terms to Lin-expand after stopword filtering: %s\n" % to_expand)
         
         # For each non-named entity (note that if a term appears twice in the question,
         # we'll do this twice):
@@ -209,9 +200,9 @@ class QueryProcessor(object):
     # a lot of stopwords automatically).
     
     def get_lin_terms(self, term, n, pos):
-        sys.stderr.write("DEBUG  Getting scored synonyms of term %s, POS %s\n" % (term, pos))
+#       sys.stderr.write("DEBUG  Getting scored synonyms of term %s, POS %s\n" % (term, pos))
         syns = thes.scored_synonyms(term)
-        sys.stderr.write("DEBUG  Here are the synsets returned from the Lin thesaurus: %s\n" % syns)
+#       sys.stderr.write("DEBUG  Here are the synsets returned from the Lin thesaurus: %s\n" % syns)
 
         all_syns = []
         # syn list is in the form ((POS, [syn, syn, syn]), (POS, [syn, syn, syn]) ...)
@@ -219,16 +210,16 @@ class QueryProcessor(object):
         for element in syns:
             if element[0] == pos:
                 all_syns.extend(element[1])
-        sys.stderr.write("DEBUG  Here are all the synonyms: %s\n" % all_syns)
+#       sys.stderr.write("DEBUG  Here are all the synonyms: %s\n" % all_syns)
         
         if len(all_syns) > n:
-            sys.stderr.write("DEBUG  Found more synonyms than required; filtering by similarity measure\n")
+#           sys.stderr.write("DEBUG  Found more synonyms than required; filtering by similarity measure\n")
             # get n-best synonyms according to Lin similarity
             top = heapq.nlargest(n, all_syns, key = lambda k: k[1])
         else:
-            sys.stderr.write("DEBUG  Synonyms found do not exceed max number of synonyms desired; skipping filtering step\n")
+#           sys.stderr.write("DEBUG  Synonyms found do not exceed max number of synonyms desired; skipping filtering step\n")
             top = all_syns
-        sys.stderr.write("DEBUG  Here are the top %s synonyms: %s\n" % (n, top))
+#       sys.stderr.write("DEBUG  Here are the top %s synonyms: %s\n" % (n, top))
         return top
 
 
