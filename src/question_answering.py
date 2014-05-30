@@ -234,7 +234,7 @@ class Quail:
             soup_questions = soup_target.find_all('q')
 
             for soup_question in soup_questions:
-                id = float(soup_question.get('id'))
+                id = str(soup_question.get('id'))
                 type = str(soup_question.get('type'))
                 q = str(soup_question.get_text().strip())
                 question = Question(id, type, q, target)
@@ -252,7 +252,7 @@ class Quail:
         for line in web_cache:
             line = line.strip()
             if line.startswith("QUESTION ID:"):
-                question_id = float(line.split()[-1])
+                question_id = line.split()[-1]
             elif line != '':
                 cached_results[question_id].append(line)
 
