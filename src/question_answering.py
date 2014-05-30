@@ -222,7 +222,7 @@ class Quail:
             soup_questions = soup_target.find_all('q')
 
             for soup_question in soup_questions:
-                id = float(soup_question.get('id'))
+                id = str(soup_question.get('id'))
                 type = str(soup_question.get('type'))
                 q = str(soup_question.get_text().strip())
                 question = Question(id, type, q, target)

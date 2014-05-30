@@ -85,6 +85,7 @@ class AnswerProcessor:
         if len(to_return) >= 20:
             return to_return[:20]
         else:
+            sys.stderr.write("WARNING: Only returning "+str(len(to_return))+" answers for question "+str(self.answer_template.question_id)+"\n")
             return to_return
 
     def extract_answers(self):
