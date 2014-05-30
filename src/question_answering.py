@@ -98,6 +98,7 @@ def get_parameters(args, script_dir):
         parameters['indri_window_size'] = '50'
 
     # Answer processing parameters
+    # These are really important!
     if 'num_docs' not in keys:
         parameters['num_docs'] = '1'
 
