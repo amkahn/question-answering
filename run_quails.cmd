@@ -1,4 +1,4 @@
-run_tag = test_ans_param
+run_tag = test_lin_exp
 web_cache = src/cached_web_results/TREC-2006.3pg.web_cache
 
 executable = src/question_answering.sh

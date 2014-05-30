@@ -7,7 +7,7 @@
 from collections import defaultdict
 
 
-# A Question object has the attributes id (a float corresponding to the TREC question ID),
+# A Question object has the attributes id (a string corresponding to the TREC question ID),
 # type (a string corresponding to the question type; always "factoid" in our system, but
 # could take on other values in an extended version of the system), q (a string corresponding
 # to the TREC natural-language question), and target (a string corresponding to the context

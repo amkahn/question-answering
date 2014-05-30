@@ -64,7 +64,7 @@ def get_parameters(args, script_dir):
 
     # Query processing parameters
     if 'stopword_filter_target' not in keys:
-        parameters['stopword_filter_target'] = False
+        parameters['stopword_filter_target'] = 'False'
     
     if 'target_upweighting' not in keys:
         parameters['target_upweighting'] = '1'
@@ -79,10 +79,10 @@ def get_parameters(args, script_dir):
         parameters['weight_web_exp_terms'] = '0.5'
 
     if 'num_lin_exp_terms' not in keys:
-        parameters['num_lin_exp_terms'] = '0'
+        parameters['num_lin_exp_terms'] = '5'
             
     if 'weight_lin_exp_query' not in keys:
-        parameters['weight_lin_exp_query'] = '0'
+        parameters['weight_lin_exp_query'] = '0.2'
     
     # IR parameters
     if 'indri_passages' not in keys:
@@ -106,12 +106,6 @@ def get_parameters(args, script_dir):
 
     if 'snippet_passage_count' not in keys:
         parameters['snippet_passage_count'] = '10'
-
-    if 'passages_per_doc_id' not in keys:
-        parameters['passages_per_doc_id'] = '1'
-
-    if 'passages_per_answer_candidate' not in keys:
-        parameters['passages_per_answer_candidate'] = '1'
 
     return parameters
 
@@ -144,9 +138,26 @@ def main():
         for answer in ranked_answers:
             #sys.stderr.write("DEBUG: Answer %s with score %s\n" % (answer.answer, answer.score))
             #sys.stderr.write("DEBUG: Answer %s found in: %s\n" % (answer.answer, answer.doc_ids))
-            question_id, doc_id, passage = answer
 
-            output.write("%s %s %s %s\n" % (question_id, run_tag, doc_id, passage))
+            # find longest list of passages
+            best_doc_id = None
+            best_passage = ''
+            most_passages = 0
+            for doc_id,passages in answer.doc_ids.items():
+                if len(passages) > most_passages:
+                    most_passages = len(passages)
+                    # use that doc ID and first passage from that list
+                    best_doc_id = doc_id
+                    best_passage = passages[0]
+
+            # truncate best passage to 250 characters, centered around answer
+            answer_index = best_passage.find(answer.answer)
+            passage_start = answer_index - (250-len(answer.answer))/2
+            if passage_start < 0:
+                passage_start = 0
+            best_passage = best_passage[passage_start:passage_start+250]
+
+            output.write("%s %s %s %s\n" % (answer.question_id, run_tag, best_doc_id, best_passage))
     output.close()
 
 
@@ -193,7 +204,8 @@ class Quail:
         self.dir = path.dirname(__file__)
 
         # stopword list
-        stopword_file = open(self.parameters['stoplist'])
+        stopword_filename = path.join(self.dir, "stoplist.dft")
+        stopword_file = open(stopword_filename)
         self.stopword_list = extract_stopwords(stopword_file)
         #sys.stderr.write("Stop words are: "+str(stopword_list))
 
