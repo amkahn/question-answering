@@ -1,0 +1,610 @@
+Getting parameters...
+Parameters: {'q_file': '/dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml', 'index': '/home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.porter.stoplist', 'snippet_passage_count': '10', 'num_passages': '10', 'ne_upweighting': '1', 'num_docs': '1', 'snippet_weight': '0.9', 'weight_web_exp_terms': '0.5', 'num_lin_exp_terms': '0', 'stopword_filter_target': False, 'target_upweighting': '1', 'weight_lin_exp_query': '0', 'indri_window_size': '50', 'indri_passages': '40', 'passages_per_doc_id': '1', 'stoplist': '/home2/cjaja/classwork/spring-2014/ling573/question-answering/src/stoplist.dft', 'passage_length': '100', 'passages_per_answer_candidate': '1', 'web_cache': '/home2/cjaja/classwork/spring-2014/ling573/question-answering/src/cached_web_results/TREC-2006.3pg.web_cache', 'run_tag': 'defaults', 'num_web_exp_terms': '5'}
+Running query: ['1992', 'presidents', 'university', 'served', 'president', 'jean', 'mayer', 'dr', 'tufts']
+Running query: ['pakistan', 'power', 'government', 'did', 'rule', '1999', 's', 'coup', 'in', 'military', 'pakistani', 'come', 'overthrown']
+Running query: ['massacred', '17', '1997', 'did', 's', 'massacre', 'site', 'occur', 'egypt', 'luxor', 'at', 'in', '2013', 'tourists', 'killed']
+Running query: ['chavez', "'s", '1998', 'hugo', '2013', 's', 'race', 'election', 'president', 'opponents', 'presidential', 'opponent']
+Running query: ['vice', 'institute', 's', 'fellow', 'director', 'american', 'enterprise', 'aei', 'president', 'senior', 'american enterprise institute', 'research']
+Running query: ['play', 'nfl', 'did', 'pro', 'football', 'moon', 'player', 's', 'position', 'professional', 'quarterback', 'warren']
+Running query: ['hitchcock', 'did', 'oscar', 'academy', 'won', 'awards', 'award', 'alfred', 'win', 'films', 'best']
+Running query: ['cheers', 'television', 'episode', 'show', 'tv', 'season', 'broadcast', 's', 'program', 'shows']
+WARNING: Only returning 16 answers for question 158.1
+Running query: ['apr', 'university', 'monaco', 'preside', 's', '2014', 'president', 'tufts']
+Running query: ['race', 'cup', 'series', 'winston', 'nascar', 's', 'races', 'racing', 'part', 'winston cup', 'sprint']
+Running query: ['hitchcock', '1980', 'die', '29', 'april', 's', 'alfred', 'died']
+Running query: ['play', 'football', 'moon', 'angeles', 'player', 's', 'college', '2014', 'warren']
+Running query: ['terrorist', 'massacred', '58', '1997', 'egypt', 'killed', 'massacre', 'tourists', 'attack', 'responsibility', 'at', 'in', 'claimed', 'organization', 'luxor', 'group']
+WARNING: Only returning 19 answers for question 143.4
+Running query: ['car', 'nascar', 'founded', 's', 'racing', '2013', 'history']
+Running query: ['code', 'zip', 'institute', 's', 'american', 'codes', 'enterprise', 'aei', '2014', 'american enterprise institute', '2013']
+Running query: ['pakistan', 'group', 'government', '1999', 'in', 's', 'accomplished', 'military', 'done', 'overthrow', 'musharraf', 'pakistani', 'overthrown']
+Running query: ['hitchcock', '1980', 'die', '29', 'april', 's', 'alfred', 'died']
+Running query: ['school', '1992', 'university', 's', 'president', 'served', 'mayer', 'endowment', 'national', 'tufts']
+WARNING: Only returning 16 answers for question 141.2
+WARNING: Only returning 19 answers for question 156.1
+Running query: ['los', '18', 'moon', 'angeles', 'born', '1956', 'years', 'warren']
+Running query: ['tobacco', 'cup', 'series', 'company', 'winston', 'nascar', 'sponsorship', 's', 'winston cup', 'sponsor', 'reynolds', 'rj']
+Running query: ['car', 'nascar', 'founded', 's', '2014', 'racing', 'history']
+WARNING: Only returning 6 answers for question 143.5
+Running query: ['82nd', 'division', 'based', 'u.s.', 'american', 'airborne', 's', 'bragg', 'carolina', 'fort']
+Running query: ['cord', '1995', 'reeve', 'paralysis', 'years', 's', 'christopher', 'paralyzed']
+Running query: ['cable', 'show', 'daily show', 'daily', 'channels', 's', 'jon', 'news', 'the', 'appears', 'channel', 'stewart']
+Running query: ['control', 'founder', 'sr', 'bill', 'took', 'nascar', 'france', 's', 'race']
+WARNING: Only returning 18 answers for question 141.3
+Running query: ['bowler', 'pro', 'nfl', 'bowl', 'moon', 's', 'time', '2012', 'times', 'warren']
+WARNING: Only returning 16 answers for question 151.4
+Running query: ['race', 'run', 'cup', 'series', 'races', 'winston', 'nascar', 's', 'winston cup', 'sprint']
+WARNING: Only returning 17 answers for question 158.3
+Running query: ['billion', 'university', 'current', 's', '2014', 'divest', 'endowment', 'investment', 'tufts']
+WARNING: Only returning 15 answers for question 144.1
+Running query: ['``', 'made', 'reeve', 'movie', 'make', 'jun', "''", 'movies', 's', 'christopher', 'film', 'superman']
+Running query: ['82nd', 'division', 'infantry', 'august', 'army', 'formed', 'airborne', 'camp', 'formation']
+Running query: ['pakistan', 'leaders', 'government', '1999', 'in', 's', 'nominal', 'overthrow', 'military', 'pakistani', 'leader', 'overthrown', 'overthrew']
+WARNING: Only returning 15 answers for question 156.3
+Running query: ['television', 'rights', 'tv', 'money', 'million', 'nascar', 'annually', 's', 'fees', 'generate', '2013']
+Running query: ['league', 'cup', 'considered', 'series', 'winston', 'nascar', 's', 'winston cup', 'season', 'sprint', 'racing', 'minor']
+WARNING: Only returning 16 answers for question 158.4
+WARNING: Only returning 10 answers for question 144.2
+Running query: ['universities', 'school', 'students', 'make', 'colleges', 'schools', '2014', 'university', 'tufts']
+Running query: ['82nd', 'division', '101st', 'form', 'personnel', 'infantry', 'airborne', 'members', 'soldiers', 'comprise']
+Running query: ['24', 'agent', 'moon', 'jan', 's', '2014', 'warren moon', 'quarterback', 'warren']
+Running query: ['``', 'made', 'reeve', 'movie', 'years', "''", 'movies', 's', 'christopher', 'films', 'man', '2013', 'superman']
+Running query: ['parodies', 'television', 'show', 'tv', 'stewart', 'daily', 'daily show', 'program', 'news', 'the', 'shows', 'type', 'parody']
+Running query: ['golf', 'tour', 's', 'lpga', 'stand', '2014', 'mean']
+WARNING: Only returning 19 answers for question 144.3
+Running query: ['pakistan', 'sharif', '2014', 'government', '1999', 'deposed', 'guilty', 'crime', 's', 'coup', 'in', 'found', 'pakistani', 'leader', 'overthrown']
+Running query: ['82nd', 'division', '101st', 'combat', 'airborne', 's', 'part', 'world', 'motto']
+Running query: ['center', 'boston', 'university', 'located', 'location', 'campus', 'medford', 'tufts']
+Running query: ['27', 'mozart', 'salzburg', 'wolfgang', 'born', 'amadeus', 'january', '1756', 'leopold']
+WARNING: Only returning 18 answers for question 156.5
+Running query: ['cup', 'career', 'series', 'holds', 'nascar', 'record', 's', 'victories', 'wins', 'sprint']
+Running query: ['golf', 'daytona', 'headquartered', 'headquarters', 'lpga', 'professional', 'beach']
+WARNING: Only returning 15 answers for question 152.1
+Running query: ['27', 'mozart', 'salzburg', 'wolfgang', 'born', 'amadeus', 'january', '1756', 'leopold']
+WARNING: Only returning 15 answers for question 144.4
+WARNING: Only returning 19 answers for question 158.7
+Running query: ['82nd', 'division', '101st', 'combat', 'song', 'track', 'official', 'airborne', 's', '2014']
+Running query: ['sam', 'walton', 'founded', 'wal-mart', 's', 'walmart', 'history']
+WARNING: Only returning 18 answers for question 154.3
+Running query: ['golf', 'tournament', 'tour', 'event', 's', 'part', 'lpga', 'members', 'events']
+Running query: ['``', 'star', 'reeve', 's', 'actress', "''", 'movies', 'co-starred', 'christopher', 'actor', 'costar', 'film', 'superman']
+WARNING: Only returning 15 answers for question 152.2
+Running query: ['december', 'mozart', 'die', '1791', 'years', 's', 'amadeus', 'wolfgang', 'died']
+Running query: ['cup', 'career', 'wins', 'nascar', 'record', 's', 'victories', 'series', 'sprint', 'total']
+WARNING: Only returning 18 answers for question 159.1
+Running query: ['sam', 'walton', 'founded', 'wal-mart', 's', 'walmart', 'history']
+WARNING: Only returning 16 answers for question 154.4
+WARNING: Only returning 18 answers for question 144.5
+Running query: ['prince edward', 'engage', "'s", 'king', 'engagement', 'marry', 'married', 'albert', 's', 'britain', 'edward', 'marries', 'prince']
+Running query: ['show', 'daily show', 's', 'daily', 'apr', 'host', '2014', 'the', 'jon', 'stewart']
+Running query: ['theatrical', 'theatre', 'reeve', 'career', 'start', 's', 'christopher', 'new', 'commence', 'superman']
+Running query: ['king', 'murder', 'william', 'of', 'bill', 'guilty', 'convicted', 's', 'member', 'non-white', 'members', 'jury', 'white', 'john']
+Running query: ['2000', 'golf', '50th', 'anniversary', 's', 'lpga', 'association', 'celebrate', 'celebration']
+WARNING: Only returning 19 answers for question 152.3
+WARNING: Only returning 18 answers for question 159.2
+Running query: ['death', 'mozart', 'rival', 'salieri', 'antonio', 's', 'amadeus', 'composer', 'wolfgang']
+Running query: ['workers', 'employees', 'million', 'wal-mart', 's', 'walmart', 'u.s.', '2013']
+Running query: ['duke', 'made', "'s", 'marry', 'married', 's', 'british', 'britain', 'edward', 'marries', 'prince']
+WARNING: Only returning 19 answers for question 149.3
+Running query: ['televised', 'show', 'initially', 'initial', 'daily', 'daily show', 's', 'time', 'tv', 'the', 'jon', 'stewart']
+Running query: ['states', 'united', 'countries', ')', '(', 'list', 'number', 'nations', 'member', '2000', 'un', 'membership', '.', 'u.n.', 'u.n']
+WARNING: Only returning 14 answers for question 152.5
+WARNING: Only returning 17 answers for question 142.4
+Running query: ['mozart', 'wolfgang', 'young', 'two', 'music', 'amadeus', 'child', 'leopold', 'children']
+Running query: ['mar', 'golf', 'cup', 'people', 's', 'lpga', 'founders', '2014']
+Running query: ['worldwide', 'stores', 'operates', 'wal-mart', 's', 'walmart', 'world-wide', 'world', 'operate']
+Running query: ['foreman', 'william', 'murder', 'jury', 'king', 'of', 'guilty', 'two', 'convicted', 's', 'black', 'grand', 'john']
+Running query: ['chavez', 'country', 'hugo', 'chvez', 's', 'hugo chavez', 'president', 'venezuelan', 'venezuela', '2013']
+Running query: ['queen', "'s", 'honeymoon', 'royal', 's', 'princess', 'britain', 'edward', 'wedding', 'marries', 'prince']
+Running query: ['2014', 'institute', 'washington', 'dc', 'located', 'american', 'enterprise', 'aei', 'found']
+WARNING: Only returning 19 answers for question 147.3
+WARNING: Only returning 16 answers for question 152.6
+Running query: ['throne', 'king', 'married', "'s", 'wedding', 's', 'queen', 'britain', 'edward', 'marriage', 'time', 'line', 'marries', 'prince']
+Running query: ['13', 'hitchcock', 'august', 'born', 'joseph', 'london', '1899', 'alfred']
+Running query: ['chavez', 'old', 'chvez', 'hugo', 'elected', 's', 'president', 'venezuela', '2013']
+Running query: ['creator', 'daily show', 'show', 'daily', 's', 'winstead', '2014', 'the', 'jon', 'stewart']
+Running query: ['stores', 'india', 'outlets', 'wal-mart', 's', 'walmart', 'store', '2013']
+WARNING: Only returning 17 answers for question 153.1
+Running query: ['13', 'hitchcock', 'august', 'born', 'joseph', 'london', '1899', 'alfred']
+WARNING: Only returning 18 answers for question 143.1
+Running query: ['full', 'name', 'title', 'institute', 's', 'research', 'american', 'enterprise', 'aei', 'organization', 'public']
+WARNING: Only returning 15 answers for question 149.5
+Running query: ['king', 'murder', 'william', 'held', 'of', 'arrested', 'convicted', 'trial', 's', 'death', 'white', 'john', 'man']
+Running query: ['show', 'daily show', 'title', 's', 'daily', '2000', 'election', 'coverage', 'news', 'the', 'comedy', 'jon', 'stewart']
+WARNING: Only returning 16 answers for question 153.2
+WARNING: Only returning 18 answers for question 159.6
+Running query: ['stores', 'outlets', 'jan', 'wal-mart', 's', 'walmart', 'china', '2014']
+Running query: ['sound', 'hitchcock', 'movie', 's', 'alfred', 'films', '2014', 'film']
+Running query: ['received', 'imf', 'receive', 'country', 'granted', 'countries', 'largest', 'world', 'loans', 'loan', 'bank']
+Running query: ['chavez', 'hugo', 'graduate', 'chvez', '2014', 'graduated', 'military', 'venezuelan']
+Running query: ['countries', 'country', 'imf', 'monetary', 'nations', 'member', 'fund', 'international']
+Running query: ['security council', 'council', ')', '(', 'un', 'nations', 'united', 'five', 'non-permanent', 'members', 'security', '.', 'u.n', 'nonpermanent']
+Running query: ['school', 'chavez', 'hugo', 'graduate', 'chvez', 's', 'military', 'years', '2013']
+Running query: ['institute', '1943', 's', 'founded', 'policy', 'american', 'enterprise', 'aei', 'public']
+Running query: ["'s", 'married', 's', 'british', 'princess', 'britain', 'edward', 'wales', 'marries', 'prince', 'occupation']
+Running query: ['king', 'murder', 'sep', 'of', 'byrd', 'convicted', 'william', 'death', 'capital', 'john', '2011']
+Running query: ['television', 'queen', "'s", 'people', 'married', 'royal', 's', 'princess', 'britain', 'edward', 'wedding', 'marries', 'prince', 'viewed']
+WARNING: Only returning 18 answers for question 143.3
+Running query: ['multiple', 'form', 'cancer', 'plasma', 'myeloma', 'treat', 'type', 'types', 'treatment']
+Running query: ['judi', 'two', 'award', 's', 'won', 'awards', 'tony', 'dench', 'tony awards']
+Running query: ['king', 'murder', 'william', 'of', 'byrd', 'crime', 'convicted', 's', 'death', 'victim', 'james', 'john']
+Running query: ['chavez', 'receive', 'hugo', 'percent', 'chvez', '2000', 'won', 'vote', 'president', 'percentage', 'venezuela', 'presidential']
+Running query: ['united', ')', '(', 'serve', 'un', 'long', 'nations', 'member', 'security council', 'five', 'non-permanent', 'council', 'security', '.', 'u.n', 'nonpermanent']
+WARNING: Only returning 13 answers for question 162.3
+Running query: ['develop', 'cancer', 'people', 'myeloma', 'years', 'americans', 'new', 'multiple', 'cases']
+Running query: ['television', 'episode', 'show', 'series', 'finale', 'leno', 'telecast', 'cheers', 's', '2014', 'final']
+Running query: ['pakistan', 'government', '1999', 'deposed', 'in', 's', 'musharraf', 'coup', 'overthrow', 'military', 'pakistani', 'leader', 'overthrown']
+Running query: ['billion', 'imf', 's', 'granted', 'countries', 'rate', 'record', 'amount', 'loans', 'loan']
+Running query: ['massacred', '1997', 'egypt', 'country', 'massacre', 'jun', 'luxor', 's', 'at', 'in', 'tourists', '2013']
+Running query: ['judi', 'years', 'born', 'olivia', 'york', 'dench', 'judith', 'dame']
+Running query: ['aired', 'network', 'show', 'tv', 'series', 'television', 'cheers', 's', 'nbc', 'channel']
+WARNING: Only returning 18 answers for question 148.1
+Running query: ['wheel', 'city', 'eye', 'ferris', 'located', 's', 'millennium', 'london', 'the', 'river', 'millennium wheel']
+Running query: ['definition', 'imf', 'monetary', 'fund', 's', 'stand', 'international']
+Running query: ['temple', 'massacred', '17', '1997', 'egypt', 'massacre', 'tourists', 'at', 'in', 'date', 'happen', 'foreign', 'luxor', 'killed']
+Running query: ['circles', 'stones', 'stone', 'prehistoric', 'built', 'bc', 'stonehenge', 'metres', 'county', 'circle']
+WARNING: Only returning 12 answers for question 162.4
+Running query: ['security council', 'presidency', ')', '(', 'un', 'nations', 'rotating', 'united', 'council', 'president', 'security', '.', 'rotate', 'u.n']
+WARNING: Only returning 17 answers for question 164.7
+Running query: ['imf', 'monetary', 'founded', 'fund', 'world', 'international', 'history']
+Running query: ['queen mum', 'celebrated', "'s", 'elizabeth', 'queen', '2000', 'years', '100th', 's', 'birthday', 'mother', 'mum', 'the']
+WARNING: Only returning 16 answers for question 169.4
+Running query: ['circles', 'stones', 'stone', 'ancient', 'england', 's', 'uk', 'circle', 'oldest', 'ring']
+WARNING: Only returning 13 answers for question 167.1
+Running query: ['wheel', 'eye', 'metres', 'high', 'ferris', 'millennium', 'tall', 'london', 'the', 'millennium wheel']
+Running query: ['states', 'death', 'multiple', 'cancer', 'deaths', 'caused', 'u.s.', 'myeloma', 'annually', 'united', 'cause']
+Running query: ['television', 'played', 'diane chambers', 'show', 'diane', 'long', 'cheers', 'tv', 'chambers', 'shelley']
+Running query: ['temple', 'massacred', '1997', 'people', 'egypt', 'killed', 'massacre', 'tourists', '62', 'at', 'in', 'foreign', 'luxor', 'died']
+WARNING: Only returning 15 answers for question 169.6
+Running query: ['album', '``', 'in spite of ourselves', 'spite', 'song', '1999', 'prine', 'number', "''", 's', 'john', 'songs']
+WARNING: Only returning 17 answers for question 165.1
+Running query: ['imf', 'washington', 'headquartered', 'headquarters', 'monetary', 'fund', 'international']
+WARNING: Only returning 19 answers for question 150.3
+Running query: ['malone', 'television', 'bartender', 'sam', 'played', 'tv', 'show', 'danson', 'cheers', 'sam malone', 'bar']
+WARNING: Only returning 13 answers for question 167.2
+Running query: ["'s", 'wore', 'color', 'queen', '100th', 'lunch', 's', 'birthday', '4', 'mother', 'mum', 'the', 'dress', 'kate', 'happy']
+Running query: ['wheel', 'eye', 'name', 'famous', 'ferris', 's', 'millennium', 'popular', 'london', 'the']
+WARNING: Only returning 16 answers for question 162.5
+Running query: ['hermitage museum', 'hermitage', 'museum', 'st', 'located', 'state', 'petersburg', 'russia', 'location']
+Running query: ['charter', 'united', 'august', '1999', '(', '31', 'nations', ')', 's', 'un', 'council', 'president', 'security', '.', 'resolution', 'u.n.', 'u.n']
+Running query: ['city', 'played', '1999', 's', 'league', 'allstar', 'all-star', 'held', 'game', 'baseball', 'boston']
+Running query: ["'s", 'name', '&', 'tour', 'jerry', 's', 'resources', 'new', 'ben', 'film']
+WARNING: Only returning 9 answers for question 170.1
+Running query: ['album', 'john prine', 'hit', 'song', 'prine', '1', 'born', 's', 'george strait', 'john', 'find', 'songs']
+WARNING: Only returning 14 answers for question 167.3
+WARNING: Only returning 16 answers for question 165.2
+Running query: ['wheel', 'eye', 'built', 'ferris', 's', 'london', 'world', 'millennium', 'the']
+Running query: ["'s", 'name', 'queen', 'queen mother', '100th', 'born', 's', 'birthday', 'birth', 'mother', 'mum', 'the', '100', 'elizabeth']
+WARNING: Only returning 12 answers for question 163.1
+Running query: ['hermitage museum', 'palace', 'hermitage', 'museum', 'amstel', 'located', 'neva', 'petersburg', 'banks', 'river', 'bank']
+WARNING: Only returning 16 answers for question 167.4
+Running query: ['wheel', 'passenger', 'capsules', 'eye', '32', 'passengers', 's', 'millennium', 'contain', 'london', 'the']
+WARNING: Only returning 19 answers for question 163.2
+Running query: ['begin', 'art', 'hermitage', 'museum', 'catherine', 'great', 'collection', 'years', '1764', 'began', 'buying']
+WARNING: Only returning 16 answers for question 165.4
+Running query: ['interview', "'s", '2014', 'interviews', 'queen', 'years', '100th', 'press', 's', 'birthday', 'mother', 'mum', 'earth', 'the', 'news', '100', 'granted']
+WARNING: Only returning 13 answers for question 167.5
+Running query: ['paintings', "'", 'artist', 'completed', 'charles', 'royal', 'days', 'approximately', 'wales', 'painting', 'prince']
+WARNING: Only returning 17 answers for question 150.4
+Running query: ['television', 'bar', 'show', 'tv', 'boston', 'finch', 'pub', 'cheers', 'beacon', 'bull', 'inspiration']
+WARNING: Only returning 9 answers for question 161.1
+Running query: ['scheduled', 'city', 'league', '1999', 's', 'originally', 'schedule', 'allstar', 'all-star', 'game', 'baseball', 'stars']
+WARNING: Only returning 15 answers for question 168.1
+WARNING: Only returning 6 answers for question 170.2
+Running query: ['work', 'art', "'", 'paintings', 'money', 'charles', 's', 'paid', 'record', 'amount', 'wales', 'prince']
+Running query: ['john prine', 'removed', 'neck', 'cancer', 'prine', 's', 'years', 'tumor', 'cancerous', 'surgery', 'john']
+WARNING: Only returning 7 answers for question 150.5
+Running query: ['turkey', 'stuffing', 'afbf', 'farm', '(', 'average', 'dinner', 'thanksgiving', ')', 'american', 'cost', 'bureau', 's', 'nov', 'trimmings', 'survey', 'federation']
+WARNING: Only returning 19 answers for question 168.3
+Running query: ['album', 'john prine', 'prine', 'long', 'years', 's', 'smoke', 'got', 'smoking', 'john']
+Running query: ['medium', 'paintings', "'", 'artist', 'media', 'charles', 's', 'portrait', 'wales', 'painting', 'prince', 'usual']
+WARNING: Only returning 18 answers for question 172.3
+Running query: ['ben', 'name', '&', 'tour', 'jerry', 's', 'resources', 'new', "'s", 'film']
+Running query: ['affairs', 'jeffrey', 'united', ')', '(', 'feltman', 'political', 'secretarygeneral', 'nations', 'secretary-general', 'un', 'undersecretarygeneral', '.', 'u.n']
+WARNING: Only returning 15 answers for question 161.2
+WARNING: Only returning 15 answers for question 168.4
+Running query: ['art', "'", 'paintings', 'charles', 's', 'subjects', 'common', 'wales', 'subject', 'prince', 'usual']
+WARNING: Only returning 17 answers for question 163.3
+Running query: ['hermitage museum', 'art', 'hermitage', 'museum', 's', 'collection', 'st', 'state', 'petersburg', 'size']
+Running query: ['league', 'name', 'played', '1999', 's', 'ballpark', 'allstar', 'all-star', 'game', 'baseball', 'stadium', 'games']
+WARNING: Only returning 15 answers for question 172.4
+Running query: ['named', 'ben', '&', 'tour', 'jerry', 'new', 'band', 's', 'resources', 'rock', "'s", 'flavor', 'film']
+WARNING: Only returning 18 answers for question 174.5
+WARNING: Only returning 12 answers for question 170.4
+Running query: ['wynn', '1942', 'stephen wynn', 'alan', 'steve', 'born', 'stephen', 'new', 'haven']
+Running query: ['gonzalez', 'cuban', 'old', 'shipwreck', 'elian', 'gonzales', 'elin', 'time', 'repatriation', 's', 'gonzlez', 'of']
+Running query: ['city', 'satellite', 'hermitage', 'museum', 'st', 'museums', 'state', 'petersburg', 'amsterdam']
+WARNING: Only returning 19 answers for question 168.5
+Running query: ['blue', 'levy', 'bet', '1996', 'money', 'deep', 'kasparov', 's', 'match', 'wagered', 'chess']
+Running query: ['art', 'paintings', "'", 'show', 's', 'charles', 'two', 'prince', 'two-prince', 'london', 'showed', 'wales', 'prince charles', 'exhibition']
+WARNING: Only returning 17 answers for question 171.1
+Running query: ['wynn', 'acquired', 'company', 's', 'mgm', 'steve', 'resorts', '2000', 'mirage resorts', 'mirage', 'stephen']
+WARNING: Only returning 12 answers for question 165.5
+Running query: ['2002', 'married', "'s", 'elizabeth', 'title', 'queen', '100th', 's', 'birthday', 'mother', 'mum', 'the', 'husband', 'king']
+Running query: ['blue', '1996', 's', 'deep', 'kasparov', 'game', 'computer', 'games', 'chess', 'match', 'consisted']
+WARNING: Only returning 17 answers for question 175.1
+Running query: ['gonzalez', 'boy', 'staying', 'elian', 'gonzales', 'elin', 'florida', 'repatriation', 's', 'gonzlez', 'of']
+WARNING: Only returning 16 answers for question 172.5
+Running query: ['tour', 'ben', '&', 's', 'price', 'jerry', '2000', 'resources', 'purchased', 'new', "'s", 'unilever', 'film']
+Running query: ['gonzalez', 'cuba', 'elian', 'of', 'elin', 'time', 'father', 'repatriation', 's', 'gonzlez', 'gonzales']
+Running query: ['league', 'seating', 'capacity', '1999', 'ballpark', 'allstar', 'all-star', 'game', 'baseball', 'stadium', 'hosted', 'games']
+WARNING: Only returning 14 answers for question 165.6
+Running query: ['king', 'death', "'s", 'elizabeth', 'title', 'queen', '100th', 's', 'birthday', 'mother', 'mum', 'the', 'died']
+Running query: ['vegas', 'hotel', 'wynn', 'opened', '1998', 'casino', 'steve', 's', 'las vegas', 'stephen', 'new', 'las', 'name']
+Running query: ['blue', 'ibm', '1997', 'deep blue', 'deep', 'gary kasparov', 'game', 'won', 'garry', 'chess', 'kasparov', 'match']
+Running query: ['mikhail', 'hermitage', 'museum', 'director', 'state', 'petersburg', '2013', 'piotrovsky']
+Running query: ['circles', 'stone', 'began', 'begin', 'britain', 'construction', 'uk', 'circle', 'avebury', 'constructed']
+Running query: ['mlb', 'league', '1999', 'allstar', 'all-star', '0', 'game', 'baseball', 'date', 'july']
+WARNING: Only returning 16 answers for question 165.7
+Running query: ['avian', 'influenza', '1997', 'humans', 'flu', 'hong', 'h5n1', 'kong', 'virus', 'infected', 'human', 'in', 'viruses', 'outbreak', 'hong kong']
+WARNING: Only returning 18 answers for question 177.5
+WARNING: Only returning 18 answers for question 169.1
+Running query: ['blue', '``', '1997', 'scan', 'million', 'deep', 'kasparov', "''", 'second', 'moves per second', 'moves', 'chess']
+Running query: ['circles', 'stones', 'stone', 'neolithic', 'approximately', 'british', 'uk', 'found', 'circle', 'isles']
+WARNING: Only returning 12 answers for question 163.7
+Running query: ['judi', 'december', 'judi dench', 'born', 'olivia', '1934', 'dench', 'judith', 'dame']
+WARNING: Only returning 14 answers for question 172.6
+Running query: ['based', 'countries', ')', 'country', 'headquartered', 'headquarters', 'trade', '(', 'world', 'organization', 'nations', 'tourism', 'wto']
+WARNING: Only returning 18 answers for question 166.1
+Running query: ['avian', 'influenza', '1997', 'people', 'flu', 'humans', 'hong', 'h5n1', 'kong', 'virus', 'in', 'outbreak', 'hong kong', 'bird', 'died']
+WARNING: Only returning 18 answers for question 164.1
+Running query: ['judi', 'feb', 'married', 'michael', '2014', 'dench', '2013', 'dame']
+WARNING: Only returning 15 answers for question 161.6
+Running query: ['mvp', 'league', '1999', 'most valuable player', 'allstar', 'all-star', 'player', 'game', 'baseball', 'valuable', 'award']
+WARNING: Only returning 16 answers for question 177.6
+Running query: ['dismantled', 'methamphetamine', 'arizona', '1998', 'drug', 'labs', 'lab', 'clandestine', 'meth', 'laboratories']
+Running query: ['gonzalez', 'attorney', 'cuba', 'repatriation', 'gonzales', 'u.s.', 'time', 'reno', 'general', 'elian', 's', 'of', 'elin']
+WARNING: Only returning 18 answers for question 169.2
+Running query: ['judi', 'oscar', 'nominated', 'oscars', 's', 'dench', '2014', 'best', 'dame']
+Running query: ['circles', 'stones', 'stone', 'prehistoric', 'built', 'bc', 'stonehenge', 's', 'circle']
+WARNING: Only returning 16 answers for question 169.3
+WARNING: Only returning 19 answers for question 166.2
+Running query: ['poultry', 'prevent', 'avian', 'influenza', 'humans', 'stop', 'hong', 'disease', 'flu', 'bird', 'virus', 'spread', 'in', 'outbreak', 'kong', 'chickens', 'slaughtered']
+Running query: ['lamarr', 'hedy', 'did', 'hedy lamarr', 'invent', 's', 'invention', 'actress', 'world', 'inventor']
+Running query: ['dismantled', 'methamphetamine', 'nationwide', '1998', 'u.s.', 'drug', 'labs', 'states', 'clandestine', 'meth', 'laboratories']
+Running query: ['talent', 'theatre', 'theater', 's', 'theaters', 'cabarets', 'steve', 'start', 'manager', 'hired', 'stephen', 'new', 'arenas', 'open', 'wynn']
+WARNING: Only returning 14 answers for question 164.4
+Running query: ['judi', 'oscar', 'award', 'oscars', 's', 'won', '2014', 'dench', 'best']
+Running query: ['body', 'multiple', 'cancer', 'cells', 'myeloma', 'parts', 'part', 'blood', 'plasma', 'bone']
+Running query: ['major', '1995', 'tourist', 'world', 'countries', ')', 'country', 'destination', 'reports', 'international', 's', '(', 'popular', 'organization', 'destinations', 'tourism', 'wto']
+WARNING: Only returning 16 answers for question 166.3
+Running query: ['avian', 'influenza', '1997', 'strains', 'flu', 'hong', 'h5n1', 'kong', 'strain', 'virus', 'broke', 'in', 'outbreak', 'hong kong', 'bird']
+WARNING: Only returning 15 answers for question 164.5
+WARNING: Only returning 17 answers for question 179.6
+Running query: ['edinburgh', 'theatre', 'festival', 'performances', 'fringe', 'number', 'award', 's', '1998', 'total', 'shows']
+Running query: ['parliamentary', 'city', 'parliament', 'assembly', 'lebanese', 'lebanese parliament', 'lebanon', 'located', 's', 'based']
+WARNING: Only returning 19 answers for question 166.4
+WARNING: Only returning 15 answers for question 162.1
+Running query: ['avian', 'influenza', 'appeared', 'pandemic', 'flu', 'hong', 'new', 'two', 'strain', 'virus', 'h5n1', 'in', 'kong', 'outbreak', 'years', 'hong kong', 'bird']
+Running query: ['gonzalez', 'boy', 'return', 'cuba', 'elian', 'of', 'elin', 'repatriation', 's', 'gonzlez', 'gonzales', 'date']
+Running query: ['parliamentary', 'lebanese', 'parliament', 'lebanese parliament', 'lebanon', 'number', 's', 'seats', '128']
+Running query: ['multiple', 'cancer', 'drugs', 'myeloma', 'drug', 'treatment', 'chemotherapy', '2013', 'treat']
+WARNING: Only returning 11 answers for question 162.2
+Running query: ['directed', 'and', 'taylor', 'richard', 'gere', 'movie', 'gentleman', 'an', 'film', 'officer', 'a', 'hackford']
+Running query: ['methamphetamine', 'clinton', 'money', 'administration', 'shutting', 'lab', 'budget', 'labs', '2000', 'clinton administration', 'meth', 'years']
+Running query: ["'s", 'chicago marathon', 'chicago', '1999', 'winner', 'record', 's', 'race', '2013', 'oct', 'marathon', 'women']
+Running query: ['lebanese', 'parliament', 'berri', 'lebanese parliament', 'lebanon', 'nabih', 's', 'speaker', 'president']
+WARNING: Only returning 13 answers for question 182.2
+Running query: ['edinburgh', 'august', 'festival', '1998', 'fringe', 'month', 'held', 's', 'edinburgh fringe', '2014', 'international']
+WARNING: Only returning 13 answers for question 176.2
+Running query: ['and', 'a', 'film', 'oscar', 'academy', 'gentleman', 'award', 'an', 'won', 'awards', 'officer', 'movie', 'win', 'best']
+Running query: ['parliamentary', 'lebanese', 'parliament', 'deputy', 'lebanese parliament', 'lebanon', 'prime', 'speaker', 'minister', 'deputies']
+WARNING: Only returning 18 answers for question 178.3
+Running query: ['town', 'atf', 'methamphetamine', 'county', 'found', 'mexico', 'lab', 'killing', 'labs', 's', 'agents', 'compound', 'destroy', 'fbi', 'dozens', 'meth', 'texas']
+WARNING: Only returning 19 answers for question 171.4
+Running query: ['parliamentary', 'lebanese', 'term', 'parliament', 'lebanese parliament', 'lebanon', 'years', 's', 'new', 'president']
+Running query: ['mississippi', 'newest', 'name', 'casino', 'steve', 's', 'vegas', 'new', 'stephen', 'wynn', 'las']
+WARNING: Only returning 18 answers for question 184.4
+WARNING: Only returning 19 answers for question 176.3
+Running query: ['and', 'a', 'film', 'song', 'movie', 'gentleman', 'award', 'an', 'jr', 'won', 'awards', 'officer', 'academy', 'original', 'best']
+Running query: ['chicago marathon', 'chicago', '1999', 'men', 'khannouchi', 'winning', 'record', 's', 'time', 'world', 'khalid', 'marathon']
+WARNING: Only returning 15 answers for question 182.4
+Running query: ['edinburgh', 'countries', 'festival', '1998', 'fringe', 'held', 's', 'edinburgh fringe', 'country', 'international', 'comedy']
+Running query: ['1996', ')', '(', 'travel', 'international', 'trade', 'director', 's', 'world', 'organization', 'tourism', 'organisation', 'wto']
+WARNING: Only returning 17 answers for question 178.4
+Running query: ['chemical', 'methamphetamine', 'bottles', 'discovered', 'company', 'labels', 'lab', 'labs', 'chemicals', 'drug', 'found', 'meth', '2013']
+WARNING: Only returning 18 answers for question 166.5
+Running query: ['great', 'pyramid', 'old', 'built', 'egypt', 'of', 'three', 'giza', 'feet', 'great pyramids', 'pyramids']
+WARNING: Only returning 14 answers for question 176.4
+Running query: ['and', 'sings', 'end', 'song', 'movie', 'gentleman', 'an', 'credits', 's', 'officer', 'a', 'man', 'final', 'songs']
+Running query: ['set', 'chicago marathon', 'chicago', '1999', 'winning', 's', 'race', 'time', 'khalid', 'oct', 'marathon', 'women']
+WARNING: Only returning 18 answers for question 178.5
+Running query: ['lamarr', 'hedy', 'name', 'hedy lamarr', 'actress', '9', 's', 'birth', 'date', '2013']
+Running query: ['league', 'play', 'united', 'club', 'football', 'premier', 'british', 's', 'fc', 'manchester', 'english', 'news']
+Running query: ['city', 'begin', 'ben', 'business', '&', 's', 'jerry', 'new', 'information', 'state', 'photo', "'s", 'film']
+WARNING: Only returning 14 answers for question 179.1
+Running query: ['lamarr', 'hedy', 'name', 'hedwig', 'screen', 'changed', 'actress', 'born', 'birth']
+WARNING: Only returning 15 answers for question 182.5
+Running query: ['1995', 'tourist', ')', '(', 'organisation', 'million', 'reports', 'visited', 'international', 's', 'china', 'world', 'organization', 'tourism', 'tourists', 'wto']
+Running query: ['edinburgh', 'festival', '1998', 'began', 'fringe', 'years', 'started', 's', 'edinburgh fringe', 'begun']
+WARNING: Only returning 14 answers for question 186.6
+Running query: ['origin', 'countries', 'country', 's', 'amazon river', 'amazon', 'peru', 'world', 'river', 'history']
+WARNING: Only returning 19 answers for question 184.6
+WARNING: Only returning 19 answers for question 176.5
+Running query: ['iditarod', 'city', 'trail', 'dog', 'sled', 'start', 's', 'race', 'ceremonial']
+Running query: ['and', 'a', 'bar', 'movie', 'pensacola', 'florida', 's', 'an', 'featured', 'gentleman', 'officer', '2014', 'fl', 'film']
+WARNING: Only returning 15 answers for question 179.2
+Running query: ['city', 'hedy', 'lamarr', 'hedwig', 'born', 's', 'kiesler', 'november', 'vienna']
+WARNING: Only returning 11 answers for question 179.3
+Running query: ['beautiful', 'lamarr', 'hedy', '19', 'die', 'hedy lamarr', '2000', 'january', 'date', 'died']
+WARNING: Only returning 13 answers for question 182.6
+Running query: ['south africa', 'of', 'africa', 'thabo mbeki', 'elections', 'elected', 's', 'mbeki', 'thabo', 'african', 'date', 'president', 'june', 'south', 'mandela']
+WARNING: Only returning 17 answers for question 187.1
+Running query: ['blue', '``', 'deep blue', 's', 'played', 'play', 'deep', 'kasparov', "''", 'game', 'computer', 'chess']
+Running query: ['novel', "'s", 'potter', 'rowling', 'did', 's', 'k', 'j', 'children', 'whitbread', 'award', 'kathleen', 'joanne', '2000', 'book', 'year', 'harry', 'receive']
+Running query: ['brazil', 'countries', 'country', 'amazon river', 'amazon', 'mouth', 'peru', 'largest', 'world', 'river']
+Running query: ['iditarod', 'city', 'finish', 'end', 'nome', 'dog', 'sled', 'trail', 'race']
+Running query: ['development', '1997', 'countries', ')', '(', 'africa', 's', 'reports', 'international', 'rate', 'growth', 'world', 'organization', 'highest', 'tourism', 'continent', 'wto']
+WARNING: Only returning 14 answers for question 172.1
+Running query: ['information', 'ben', '&', 'photo', 'jerry', 's', 'produce', 'new', "'s", 'film']
+Running query: ['play', 'united', 'plays', 'name', 'club', 'football', 's', 'manchester', 'stadium', 'team', 'old', 'trafford']
+WARNING: Only returning 18 answers for question 177.1
+Running query: ['blue', 'february', 'computer', '1996', 'deep blue', 'deep', 'gary kasparov', 'game', 'won', 'garry', 'chess', 'kasparov', 'match']
+Running query: ['s', 'dolphin', 'length', 'long', 'amazon', 'miles', 'amazon river', 'world', 'river']
+WARNING: Only returning 13 answers for question 172.2
+Running query: ['manchester united', 'united', 'van', 'club', 'louis', 'football', 'manager', 'manchester', 'news', 'latest', 'gaal']
+Running query: ['championship', 'played', 'champion', '1996', 'super', 'tournament', 'players', 'won', 'chess', 'world', 'tournaments', 'participated']
+Running query: ['stands', 'acronym', 'eta', 'askatasuna', 'stand', 'homeland', 'basque', 'euskadi', 'ta']
+Running query: ['iditarod', 'trail', 'dog', 'sled', 'month', 'held', 'race', 'alaska', '2014']
+Running query: ['whom', 'of', 'south africa', 'africa', 'thabo mbeki', 'elected', 's', 'succeed', 'thabo', 'african', 'president', 'nelson', 'mbeki', 'former', 'south', 'mandela']
+Running query: ['franco', 'people', 'basques', 'two', 'approximately', 's', 'eta', 'basque', 'killed', 'spain']
+WARNING: Only returning 17 answers for question 187.3
+Running query: ['mountain', 'largest', 'mountains', 's', 'rise', 'range', 'amazon river', 'amazon', 'world', 'andes', 'river']
+Running query: ['afbf', 'farmers', 'farm', '(', 'annual', 's', 'founded', ')', 'american', 'bureau', 'president', '2014', 'federation']
+Running query: ['east timor', 'independent', '1999', 'vote', 's', 'presidential', 'election', 'date', 'east', 'timor', 'independence']
+Running query: ['wayne', 'manchester united', 'united', 'club', 'football', 's', 'fc', 'manchester', '2014', 'captain', 'man']
+Running query: ['iditarod', 'founder', 'dog', 'sled', 'trail', 'race', '2014', 'history']
+Running query: ['origin', 'name', 'inia', 'dolphin', 'amazon river', 'tributaries', 'amazon', 'names', 'basin', 'river']
+Running query: ['african', 'of', 'national', 'belong', 'political', 'thabo mbeki', 'elections', 'elected', 's', 'mbeki', 'thabo', 'africa', 'party', 'president', 'former', 'south']
+Running query: ['cease-fire', 'group', 'september', '1998', 's', 'eta', 'basque', 'date', 'announce', 'ceasefire', 'announced']
+Running query: ['iditarod', 'race', 'run', 'dog', 'long', 'trail', 'miles', 'sled', 'dogs']
+WARNING: Only returning 17 answers for question 187.6
+WARNING: Only returning 19 answers for question 189.5
+Running query: ['producer', 'mexico', 'u.s.', 'avocado', 's', 'states', 'state', 'production', 'california', 'avocados', 'highest']
+Running query: ['city', 'j', 'joanne', 'kathleen', '1965', 'k', 'rowling', 'born', 'jk', 'july']
+Running query: ['united', 'club', 'football', 'david', 's', 'manchester', 'team', 'keeper', '2014', 'man']
+Running query: ['independent', 'timorese', '1999', 'percent', 'referendum', 'vote', 'percentage', 'east', 'timor', 'independence']
+Running query: ['iditarod', '11', 'race', 'seavey', 'dallas', 'mar', 'record', 'won', 'time', '2014']
+WARNING: Only returning 19 answers for question 174.1
+Running query: ['cease-fire', 'begin', 'group', '2011', 'separatist', 's', 'eta', 'basque', 'date', 'ceasefire']
+Running query: ['stallman', 'farm', 'afbf', ')', '(', 's', '1999', 'american', 'bureau', 'texas', 'president', 'bob', '2013', 'federation']
+WARNING: Only returning 17 answers for question 189.6
+Running query: ['city', 'rowling', 'kathleen', 'harry', 'potter', 'live', 'joanne', '2000', 'jk', 'july', 'edinburgh']
+Running query: ['league', 'united', 'club', 'football', 'arsenal', 'feeder', 'fc', 'manchester', 'team', '2013']
+WARNING: Only returning 12 answers for question 188.1
+Running query: ['party', '2014', 'of', 'national', 'african', 'africa', 'elections', 'elected', 's', 'mbeki', 'black', 'election', 'opposition', 'time', 'biggest', 'president', 'south', 'thabo']
+Running query: ['cease-fire', 'end', 'group', 'permanent', 's', 'eta', 'basque', 'date', 'announce', 'ceasefire', 'announced']
+Running query: ['nutrition', 'avocado', 'calories', 'fat', 'content', 'high', 'fruit', 'avocados', 'monounsaturated']
+Running query: ['east timor', 'independent', 'timorese', 'separate', 'country', 'indonesia', '2002', 's', 'east', 'timor', 'independence']
+Running query: ['great', 'pyramid', 'egyptian', 'egypt', 'of', 'discovered', 'ancient', 'pyramids', 'found']
+WARNING: Only returning 16 answers for question 188.2
+WARNING: Only returning 16 answers for question 189.7
+Running query: ['plant', 'mexico', 'avocado', 'u.s.', 'tree', 'trees', 'cultivated', 'avocados', 'america', 'history']
+Running query: ['city', 'heinz', 'co', 'pittsburgh', 'company', 'headquartered', 's', '.', 'hj', 'food', 'j.', 'h.', 'headquarters']
+Running query: ['edinburgh', 'theatre', 'performers', 'appeared', '1998', 'fringe', 'festival', 's', 'performed', 'show']
+WARNING: Only returning 19 answers for question 174.2
+Running query: ['represents', 'families', 'afbf', 'family', 'farmers', 'farm', '(', 'annual', 's', ')', 'american', 'bureau', 'representing', 'federation']
+WARNING: Only returning 17 answers for question 192.6
+Running query: ['city', 'based', 'food', '(', 'headquartered', 'headquarters', ')', 's', 'program', 'world', 'wfp', 'un', 'programme']
+Running query: ['city', 'great', 'pyramid', 'built', 'egypt', 'of', 'largest', 'three', 'giza', 'located', 'great pyramids', 'pyramids']
+WARNING: Only returning 17 answers for question 188.5
+Running query: ['pests', 'crops', 'threatens', 'avocado', 's', 'crop', 'insect', 'pest', 'beetle', 'california', 'avocados']
+Running query: ['east timor', 'country', '1975', 'indonesia', 's', 'years', 'invaded', 'east', 'timor', 'invade', 'independence']
+WARNING: Only returning 15 answers for question 182.1
+Running query: ['from', ')', '(', 'cells', 'dolly', 'mammals', 'cloned', 'cell', 'born', 'cloning', 'animal', 'of', 'mammal', 'animals', 'adult']
+Running query: ['heinz', 'co', 'ceo', '1998', 'company', 's', '.', 'hj', 'chief', 'j.', 'h.', 'president', '2013']
+Running query: ['publishes', 'rowling', 'kathleen', 'published', 'potter', 'joanne', 'books', 'jk', 'harry', 'book']
+WARNING: Only returning 17 answers for question 186.2
+Running query: ['great', 'pyramid', 'built', 'egyptian', 'egypt', 'of', 'largest', 'giza', 'ancient', 'khufu', 'pyramids']
+Running query: ['conference', 'afbf', 'farm', 'disaster', 'congress', 'farmers', ')', '(', 'help', 'amount', 's', '1999', 'american', 'bureau', 'aid', 'july', 'total', 'asked', '2013', 'federation']
+Running query: ['from', 'roslin', 'institute', 'of', 'cells', 'dolly', 'cloned', 'cell', ')', 'done', 'cloning', 'mammals', 'mammal', '(', 'procedure', 'adult']
+Running query: ['united', 'created', 'food', '(', 'agency', 'nations', ')', 's', 'program', 'world', 'wfp', 'programme']
+WARNING: Only returning 15 answers for question 189.2
+Running query: ['publisher', 'manuscript', 'rowling', 'kathleen', 'pay', 'jk', 'potter', 'joanne', 's', 'book', 'harry']
+WARNING: Only returning 17 answers for question 186.4
+Running query: ['east timor', 'united', 'force', 'timorese', 'international force', 'interfet', 'enter', 'date', 'international', 'australian', 'east', 'timor', 'independence']
+Running query: ['great', 'pyramid', 'ft', 'egypt', 'of', 'largest', 'height', 'feet', 's', 'pyramids', 'giza']
+Running query: ['plant', 'iran', 'power', 'facility', 'country', 'bushehr', 'located', 's', 'nuclear', '2013']
+Running query: ['old', 'anc', 'of', 'national', 'africa', 'thabo mbeki', 'elected', 's', 'mbeki', 'thabo', 'african', 'president', 'south', 'election']
+WARNING: Only returning 19 answers for question 186.5
+WARNING: Only returning 19 answers for question 189.3
+Running query: ['start', 'kathleen', 'began', 'rowling', 'potter', 'writing', 'joanne', 'book', 'harry', 'years', 'jk']
+Running query: ['city', '12', 'sinatra', 'frank', 'frank sinatra', 'born', 'hoboken', 'new', '1915', 'jersey']
+Running query: ['accident', 'co', 'company', 'crash', 'heir', 's', '.', 'hj', 'j.', 'heinz', 'h.', 'died', 'aviation', 'fortune', 'killed', 'ketchup']
+WARNING: Only returning 12 answers for question 198.1
+Running query: ['development', 'assisting', 'iran', 'power', 'facility', 'country', 'assistance', 'bushehr', 'plant', 's', 'nuclear']
+WARNING: Only returning 19 answers for question 195.5
+Running query: ['united', 'food', '(', 'executive', 'nations', 'director', ')', 's', 'program', 'world', 'wfp', 'programme']
+Running query: ['control', 'east timor', 'united', 'u.n. transitional authority', 'transitional', 'administration', 'interfet', 'nations', 'turn', 'un', 'date', 'untaet', 'east', 'timor', 'independence']
+WARNING: Only returning 18 answers for question 189.4
+Running query: ['did', 'die', 'years', '1964', 's', 'porter', 'cole porter', 'cole', 'died', 'songs']
+Running query: ['party', 'anc', '1999', 'of', 'seats', 'africa', 'elections', 'elected', 's', 'mbeki', 'election', 'african', 'win', 'president', 'south', 'thabo']
+WARNING: Only returning 16 answers for question 200.1
+Running query: ['tomato', 'heinz', 'co', 'company', 's', '.', 'hj', 'j.', 'h.', 'introduced', 'heinz ketchup', 'ketchup']
+Running query: ['show', 'frank', 'years', 'sinatra', 's', 'nancy', 'new', 'performance']
+WARNING: Only returning 16 answers for question 198.2
+Running query: ['bushehr', 'iran', 'power', 'facility', 'nuclear', 'primary', 'plant', 's', 'purpose', 'claimed', 'main']
+Running query: ['mormon church', 'lds', 'money', 'christ', 'latter-day', ')', 'of', 'mormon', 'church', 'saints', 'jesus', 'mormons', 'latterday', '(', 'capital', 'numbers']
+Running query: ['1997', 'hunger', 'food', '(', 'executive', 'director', ')', 's', 'program', 'country', 'world', 'wfp', 'programme']
+WARNING: Only returning 15 answers for question 195.7
+Running query: ['hj', 'prevent', 'heinz', 'co', 'help', 's', 'company', 'disease', '.', 'helping', 'j.', 'tout', 'h', 'h.', 'ketchup']
+Running query: ['union', 'of', 'adopt', 'adopted', 'currency', 'latvia', 'adoption', 'date', '2014', 'the', 'euro']
+WARNING: Only returning 17 answers for question 202.3
+WARNING: Only returning 16 answers for question 198.4
+Running query: ['show', 'astaire', 's', '2013', 'cole porter', 'broadway', 'cole', 'musical', 'porter', 'songs']
+Running query: ['bushehr', 'iran', 'reactor', 'power', 'facility', 'nuclear', 'plant', 's', 'planned', 'model', 'plans']
+WARNING: Only returning 12 answers for question 204.6
+Running query: ['worldwide', 'lds', 'temples', 'latter-day', ')', 'of', 'mormon', 'church', 'saints', 'jesus', 'mormons', 'latterday', 'operating', '(', 'operation', 'temple', 'christ']
+Running query: ['states', 'countries', 'union', 'of', 'originally', 'adopt', 'adopted', 'member', 'adoption', 'eu', 'the', 'european union', 'euro']
+WARNING: Only returning 16 answers for question 200.2
+Running query: ['album', 'record', 'frank', 'recorded', 'recording', 'sinatra', 's', 'voice']
+WARNING: Only returning 18 answers for question 202.5
+Running query: ['love', 'song', 'writing', 'write', 's', 'cole porter', 'sing', 'cole', 'porter', 'songs']
+WARNING: Only returning 15 answers for question 198.5
+Running query: ['chicago marathon', 'chicago', '1999', 'race', 'marathon', 'date', '2014', 'america', 'bank', '2013']
+Running query: ['bushehr', 'iran', 'reactor', 'power', 'facility', 'nuclear', 'originally', 'work', 'plant', 'start', 's']
+Running query: ['fisa', 'federation', 'acronym', 'rowing', 'french', 'abbreviation', 'known', 'know', 'world', 'international rowing federation', 'international']
+Running query: ['1991', '15', 'island', 'pinatubo', 'luzon', 'eruption', 'mt', 'mt.', 'philippines', 'of', 'june', 'mount']
+Running query: ['death', 'wife', 'die', 'sinatra', 's', 'frank', 'died', '1998']
+Running query: ['humanitarian', 'largest', 'hunger', 'food', '(', 'agency', ')', 's', 'program', 'organization', 'world', 'wfp', 'programme']
+WARNING: Only returning 18 answers for question 202.6
+Running query: ['america', 'career', 's', 'music', 'cole porter', 'broadway', 'professional', 'cole', 'musical', 'porter']
+Running query: ['distance', 'run', 'chicago marathon', 'chicago', '1999', 'record', 'miles', 'oct', 'marathon', '10']
+Running query: ['allowed', 'countries', 'of', 'adopt', 'able', 'adopted', 'currency', 'adoption', 'greece', 'date', 'the', 'european', 'euro']
+WARNING: Only returning 19 answers for question 198.6
+WARNING: Only returning 16 answers for question 205.1
+WARNING: Only returning 19 answers for question 200.4
+WARNING: Only returning 12 answers for question 202.7
+Running query: ['1991', 'of', 'mount', 'months', 'eruption', 'month', 'erupt', 'philippines', 'eruptions', 'volcano', 'june', 'pinatubo']
+Running query: ['25', 'forgione', 'padre', 'pio', 'padre pio', 'years', 'born', 'pietrelcina', '1887']
+Running query: ['nissan', 'automakers', 'japanese', 'automaker', '.', 's', 'corp', 'motor', 'japan', 'position', 'company']
+Running query: ['old', '14', 'frank', 'age', 'years', 'sinatra', 's', '1998', 'died']
+WARNING: Only returning 17 answers for question 191.1
+Running query: ['2014', 'fisa', 'federation', 'cup', 'rowing', 'regatta', 'held', 's', 'championships', 'world', 'international rowing federation', 'international']
+Running query: ['aid', 'countries', 'food', '(', 'distribute', 's', ')', '2000', 'program', 'country', 'world', 'wfp', 'distribution', 'programme']
+WARNING: Only returning 16 answers for question 205.2
+WARNING: Only returning 8 answers for question 199.1
+Running query: ['25', 'forgione', 'italy', 'padre', 'pio', 'padre pio', 'born', 'pietrelcina', '1887']
+WARNING: Only returning 15 answers for question 184.2
+Running query: ['1991', 'people', 'of', 'mount', 'eruption', 'killed', 'mt', 'erupted', 'years', 'june', 'pinatubo', 'died']
+Running query: ['scheduled', 'currencies', 'of', 'national', 'single', 'replace', 'currency', 'completely', 'adoption', 'due', 'replaced', 'the', 'years', 'euro']
+Running query: ['men', 'chicago marathon', 'chicago', '1999', 'winner', 'khannouchi', 'khalid', 'record', 's', 'world', 'marathon']
+Running query: ['nissan corp.', 'vice', 'nissan', 'executive', '.', 'corp', 'motor', 'president', 'corporate', 'company']
+WARNING: Only returning 10 answers for question 199.2
+Running query: ['life', '1968', 'padre', 'pio', 'die', 'padre pio', 'wounds', 'years', 'died']
+Running query: ['april', 'stratforduponavon', 'william', 'born', 's', 'shakespeare', 'birth', '1564']
+Running query: ['2014', 'won', 'federation', 'cup', 'country', 'rowing', 'overall', 'four', 's', 'titles', 'fisa', 'world', 'international', 'championships', '2013']
+WARNING: Only returning 16 answers for question 201.1
+WARNING: Only returning 14 answers for question 203.2
+Running query: ['april', 'stratforduponavon', 'william', 'born', 's', 'shakespeare', 'birth', '1564']
+Running query: ['city', 'north', 'nissan', 'headquartered', 'headquarters', '.', 'corp', 'motor', 'america', 'company']
+Running query: ['1173', 'built', 'of', 'began', 'lean', 'pisa', 'years', 's', 'construction', 'leaning', 'tower']
+Running query: ['championship', '1996', 'tournament', 's', 'won', 'place', 'take', '2014', 'world', 'tournaments', 'super', 'chess']
+WARNING: Only returning 9 answers for question 199.3
+Running query: ['death', 'old', 'padre', 'pio', 'age', 'padre pio', 'years', 's', '1968', 'died']
+WARNING: Only returning 17 answers for question 205.3
+Running query: ['1991', 'people', 'of', 'mount', 'eruption', 'mt', 'philippines', 'evacuation', 'volcano', 'june', 'pinatubo', 'evacuated']
+WARNING: Only returning 17 answers for question 201.2
+Running query: ['23', '1616', 'die', 'william', 'april', 's', 'shakespeare', 'died']
+Running query: ['danish', 'voters', 'sweden', 'of', 'percentage', 'percent', 'referendum', 'rejected', '2000', 'adoption', 'adopted', 'denmark', 'eu', 'the', 'adopting', 'euro']
+WARNING: Only returning 18 answers for question 203.4
+Running query: ['car', 'nissan', '.', 's', 'corp', 'luxury', 'motor', 'cars', 'infiniti', 'corp.', 'company']
+WARNING: Only returning 17 answers for question 201.3
+Running query: ['hamnet', 'death', 'old', 'age', 'william', 'april', 's', 'shakespeare', 'died']
+Running query: ['building', 'took', 'of', 'pisa', 'long', 'years', 's', 'take', 'leaning', 'cathedral', 'tower', 'build']
+WARNING: Only returning 11 answers for question 199.4
+WARNING: Only returning 19 answers for question 205.4
+Running query: ['city', 'padre', 'pio', 'giovanni', 'visit', 'padre pio', 'st', 's', 'church', 'tomb']
+Running query: ['dormant', '1991', 'of', 'pinatubo', 'eruption', 'long', 'years', 'mt', 'mt.', 'philippines', 'volcano', 'june', 'mount']
+Running query: ['olympic', 'fisa', 'federation', 'oswald', 'rowing', '1989', 'elected', 'committee', 'president', 'international rowing federation', 'international', '2013']
+Running query: ['conclude', 'championship', 'end', '1996', 'tournament', 'chess', 'fide', 'world', 'tournaments', 'super', '2013']
+Running query: ['corporation', 'nissan', 'japanese', '.', 's', 'corp', 'motor', 'known', 'company']
+Running query: ['from', ')', 'of', 'cells', 'successfully', 'dolly', 'cloned', 'cell', 's', 'animals', 'adult', 'animal', 'mammals', 'mammal', '(', 'clone', 'cloning']
+WARNING: Only returning 14 answers for question 201.4
+Running query: ['william', 'sonnet', 'plays', '154', 'write', 's', 'shakespeare', 'sonnets', 'wrote']
+WARNING: Only returning 9 answers for question 199.5
+Running query: ['received', 'padre', 'pio', 'receive', 's', 'padre pio', 'years', 'visible', 'stigmata', 'priest']
+Running query: ['bessette', 'carolyn', 'f', 'kennedy', 'married', 'jr', 's', 'wife', 'john']
+WARNING: Only returning 19 answers for question 203.6
+Running query: ['founded', 'official', 'christ', 'latter-day', ')', 'jesus christ', 'mormon', 'of', 'saints', 'jesus', 'mormons', 'latterday', '(', 'lds', 'church', 'history']
+WARNING: Only returning 18 answers for question 205.5
+Running query: ['life', 'based', 'movie', 'patsy', 's', 'cline', 'country', 'music', 'sweet', 'dreams']
+WARNING: Only returning 17 answers for question 191.5
+Running query: ['angle', '55', 'tilt', 'leaning', 'pisa', 'famous', 's', 'degrees', 'of', 'world', 'tower']
+Running query: ['great', 'dam', 'flood', '1889', 'river', 'occur', 'johnstown', 'happened']
+WARNING: Only returning 19 answers for question 201.5
+Running query: ['olympic', 'raced', 'federation', 'sydney australia', 's', '2000', 'race', 'games', 'sydney', 'world', 'boats', 'international', 'rowing', 'boat']
+Running query: ['william', 'play', 'plays', 'years', 'write', 's', 'shakespeare', 'sonnets', 'wrote']
+WARNING: Only returning 13 answers for question 209.4
+WARNING: Only returning 9 answers for question 199.6
+Running query: ['bessette', 'carolyn', 'f', 'kennedy', 'married', 'jr', 'wife', '1996', 'john']
+Running query: ['meg', 'business', 'did', 'movie', 'life', 'eve', 'ryan', 'party-planning', 's', 'party', 'film']
+WARNING: Only returning 15 answers for question 206.1
+Running query: ['people', 'perished', '2209', 'flood', 's', '1889', 'killed', 'died', 'johnstown']
+WARNING: Only returning 16 answers for question 207.3
+WARNING: Only returning 11 answers for question 204.1
+Running query: ['1990', 'italy', 'of', 'pisa', 'famous', 's', 'closed', 'leaning', 'straightened', 'tower', 'public']
+Running query: ['founded', 'christ', 'latter-day', ')', 'of', 'mormon', 'church', 'saints', 'jesus', 'mormons', 'latterday', 'lds', '(', 'years', 'history']
+WARNING: Only returning 12 answers for question 209.5
+Running query: ['john', 'carolyn', 'kennedy', 'die', 'f', 'jr', 's', 'date', 'bessette', 'died']
+WARNING: Only returning 16 answers for question 201.6
+Running query: ['name', 'producer', 'song', 'country', 'owen', 'patsy', 'bradley', 's', 'cline']
+Running query: ['cole porter', 'june', 'born', 'peru', '9', 'indiana', 'cole', '1891', 'porter']
+WARNING: Only returning 18 answers for question 206.2
+Running query: ['dam', '31', 'rain', 'water', 'flood', 'fell', '1889', 'history', 'johnstown']
+Running query: ['preserve', 'fee', 'of', 'online', 'visit', 'pisa', 'preservation', 'famous', 'cost', 'leaning', 'tower']
+Running query: ['city', 'pageant', 'american', 'years', 'held', '2000', 'atlantic', 'america', 'miss', '2013']
+WARNING: Only returning 14 answers for question 202.1
+WARNING: Only returning 9 answers for question 209.6
+Running query: ['cole porter', 'years', 'born', 's', 'peru', 'indiana', 'cole', '1891', 'porter']
+Running query: ['1993', 'clinton', 'janet', 'government', 'assume', 'attorney', 'reno', 'general', 's', 'take', 'position']
+WARNING: Only returning 12 answers for question 204.2
+WARNING: Only returning 18 answers for question 206.3
+WARNING: Only returning 18 answers for question 211.6
+Running query: ['lds', 'begin', 'christ', 'latter-day', ')', 'of', 'mormon', 'church', 'saints', 'jesus', 'mormons', 'latterday', '(', 'joseph', 'began', 'smith']
+Running query: ['fork', 'dam', '31', 'lake', 'flood', '1889', 'caused', 'south', 'johnstown']
+Running query: ['pincus', '17', 'barry', 'manilow', 'alan', 'years', 'born', '1943']
+Running query: ['feet', 'bell', 'of', 'di', 'pisa', 'height', 'high', 'leaning', 'torre', 'tower']
+WARNING: Only returning 16 answers for question 202.2
+WARNING: Only returning 13 answers for question 206.4
+Running query: ['fork', 'old', 'people', 'dam', 'lake', 'flood', '1889', 'south', 'johnstown']
+WARNING: Only returning 14 answers for question 204.3
+WARNING: Only returning 18 answers for question 207.6
+Running query: ['lds', 'christ', 'latter-day', ')', 'of', 'mormon', 'church', 'saints', 'jesus', 'mormons', 'france', 'latterday', 'members', '(', 'believe']
+WARNING: Only returning 15 answers for question 212.1
+Running query: ['great', 'old', 'built', 'chinese', 'wall', 'of', 'mutianyu', 's', 'great wall', 'china', 'history']
+Running query: ['susan', 'barry', 'manilow', 'married', 'long', 'times', 'deixler', 's', 'time']
+Running query: ['aired', 'pageant', 'network', 'tv', 's', 'live', 'television', '2000', 'abc', 'america', 'miss', '2013']
+Running query: ['1993', 'clinton', 'janet', 'april', 'attorney', 'reno', 'general', 'prior', 's', 'immediately', 'position']
+WARNING: Only returning 14 answers for question 206.5
+WARNING: Only returning 11 answers for question 204.4
+Running query: ['great', 'pennsylvania', 'states', 'flood', 'state', '1889', 'history', 'johnstown']
+WARNING: Only returning 13 answers for question 208.1
+Running query: ['great', 'miles', 'built', 'wall', 'of', 'long', 'length', 'great wall', 'china', '2012', 'history']
+WARNING: Only returning 19 answers for question 212.2
+Running query: ['crazy', 'old', 'name', 'accordion', 'barry', 'manilow', 'mendelssohn', 'harmonistas', '212', 'musical', 'wrote']
+WARNING: Only returning 18 answers for question 214.2
+Running query: ['tickets', 'pageant', 'state', 'american', 's', '2000', 'date', '2014', 'america', 'miss']
+WARNING: Only returning 15 answers for question 206.6
+Running query: ['attorney', 'united', 'janet', 'miami', 'father', 'reno', 'born', '1938', '21']
+WARNING: Only returning 5 answers for question 212.3
+Running query: ['college', 'school', 'attended', 'attend', 'barry', 'manilow', 's', 'music', 'york', 'new']
+Running query: ['great', 'built', 'chinese', 'wall', 'of', 'long', 's', 'defense', 'china', 'defensive', 'northern']
+Running query: ['attorney', 'grew', 'janet', 'reno', 'general', 'states', 'grow', 'children']
+WARNING: Only returning 16 answers for question 214.3
+Running query: ['renee', 'pageant', 'heather', 's', 'french', '2000', 'miss america', 'crowned', 'america', 'miss', '2010']
+WARNING: Only returning 19 answers for question 208.3
+Running query: ['great', 'qin', 'built', 'bc', 'wall', 'of', 'dynasty', 'china', 'emperor', 'ming', 'today']
+WARNING: Only returning 18 answers for question 212.4
+Running query: ['pageant', 'heather', 's', 'state', 'french', 'states', '2000', 'miss america', 'america', 'miss', 'scholarship']
+Running query: ['singer', 'barry', 'manilow', '70s', 'director', 's', 'music', 'female', '70', 'new', 'piano', 'pianist', 'musical']
+Running query: ['attorney', 'janet', 'deputy', '1999', 'top', 'reno', 'general', 'justice', 's', 'fbi', 'holder']
+Running query: ['grew', 'carolyn', 'kennedy', 'john', 'jr', 's', 'bessette', 'grow', 'greenwich']
+WARNING: Only returning 17 answers for question 209.1
+WARNING: Only returning 19 answers for question 214.5
+Running query: ['school', 'john', 'carolyn', 'kennedy', 'f', 'bessettekennedy', 'high', 'person', 's', 'bessette']
+Running query: ['teen', 'judges', 'pageant', 'usa', 's', '2000', 'pageants', 'judge', 'america', 'miss']
+Running query: ['parkinson', '1995', 'janet', 'disease', 'reno', 'general', 's', 'diagnosed', 'attorney', 'announced']
+Running query: ['singer', 'singersongwriter', 'records', 'barry', 'manilow', 's', 'label', 'write', 'record', '2000', 'sing']
+Running query: ['city', 'independent', 'festival', 'january', 'park', '1999', 'held', 's', 'sundance', 'film']
+WARNING: Only returning 13 answers for question 209.2
+Running query: ['star', 'inducted', 'country', 'patsy', 'hall', 'cline', 'hollywood', 'walk', 'hollywood walk', 'fame']
+Running query: ['bessette', 'carolyn', 'kennedy', 'jr', 'high', 's', 'college', 'bessettekennedy', 'john']
+Running query: ['meg', 'name', '19', 'meg ryan', 'ryan', 'margaret', 's', 'birthday', 'birth', 'hyra']
+WARNING: Only returning 9 answers for question 209.3
+Running query: ['dick', 'gerald', 'married', 'patsy', 's', 'cline', '1953', 'charlie']
+Running query: ['name', 'festival', 'executive', 'director', '1999', 's', 'sundance', 'artistic', 'films', 'international', 'documentary', 'film']
+Running query: ['meg', 'married', 'ryan', 'years', 'quaid', 's', 'dennis', '2013']
+Running query: ['death', 'die', 'patsy', 'years', 's', 'plane', 'cline', 'died']
+WARNING: Only returning 15 answers for question 213.2
+Running query: ['meg', 'apr', 'ryan', 'met', 's', '2014', 'meet', 'sally', 'husband']
+WARNING: Only returning 16 answers for question 211.3
+Running query: ['crash', 'die', 'patsy', '1963', 'plane', 'cline', 'country', 'died']
+Running query: ['city', 'independent', 'festival', 'january', 'park', '1999', 'held', 's', 'sundance', 'film']
+WARNING: Only returning 14 answers for question 213.3
+Running query: ['meg', 'love', 'movie', 'ryan', 's', 'bookstore', 'books', 'tom', 'hanks']
+Running query: ['meg', 'lead', 'movie', 'ryan', 'leads', '2013', 's', 'actor', 'male', 'film']
+WARNING: Only returning 18 answers for question 215.3
+Running query: ['1999', 'appear', 'appeared', 'two', 'actress', 'festival', 's', 'sundance', 'best', 'films', '2014', 'starred', 'film']
+Running query: ['screenplay', 'won', 'festival', 'dramatic', 'award', '1999', 'sundance', 'dramatic screen play award', 'best', 'awards', 'film']
+Running query: ['prize', 'festival', 'three', 'award', '1999', 's', 'won', 'awards', 'films', 'seasons', 'sundance', 'film']

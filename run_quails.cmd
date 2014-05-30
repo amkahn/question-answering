@@ -1,8 +1,7 @@
-run_tag = test_standalone_punc_removal
-web_cache = src/cached_web_results/TREC-2006.3pg.web_cache
+run_tag = defaults
 
 executable = src/question_answering.sh
-arguments = $(run_tag) web_cache=$(web_cache)
+arguments = $(run_tag)
 Universe = vanilla
 getenv = true
 output = $(run_tag).out
