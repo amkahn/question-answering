@@ -72,6 +72,11 @@ class QueryProcessor(object):
 #       non_ne = filter(lambda x: x != '', non_ne)
 #       sys.stderr.write("DEBUG  Here are the non-named entity query terms after punctuation stripping: %s\n" % non_ne)
 
+        # trying out method where only standalone punctuation is removed
+        for i in range(len(q_non_ne)):
+            q_non_ne[i] = re.sub(r'^\W$','',q_non_ne[i])
+        q_non_ne = filter(lambda x: x != '',q_non_ne)
+
 
         # Create a dictionary of all non-named entity terms, excluding stopwords, mapped
         # to counts in the question/target.
@@ -343,12 +348,28 @@ class QueryProcessor(object):
 
     def extract_ne(self, input):
 #       sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the input: %s\n" % input)
+
+        # phrases in quotation marks are NEs, let's treat them as such
+        possible_ne = []
+        in_ne = False
+
+        for word in input:
+            if word == "''" and in_ne:
+                in_ne = False
+                possible_ne.append(current_ne.strip())
+            if in_ne:
+                current_ne = current_ne + " " + word
+            if word == '``' and not in_ne:
+                in_ne = True
+                current_ne = ''
+
+        #if len(possible_ne) > 0:
+        #    sys.stderr.write("DEBUG: Here are the quoted possible NEs: "+str(possible_ne)+"\n")
         
-        pos_tagged = nltk.pos_tag(input)
-        
-        ne = []
+        ne = possible_ne
         non_ne = input
         
+        pos_tagged = nltk.pos_tag(input)
         extracted = nltk.ne_chunk(pos_tagged, binary=True)
         # find NE-headed subtrees
         for subtree in extracted.subtrees(lambda t: t.node == "NE"):
@@ -358,12 +379,29 @@ class QueryProcessor(object):
             ne.append(current_ne)
             # note: this isn't foolproof, but should work for now. I can't figure out how to get
             # the indices of the NE terms in the surface string -Clara
-            for leaf in leaves:
+            #for leaf in leaves:
                 #sys.stderr.write("trying to remove "+leaf[0]+" from "+str(non_ne)+"\n")
-                non_ne.remove(leaf[0])
+            #    non_ne.remove(leaf[0])
+
+        for entity in possible_ne:
+            entity_split = entity.split()
+            if len(entity_split) > 1:
+                for word in entity_split:
+                    if word in ne:
+                        ne.remove(word)
+
+        for entity in ne:
+            entity_split = entity.split()
+            for word in entity_split:
+                if word in non_ne:
+                    non_ne.remove(word)
+
+        # deduplicate ne
+        # because may have same one word NE from quoted phrase and from NLTK
+        ne = list(set(ne))
         
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: %s\n" % non_ne)
-#       sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: %s\n" % ne)
+        #sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of non-named entities: %s\n" % non_ne)
+        #sys.stderr.write("DEBUG QUERY_PROCESSING.EXTRACT_NE()  Here is the list of named entities: %s\n" % ne)
 
         non_ne_pos_tagged = []
         for pair in pos_tagged:

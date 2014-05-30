@@ -1,4 +1,4 @@
-run_tag = test_lin_exp2
+run_tag = test_standalone_punc_removal
 web_cache = src/cached_web_results/TREC-2006.3pg.web_cache
 
 executable = src/question_answering.sh
