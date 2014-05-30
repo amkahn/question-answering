@@ -240,7 +240,7 @@ class Quail:
         for line in web_cache:
             line = line.strip()
             if line.startswith("QUESTION ID:"):
-                question_id = float(line.split()[-1])
+                question_id = line.split()[-1]
             elif line != '':
                 cached_results[question_id].append(line)
 
