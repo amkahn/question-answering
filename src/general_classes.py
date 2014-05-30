@@ -24,7 +24,7 @@ class Question(object):
 		self.target = target
 	
 	# This method returns a string representing the Question instance (used for debugging).
-	def __str__(self):
+	def __repr__(self):
 		to_return = "id: %s; type: %s; q: %s; target: %s" % (self.id, self.type, self.q, self.target)
 		return to_return	
 
@@ -43,7 +43,7 @@ class SearchQuery(object):
 		self.weight = weight
 	
 	# This method returns a string representing the SearchQuery instance (used for debugging).
-	def __str__(self):
+	def __repr__(self):
 		to_return = "search_terms: %s; weight: %s" % (self.search_terms, self.weight)
 		return to_return
 
@@ -62,7 +62,7 @@ class AnswerTemplate:
         self.type_weights = type_weights
 
     # This method returns a string representing the AnswerTemplate instance (used for debugging).
-    def __str__(self):
+    def __repr__(self):
         to_return = "question_id: %s; query_terms: %s; type_weights: %s" % (self.question_id, self.query_terms, self.type_weights)
         return to_return
 
@@ -90,6 +90,6 @@ class Passage:
         self.doc_id = doc_id
 
     # This method returns a string representing the Question instance (used for debugging).
-    def __str__(self):
+    def __repr__(self):
         to_return = "passage: %s; weight: %s" % (self.passage, self.weight)
         return to_return

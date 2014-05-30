@@ -149,7 +149,7 @@ class QueryProcessor(object):
 #                 else:
 #                     query.search_terms[term] += 1
 
-#       sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % queries)
+        sys.stderr.write("DEBUG  Here are the queries generated: %s\n" % queries)
         return queries
 
 
@@ -174,7 +174,7 @@ class QueryProcessor(object):
         sys.stderr.write("DEBUG  Here is the set of terms to Lin-expand: %s\n" % to_expand)
         
         # Filter out stopwords.
-        to_expand = filter(lambda x: x not in self.stoplist, to_expand)
+        to_expand = filter(lambda x: x[0] not in self.stoplist, to_expand)
         sys.stderr.write("DEBUG  Here is the set of terms to Lin-expand after stopword filtering: %s\n" % to_expand)
         
         # For each non-named entity (note that if a term appears twice in the question,
@@ -192,7 +192,7 @@ class QueryProcessor(object):
                     # Add the synonym to the dictionary for the expanded query, assigning it
                     # weight = weight of original term * similarity measure of synonym.
                     if expanded_voc.get(syn) != None:
-                        expanded_voc[syn] = non_ne_voc[pair[0]] * sim_measure
+                        expanded_voc[syn] = self.non_ne_voc[pair[0]] * sim_measure
         expanded_query = SearchQuery(expanded_voc, query_weight)
         return expanded_query
 
@@ -209,7 +209,7 @@ class QueryProcessor(object):
     # a lot of stopwords automatically).
     
     def get_lin_terms(self, term, n, pos):
-        sys.stderr.write("DEBUG  Getting scored synonyms of %s\n" % term)
+        sys.stderr.write("DEBUG  Getting scored synonyms of term %s, POS %s\n" % (term, pos))
         syns = thes.scored_synonyms(term)
         sys.stderr.write("DEBUG  Here are the synsets returned from the Lin thesaurus: %s\n" % syns)
 

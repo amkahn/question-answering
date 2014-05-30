@@ -51,7 +51,7 @@ class InfoRetriever:
        
         passages = []
         #sys.stderr.write(query_str + '\n')
-      	#sys.stderr.write('Running query: ' + str(query.search_terms.keys()) + '\n')
+      	sys.stderr.write('Running query: ' + str(query.search_terms.keys()) + '\n')
 
 	
 	indri_query = "#weight[passage" + self.passage_length + ":" + self.indri_window_size + "](" + query_str + ")"
