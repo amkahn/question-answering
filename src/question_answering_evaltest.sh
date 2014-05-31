@@ -14,7 +14,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 $DIR/question_answering.py $@
 
 # Run the MRR eval script with strict evaluation, redirecting output to the appropriate results file
-python2.6 /dropbox/13-14/573/code/compute_mrr.py /dropbox/13-14/573/Data/patterns/evaltest/factoid-docs.litkowski.2007.txt $DIR/../outputs/$1.outputs strict > $DIR/../results/$1.results_strict
+python2.6 /dropbox/13-14/573/code/compute_mrr.py /dropbox/13-14/573/Data/patterns/evaltest/factoid-docs.litkowski.2007.txt $DIR/../outputs/QA.outputs_$1 strict > $DIR/../results/QA.results_$1_strict
 
 # Run the MRR eval script with lenient evaluation, redirecting output to the appropriate results file
-python2.6 /dropbox/13-14/573/code/compute_mrr.py /dropbox/13-14/573/Data/patterns/evaltest/factoid-docs.litkowski.2007.txt $DIR/../outputs/$1.outputs lenient > $DIR/../results/$1.results_lenient
+python2.6 /dropbox/13-14/573/code/compute_mrr.py /dropbox/13-14/573/Data/patterns/evaltest/factoid-docs.litkowski.2007.txt $DIR/../outputs/QA.outputs_$1 lenient > $DIR/../results/QA.results_$1_lenient
