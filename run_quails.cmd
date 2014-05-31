@@ -1,4 +1,4 @@
-run_tag = defaults
+run_tag = test_mem
 
 executable = src/question_answering.sh
 arguments = $(run_tag)
