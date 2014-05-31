@@ -4,6 +4,7 @@ Claire Jaja, Andrea Kahn, Clara Gordon
 
 This repository holds our question answering system for LING 573: Systems and Applications.
 
+Note: For a full list of our systems parameters and default settings, please see parameters.txt. 
 
 D4.CMD
 The condor script D4.cmd runs question_answering.sh on the development set with the following non-default parameter settings (all others are set to default):
