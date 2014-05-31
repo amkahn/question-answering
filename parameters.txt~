@@ -12,7 +12,7 @@ index   /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexe
 
 Category: Query Processing
 
-stopword_filter_target  False
+stopword_filter_target  FALSE
 target_upweighting  1
 ne_upweighting  1
 num_web_exp_terms   5
