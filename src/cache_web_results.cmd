@@ -3,7 +3,7 @@
 # LING 573 Question Answering
 # cache web results
 
-num_pages = 4
+num_pages = 3
 q_file = /dropbox/13-14/573/Data/Questions/evaltest/QA2007_testset.xml
 q_name = QA2007_testset.$(num_pages)pg
 

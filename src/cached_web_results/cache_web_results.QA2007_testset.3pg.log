@@ -40,3 +40,19 @@
 009 (131363.000.000) 05/28 13:36:26 Job was aborted by the user.
 	via condor_rm (by user cjaja)
 ...
+000 (134081.000.000) 05/30 21:04:54 Job submitted from host: <192.168.100.50:50435>
+...
+001 (134081.000.000) 05/30 21:04:57 Job executing on host: <192.168.100.59:51381>
+...
+006 (134081.000.000) 05/30 21:05:06 Image size of job updated: 133648
+	20  -  MemoryUsage of job (MB)
+	19564  -  ResidentSetSize of job (KB)
+...
+006 (134081.000.000) 05/30 21:10:07 Image size of job updated: 161940
+	47  -  MemoryUsage of job (MB)
+	48108  -  ResidentSetSize of job (KB)
+...
+006 (134081.000.000) 05/30 21:15:07 Image size of job updated: 162136
+	48  -  MemoryUsage of job (MB)
+	48184  -  ResidentSetSize of job (KB)
+...
