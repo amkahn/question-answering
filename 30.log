@@ -1,0 +1,33 @@
+000 (124015.009.000) 05/30 16:07:14 Job submitted from host: <192.168.100.49:39849>
+...
+000 (134022.009.000) 05/30 16:30:55 Job submitted from host: <192.168.100.50:50435>
+...
+009 (134022.009.000) 05/30 16:35:36 Job was aborted by the user.
+	via condor_rm (by user amkahn)
+...
+001 (124015.009.000) 05/30 16:39:35 Job executing on host: <192.168.100.51:39141>
+...
+006 (124015.009.000) 05/30 16:39:44 Image size of job updated: 300120
+	20  -  MemoryUsage of job (MB)
+	19692  -  ResidentSetSize of job (KB)
+...
+006 (124015.009.000) 05/30 16:44:45 Image size of job updated: 15950572
+	12581  -  MemoryUsage of job (MB)
+	12882416  -  ResidentSetSize of job (KB)
+...
+006 (124015.009.000) 05/30 16:49:46 Image size of job updated: 16048664
+	12677  -  MemoryUsage of job (MB)
+	12981036  -  ResidentSetSize of job (KB)
+...
+006 (124015.009.000) 05/30 16:54:47 Image size of job updated: 16101032
+	12729  -  MemoryUsage of job (MB)
+	13033880  -  ResidentSetSize of job (KB)
+...
+006 (124015.009.000) 05/30 16:59:48 Image size of job updated: 16178588
+	12805  -  MemoryUsage of job (MB)
+	13111772  -  ResidentSetSize of job (KB)
+...
+006 (124015.009.000) 05/30 17:04:49 Image size of job updated: 16224876
+	12850  -  MemoryUsage of job (MB)
+	13157844  -  ResidentSetSize of job (KB)
+...

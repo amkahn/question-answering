@@ -188,7 +188,10 @@ class QueryProcessor(object):
                     # Add the synonym to the dictionary for the expanded query, assigning it
                     # weight = weight of original term * similarity measure of synonym.
                     if expanded_voc.get(syn) != None:
-                        expanded_voc[syn] = self.non_ne_voc[pair[0]] * sim_measure
+                        if self.non_ne_voc.get(pair[0].lower()) == None:
+                            sys.stderr.write("DEBUG  Warning: %s not in non_ne_voc dictionary; question id %s; here's the dictionary: %s\n" % (pair[0].lower(), self.question.id, self.non_ne_voc)
+                        else:
+                            expanded_voc[syn] = self.non_ne_voc[pair[0].lower()] * sim_measure
         expanded_query = SearchQuery(expanded_voc, query_weight)
         return expanded_query
 

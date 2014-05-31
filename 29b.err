@@ -1,0 +1,5 @@
+Getting parameters...
+Parameters: {'q_file': '/dropbox/13-14/573/Data/Questions/devtest/TREC-2006.xml', 'index': '/home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexes/index.porter.stoplist', 'num_docs': '1', 'num_passages': '10', 'ne_upweighting': '1.5', 'stopword_filter_target': False, 'snippet_weight': '0.9', 'weight_web_exp_terms': '0.5', 'num_lin_exp_terms': '10', 'target_upweighting': '1', 'run_tag': '29b', 'snippet_passage_count': '10', 'indri_window_size': '50', 'indri_passages': '40', 'passages_per_doc_id': '2', 'stoplist': '/home2/amkahn/workspace/573/question-answering/src/stoplist.dft', 'passage_length': '100', 'passages_per_answer_candidate': '1', 'web_cache': '/home2/amkahn/workspace/573/question-answering/src/cached_web_results/TREC-2006.3pg.web_cache', 'weight_lin_exp_query': '0.2', 'num_web_exp_terms': '10'}
+WARNING: Only returning 19 answers for question 143.5
+WARNING: Only returning 18 answers for question 170.2
+WARNING: Only returning 11 answers for question 150.5
