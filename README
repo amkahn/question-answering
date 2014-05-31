@@ -7,11 +7,19 @@ This repository holds our question answering system for LING 573: Systems and Ap
 
 D4.CMD
 The condor script D4.cmd runs question_answering.sh on the development set with the following non-default parameter settings (all others are set to default):
+indri_passages=20
+passage_length=75
+indri_window_size=30
 
 It runs question_answering_evaltest.sh on the evaluation set with the following non-default parameter settings (all others are set to default):
-q_file=
+q_file=/dropbox/13-14/573/Data/Questions/evaltest/QA2007_testset.xml
+web_cache=src/cached_web_results/QA2007_testset.3pg.web_cache
+index=src/indexes/AQUAINT-2/porter.stoplist
+indri_passages=20
+passage_length=75
+indri_window_size=30
 
-This code runs in about 10 minutes on the Condor cluster.
+This code runs in about 15 minutes on the Condor cluster.
 
 
 SRC
@@ -46,5 +54,5 @@ Third-party modules that we use include: BeautifulSoup, NLTK, and pymur (Python 
 
 RESULTS
 After extensive tuning of our parameters on the development set, the evaluation script gives us the following accuracies:
-dev: strict: lenient:
-eval: strict: lenient:
+dev: strict: 0.2183, lenient: 0.3769
+eval: strict: , lenient:
