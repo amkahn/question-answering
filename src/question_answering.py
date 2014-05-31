@@ -23,14 +23,48 @@ from functools import partial
 from collections import defaultdict
 
 
+def main():
+
+    script_dir = path.dirname(path.realpath(__file__))
+    
+    # pass arguments to get_parameters method 
+    sys.stderr.write('Getting parameters...\n')
+    parameters = get_parameters(sys.argv[1:], script_dir)
+    sys.stderr.write('Parameters: ' + str(parameters) + '\n')
+
+    # read run tag and output from parameters dict
+    run_tag = parameters['run_tag']
+    output = open(script_dir + '/../outputs/QA.outputs_' + run_tag,'w')
+          
+    quail = Quail(parameters)
+
+    questions = quail.generate_q_list()
+    # filter for only factoid questions
+    questions = filter(lambda x: x.type=='FACTOID', questions)
+
+    partial_process_question = partial(process_question, object=quail)
+    pool = multiprocessing.Pool()
+    all_answers = pool.map(partial_process_question,questions)
+
+    # do formatting on answer list
+    for ranked_answers in all_answers:
+        for answer in ranked_answers:
+            #sys.stderr.write("DEBUG: Answer %s with score %s\n" % (answer.answer, answer.score))
+            #sys.stderr.write("DEBUG: Answer %s found in: %s\n" % (answer.answer, answer.doc_ids))
+            question_id, doc_id, passage = answer
+
+            output.write("%s %s %s %s\n" % (question_id, run_tag, doc_id, passage))
+    output.close()
+
+
+
 # This method reads in command line arguments and stores them in a dict. It 
 # assigns default values if none are specified. 
 
 def get_parameters(args, script_dir):
     
-    
     if len(args) == 0:
-        raise Exception('Must include runtag as first argument.')
+        raise Exception('Must include run tag as first argument.')
 
     if '=' in args[0]:
         raise Exception('First argument must be run tag only.')
@@ -115,40 +149,6 @@ def get_parameters(args, script_dir):
         parameters['passages_per_answer_candidate'] = '1'
 
     return parameters
-
-
-def main():
-
-    script_dir = path.dirname(path.realpath(__file__))
-    
-    # pass arguments to get_parameters method 
-    sys.stderr.write('Getting parameters...\n')
-    parameters = get_parameters(sys.argv[1:], script_dir)
-    sys.stderr.write('Parameters: ' + str(parameters) + '\n')
-
-    # read run tag and output from parameters dict
-    run_tag = parameters['run_tag']
-    output = open(script_dir + '/../outputs/' + run_tag + '.outputs','w')
-          
-    quail = Quail(parameters)
-
-    questions = quail.generate_q_list()
-    # filter for only factoid questions
-    questions = filter(lambda x: x.type=='FACTOID', questions)
-
-    partial_process_question = partial(process_question, object=quail)
-    pool = multiprocessing.Pool()
-    all_answers = pool.map(partial_process_question,questions)
-
-    # do formatting on answer list
-    for ranked_answers in all_answers:
-        for answer in ranked_answers:
-            #sys.stderr.write("DEBUG: Answer %s with score %s\n" % (answer.answer, answer.score))
-            #sys.stderr.write("DEBUG: Answer %s found in: %s\n" % (answer.answer, answer.doc_ids))
-            question_id, doc_id, passage = answer
-
-            output.write("%s %s %s %s\n" % (question_id, run_tag, doc_id, passage))
-    output.close()
 
 
 # This method takes an XML file of stopwords as input and returns a list of the stopwords.
