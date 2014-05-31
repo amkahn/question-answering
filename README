@@ -22,7 +22,7 @@ indri_passages=20
 passage_length=75
 indri_window_size=30
 
-This code runs in about 15 minutes on the Condor cluster.
+This code runs in about 5 minutes on the Condor cluster.
 
 
 SRC
