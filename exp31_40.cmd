@@ -79,8 +79,7 @@ run_tag = 40
 passages_per_doc_id = 4
 passages_per_answer_candidate = 6
 
-arguments = $(run_tag) passages_per_doc_id=$(passages_per_doc_id) passages_per_answer_can
-didate=$(passages_per_answer_candidate)
+arguments = $(run_tag) passages_per_doc_id=$(passages_per_doc_id) passages_per_answer_candidate=$(passages_per_answer_candidate)
 
 Queue
 
