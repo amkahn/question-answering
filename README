@@ -6,7 +6,10 @@ This repository holds our question answering system for LING 573: Systems and Ap
 
 
 D4.CMD
-The condor script D4.cmd runs question_answering.sh with the following paramter settings:
+The condor script D4.cmd runs question_answering.sh on the development set with the following non-default parameter settings (all others are set to default):
+
+It runs question_answering_evaltest.sh on the evaluation set with the following non-default parameter settings (all others are set to default):
+q_file=
 
 This code runs in about 10 minutes on the Condor cluster.
 

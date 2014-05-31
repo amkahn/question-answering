@@ -12,13 +12,13 @@ index   /home2/cjaja/classwork/spring-2014/ling573/question-answering/src/indexe
 
 Category: Query Processing
 
-stopword_filter_target  FALSE
-target_upweighting  1
-ne_upweighting  1
-num_web_exp_terms   5
-weight_web_exp_terms    0.5
-num_lin_exp_terms   0
-weight_lin_exp_query    0
+stopword_filter_target  False   boolean variable for whether or not to perform stopword-filtering on the target
+target_upweighting  1   the factor by which initial target query term weights based on counts are multiplied (defaults to 1, i.e. no upweighting)
+ne_upweighting  1   the factor by which initial NE query term weights based on counts are multiplied (defaults to 1, i.e. no upweighting)
+num_web_exp_terms   5   number of web-redundancy terms added to query
+weight_web_exp_terms    0.5 weight given to web-redundancy terms added to query
+num_lin_exp_terms   0   number of Lin-thesaurus terms added to query
+weight_lin_exp_query    0   weight given to Lin-thesaurus-expanded query
 
 Category: Info Retrieval
 
@@ -29,11 +29,11 @@ snippet_weight  0.9 weight assigned to web snippets
 
 Category: Answer Processing
 
-num_docs    1
-num_passages    10
-snippet_passage_count   10
-passages_per_doc_id 1
-passages_per_answer_candidate   1
+num_docs    1   number of AQUAINT docs the answer must occur in
+num_passages    10  number of passages the answer must occur in
+snippet_passage_count   10  how many passages does a web snippet count as
+passages_per_doc_id 1   number of passages to return for each document ID
+passages_per_answer_candidate   1   number of passages to return for each answer candidate
 
 
 
