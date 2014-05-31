@@ -124,12 +124,12 @@ def get_parameters(args, script_dir):
     
     if 'passage_length' not in keys:
         parameters['passage_length'] = '100'
-        
-    if 'snippet_weight' not in keys:
-        parameters ['snippet_weight'] = '0.9'
-        
+
     if 'indri_window_size' not in keys:
         parameters['indri_window_size'] = '50'
+       
+    if 'snippet_weight' not in keys:
+        parameters ['snippet_weight'] = '0.9'
 
     # Answer processing parameters
     # These are really important!
