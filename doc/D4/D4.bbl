@@ -5,8 +5,8 @@
 Sanda~M Harabagiu, Dan~I Moldovan, Christine Clark, Mitchell Bowden, Andrew
   Hickl, and Patrick Wang.
 \newblock 2005.
-\newblock Employing two question answering systems in trec-2005.
-\newblock In {\em TREC}.
+\newblock Employing two question answering systems in {TREC}-2005.
+\newblock In {\em {TREC}}.
 
 \bibitem[\protect\citename{Hirschman and Gaizauskas}2001]{hirschman2001natural}
 Lynette Hirschman and Robert Gaizauskas.
@@ -14,11 +14,28 @@ Lynette Hirschman and Robert Gaizauskas.
 \newblock Natural language question answering: The view from here.
 \newblock {\em Natural Language Engineering}, 7(4):275--300.
 
+\bibitem[\protect\citename{Lin}1998]{lin1998automatic}
+Dekang Lin.
+\newblock 1998.
+\newblock Automatic retrieval and clustering of similar words.
+\newblock In {\em Proceedings of the 17th international conference on
+  Computational linguistics-Volume 2}, pages 768--774. Association for
+  Computational Linguistics.
+
 \bibitem[\protect\citename{Lin}2007]{lin2007exploration}
 Jimmy Lin.
 \newblock 2007.
 \newblock An exploration of the principles underlying redundancy-based factoid
   question answering.
-\newblock {\em ACM Transactions on Information Systems (TOIS)}, 25(2):6.
+\newblock {\em {ACM} Transactions on Information Systems ({TOIS})}, 25(2):6.
+
+\bibitem[\protect\citename{Loper and Bird}2002]{Loper:2002:NNL:1118108.1118117}
+Edward Loper and Steven Bird.
+\newblock 2002.
+\newblock {NLTK}: The natural language toolkit.
+\newblock In {\em Proceedings of the ACL-02 Workshop on Effective Tools and
+  Methodologies for Teaching Natural Language Processing and Computational
+  Linguistics - Volume 1}, ETMTNLP '02, pages 63--70, Stroudsburg, PA, USA.
+  Association for Computational Linguistics.
 
 \end{thebibliography}
