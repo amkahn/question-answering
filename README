@@ -2,7 +2,7 @@ LING 573: D4
 Claire Jaja, Andrea Kahn, Clara Gordon
 5/30/2014
 
-This repository holds our question answering system for LING 573: Systems and Applications. It processes the AQUAINT corpus of English news text to produce answers to the natural languages questions used in the TREC shared tasks of 2006 and 2007. See the project reports in doc/ for more detailed information, and descriptions of the main project scripts below. 
+This repository holds our question-answering system for LING 573: Systems and Applications. It processes the AQUAINT corpus of English news text to produce answers to the natural language questions used in the TREC Q&A shared tasks of 2006 and 2007. See the project reports in doc/ for more detailed information, and descriptions of the main project scripts below. 
 
 D4.CMD
 The condor script D4.cmd runs question_answering.sh on the development set with the following non-default parameter settings (all others are set to default):
